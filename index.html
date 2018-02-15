@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="7653ae1e5db78ba34f266c7ad2066af188b5c37d" name="document-revision">
+  <meta content="d5042f5a97e7d5a9956a2722880f1b8a1adf79c9" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -1977,15 +1977,7 @@ it is anticipated to be used with the <code>canvas</code> 2D <a data-link-type="
           <li>
            <a href="#dictdef-audioworkletnodeoptions"><span class="secno">1.33.3.3</span> <span class="content"> <code class="idl"><span>AudioWorkletNodeOptions</span></code></span></a>
            <ol class="toc">
-            <li><a href="#dictionary-audioworkletnodeoptions-members"><span class="secno">1.33.3.3.1</span> <span class="content"> Dictionary <code class="idl"><span>AudioWorkletNodeOptions</span></code> Members <dl><dt data-md=""><span><code>numberOfInputs</code></span>, <span> of type <span>unsigned long</span>, defaulting to <code>1</code></span></dt><dd data-md=""> <p>This is used to initialize the value of <code class="idl"><span>AudioNode</span></code> <code class="idl"><span>numberOfInputs</span></code> attribute.</p> </dd><dt data-md=""><span><code>numberOfOutputs</code></span>, <span> of type <span>unsigned long</span>, defaulting to <code>1</code></span></dt><dd data-md=""> <p>This is used to initialize the value of <code class="idl"><span>AudioNode</span></code> <code class="idl"><span>numberOfOutputs</span></code> attribute.</p> </dd><dt data-md=""><span><code>outputChannelCount</code></span>, <span> of type <span>sequence&lt;unsigned long></span></span></dt><dd data-md=""> <p>This array is used to configure the number of channels in
-each output. For example, <code>outputChannelCount: [n,
-m]</code> specifies the number of channels in the first
-output to <code>n</code> and the second output to <code>m</code> respectively. <code class="idl"><span>IndexSizeError</span></code> MUST
-be thrown if the length of sequence does not match <code class="idl"><span>numberOfOutputs</span></code>. A <code class="idl"><span>NotSupportedError</span></code> exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s <code class="idl"><span>channelCount</span></code>.</p> </dd><dt data-md=""><span><code>parameterData</code></span>, <span> of type <span>record&lt;DOMString, double></span></span></dt><dd data-md=""> <p>This is a list of user-defined key-value pairs that are used
-to initialize <code class="idl"><span>AudioParam</span></code> values in <code class="idl"><span>AudioWorkletNode</span></code>. If the string key of an entry in the
-list does not match any name of <code class="idl"><span>AudioParam</span></code> objects in
-the node, it is ignored.</p> </dd><dt data-md=""><span><code>processorOptions</code></span>, <span> of type <span>Object</span>, defaulting to <code>null</code></span></dt><dd data-md=""> <p>This holds any additional user-defined data that may be used to initialize the corresponding <code class="idl"><span>AudioWorkletProcessor</span></code> for this <code class="idl"><span>AudioWorkletNode</span></code>.</p> </dd></dl> </span></a>
+            <li><a href="#dictionary-audioworkletnodeoptions-members"><span class="secno">1.33.3.3.1</span> <span class="content"> Dictionary <code class="idl"><span>AudioWorkletNodeOptions</span></code> Members</span></a>
             <li><a href="#configuring-channels-with-audioworkletnodeoptions"><span class="secno">1.33.3.3.2</span> <span class="content"> Configuring Channels with <code class="idl"><span>AudioWorkletNodeOptions</span></code></span></a>
            </ol>
          </ol>
@@ -11335,15 +11327,32 @@ the parameter values upon the creation of a node.</p>
   <a class="n" data-link-type="idl-name">Object</a> <a class="nv idl-code" data-default="null" data-link-type="dict-member" data-type="Object " href="#dom-audioworkletnodeoptions-processoroptions" id="ref-for-dom-audioworkletnodeoptions-processoroptions">processorOptions</a> = <span class="kt">null</span>;
 };
 </pre>
-   <h6 class="heading settled" data-level="1.33.3.3.1" id="dictionary-audioworkletnodeoptions-members"><span class="secno">1.33.3.3.1. </span><span class="content"> Dictionary <code class="idl"><a data-link-type="idl" href="#dictdef-audioworkletnodeoptions" id="ref-for-dictdef-audioworkletnodeoptions④">AudioWorkletNodeOptions</a></code> Members <dl><dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletNodeOptions" data-dfn-type="dict-member" data-export="" id="dom-audioworkletnodeoptions-numberofinputs"><code>numberOfInputs</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤⑨">unsigned long</a>, defaulting to <code>1</code></span></dt><dd data-md=""> <p>This is used to initialize the value of <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑦③">AudioNode</a></code> <code class="idl"><a data-link-type="idl" href="#dom-audionode-numberofinputs" id="ref-for-dom-audionode-numberofinputs②⑤">numberOfInputs</a></code> attribute.</p> </dd><dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletNodeOptions" data-dfn-type="dict-member" data-export="" id="dom-audioworkletnodeoptions-numberofoutputs"><code>numberOfOutputs</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑥⓪">unsigned long</a>, defaulting to <code>1</code></span></dt><dd data-md=""> <p>This is used to initialize the value of <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑦④">AudioNode</a></code> <code class="idl"><a data-link-type="idl" href="#dom-audionode-numberofoutputs" id="ref-for-dom-audionode-numberofoutputs②⑥">numberOfOutputs</a></code> attribute.</p> </dd><dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletNodeOptions" data-dfn-type="dict-member" data-export="" id="dom-audioworkletnodeoptions-outputchannelcount"><code>outputChannelCount</code></dfn>, <span> of type <a data-link-type="idl-name">sequence&lt;unsigned long></a></span></dt><dd data-md=""> <p>This array is used to configure the number of channels in
+   <h6 class="heading settled" data-level="1.33.3.3.1" id="dictionary-audioworkletnodeoptions-members"><span class="secno">1.33.3.3.1. </span><span class="content"> Dictionary <code class="idl"><a data-link-type="idl" href="#dictdef-audioworkletnodeoptions" id="ref-for-dictdef-audioworkletnodeoptions④">AudioWorkletNodeOptions</a></code> Members</span><a class="self-link" href="#dictionary-audioworkletnodeoptions-members"></a></h6>
+   <dl>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletNodeOptions" data-dfn-type="dict-member" data-export="" id="dom-audioworkletnodeoptions-numberofinputs"><code>numberOfInputs</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤⑨">unsigned long</a>, defaulting to <code>1</code></span>
+    <dd data-md="">
+     <p>This is used to initialize the value of <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑦③">AudioNode</a></code> <code class="idl"><a data-link-type="idl" href="#dom-audionode-numberofinputs" id="ref-for-dom-audionode-numberofinputs②⑤">numberOfInputs</a></code> attribute.</p>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletNodeOptions" data-dfn-type="dict-member" data-export="" id="dom-audioworkletnodeoptions-numberofoutputs"><code>numberOfOutputs</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑥⓪">unsigned long</a>, defaulting to <code>1</code></span>
+    <dd data-md="">
+     <p>This is used to initialize the value of <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑦④">AudioNode</a></code> <code class="idl"><a data-link-type="idl" href="#dom-audionode-numberofoutputs" id="ref-for-dom-audionode-numberofoutputs②⑥">numberOfOutputs</a></code> attribute.</p>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletNodeOptions" data-dfn-type="dict-member" data-export="" id="dom-audioworkletnodeoptions-outputchannelcount"><code>outputChannelCount</code></dfn>, <span> of type <a data-link-type="idl-name">sequence&lt;unsigned long></a></span>
+    <dd data-md="">
+     <p>This array is used to configure the number of channels in
 each output. For example, <code>outputChannelCount: [n,
 m]</code> specifies the number of channels in the first
 output to <code>n</code> and the second output to <code>m</code> respectively. <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror②⑤">IndexSizeError</a></code> MUST
 be thrown if the length of sequence does not match <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnodeoptions-numberofoutputs" id="ref-for-dom-audioworkletnodeoptions-numberofoutputs①">numberOfOutputs</a></code>. A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror③①">NotSupportedError</a></code> exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcount" id="ref-for-dom-audionode-channelcount③⑤">channelCount</a></code>.</p> </dd><dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletNodeOptions" data-dfn-type="dict-member" data-export="" id="dom-audioworkletnodeoptions-parameterdata"><code>parameterData</code></dfn>, <span> of type <a data-link-type="idl-name">record&lt;DOMString, double></a></span></dt><dd data-md=""> <p>This is a list of user-defined key-value pairs that are used
+channel count is not in the valid range of AudioNode’s <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcount" id="ref-for-dom-audionode-channelcount③⑤">channelCount</a></code>.</p>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletNodeOptions" data-dfn-type="dict-member" data-export="" id="dom-audioworkletnodeoptions-parameterdata"><code>parameterData</code></dfn>, <span> of type <a data-link-type="idl-name">record&lt;DOMString, double></a></span>
+    <dd data-md="">
+     <p>This is a list of user-defined key-value pairs that are used
 to initialize <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①④⑦">AudioParam</a></code> values in <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode②⑦">AudioWorkletNode</a></code>. If the string key of an entry in the
 list does not match any name of <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①④⑧">AudioParam</a></code> objects in
-the node, it is ignored.</p> </dd><dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletNodeOptions" data-dfn-type="dict-member" data-export="" id="dom-audioworkletnodeoptions-processoroptions"><code>processorOptions</code></dfn>, <span> of type <a data-link-type="idl-name">Object</a>, defaulting to <code>null</code></span></dt><dd data-md=""> <p>This holds any additional user-defined data that may be used to initialize the corresponding <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②①">AudioWorkletProcessor</a></code> for this <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode②⑧">AudioWorkletNode</a></code>.</p> </dd></dl> </span><a class="self-link" href="#dictionary-audioworkletnodeoptions-members"></a></h6>
+the node, it is ignored.</p>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletNodeOptions" data-dfn-type="dict-member" data-export="" id="dom-audioworkletnodeoptions-processoroptions"><code>processorOptions</code></dfn>, <span> of type <a data-link-type="idl-name">Object</a>, defaulting to <code>null</code></span>
+    <dd data-md="">
+     <p>This holds any additional user-defined data that may be used to initialize the corresponding <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②①">AudioWorkletProcessor</a></code> for this <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode②⑧">AudioWorkletNode</a></code>.</p>
+   </dl>
    <h6 class="heading settled" data-level="1.33.3.3.2" id="configuring-channels-with-audioworkletnodeoptions"><span class="secno">1.33.3.3.2. </span><span class="content"> Configuring Channels with <code class="idl"><a data-link-type="idl" href="#dictdef-audioworkletnodeoptions" id="ref-for-dictdef-audioworkletnodeoptions⑤">AudioWorkletNodeOptions</a></code></span><a class="self-link" href="#configuring-channels-with-audioworkletnodeoptions"></a></h6>
    <p>With a combination of <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnodeoptions-numberofinputs" id="ref-for-dom-audioworkletnodeoptions-numberofinputs①">numberOfInputs</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnodeoptions-numberofoutputs" id="ref-for-dom-audioworkletnodeoptions-numberofoutputs②">numberOfOutputs</a></code>,
 and <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnodeoptions-outputchannelcount" id="ref-for-dom-audioworkletnodeoptions-outputchannelcount①">outputChannelCount</a></code>,
@@ -11637,8 +11646,7 @@ of an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref
     <li data-md="">
      <p>In the main scope, <code>context.audioWorklet</code> is requested to add a script module.</p>
     <li data-md="">
-     <p>Since none exists yet, a new <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑦">AudioWorkletGlobalScope</a></code> is created in association with the context’sThis is the global scope in which <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④①">AudioWorkletProcessor</a></code> class definitions will be evaluated. (On subsequent calls, this
-previously created scope will be used.)</p>
+     <p>Since none exists yet, a new <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑦">AudioWorkletGlobalScope</a></code> is created in association with the context’sThis is the global scope in which <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④①">AudioWorkletProcessor</a></code> class definitions will be evaluated. (On subsequent calls, this previously created scope will be used.)</p>
     <li data-md="">
      <p>The imported script is run in the newly created global scope.</p>
     <li data-md="">
@@ -15955,42 +15963,7 @@ The AudioWorkletNode Interface</a> <a href="#ref-for-audionode①⑦⓪">(2)</a>
     <li><a href="#ref-for-audionode①⑦②">1.33.3.3. 
 AudioWorkletNodeOptions</a>
     <li><a href="#ref-for-audionode①⑦③">1.33.3.3.1. 
-Dictionary AudioWorkletNodeOptions Members
-
-
-numberOfInputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfInputs attribute.
-
-numberOfOutputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfOutputs attribute.
-
-outputChannelCount,  of type sequence&lt;unsigned long>
-
-This array is used to configure the number of channels in
-each output. For example, outputChannelCount: [n,
-m] specifies the number of channels in the first
-output to n and the second output to
-m respectively. IndexSizeError MUST
-be thrown if the length of sequence does not match
-numberOfOutputs. A
-NotSupportedError exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s
-channelCount.
-
-parameterData,  of type record&lt;DOMString, double>
-
-This is a list of user-defined key-value pairs that are used
-to initialize AudioParam values in
-AudioWorkletNode. If the string key of an entry in the
-list does not match any name of AudioParam objects in
-the node, it is ignored.
-processorOptions,  of type Object, defaulting to null
-
-This holds any additional user-defined data that may be used to initialize the corresponding AudioWorkletProcessor for this AudioWorkletNode. </a> <a href="#ref-for-audionode①⑦④">(2)</a>
+Dictionary AudioWorkletNodeOptions Members</a> <a href="#ref-for-audionode①⑦④">(2)</a>
     <li><a href="#ref-for-audionode①⑦⑤">1.33.7.2. 
 VU Meter Node</a>
     <li><a href="#ref-for-audionode①⑦⑥">2.1. 
@@ -16372,42 +16345,7 @@ The WaveShaperNode Interface</a>
     <li><a href="#ref-for-dom-audionode-channelcount③④">1.33.3. 
 The AudioWorkletNode Interface</a>
     <li><a href="#ref-for-dom-audionode-channelcount③⑤">1.33.3.3.1. 
-Dictionary AudioWorkletNodeOptions Members
-
-
-numberOfInputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfInputs attribute.
-
-numberOfOutputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfOutputs attribute.
-
-outputChannelCount,  of type sequence&lt;unsigned long>
-
-This array is used to configure the number of channels in
-each output. For example, outputChannelCount: [n,
-m] specifies the number of channels in the first
-output to n and the second output to
-m respectively. IndexSizeError MUST
-be thrown if the length of sequence does not match
-numberOfOutputs. A
-NotSupportedError exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s
-channelCount.
-
-parameterData,  of type record&lt;DOMString, double>
-
-This is a list of user-defined key-value pairs that are used
-to initialize AudioParam values in
-AudioWorkletNode. If the string key of an entry in the
-list does not match any name of AudioParam objects in
-the node, it is ignored.
-processorOptions,  of type Object, defaulting to null
-
-This holds any additional user-defined data that may be used to initialize the corresponding AudioWorkletProcessor for this AudioWorkletNode. </a>
+Dictionary AudioWorkletNodeOptions Members</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="audionode-channelcount-constraints">
@@ -16626,42 +16564,7 @@ The WaveShaperNode Interface</a>
     <li><a href="#ref-for-dom-audionode-numberofinputs②④">1.33.3. 
 The AudioWorkletNode Interface</a>
     <li><a href="#ref-for-dom-audionode-numberofinputs②⑤">1.33.3.3.1. 
-Dictionary AudioWorkletNodeOptions Members
-
-
-numberOfInputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfInputs attribute.
-
-numberOfOutputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfOutputs attribute.
-
-outputChannelCount,  of type sequence&lt;unsigned long>
-
-This array is used to configure the number of channels in
-each output. For example, outputChannelCount: [n,
-m] specifies the number of channels in the first
-output to n and the second output to
-m respectively. IndexSizeError MUST
-be thrown if the length of sequence does not match
-numberOfOutputs. A
-NotSupportedError exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s
-channelCount.
-
-parameterData,  of type record&lt;DOMString, double>
-
-This is a list of user-defined key-value pairs that are used
-to initialize AudioParam values in
-AudioWorkletNode. If the string key of an entry in the
-list does not match any name of AudioParam objects in
-the node, it is ignored.
-processorOptions,  of type Object, defaulting to null
-
-This holds any additional user-defined data that may be used to initialize the corresponding AudioWorkletProcessor for this AudioWorkletNode. </a>
+Dictionary AudioWorkletNodeOptions Members</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="audionode-source-nodes">
@@ -16723,42 +16626,7 @@ The WaveShaperNode Interface</a>
     <li><a href="#ref-for-dom-audionode-numberofoutputs②⑤">1.33.3. 
 The AudioWorkletNode Interface</a>
     <li><a href="#ref-for-dom-audionode-numberofoutputs②⑥">1.33.3.3.1. 
-Dictionary AudioWorkletNodeOptions Members
-
-
-numberOfInputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfInputs attribute.
-
-numberOfOutputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfOutputs attribute.
-
-outputChannelCount,  of type sequence&lt;unsigned long>
-
-This array is used to configure the number of channels in
-each output. For example, outputChannelCount: [n,
-m] specifies the number of channels in the first
-output to n and the second output to
-m respectively. IndexSizeError MUST
-be thrown if the length of sequence does not match
-numberOfOutputs. A
-NotSupportedError exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s
-channelCount.
-
-parameterData,  of type record&lt;DOMString, double>
-
-This is a list of user-defined key-value pairs that are used
-to initialize AudioParam values in
-AudioWorkletNode. If the string key of an entry in the
-list does not match any name of AudioParam objects in
-the node, it is ignored.
-processorOptions,  of type Object, defaulting to null
-
-This holds any additional user-defined data that may be used to initialize the corresponding AudioWorkletProcessor for this AudioWorkletNode. </a>
+Dictionary AudioWorkletNodeOptions Members</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-audionode-connect">
@@ -17135,42 +17003,7 @@ Attributes</a>
     <li><a href="#ref-for-AudioParam①④⑥">1.33.3.3. 
 AudioWorkletNodeOptions</a>
     <li><a href="#ref-for-AudioParam①④⑦">1.33.3.3.1. 
-Dictionary AudioWorkletNodeOptions Members
-
-
-numberOfInputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfInputs attribute.
-
-numberOfOutputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfOutputs attribute.
-
-outputChannelCount,  of type sequence&lt;unsigned long>
-
-This array is used to configure the number of channels in
-each output. For example, outputChannelCount: [n,
-m] specifies the number of channels in the first
-output to n and the second output to
-m respectively. IndexSizeError MUST
-be thrown if the length of sequence does not match
-numberOfOutputs. A
-NotSupportedError exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s
-channelCount.
-
-parameterData,  of type record&lt;DOMString, double>
-
-This is a list of user-defined key-value pairs that are used
-to initialize AudioParam values in
-AudioWorkletNode. If the string key of an entry in the
-list does not match any name of AudioParam objects in
-the node, it is ignored.
-processorOptions,  of type Object, defaulting to null
-
-This holds any additional user-defined data that may be used to initialize the corresponding AudioWorkletProcessor for this AudioWorkletNode. </a> <a href="#ref-for-AudioParam①④⑧">(2)</a>
+Dictionary AudioWorkletNodeOptions Members</a> <a href="#ref-for-AudioParam①④⑧">(2)</a>
     <li><a href="#ref-for-AudioParam①④⑨">1.33.4.2. 
 Defining A Valid AudioWorkletProcessor</a> <a href="#ref-for-AudioParam①⑤⓪">(2)</a>
     <li><a href="#ref-for-AudioParam①⑤①">1.33.4.3. 
@@ -20420,42 +20253,7 @@ Attributes</a> <a href="#ref-for-audioworkletnode②⑤">(2)</a>
     <li><a href="#ref-for-audioworkletnode②⑥">1.33.3.3. 
 AudioWorkletNodeOptions</a>
     <li><a href="#ref-for-audioworkletnode②⑦">1.33.3.3.1. 
-Dictionary AudioWorkletNodeOptions Members
-
-
-numberOfInputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfInputs attribute.
-
-numberOfOutputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfOutputs attribute.
-
-outputChannelCount,  of type sequence&lt;unsigned long>
-
-This array is used to configure the number of channels in
-each output. For example, outputChannelCount: [n,
-m] specifies the number of channels in the first
-output to n and the second output to
-m respectively. IndexSizeError MUST
-be thrown if the length of sequence does not match
-numberOfOutputs. A
-NotSupportedError exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s
-channelCount.
-
-parameterData,  of type record&lt;DOMString, double>
-
-This is a list of user-defined key-value pairs that are used
-to initialize AudioParam values in
-AudioWorkletNode. If the string key of an entry in the
-list does not match any name of AudioParam objects in
-the node, it is ignored.
-processorOptions,  of type Object, defaulting to null
-
-This holds any additional user-defined data that may be used to initialize the corresponding AudioWorkletProcessor for this AudioWorkletNode. </a> <a href="#ref-for-audioworkletnode②⑧">(2)</a>
+Dictionary AudioWorkletNodeOptions Members</a> <a href="#ref-for-audioworkletnode②⑧">(2)</a>
     <li><a href="#ref-for-audioworkletnode②⑨">1.33.4. 
 The AudioWorkletProcessor Interface</a>
     <li><a href="#ref-for-audioworkletnode③⓪">1.33.4.1. 
@@ -20595,42 +20393,7 @@ The AudioWorkletNode Interface</a>
     <li><a href="#ref-for-dictdef-audioworkletnodeoptions①">1.33.3.3. 
 AudioWorkletNodeOptions</a> <a href="#ref-for-dictdef-audioworkletnodeoptions②">(2)</a> <a href="#ref-for-dictdef-audioworkletnodeoptions③">(3)</a>
     <li><a href="#ref-for-dictdef-audioworkletnodeoptions④">1.33.3.3.1. 
-Dictionary AudioWorkletNodeOptions Members
-
-
-numberOfInputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfInputs attribute.
-
-numberOfOutputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfOutputs attribute.
-
-outputChannelCount,  of type sequence&lt;unsigned long>
-
-This array is used to configure the number of channels in
-each output. For example, outputChannelCount: [n,
-m] specifies the number of channels in the first
-output to n and the second output to
-m respectively. IndexSizeError MUST
-be thrown if the length of sequence does not match
-numberOfOutputs. A
-NotSupportedError exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s
-channelCount.
-
-parameterData,  of type record&lt;DOMString, double>
-
-This is a list of user-defined key-value pairs that are used
-to initialize AudioParam values in
-AudioWorkletNode. If the string key of an entry in the
-list does not match any name of AudioParam objects in
-the node, it is ignored.
-processorOptions,  of type Object, defaulting to null
-
-This holds any additional user-defined data that may be used to initialize the corresponding AudioWorkletProcessor for this AudioWorkletNode. </a>
+Dictionary AudioWorkletNodeOptions Members</a>
     <li><a href="#ref-for-dictdef-audioworkletnodeoptions⑤">1.33.3.3.2. 
 Configuring Channels with AudioWorkletNodeOptions</a>
    </ul>
@@ -20650,42 +20413,7 @@ Configuring Channels with AudioWorkletNodeOptions</a> <a href="#ref-for-dom-audi
     <li><a href="#ref-for-dom-audioworkletnodeoptions-numberofoutputs">1.33.3.3. 
 AudioWorkletNodeOptions</a>
     <li><a href="#ref-for-dom-audioworkletnodeoptions-numberofoutputs①">1.33.3.3.1. 
-Dictionary AudioWorkletNodeOptions Members
-
-
-numberOfInputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfInputs attribute.
-
-numberOfOutputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfOutputs attribute.
-
-outputChannelCount,  of type sequence&lt;unsigned long>
-
-This array is used to configure the number of channels in
-each output. For example, outputChannelCount: [n,
-m] specifies the number of channels in the first
-output to n and the second output to
-m respectively. IndexSizeError MUST
-be thrown if the length of sequence does not match
-numberOfOutputs. A
-NotSupportedError exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s
-channelCount.
-
-parameterData,  of type record&lt;DOMString, double>
-
-This is a list of user-defined key-value pairs that are used
-to initialize AudioParam values in
-AudioWorkletNode. If the string key of an entry in the
-list does not match any name of AudioParam objects in
-the node, it is ignored.
-processorOptions,  of type Object, defaulting to null
-
-This holds any additional user-defined data that may be used to initialize the corresponding AudioWorkletProcessor for this AudioWorkletNode. </a>
+Dictionary AudioWorkletNodeOptions Members</a>
     <li><a href="#ref-for-dom-audioworkletnodeoptions-numberofoutputs②">1.33.3.3.2. 
 Configuring Channels with AudioWorkletNodeOptions</a> <a href="#ref-for-dom-audioworkletnodeoptions-numberofoutputs③">(2)</a> <a href="#ref-for-dom-audioworkletnodeoptions-numberofoutputs④">(3)</a>
    </ul>
@@ -20734,42 +20462,7 @@ Attributes</a> <a href="#ref-for-audioworkletprocessor①⑧">(2)</a> <a href="#
     <li><a href="#ref-for-audioworkletprocessor②⓪">1.33.3.3. 
 AudioWorkletNodeOptions</a>
     <li><a href="#ref-for-audioworkletprocessor②①">1.33.3.3.1. 
-Dictionary AudioWorkletNodeOptions Members
-
-
-numberOfInputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfInputs attribute.
-
-numberOfOutputs,  of type unsigned long, defaulting to 1
-
-This is used to initialize the value of AudioNode
-numberOfOutputs attribute.
-
-outputChannelCount,  of type sequence&lt;unsigned long>
-
-This array is used to configure the number of channels in
-each output. For example, outputChannelCount: [n,
-m] specifies the number of channels in the first
-output to n and the second output to
-m respectively. IndexSizeError MUST
-be thrown if the length of sequence does not match
-numberOfOutputs. A
-NotSupportedError exception MUST be thrown if a
-channel count is not in the valid range of AudioNode’s
-channelCount.
-
-parameterData,  of type record&lt;DOMString, double>
-
-This is a list of user-defined key-value pairs that are used
-to initialize AudioParam values in
-AudioWorkletNode. If the string key of an entry in the
-list does not match any name of AudioParam objects in
-the node, it is ignored.
-processorOptions,  of type Object, defaulting to null
-
-This holds any additional user-defined data that may be used to initialize the corresponding AudioWorkletProcessor for this AudioWorkletNode. </a>
+Dictionary AudioWorkletNodeOptions Members</a>
     <li><a href="#ref-for-audioworkletprocessor②②">1.33.4. 
 The AudioWorkletProcessor Interface</a> <a href="#ref-for-audioworkletprocessor②③">(2)</a> <a href="#ref-for-audioworkletprocessor②④">(3)</a> <a href="#ref-for-audioworkletprocessor②⑤">(4)</a>
     <li><a href="#ref-for-audioworkletprocessor②⑥">1.33.4.1. 

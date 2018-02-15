@@ -9455,8 +9455,7 @@ Every {{AudioWorkletNode}} has an associated <dfn>processor
 reference</dfn>, initially null, which refers to the
 {{AudioWorkletProcessor}} handling the processing for this node.
 
-Every {{AudioWorkletProcessor}} has an associated <dfn>active
-source</dfn> flag, initially `true`. This flag causes
+Every {{AudioWorkletProcessor}} has an associated <dfn>active source</dfn> flag, initially `true`. This flag causes
 the node to be retained in memory and perform audio processing in
 the absence of any connected inputs.
 
@@ -9781,7 +9780,7 @@ The return value of this method controls the lifetime of the
 {{AudioWorkletProcessor}}'s associated
 {{AudioWorkletNode}}. At the conclusion of each call to the
 <code>process()</code> method, <a href="https://tc39.github.io/ecma262/#sec-toboolean"><code>ToBoolean</code></a> (described in [[!ECMASCRIPT]])
-is applied to the return value and the result is assigned to the associated AudioWorkletProcessor's {{active source}} flag. This in turn affects whether subsequent
+is applied to the return value and the result is assigned to the associated AudioWorkletProcessor's <a>active source</a> flag. This in turn affects whether subsequent
 invocations of <code>process()</code> occur, and has an impact on the lifetime of the node. The flag change is propagated by <a href="#queue">queueing a task</a> on the control thread to update the corresponding {{AudioWorkletNode}}'s <code>state</code> property accordingly.
 
 <div class="note">

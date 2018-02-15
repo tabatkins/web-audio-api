@@ -9594,7 +9594,7 @@ dictionary AudioWorkletNodeOptions : AudioNodeOptions {
 </xmp>
 
 <h6 id="dictionary-audioworkletnodeoptions-members">
-Dictionary {{AudioWorkletNodeOptions}} Members
+Dictionary {{AudioWorkletNodeOptions}} Members</h6>
 
 <dl dfn-type=dict-member dfn-for="AudioWorkletNodeOptions">
 	: <dfn>numberOfInputs</dfn>

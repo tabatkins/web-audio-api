@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="d5042f5a97e7d5a9956a2722880f1b8a1adf79c9" name="document-revision">
+  <meta content="08c89d33e7d1e9c9b1c7a32c604f21d41e8dd583" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -1526,7 +1526,7 @@ pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Web Audio API</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2018-02-15">15 February 2018</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2018-02-21">21 February 2018</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2574,7 +2574,7 @@ but is instead extended by the concrete interfaces <code class="idl"><a data-lin
                                             <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long④"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">numberOfOutputChannels</a> = 2);
   <a class="n" data-link-type="idl-name" href="#analysernode" id="ref-for-analysernode①">AnalyserNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createanalyser" id="ref-for-dom-baseaudiocontext-createanalyser">createAnalyser</a> ();
   <a class="n" data-link-type="idl-name" href="#gainnode" id="ref-for-gainnode①">GainNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-creategain" id="ref-for-dom-baseaudiocontext-creategain">createGain</a> ();
-  <a class="n" data-link-type="idl-name" href="#DelayNode" id="ref-for-DelayNode①">DelayNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createdelay" id="ref-for-dom-baseaudiocontext-createdelay">createDelay</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">maxDelayTime</a> = 1.0);
+  <a class="n" data-link-type="idl-name" href="#DelayNode" id="ref-for-DelayNode①">DelayNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createdelay" id="ref-for-dom-baseaudiocontext-createdelay">createDelay</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime" id="ref-for-dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime">maxDelayTime</a> = 1.0);
   <a class="n" data-link-type="idl-name" href="#biquadfilternode" id="ref-for-biquadfilternode①">BiquadFilterNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createbiquadfilter" id="ref-for-dom-baseaudiocontext-createbiquadfilter">createBiquadFilter</a> ();
   <a class="n" data-link-type="idl-name" href="#iirfilternode" id="ref-for-iirfilternode①">IIRFilterNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createiirfilter" id="ref-for-dom-baseaudiocontext-createiirfilter">createIIRFilter</a> (<span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②"><span class="kt">double</span></a>> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/createIIRFilter(feedforward, feedback)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createiirfilter-feedforward-feedback-feedforward"><code>feedforward</code><a class="self-link" href="#dom-baseaudiocontext-createiirfilter-feedforward-feedback-feedforward"></a></dfn>, <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③"><span class="kt">double</span></a>> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/createIIRFilter(feedforward, feedback)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createiirfilter-feedforward-feedback-feedback"><code>feedback</code><a class="self-link" href="#dom-baseaudiocontext-createiirfilter-feedforward-feedback-feedback"></a></dfn>);
   <a class="n" data-link-type="idl-name" href="#waveshapernode" id="ref-for-waveshapernode①">WaveShaperNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createwaveshaper" id="ref-for-dom-baseaudiocontext-createwaveshaper">createWaveShaper</a> ();
@@ -2767,7 +2767,7 @@ parameter values.</span></p>
      <p><a data-link-type="dfn" href="#factory-method" id="ref-for-factory-method⑦">Factory method</a> for a <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode②">DelayNode</a></code>. The initial default
 delay time will be 0 seconds.</p>
      <table class="argumentdef data">
-      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-baseaudiocontext-createdelay" id="ref-for-dom-baseaudiocontext-createdelay①">BaseAudioContext.createDelay()</a> method.</caption>
+      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-baseaudiocontext-createdelay" id="ref-for-dom-baseaudiocontext-createdelay①">BaseAudioContext.createDelay(maxDelayTime)</a> method.</caption>
       <thead>
        <tr>
         <th>Parameter 
@@ -2777,7 +2777,7 @@ delay time will be 0 seconds.</p>
         <th>Description 
       <tbody>
        <tr>
-        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createDelay()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createdelay-maxdelaytime"><code>maxDelayTime</code></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createDelay(maxDelayTime)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime"><code>maxDelayTime</code></dfn> 
         <td> double 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
@@ -2887,7 +2887,7 @@ method has been called on as a first argument, and <var>o</var>.</p>
     <dd data-md="">
      <p><a data-link-type="dfn" href="#factory-method" id="ref-for-factory-method①③">Factory method</a> for a <code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode③">ScriptProcessorNode</a></code>.
 This method is DEPRECATED, as it is intended to be replaced by <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode①">AudioWorkletNode</a></code>.
-Creates a <code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode④">ScriptProcessorNode</a></code> for direct audio processing using scripts. <span class="synchronous">An <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror②">IndexSizeError</a></code> exception MUST be thrown if <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createscriptprocessor-buffersize" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize">bufferSize</a></code> or <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels">numberOfInputChannels</a></code> or <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels">numberOfOutputChannels</a></code> are outside the valid range.</span></p>
+Creates a <code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode④">ScriptProcessorNode</a></code> for direct audio processing using scripts. <span class="synchronous">An <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror②">IndexSizeError</a></code> exception MUST be thrown if <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize">bufferSize</a></code> or <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels">numberOfInputChannels</a></code> or <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels">numberOfOutputChannels</a></code> are outside the valid range.</span></p>
      <p>It is invalid for both <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels①">numberOfInputChannels</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels①">numberOfOutputChannels</a></code> to be zero.
 In this case an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror③">IndexSizeError</a></code> MUST be thrown.</p>
      <table class="argumentdef data">
@@ -3066,7 +3066,7 @@ returning <em>promise</em>.</p>
 abort these steps.</p>
        <li data-md="">
         <p>If the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext①⓪">BaseAudioContext</a></code> is not <a data-link-type="dfn" href="#allowed-to-start" id="ref-for-allowed-to-start">allowed to
-start</a>, append <em>promise</em> to <a data-link-type="dfn">pendingResumePromises</a> and abort these steps, returning <em>promise</em>.</p>
+start</a>, append <em>promise</em> to <a data-link-type="dfn" href="#pendingresumepromises" id="ref-for-pendingresumepromises">pendingResumePromises</a> and abort these steps, returning <em>promise</em>.</p>
        <li data-md="">
         <p>Set the <em>control thread state</em> flag on the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext①①">BaseAudioContext</a></code> to <code>running</code>.</p>
        <li data-md="">
@@ -3081,7 +3081,7 @@ start</a>, append <em>promise</em> to <a data-link-type="dfn">pendingResumePromi
        <li data-md="">
         <p>Attempt to <a href="#acquiring" id="ref-for-acquiring">acquire system resources</a>.</p>
        <li data-md="">
-        <p>Set the <a data-link-type="dfn">rendering thread state</a> flag on the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext①④">BaseAudioContext</a></code> to <code>running</code>.</p>
+        <p>Set the <a data-link-type="dfn" href="#rendering-thread-state" id="ref-for-rendering-thread-state">rendering thread state</a> flag on the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext①④">BaseAudioContext</a></code> to <code>running</code>.</p>
        <li data-md="">
         <p>Start <a href="#rendering-loop">rendering the audio graph</a>.</p>
        <li data-md="">
@@ -3089,7 +3089,7 @@ start</a>, append <em>promise</em> to <a data-link-type="dfn">pendingResumePromi
 and abort these steps:</p>
         <ol>
          <li data-md="">
-          <p>Reject all promises from <a data-link-type="dfn">pendingResumePromises</a> in order, then clear <a data-link-type="dfn">pendingResumePromises</a>.</p>
+          <p>Reject all promises from <a data-link-type="dfn" href="#pendingresumepromises" id="ref-for-pendingresumepromises①">pendingResumePromises</a> in order, then clear <a data-link-type="dfn" href="#pendingresumepromises" id="ref-for-pendingresumepromises②">pendingResumePromises</a>.</p>
          <li data-md="">
           <p>Reject <em>promise</em>.</p>
         </ol>
@@ -3098,7 +3098,7 @@ and abort these steps:</p>
 execute these steps:</p>
         <ol>
          <li data-md="">
-          <p>Resolve all promises from <a data-link-type="dfn">pendingResumePromises</a> in order, then clear <a data-link-type="dfn">pendingResumePromises</a>.</p>
+          <p>Resolve all promises from <a data-link-type="dfn" href="#pendingresumepromises" id="ref-for-pendingresumepromises③">pendingResumePromises</a> in order, then clear <a data-link-type="dfn" href="#pendingresumepromises" id="ref-for-pendingresumepromises④">pendingResumePromises</a>.</p>
          <li data-md="">
           <p>Resolve <em>promise</em>.</p>
          <li data-md="">
@@ -3218,9 +3218,9 @@ running is <a data-link-type="dfn"> triggered by user activation</a> (as describ
        <li data-md="">
         <p>Set a <code>control thread state</code> to <code>suspended</code> on the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext②⓪">AudioContext</a></code>.</p>
        <li data-md="">
-        <p>Set a <dfn class="idl-code" data-dfn-for="AudioContext" data-dfn-type="constructor">rendering thread state</dfn> to <code>suspended</code> on the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext②①">AudioContext</a></code>.</p>
+        <p>Set a <dfn class="dfn-paneled" data-dfn-for="" data-dfn-type="dfn" data-noexport="" id="rendering-thread-state">rendering thread state</dfn> to <code>suspended</code> on the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext②①">AudioContext</a></code>.</p>
        <li data-md="">
-        <p>Let <dfn class="idl-code" data-dfn-for="AudioContext" data-dfn-type="constructor">pendingResumePromises</dfn> be an empty ordered list of promises.</p>
+        <p>Let <dfn class="dfn-paneled" data-dfn-for="" data-dfn-type="dfn" data-noexport="" id="pendingresumepromises">pendingResumePromises</dfn> be an empty ordered list of promises.</p>
        <li data-md="">
         <p>If <code>contextOptions</code> is given, apply the options:</p>
         <ol>
@@ -3253,7 +3253,7 @@ amount.</p>
        <li data-md="">
         <p>In case of failure, abort these steps.</p>
        <li data-md="">
-        <p>Set the <a data-link-type="dfn">rendering thread state</a> to <code>running</code> on the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext②⑥">AudioContext</a></code>.</p>
+        <p>Set the <a data-link-type="dfn" href="#rendering-thread-state" id="ref-for-rendering-thread-state①">rendering thread state</a> to <code>running</code> on the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext②⑥">AudioContext</a></code>.</p>
        <li data-md="">
         <p>Queue a task on the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread⑥">control thread</a> event loop, to execute these steps:</p>
         <ol>
@@ -3322,7 +3322,7 @@ device is changed the <code class="idl"><a data-link-type="idl" href="#dom-audio
    <dl>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioContext" data-dfn-type="method" data-export="" id="dom-audiocontext-close"><code>close()</code></dfn>
     <dd data-md="">
-     <p>Closes the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext③②">AudioContext</a></code>, <a data-link-type="dfn">releasing the system
+     <p>Closes the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext③②">AudioContext</a></code>, <a data-link-type="dfn" href="#releasing" id="ref-for-releasing">releasing the system
 resources</a> it’s using. This will not automatically release
 all <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext③③">AudioContext</a></code>-created objects, but will suspend the
 progression of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext③④">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime⑤">currentTime</a></code>, and stop
@@ -3352,9 +3352,9 @@ resolve <em>promise</em>, return it, and abort these steps.</p>
        Running a <a data-link-type="dfn" href="#control-message" id="ref-for-control-message③">control message</a> to close an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext③⑨">AudioContext</a></code> means running these steps on the <a data-link-type="dfn" href="#rendering-thread" id="ref-for-rendering-thread②">rendering thread</a>: 
       <ol>
        <li data-md="">
-        <p>Attempt to <a data-link-type="dfn" href="#releasing" id="ref-for-releasing">release system resources</a>.</p>
+        <p>Attempt to <a data-link-type="dfn" href="#releasing" id="ref-for-releasing①">release system resources</a>.</p>
        <li data-md="">
-        <p>Set the <a data-link-type="dfn">rendering thread state</a> to <code>suspended</code>.</p>
+        <p>Set the <a data-link-type="dfn" href="#rendering-thread-state" id="ref-for-rendering-thread-state②">rendering thread state</a> to <code>suspended</code>.</p>
        <li data-md="">
         <p>Queue a task on the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread⑦">control thread</a>’s event loop, to execute these steps:</p>
         <ol>
@@ -3498,7 +3498,7 @@ be used instead.</p>
 current context processing blocks that are already processed to
 be played to the destination, and then allows the system to
 release its claim on audio hardware. This is generally useful
-when the application knows it will not need the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext④⑧">AudioContext</a></code> for some time, and wishes to temporarily <a data-link-type="dfn" href="#releasing" id="ref-for-releasing①">release system resource</a> associated with the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext④⑨">AudioContext</a></code>. The promise resolves when the frame buffer
+when the application knows it will not need the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext④⑧">AudioContext</a></code> for some time, and wishes to temporarily <a data-link-type="dfn" href="#releasing" id="ref-for-releasing②">release system resource</a> associated with the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext④⑨">AudioContext</a></code>. The promise resolves when the frame buffer
 is empty (has been handed off to the hardware), or immediately
 (with no other effect) if the context is already <code>suspended</code>. The promise is rejected if the context
 has been closed.</p>
@@ -3526,9 +3526,9 @@ resolve <em>promise</em>, return it, and abort these steps.</p>
        Running a <a data-link-type="dfn" href="#control-message" id="ref-for-control-message④">control message</a> to suspend an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑤④">AudioContext</a></code> means running these steps on the <a data-link-type="dfn" href="#rendering-thread" id="ref-for-rendering-thread③">rendering thread</a>: 
       <ol>
        <li data-md="">
-        <p>Attempt to <a data-link-type="dfn" href="#releasing" id="ref-for-releasing②">release system resources</a>.</p>
+        <p>Attempt to <a data-link-type="dfn" href="#releasing" id="ref-for-releasing③">release system resources</a>.</p>
        <li data-md="">
-        <p>Set the <a data-link-type="dfn">rendering thread state</a> on the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑤⑤">AudioContext</a></code> to <code>suspended</code>.</p>
+        <p>Set the <a data-link-type="dfn" href="#rendering-thread-state" id="ref-for-rendering-thread-state③">rendering thread state</a> on the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑤⑤">AudioContext</a></code> to <code>suspended</code>.</p>
        <li data-md="">
         <p>Queue a task on the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread⑧">control thread</a>’s event loop, to execute these steps:</p>
         <ol>
@@ -3738,12 +3738,12 @@ event named <code>complete</code> for legacy reasons.</p>
 		Assign this buffer to an internal slot <dfn class="dfn-paneled idl-code" data-dfn-for="OfflineAudioContext" data-dfn-type="attribute" data-export="" id="dom-offlineaudiocontext-rendered-buffer-slot"><code>[[rendered buffer]]</code></dfn> in the <code class="idl"><a data-link-type="idl" href="#offlineaudiocontext" id="ref-for-offlineaudiocontext①⓪">OfflineAudioContext</a></code>. 
        <li>If an exception was thrown during the preceding <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer①②">AudioBuffer</a></code> constructor call, reject <var>promise</var> with this exception. 
        <li>Otherwise, in the case that the buffer was successfully
-		constructed, <a data-link-type="dfn">begin offline rendering</a>. 
+		constructed, <a data-link-type="dfn" href="#begin-offline-rendering" id="ref-for-begin-offline-rendering">begin offline rendering</a>. 
        <li>Return <var>promise</var>. 
       </ol>
      </div>
      <div class="algorithm" data-algorithm="begin offline rendering">
-       To <dfn class="idl-code" data-dfn-for="OfflineAudioContext" data-dfn-type="method">begin offline rendering</dfn>, the following steps MUST
+       To <dfn class="dfn-paneled" data-dfn-for="" data-dfn-type="dfn" data-noexport="" id="begin-offline-rendering">begin offline rendering</dfn>, the following steps MUST
 	happen on a <a data-link-type="dfn" href="#rendering-thread" id="ref-for-rendering-thread④">rendering thread</a> that is created for the
 	occasion. 
       <ol>
@@ -4470,7 +4470,7 @@ nodeA<span class="p">.</span>connect<span class="p">(</span>nodeB<span class="p"
         <td>
         <td>
         <td>
-        <td>The <code>input</code> parameter is an index describing which input of the destination <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑦⑨">AudioNode</a></code> to connect to. <span class="synchronous">If this parameter is out-of-bounds, an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror①②">IndexSizeError</a></code> exception MUST be thrown.</span> It is possible to connect an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧⓪">AudioNode</a></code> to another <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧①">AudioNode</a></code> which creates a <dfn class="idl-code" data-dfn-for="AudioNode/connect(destinationNode, output, input)" data-dfn-type="method">cycle</dfn>: an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧②">AudioNode</a></code> may connect to another <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧③">AudioNode</a></code>, which in turn connects back to the input or <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑧">AudioParam</a></code> of the first <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧④">AudioNode</a></code>. This is allowed only if there is at least one <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode③">DelayNode</a></code> in the <em>cycle</em> <span class="synchronous">or a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑧">NotSupportedError</a></code> exception MUST be thrown.</span>
+        <td>The <code>input</code> parameter is an index describing which input of the destination <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑦⑨">AudioNode</a></code> to connect to. <span class="synchronous">If this parameter is out-of-bounds, an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror①②">IndexSizeError</a></code> exception MUST be thrown.</span> It is possible to connect an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧⓪">AudioNode</a></code> to another <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧①">AudioNode</a></code> which creates a <dfn class="dfn-paneled" data-dfn-for="" data-dfn-type="dfn" data-noexport="" id="cycle">cycle</dfn>: an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧②">AudioNode</a></code> may connect to another <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧③">AudioNode</a></code>, which in turn connects back to the input or <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑧">AudioParam</a></code> of the first <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧④">AudioNode</a></code>. This is allowed only if there is at least one <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode③">DelayNode</a></code> in the <em>cycle</em> <span class="synchronous">or a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑧">NotSupportedError</a></code> exception MUST be thrown.</span>
      </table>
      <div> <em>Return type:</em> <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑧⑤">AudioNode</a></code> </div>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioNode" data-dfn-type="method" data-export="" data-lt="connect(destinationParam, output)|connect(destinationParam)" id="dom-audionode-connect-destinationparam-output"><code>connect(destinationParam, output)</code></dfn>
@@ -5244,7 +5244,7 @@ start from the end of the <code class="idl"><a data-link-type="idl" href="#dom-a
         <td> <span class="no">✘</span>
         <td>The start time in the same time coordinate system as the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧⑥">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime③④">currentTime</a></code> attribute at which the value curve will be applied. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror⑧">RangeError</a></code> exception MUST be thrown if <code>startTime</code> is negative or is not a finite number</span>. If <var>startTime</var> is less than <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime③⑤">currentTime</a></code>, it is clamped to <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime③⑥">currentTime</a></code>. 
        <tr>
-        <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParam/setValueCurveAtTime()" data-dfn-type="argument" data-export="" id="dom-audioparam-setvaluecurveattime-duration"><code>duration</code></dfn> 
+        <td><dfn class="idl-code" data-dfn-for="AudioParam/setValueCurveAtTime()" data-dfn-type="argument" data-export="" id="dom-audioparam-setvaluecurveattime-duration"><code>duration</code><a class="self-link" href="#dom-audioparam-setvaluecurveattime-duration"></a></dfn> 
         <td> double 
         <td> <span class="no">✘</span>
         <td> <span class="no">✘</span>
@@ -5353,8 +5353,8 @@ is instead extended by the concrete interfaces for the source nodes.</p>
 <pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①④">Exposed</a>=<span class="n">Window</span>]
 <span class="kt">interface</span> <a class="nv idl-code" data-link-type="interface" href="#AudioScheduledSourceNode" id="ref-for-AudioScheduledSourceNode②">AudioScheduledSourceNode</a> : <a class="n" data-link-type="idl-name" href="#audionode" id="ref-for-audionode①③②">AudioNode</a> {
   <span class="kt">attribute</span> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler" id="ref-for-eventhandler④">EventHandler</a> <a class="nv idl-code" data-link-type="attribute" data-type="EventHandler" href="#dom-audioscheduledsourcenode-onended" id="ref-for-dom-audioscheduledsourcenode-onended">onended</a>;
-  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-start" id="ref-for-dom-audioscheduledsourcenode-start①">start</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②③"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">when</a> = 0);
-  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-stop" id="ref-for-dom-audioscheduledsourcenode-stop①">stop</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②④"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">when</a> = 0);
+  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-start" id="ref-for-dom-audioscheduledsourcenode-start①">start</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②③"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audioscheduledsourcenode-start-when-when" id="ref-for-dom-audioscheduledsourcenode-start-when-when">when</a> = 0);
+  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-stop" id="ref-for-dom-audioscheduledsourcenode-stop①">stop</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②④"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audioscheduledsourcenode-stop-when-when" id="ref-for-dom-audioscheduledsourcenode-stop-when-when">when</a> = 0);
 };
 </pre>
    <h4 class="heading settled" data-level="1.7.1" id="AudioScheduledSourceNode-attributes"><span class="secno">1.7.1. </span><span class="content"> Attributes</span><a class="self-link" href="#AudioScheduledSourceNode-attributes"></a></h4>
@@ -5370,7 +5370,7 @@ handler.</p>
      <p>For all <code class="idl"><a data-link-type="idl" href="#AudioScheduledSourceNode" id="ref-for-AudioScheduledSourceNode④">AudioScheduledSourceNode</a></code>s, the <code>onended</code> event is dispatched when the stop time
 determined by <code class="idl"><a data-link-type="idl" href="#dom-audioscheduledsourcenode-stop" id="ref-for-dom-audioscheduledsourcenode-stop②">stop()</a></code> is reached.
 For an <code class="idl"><a data-link-type="idl" href="#AudioBufferSourceNode" id="ref-for-AudioBufferSourceNode⑥">AudioBufferSourceNode</a></code>, the event is
-also dispatched because the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-start-duration" id="ref-for-dom-audiobuffersourcenode-start-duration">duration</a></code> has been
+also dispatched because the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-start-when-offset-duration-duration" id="ref-for-dom-audiobuffersourcenode-start-when-offset-duration-duration">duration</a></code> has been
 reached or if the entire <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-buffer" id="ref-for-dom-audiobuffersourcenode-buffer⑥">buffer</a></code> has been
 played.</p>
    </dl>
@@ -5395,7 +5395,7 @@ values in the messsage.</p>
       </ol>
      </div>
      <table class="argumentdef data">
-      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-start" id="ref-for-dom-audioscheduledsourcenode-start③">AudioScheduledSourceNode.start()</a> method.</caption>
+      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-start" id="ref-for-dom-audioscheduledsourcenode-start③">AudioScheduledSourceNode.start(when)</a> method.</caption>
       <thead>
        <tr>
         <th>Parameter 
@@ -5405,11 +5405,11 @@ values in the messsage.</p>
         <th>Description 
       <tbody>
        <tr>
-        <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioScheduledSourceNode/start()" data-dfn-type="argument" data-export="" id="dom-audioscheduledsourcenode-start-when"><code>when</code></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioScheduledSourceNode/start(when)" data-dfn-type="argument" data-export="" id="dom-audioscheduledsourcenode-start-when-when"><code>when</code></dfn> 
         <td> double 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
-        <td>The <code class="idl"><a data-link-type="idl" href="#dom-audioscheduledsourcenode-start-when" id="ref-for-dom-audioscheduledsourcenode-start-when">when</a></code> parameter describes at what time (in seconds) the sound should start playing. It is in the same time coordinate system as the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧⑦">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime③⑦">currentTime</a></code> attribute. When the signal emitted by the <code class="idl"><a data-link-type="idl" href="#AudioScheduledSourceNode" id="ref-for-AudioScheduledSourceNode⑥">AudioScheduledSourceNode</a></code> depends on the sound’s start time, the exact value of <code>when</code> is always used without rounding to the nearest sample frame. If 0 is passed in for this value or if the value is less than <b>currentTime</b>, then the sound will start playing immediately. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①⓪">RangeError</a></code> exception MUST be thrown if <code>when</code> is negative.</span>
+        <td>The <code class="idl"><a data-link-type="idl" href="#dom-audioscheduledsourcenode-start-when-when" id="ref-for-dom-audioscheduledsourcenode-start-when-when①">when</a></code> parameter describes at what time (in seconds) the sound should start playing. It is in the same time coordinate system as the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧⑦">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime③⑦">currentTime</a></code> attribute. When the signal emitted by the <code class="idl"><a data-link-type="idl" href="#AudioScheduledSourceNode" id="ref-for-AudioScheduledSourceNode⑥">AudioScheduledSourceNode</a></code> depends on the sound’s start time, the exact value of <code>when</code> is always used without rounding to the nearest sample frame. If 0 is passed in for this value or if the value is less than <b>currentTime</b>, then the sound will start playing immediately. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①⓪">RangeError</a></code> exception MUST be thrown if <code>when</code> is negative.</span>
      </table>
      <div> <em>Return type:</em> <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-void" id="ref-for-idl-void">void</a></code> </div>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioScheduledSourceNode" data-dfn-type="method" data-export="" data-lt="stop(when)|stop()" id="dom-audioscheduledsourcenode-stop"><code>stop(when)</code></dfn>
@@ -5437,7 +5437,7 @@ values in the messsage.</p>
       </ol>
      </div>
      <table class="argumentdef data">
-      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-stop" id="ref-for-dom-audioscheduledsourcenode-stop④">AudioScheduledSourceNode.stop()</a> method.</caption>
+      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-stop" id="ref-for-dom-audioscheduledsourcenode-stop④">AudioScheduledSourceNode.stop(when)</a> method.</caption>
       <thead>
        <tr>
         <th>Parameter 
@@ -5447,11 +5447,11 @@ values in the messsage.</p>
         <th>Description 
       <tbody>
        <tr>
-        <td><dfn class="idl-code" data-dfn-for="AudioScheduledSourceNode/stop()" data-dfn-type="argument" data-export="" id="dom-audioscheduledsourcenode-stop-when"><code>when</code><a class="self-link" href="#dom-audioscheduledsourcenode-stop-when"></a></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioScheduledSourceNode/stop(when)" data-dfn-type="argument" data-export="" id="dom-audioscheduledsourcenode-stop-when-when"><code>when</code></dfn> 
         <td> double 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
-        <td>The <code class="idl"><a data-link-type="idl" href="#dom-audioscheduledsourcenode-start-when" id="ref-for-dom-audioscheduledsourcenode-start-when①">when</a></code> parameter describes at what time (in seconds) the source should stop playing. It is in the same time coordinate system as the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧⑧">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime③⑧">currentTime</a></code> attribute. If 0 is passed in for this value or if the value is less than <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime③⑨">currentTime</a></code>, then the sound will stop playing immediately. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①①">RangeError</a></code> exception MUST be thrown if <code>when</code> is negative</span>.
+        <td>The <code class="idl"><a data-link-type="idl" href="#dom-audioscheduledsourcenode-stop-when-when" id="ref-for-dom-audioscheduledsourcenode-stop-when-when①">when</a></code> parameter describes at what time (in seconds) the source should stop playing. It is in the same time coordinate system as the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧⑧">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime③⑧">currentTime</a></code> attribute. If 0 is passed in for this value or if the value is less than <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime③⑨">currentTime</a></code>, then the sound will stop playing immediately. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①①">RangeError</a></code> exception MUST be thrown if <code>when</code> is negative</span>.
      </table>
      <div> <em>Return type:</em> <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-void" id="ref-for-idl-void①">void</a></code> </div>
    </dl>
@@ -5895,10 +5895,10 @@ slot <dfn class="dfn-paneled idl-code" data-dfn-for="AudioBufferSourceNode" data
   <span class="kt">attribute</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-boolean" id="ref-for-idl-boolean"><span class="kt">boolean</span></a> <a class="nv idl-code" data-link-type="attribute" data-type="boolean" href="#dom-audiobuffersourcenode-loop" id="ref-for-dom-audiobuffersourcenode-loop①">loop</a>;
   <span class="kt">attribute</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⑦"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="attribute" data-type="double" href="#dom-audiobuffersourcenode-loopstart" id="ref-for-dom-audiobuffersourcenode-loopstart">loopStart</a>;
   <span class="kt">attribute</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⑧"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="attribute" data-type="double" href="#dom-audiobuffersourcenode-loopend" id="ref-for-dom-audiobuffersourcenode-loopend">loopEnd</a>;
-  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-start" id="ref-for-dom-audiobuffersourcenode-start">start</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⑨"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">when</a> = 0,
-              <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④⓪"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">offset</a>,
-              <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">duration</a>);
-  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-stop" id="ref-for-dom-audiobuffersourcenode-stop">stop</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④②"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">when</a> = 0);
+  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-start" id="ref-for-dom-audiobuffersourcenode-start">start</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⑨"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audiobuffersourcenode-start-when-offset-duration-when" id="ref-for-dom-audiobuffersourcenode-start-when-offset-duration-when">when</a> = 0,
+              <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④⓪"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audiobuffersourcenode-start-when-offset-duration-offset" id="ref-for-dom-audiobuffersourcenode-start-when-offset-duration-offset">offset</a>,
+              <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audiobuffersourcenode-start-when-offset-duration-duration" id="ref-for-dom-audiobuffersourcenode-start-when-offset-duration-duration①">duration</a>);
+  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-stop" id="ref-for-dom-audiobuffersourcenode-stop">stop</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④②"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audiobuffersourcenode-stop-when-when" id="ref-for-dom-audiobuffersourcenode-stop-when-when">when</a> = 0);
 };
 </pre>
    <h4 class="heading settled" data-level="1.9.1" id="AudioBufferSourceNode-constructors"><span class="secno">1.9.1. </span><span class="content"> Constructors</span><a class="self-link" href="#AudioBufferSourceNode-constructors"></a></h4>
@@ -6057,7 +6057,7 @@ in the messsage.</p>
      <div class="algorithm" data-algorithm="run a control message to start the AudioBufferSourceNode"> Running a <a data-link-type="dfn" href="#control-message" id="ref-for-control-message⑤">control message</a> to start the <code class="idl"><a data-link-type="idl" href="#AudioBufferSourceNode" id="ref-for-AudioBufferSourceNode①⑤">AudioBufferSourceNode</a></code> means invoking the <code>handleStart()</code> function in the <a href="#playback-AudioBufferSourceNode">playback algorithm</a> which
 	follows. </div>
      <table class="argumentdef data">
-      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-start" id="ref-for-dom-audiobuffersourcenode-start①">AudioBufferSourceNode.start()</a> method.</caption>
+      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-start" id="ref-for-dom-audiobuffersourcenode-start①">AudioBufferSourceNode.start(when, offset, duration)</a> method.</caption>
       <thead>
        <tr>
         <th>Parameter 
@@ -6067,23 +6067,23 @@ in the messsage.</p>
         <th>Description 
       <tbody>
        <tr>
-        <td><dfn class="idl-code" data-dfn-for="AudioBufferSourceNode/start()" data-dfn-type="argument" data-export="" id="dom-audiobuffersourcenode-start-when"><code>when</code><a class="self-link" href="#dom-audiobuffersourcenode-start-when"></a></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioBufferSourceNode/start(when, offset, duration)" data-dfn-type="argument" data-export="" id="dom-audiobuffersourcenode-start-when-offset-duration-when"><code>when</code></dfn> 
         <td> double 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
         <td>The <code>when</code> parameter describes at what time (in seconds) the sound should start playing. It is in the same time coordinate system as the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑧⑨">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime④⓪">currentTime</a></code> attribute. If 0 is passed in for this value or if the value is less than <b>currentTime</b>, then the sound will start playing immediately. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①②">RangeError</a></code> exception MUST be thrown if <code>when</code> is negative.</span> 
        <tr>
-        <td><dfn class="idl-code" data-dfn-for="AudioBufferSourceNode/start()" data-dfn-type="argument" data-export="" id="dom-audiobuffersourcenode-start-offset"><code>offset</code><a class="self-link" href="#dom-audiobuffersourcenode-start-offset"></a></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioBufferSourceNode/start(when, offset, duration)" data-dfn-type="argument" data-export="" id="dom-audiobuffersourcenode-start-when-offset-duration-offset"><code>offset</code></dfn> 
         <td> double 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
         <td>The <code>offset</code> parameter supplies a <a data-link-type="dfn" href="#playhead-position" id="ref-for-playhead-position②">playhead position</a> where playback will begin. If 0 is passed in for this value, then playback will start from the beginning of the buffer. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①③">RangeError</a></code> exception MUST be thrown if <code>offset</code> is negative.</span> If <code>offset</code> is greater than <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-loopend" id="ref-for-dom-audiobuffersourcenode-loopend④">loopEnd</a></code>, playback will begin at <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-loopend" id="ref-for-dom-audiobuffersourcenode-loopend⑤">loopEnd</a></code> (and immediately loop to <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-loopstart" id="ref-for-dom-audiobuffersourcenode-loopstart④">loopStart</a></code>). <code>offset</code> is silently clamped to [0, <code>duration</code>], when <code>startTime</code> is reached, where <code>duration</code> is the value of the <code>duration</code> attribute of the <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer⑤③">AudioBuffer</a></code> set to the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-buffer" id="ref-for-dom-audiobuffersourcenode-buffer①④">buffer</a></code> attribute of this <code>AudioBufferSourceNode</code>. 
        <tr>
-        <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioBufferSourceNode/start()" data-dfn-type="argument" data-export="" id="dom-audiobuffersourcenode-start-duration"><code>duration</code></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioBufferSourceNode/start(when, offset, duration)" data-dfn-type="argument" data-export="" id="dom-audiobuffersourcenode-start-when-offset-duration-duration"><code>duration</code></dfn> 
         <td> double 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
-        <td>The <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-audioparam-setvaluecurveattime-duration" id="ref-for-dom-audioparam-setvaluecurveattime-duration">duration</a></code> parameter describes the duration of the sound (in seconds) to be played. If this parameter is passed, this method has exactly the same effect as the invocation of <code>start(when, offset)</code> followed by <code>stop(when + duration)</code>. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①④">RangeError</a></code> exception MUST be thrown if <code>duration</code> is negative.</span>
+        <td>The <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-start-when-offset-duration-duration" id="ref-for-dom-audiobuffersourcenode-start-when-offset-duration-duration②">duration</a></code> parameter describes the duration of the sound (in seconds) to be played. If this parameter is passed, this method has exactly the same effect as the invocation of <code>start(when, offset)</code> followed by <code>stop(when + duration)</code>. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①④">RangeError</a></code> exception MUST be thrown if <code>duration</code> is negative.</span>
      </table>
      <div> <em>Return type:</em> <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-void" id="ref-for-idl-void②">void</a></code> </div>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioBufferSourceNode" data-dfn-type="method" data-export="" data-lt="stop(when)|stop()" id="dom-audiobuffersourcenode-stop"><code>stop(when)</code></dfn>
@@ -6113,7 +6113,7 @@ in the messsage.</p>
      <div class="algorithm" data-algorithm="run a control message to stop the AudioBufferSourceNode"> Running a <a data-link-type="dfn" href="#control-message" id="ref-for-control-message⑥">control message</a> to stop the <code class="idl"><a data-link-type="idl" href="#AudioBufferSourceNode" id="ref-for-AudioBufferSourceNode①⑦">AudioBufferSourceNode</a></code> means invoking the <code>handleStop()</code> function in the <a href="#playback-AudioBufferSourceNode">playback algorithm</a> which
 	follows. </div>
      <table class="argumentdef data">
-      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-stop" id="ref-for-dom-audiobuffersourcenode-stop①">AudioBufferSourceNode.stop()</a> method.</caption>
+      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-stop" id="ref-for-dom-audiobuffersourcenode-stop①">AudioBufferSourceNode.stop(when)</a> method.</caption>
       <thead>
        <tr>
         <th>Parameter 
@@ -6123,11 +6123,11 @@ in the messsage.</p>
         <th>Description 
       <tbody>
        <tr>
-        <td><dfn class="idl-code" data-dfn-for="AudioBufferSourceNode/stop()" data-dfn-type="argument" data-export="" id="dom-audiobuffersourcenode-stop-when"><code>when</code><a class="self-link" href="#dom-audiobuffersourcenode-stop-when"></a></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioBufferSourceNode/stop(when)" data-dfn-type="argument" data-export="" id="dom-audiobuffersourcenode-stop-when-when"><code>when</code></dfn> 
         <td> double 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
-        <td>The <code class="idl"><a data-link-type="idl" href="#dom-audioscheduledsourcenode-start-when" id="ref-for-dom-audioscheduledsourcenode-start-when②">when</a></code> parameter describes at what time (in seconds) the source should stop playing. It is in the same time coordinate system as the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑨⓪">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime④①">currentTime</a></code> attribute. If 0 is passed in for this value or if the value is less than <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime④②">currentTime</a></code>, then the sound will stop playing immediately. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①⑤">RangeError</a></code> exception MUST be thrown if <code>when</code> is negative</span>.
+        <td>The <code class="idl"><a data-link-type="idl" href="#dom-audiobuffersourcenode-stop-when-when" id="ref-for-dom-audiobuffersourcenode-stop-when-when①">when</a></code> parameter describes at what time (in seconds) the source should stop playing. It is in the same time coordinate system as the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑨⓪">AudioContext</a></code>'s <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime④①">currentTime</a></code> attribute. If 0 is passed in for this value or if the value is less than <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime④②">currentTime</a></code>, then the sound will stop playing immediately. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①⑤">RangeError</a></code> exception MUST be thrown if <code>when</code> is negative</span>.
      </table>
      <div> <em>Return type:</em> <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-void" id="ref-for-idl-void③">void</a></code> </div>
    </dl>
@@ -8320,8 +8320,8 @@ and return <var>node</var>.</p>
      <dd data-md="">
       <p>An <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⓪⑤">AudioParam</a></code> object representing the
 amount of delay (in seconds) to apply. Its default <code>value</code> is 0 (no delay). The minimum value is 0 and
-the maximum value is determined by the <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createdelay-maxdelaytime" id="ref-for-dom-baseaudiocontext-createdelay-maxdelaytime">maxDelayTime</a></code> argument to the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①⓪③">AudioContext</a></code> method <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createdelay" id="ref-for-dom-baseaudiocontext-createdelay②">createDelay()</a></code>.</p>
-      <p>If <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①①">DelayNode</a></code> is part of a <a data-link-type="dfn">cycle</a>,
+the maximum value is determined by the <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime" id="ref-for-dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime①">maxDelayTime</a></code> argument to the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①⓪③">AudioContext</a></code> method <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createdelay" id="ref-for-dom-baseaudiocontext-createdelay②">createDelay()</a></code>.</p>
+      <p>If <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①①">DelayNode</a></code> is part of a <a data-link-type="dfn" href="#cycle" id="ref-for-cycle">cycle</a>,
 then the value of the <code class="idl"><a data-link-type="idl" href="#dom-delaynode-delaytime" id="ref-for-dom-delaynode-delaytime①">delayTime</a></code> attribute
 is clamped to a minimum of one <a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum①⓪">render quantum</a>.</p>
     </dl>
@@ -11210,8 +11210,7 @@ an audio graph.</p>
    </div>
    <p>Every <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode①⑦">AudioWorkletNode</a></code> has an associated <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="processor reference" data-noexport="" id="processor-reference">processor
 reference</dfn>, initially null, which refers to the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor①④">AudioWorkletProcessor</a></code> handling the processing for this node.</p>
-   <p>Every <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor①⑤">AudioWorkletProcessor</a></code> has an associated <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="active source" data-noexport="" id="active-source">active
-source</dfn> flag, initially <code>true</code>. This flag causes
+   <p>Every <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor①⑤">AudioWorkletProcessor</a></code> has an associated <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="active-source">active source</dfn> flag, initially <code>true</code>. This flag causes
 the node to be retained in memory and perform audio processing in
 the absence of any connected inputs.</p>
 <pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed④①">Exposed</a>=<span class="n">Window</span>]
@@ -11459,7 +11458,7 @@ output.</p>
 values of the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⓪">AudioParam</a></code> named <code>"name"</code>.</p>
    </dl>
    <p>The return value of this method controls the lifetime of the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③③">AudioWorkletProcessor</a></code>'s associated <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③②">AudioWorkletNode</a></code>. At the conclusion of each call to the <code>process()</code> method, <a href="https://tc39.github.io/ecma262/#sec-toboolean"><code>ToBoolean</code></a> (described in <a data-link-type="biblio" href="#biblio-ecmascript">[ECMASCRIPT]</a>)
-is applied to the return value and the result is assigned to the associated AudioWorkletProcessor’s <code class="idl"><a data-link-type="idl">active source</a></code> flag. This in turn affects whether subsequent
+is applied to the return value and the result is assigned to the associated AudioWorkletProcessor’s <a data-link-type="dfn" href="#active-source" id="ref-for-active-source④">active source</a> flag. This in turn affects whether subsequent
 invocations of <code>process()</code> occur, and has an impact on the lifetime of the node. The flag change is propagated by <a href="#queue">queueing a task</a> on the control thread to update the corresponding <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③③">AudioWorkletNode</a></code>'s <code>state</code> property accordingly.</p>
    <div class="note" role="note">
      This lifetime policy can support a variety of approaches found in
@@ -11992,7 +11991,7 @@ execute the following steps:</p>
        <p>Remove the <a data-link-type="dfn" href="#oldest-message" id="ref-for-oldest-message①">oldest message</a> of <em>Q<sub>rendering</sub></em>.</p>
      </ol>
     <li data-md="">
-     <p>If the <a data-link-type="dfn">rendering thread state</a> of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①②④">AudioContext</a></code> is not <code>running</code>, return false.</p>
+     <p>If the <a data-link-type="dfn" href="#rendering-thread-state" id="ref-for-rendering-thread-state④">rendering thread state</a> of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①②④">AudioContext</a></code> is not <code>running</code>, return false.</p>
     <li data-md="">
      <p>Order the <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑦⑨">AudioNode</a></code>s of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①②⑤">AudioContext</a></code> to be
 processed.</p>
@@ -13236,6 +13235,7 @@ James (Intel Corporation);</p>
    <li><a href="#dom-biquadfiltertype-bandpass">bandpass</a><span>, in §1.13</span>
    <li><a href="#baseaudiocontext">BaseAudioContext</a><span>, in §1.1</span>
    <li><a href="#dom-audiocontext-baselatency">baseLatency</a><span>, in §1.2.2</span>
+   <li><a href="#begin-offline-rendering">begin offline rendering</a><span>, in §1.3.3</span>
    <li><a href="#biquadfilternode">BiquadFilterNode</a><span>, in §1.12.2.1</span>
    <li><a href="#dom-biquadfilternode-biquadfilternode">BiquadFilterNode(context, options)</a><span>, in §1.13.1</span>
    <li><a href="#dictdef-biquadfilteroptions">BiquadFilterOptions</a><span>, in §1.13.3</span>
@@ -13392,6 +13392,7 @@ James (Intel Corporation);</p>
      <li><a href="#dom-waveshaperoptions-curve">dict-member for WaveShaperOptions</a><span>, in §1.32.3.1</span>
     </ul>
    <li><a href="#dom-oscillatortype-custom">custom</a><span>, in §1.26</span>
+   <li><a href="#cycle">cycle</a><span>, in §1.5.3</span>
    <li><a href="#db-to-linear">decibels to linear gain unit</a><span>, in §1.19.4</span>
    <li><a href="#dom-baseaudiocontext-decodeaudiodata">decodeAudioData(audioData)</a><span>, in §1.1.2</span>
    <li><a href="#dom-baseaudiocontext-decodeaudiodata">decodeAudioData(audioData, successCallback)</a><span>, in §1.1.2</span>
@@ -13738,6 +13739,7 @@ James (Intel Corporation);</p>
    <li><a href="#dom-audioworkletnode-parameters">parameters</a><span>, in §1.33.3.2</span>
    <li><a href="#dom-biquadfiltertype-peaking">peaking</a><span>, in §1.13</span>
    <li><a href="#dom-audioworkletprocessorstate-pending">pending</a><span>, in §1.33.3</span>
+   <li><a href="#pendingresumepromises">pendingResumePromises</a><span>, in §1.2.1</span>
    <li><a href="#dom-audiotimestamp-performancetime">performanceTime</a><span>, in §1.2.5.1</span>
    <li><a href="#dom-oscillatoroptions-periodicwave">periodicWave</a><span>, in §1.27.3.1</span>
    <li><a href="#periodicwave">PeriodicWave</a><span>, in §1.28.5</span>
@@ -13829,6 +13831,7 @@ James (Intel Corporation);</p>
     </ul>
    <li><a href="#dom-offlineaudiocontext-rendered-buffer-slot">[[rendered buffer]]</a><span>, in §1.3.3</span>
    <li><a href="#rendering-thread">rendering thread</a><span>, in §2.2</span>
+   <li><a href="#rendering-thread-state">rendering thread state</a><span>, in §1.2.1</span>
    <li><a href="#render-quantum">render quantum</a><span>, in §2.4</span>
    <li><a href="#dom-baseaudiocontext-resume">resume()</a><span>, in §1.1.2</span>
    <li>
@@ -14081,7 +14084,7 @@ James (Intel Corporation);</p>
                                             <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long④①⓪"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">numberOfOutputChannels</a> = 2);
   <a class="n" data-link-type="idl-name" href="#analysernode" id="ref-for-analysernode①⑥">AnalyserNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createanalyser" id="ref-for-dom-baseaudiocontext-createanalyser①">createAnalyser</a> ();
   <a class="n" data-link-type="idl-name" href="#gainnode" id="ref-for-gainnode①⑤">GainNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-creategain" id="ref-for-dom-baseaudiocontext-creategain①">createGain</a> ();
-  <a class="n" data-link-type="idl-name" href="#DelayNode" id="ref-for-DelayNode①⑨">DelayNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createdelay" id="ref-for-dom-baseaudiocontext-createdelay③">createDelay</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①①⓪"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">maxDelayTime</a> = 1.0);
+  <a class="n" data-link-type="idl-name" href="#DelayNode" id="ref-for-DelayNode①⑨">DelayNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createdelay" id="ref-for-dom-baseaudiocontext-createdelay③">createDelay</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①①⓪"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime" id="ref-for-dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime②">maxDelayTime</a> = 1.0);
   <a class="n" data-link-type="idl-name" href="#biquadfilternode" id="ref-for-biquadfilternode①①⓪">BiquadFilterNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createbiquadfilter" id="ref-for-dom-baseaudiocontext-createbiquadfilter①">createBiquadFilter</a> ();
   <a class="n" data-link-type="idl-name" href="#iirfilternode" id="ref-for-iirfilternode①①">IIRFilterNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createiirfilter" id="ref-for-dom-baseaudiocontext-createiirfilter③">createIIRFilter</a> (<span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②①⓪"><span class="kt">double</span></a>> <a class="nv" href="#dom-baseaudiocontext-createiirfilter-feedforward-feedback-feedforward"><code>feedforward</code></a>, <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③①⓪"><span class="kt">double</span></a>> <a class="nv" href="#dom-baseaudiocontext-createiirfilter-feedforward-feedback-feedback"><code>feedback</code></a>);
   <a class="n" data-link-type="idl-name" href="#waveshapernode" id="ref-for-waveshapernode①②">WaveShaperNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createwaveshaper" id="ref-for-dom-baseaudiocontext-createwaveshaper①">createWaveShaper</a> ();
@@ -14232,8 +14235,8 @@ James (Intel Corporation);</p>
 [<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①④①">Exposed</a>=<span class="n">Window</span>]
 <span class="kt">interface</span> <a class="nv idl-code" data-link-type="interface" href="#AudioScheduledSourceNode" id="ref-for-AudioScheduledSourceNode②①">AudioScheduledSourceNode</a> : <a class="n" data-link-type="idl-name" href="#audionode" id="ref-for-audionode①③②①">AudioNode</a> {
   <span class="kt">attribute</span> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler" id="ref-for-eventhandler④①">EventHandler</a> <a class="nv idl-code" data-link-type="attribute" data-type="EventHandler" href="#dom-audioscheduledsourcenode-onended" id="ref-for-dom-audioscheduledsourcenode-onended①">onended</a>;
-  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-start" id="ref-for-dom-audioscheduledsourcenode-start①①">start</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②③①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">when</a> = 0);
-  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-stop" id="ref-for-dom-audioscheduledsourcenode-stop①①">stop</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②④①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">when</a> = 0);
+  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-start" id="ref-for-dom-audioscheduledsourcenode-start①①">start</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②③①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audioscheduledsourcenode-start-when-when" id="ref-for-dom-audioscheduledsourcenode-start-when-when②">when</a> = 0);
+  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audioscheduledsourcenode-stop" id="ref-for-dom-audioscheduledsourcenode-stop①①">stop</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double②④①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audioscheduledsourcenode-stop-when-when" id="ref-for-dom-audioscheduledsourcenode-stop-when-when②">when</a> = 0);
 };
 
 [<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①⑤①">Exposed</a>=<span class="n">Window</span>,
@@ -14266,10 +14269,10 @@ James (Intel Corporation);</p>
   <span class="kt">attribute</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-boolean" id="ref-for-idl-boolean①⓪"><span class="kt">boolean</span></a> <a class="nv idl-code" data-link-type="attribute" data-type="boolean" href="#dom-audiobuffersourcenode-loop" id="ref-for-dom-audiobuffersourcenode-loop①①">loop</a>;
   <span class="kt">attribute</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⑦①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="attribute" data-type="double" href="#dom-audiobuffersourcenode-loopstart" id="ref-for-dom-audiobuffersourcenode-loopstart①②">loopStart</a>;
   <span class="kt">attribute</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⑧①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="attribute" data-type="double" href="#dom-audiobuffersourcenode-loopend" id="ref-for-dom-audiobuffersourcenode-loopend①④">loopEnd</a>;
-  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-start" id="ref-for-dom-audiobuffersourcenode-start④">start</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⑨①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">when</a> = 0,
-              <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④⓪①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">offset</a>,
-              <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④①①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">duration</a>);
-  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-stop" id="ref-for-dom-audiobuffersourcenode-stop③">stop</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④②①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument">when</a> = 0);
+  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-start" id="ref-for-dom-audiobuffersourcenode-start④">start</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double③⑨①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audiobuffersourcenode-start-when-offset-duration-when" id="ref-for-dom-audiobuffersourcenode-start-when-offset-duration-when①">when</a> = 0,
+              <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④⓪①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audiobuffersourcenode-start-when-offset-duration-offset" id="ref-for-dom-audiobuffersourcenode-start-when-offset-duration-offset①">offset</a>,
+              <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④①①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audiobuffersourcenode-start-when-offset-duration-duration" id="ref-for-dom-audiobuffersourcenode-start-when-offset-duration-duration①①">duration</a>);
+  <span class="kt">void</span> <a class="nv idl-code" data-link-type="method" href="#dom-audiobuffersourcenode-stop" id="ref-for-dom-audiobuffersourcenode-stop③">stop</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double④②①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-audiobuffersourcenode-stop-when-when" id="ref-for-dom-audiobuffersourcenode-stop-when-when②">when</a> = 0);
 };
 
 <span class="kt">dictionary</span> <a class="nv idl-code" data-link-type="dictionary" href="#dictdef-audiobuffersourceoptions" id="ref-for-dictdef-audiobuffersourceoptions②①">AudioBufferSourceOptions</a> {
@@ -15022,10 +15025,12 @@ Methods</a>
 Attributes</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createdelay-maxdelaytime">
-   <b><a href="#dom-baseaudiocontext-createdelay-maxdelaytime">#dom-baseaudiocontext-createdelay-maxdelaytime</a></b><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime">
+   <b><a href="#dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime">#dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-baseaudiocontext-createdelay-maxdelaytime">1.18.2. 
+    <li><a href="#ref-for-dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime">1.1. 
+The BaseAudioContext Interface</a>
+    <li><a href="#ref-for-dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime①">1.18.2. 
 Attributes</a>
    </ul>
   </aside>
@@ -15201,7 +15206,7 @@ Constructors</a>
    <b><a href="#releasing">#releasing</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-releasing">1.2.3. 
-Methods</a> <a href="#ref-for-releasing①">(2)</a> <a href="#ref-for-releasing②">(3)</a>
+Methods</a> <a href="#ref-for-releasing①">(2)</a> <a href="#ref-for-releasing②">(3)</a> <a href="#ref-for-releasing③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="allowed-to-start">
@@ -15341,6 +15346,26 @@ Latency</a>
    <ul>
     <li><a href="#ref-for-dom-audiocontext-audiocontext">1.2. 
 The AudioContext Interface</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="rendering-thread-state">
+   <b><a href="#rendering-thread-state">#rendering-thread-state</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-rendering-thread-state">1.1.2. 
+Methods</a>
+    <li><a href="#ref-for-rendering-thread-state①">1.2.1. 
+Constructors</a>
+    <li><a href="#ref-for-rendering-thread-state②">1.2.3. 
+Methods</a> <a href="#ref-for-rendering-thread-state③">(2)</a>
+    <li><a href="#ref-for-rendering-thread-state④">2.4. 
+Rendering an audio graph</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="pendingresumepromises">
+   <b><a href="#pendingresumepromises">#pendingresumepromises</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-pendingresumepromises">1.1.2. 
+Methods</a> <a href="#ref-for-pendingresumepromises①">(2)</a> <a href="#ref-for-pendingresumepromises②">(3)</a> <a href="#ref-for-pendingresumepromises③">(4)</a> <a href="#ref-for-pendingresumepromises④">(5)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-audiocontext-baselatency">
@@ -15595,6 +15620,13 @@ The OfflineAudioContext Interface</a>
    <ul>
     <li><a href="#ref-for-dom-offlineaudiocontext-rendered-buffer-slot">1.3.3. 
 Methods</a> <a href="#ref-for-dom-offlineaudiocontext-rendered-buffer-slot①">(2)</a> <a href="#ref-for-dom-offlineaudiocontext-rendered-buffer-slot②">(3)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="begin-offline-rendering">
+   <b><a href="#begin-offline-rendering">#begin-offline-rendering</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-begin-offline-rendering">1.3.3. 
+Methods</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-offlineaudiocontext-suspend">
@@ -16659,6 +16691,13 @@ The AudioNode Interface</a>
 The AudioNode Interface</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="cycle">
+   <b><a href="#cycle">#cycle</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-cycle">1.18.2. 
+Attributes</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="dom-audionode-connect-destinationparam-output">
    <b><a href="#dom-audionode-connect-destinationparam-output">#dom-audionode-connect-destinationparam-output</a></b><b>Referenced in:</b>
    <ul>
@@ -17320,13 +17359,6 @@ Methods</a> <a href="#ref-for-dom-audioparam-setvaluecurveattime⑥">(2)</a>
 Methods</a> <a href="#ref-for-dom-audioparam-setvaluecurveattime⑧">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="dom-audioparam-setvaluecurveattime-duration">
-   <b><a href="#dom-audioparam-setvaluecurveattime-duration">#dom-audioparam-setvaluecurveattime-duration</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dom-audioparam-setvaluecurveattime-duration">1.9.3. 
-Methods</a>
-   </ul>
-  </aside>
   <aside class="dfn-panel" data-for="simple-parameter">
    <b><a href="#simple-parameter">#simple-parameter</a></b><b>Referenced in:</b>
    <ul>
@@ -17418,12 +17450,12 @@ Methods</a> <a href="#ref-for-dom-audioscheduledsourcenode-start③">(2)</a>
 The AudioBufferSourceNode Interface</a> <a href="#ref-for-dom-audioscheduledsourcenode-start⑤">(2)</a> <a href="#ref-for-dom-audioscheduledsourcenode-start⑥">(3)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="dom-audioscheduledsourcenode-start-when">
-   <b><a href="#dom-audioscheduledsourcenode-start-when">#dom-audioscheduledsourcenode-start-when</a></b><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="dom-audioscheduledsourcenode-start-when-when">
+   <b><a href="#dom-audioscheduledsourcenode-start-when-when">#dom-audioscheduledsourcenode-start-when-when</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-audioscheduledsourcenode-start-when">1.7.2. 
-Methods</a> <a href="#ref-for-dom-audioscheduledsourcenode-start-when①">(2)</a>
-    <li><a href="#ref-for-dom-audioscheduledsourcenode-start-when②">1.9.3. 
+    <li><a href="#ref-for-dom-audioscheduledsourcenode-start-when-when">1.7. 
+The AudioScheduledSourceNode Interface</a>
+    <li><a href="#ref-for-dom-audioscheduledsourcenode-start-when-when①">1.7.2. 
 Methods</a>
    </ul>
   </aside>
@@ -17438,6 +17470,15 @@ Attributes</a>
 Methods</a> <a href="#ref-for-dom-audioscheduledsourcenode-stop④">(2)</a>
     <li><a href="#ref-for-dom-audioscheduledsourcenode-stop⑤">1.9. 
 The AudioBufferSourceNode Interface</a> <a href="#ref-for-dom-audioscheduledsourcenode-stop⑥">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-audioscheduledsourcenode-stop-when-when">
+   <b><a href="#dom-audioscheduledsourcenode-stop-when-when">#dom-audioscheduledsourcenode-stop-when-when</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-audioscheduledsourcenode-stop-when-when">1.7. 
+The AudioScheduledSourceNode Interface</a>
+    <li><a href="#ref-for-dom-audioscheduledsourcenode-stop-when-when①">1.7.2. 
+Methods</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="analysernode">
@@ -17830,11 +17871,29 @@ Methods</a>
 Looping</a> <a href="#ref-for-dom-audiobuffersourcenode-start③">(2)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="dom-audiobuffersourcenode-start-duration">
-   <b><a href="#dom-audiobuffersourcenode-start-duration">#dom-audiobuffersourcenode-start-duration</a></b><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="dom-audiobuffersourcenode-start-when-offset-duration-when">
+   <b><a href="#dom-audiobuffersourcenode-start-when-offset-duration-when">#dom-audiobuffersourcenode-start-when-offset-duration-when</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-audiobuffersourcenode-start-duration">1.7.1. 
+    <li><a href="#ref-for-dom-audiobuffersourcenode-start-when-offset-duration-when">1.9. 
+The AudioBufferSourceNode Interface</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-audiobuffersourcenode-start-when-offset-duration-offset">
+   <b><a href="#dom-audiobuffersourcenode-start-when-offset-duration-offset">#dom-audiobuffersourcenode-start-when-offset-duration-offset</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-audiobuffersourcenode-start-when-offset-duration-offset">1.9. 
+The AudioBufferSourceNode Interface</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-audiobuffersourcenode-start-when-offset-duration-duration">
+   <b><a href="#dom-audiobuffersourcenode-start-when-offset-duration-duration">#dom-audiobuffersourcenode-start-when-offset-duration-duration</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-audiobuffersourcenode-start-when-offset-duration-duration">1.7.1. 
 Attributes</a>
+    <li><a href="#ref-for-dom-audiobuffersourcenode-start-when-offset-duration-duration①">1.9. 
+The AudioBufferSourceNode Interface</a>
+    <li><a href="#ref-for-dom-audiobuffersourcenode-start-when-offset-duration-duration②">1.9.3. 
+Methods</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-audiobuffersourcenode-stop">
@@ -17846,6 +17905,15 @@ The AudioBufferSourceNode Interface</a>
 Methods</a>
     <li><a href="#ref-for-dom-audiobuffersourcenode-stop②">1.9.5. 
 Looping</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-audiobuffersourcenode-stop-when-when">
+   <b><a href="#dom-audiobuffersourcenode-stop-when-when">#dom-audiobuffersourcenode-stop-when-when</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-audiobuffersourcenode-stop-when-when">1.9. 
+The AudioBufferSourceNode Interface</a>
+    <li><a href="#ref-for-dom-audiobuffersourcenode-stop-when-when①">1.9.3. 
+Methods</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dictdef-audiobuffersourceoptions">
@@ -20287,7 +20355,7 @@ The AudioWorkletNode Interface</a> <a href="#ref-for-active-source①">(2)</a>
     <li><a href="#ref-for-active-source②">1.33.3.2. 
 Attributes</a>
     <li><a href="#ref-for-active-source③">1.33.4.2. 
-Defining A Valid AudioWorkletProcessor</a>
+Defining A Valid AudioWorkletProcessor</a> <a href="#ref-for-active-source④">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="audioparammap">

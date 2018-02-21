@@ -1490,8 +1490,8 @@ Methods</h4>
 <dl dfn-type=method dfn-for="AudioContext">
 	: <dfn>close()</dfn>
 	::
-		Closes the {{AudioContext}}, <a>releasing the system
-		resources</a> it's using. This will not automatically release
+		Closes the {{AudioContext}}, [=release system resources|releasing the system
+		resources=] it's using. This will not automatically release
 		all {{AudioContext}}-created objects, but will suspend the
 		progression of the {{AudioContext}}'s
 		{{BaseAudioContext/currentTime}}, and stop

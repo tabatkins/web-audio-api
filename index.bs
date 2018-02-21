@@ -3830,7 +3830,7 @@ Attributes</h4>
 		<code>onended</code> event is dispatched when the stop time
 		determined by {{AudioScheduledSourceNode/stop()}} is reached.
 		For an {{AudioBufferSourceNode}}, the event is
-		also dispatched because the {{AudioBufferSourceNode/start()/duration}} has been
+		also dispatched because the {{AudioBufferSourceNode/start(when, offset, duration)/duration}} has been
 		reached or if the entire {{AudioBufferSourceNode/buffer}} has been
 		played.
 </dl>
@@ -3859,8 +3859,8 @@ Methods</h4>
 				values in the messsage.
 		</div>
 
-		<pre class=argumentdef for="AudioScheduledSourceNode/start()">
-			when: The {{when}} parameter describes at what time (in seconds) the sound should start playing. It is in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. When the signal emitted by the {{AudioScheduledSourceNode}} depends on the sound's start time, the exact value of <code>when</code> is always used without rounding to the nearest sample frame. If 0 is passed in for this value or if the value is less than <b>currentTime</b>, then the sound will start playing immediately. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>when</code> is negative.</span>
+		<pre class=argumentdef for="AudioScheduledSourceNode/start(when)">
+			when: The {{AudioScheduledSourceNode/start(when)/when}} parameter describes at what time (in seconds) the sound should start playing. It is in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. When the signal emitted by the {{AudioScheduledSourceNode}} depends on the sound's start time, the exact value of <code>when</code> is always used without rounding to the nearest sample frame. If 0 is passed in for this value or if the value is less than <b>currentTime</b>, then the sound will start playing immediately. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>when</code> is negative.</span>
 		</pre>
 
 		<div>
@@ -3894,8 +3894,8 @@ Methods</h4>
 				values in the messsage.
 		</div>
 
-		<pre class=argumentdef for="AudioScheduledSourceNode/stop()">
-			when: The {{when}} parameter describes at what time (in seconds) the source should stop playing. It is in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. If 0 is passed in for this value or if the value is less than {{BaseAudioContext/currentTime}}, then the sound will stop playing immediately. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>when</code> is negative</span>.
+		<pre class=argumentdef for="AudioScheduledSourceNode/stop(when)">
+			when: The {{AudioScheduledSourceNode/stop(when)/when}} parameter describes at what time (in seconds) the source should stop playing. It is in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. If 0 is passed in for this value or if the value is less than {{BaseAudioContext/currentTime}}, then the sound will stop playing immediately. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>when</code> is negative</span>.
 		</pre>
 
 		<div>
@@ -4518,10 +4518,10 @@ Methods</h4>
 			follows.
 		</div>
 
-		<pre class=argumentdef for="AudioBufferSourceNode/start()">
+		<pre class=argumentdef for="AudioBufferSourceNode/start(when, offset, duration)">
 			when: The <code>when</code> parameter describes at what time (in seconds) the sound should start playing. It is in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. If 0 is passed in for this value or if the value is less than <b>currentTime</b>, then the sound will start playing immediately. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>when</code> is negative.</span>
 			offset: The <code>offset</code> parameter supplies a <a>playhead position</a> where playback will begin. If 0 is passed in for this value, then playback will start from the beginning of the buffer. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>offset</code> is negative.</span> If <code>offset</code> is greater than {{AudioBufferSourceNode/loopEnd}}, playback will begin at {{AudioBufferSourceNode/loopEnd}} (and immediately loop to {{AudioBufferSourceNode/loopStart}}). <code>offset</code> is silently clamped to [0, <code>duration</code>], when <code>startTime</code> is reached, where <code>duration</code> is the value of the <code>duration</code> attribute of the {{AudioBuffer}} set to the {{AudioBufferSourceNode/buffer}} attribute of this <code>AudioBufferSourceNode</code>.
-			duration: The {{duration!!argument}} parameter describes the duration of the sound (in seconds) to be played. If this parameter is passed, this method has exactly the same effect as the invocation of <code>start(when, offset)</code> followed by <code>stop(when + duration)</code>. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>duration</code> is negative.</span>
+			duration: The {{AudioBufferSourceNode/start(when, offset, duration)/duration}} parameter describes the duration of the sound (in seconds) to be played. If this parameter is passed, this method has exactly the same effect as the invocation of <code>start(when, offset)</code> followed by <code>stop(when + duration)</code>. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>duration</code> is negative.</span>
 		</pre>
 
 		<div>
@@ -4562,8 +4562,8 @@ Methods</h4>
 			follows.
 		</div>
 
-		<pre class=argumentdef for="AudioBufferSourceNode/stop()">
-			when: The {{when}} parameter describes at what time (in seconds) the source should stop playing. It is in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. If 0 is passed in for this value or if the value is less than {{BaseAudioContext/currentTime}}, then the sound will stop playing immediately. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>when</code> is negative</span>.
+		<pre class=argumentdef for="AudioBufferSourceNode/stop(when)">
+			when: The {{AudioBufferSourceNode/stop(when)/when}} parameter describes at what time (in seconds) the source should stop playing. It is in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. If 0 is passed in for this value or if the value is less than {{BaseAudioContext/currentTime}}, then the sound will stop playing immediately. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>when</code> is negative</span>.
 		</pre>
 
 		<div>

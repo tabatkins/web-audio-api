@@ -914,7 +914,7 @@ Methods</h4>
 		<a>Factory method</a> for a {{DelayNode}}. The initial default
 		delay time will be 0 seconds.
 
-		<pre class=argumentdef for="BaseAudioContext/createDelay()">
+		<pre class=argumentdef for="BaseAudioContext/createDelay(maxDelayTime)">
 		maxDelayTime: Specifies the maximum delay time in seconds allowed for the delay line. <span class="synchronous">If specified, this value MUST be greater than zero and less than three minutes or a {{NotSupportedError}} exception MUST be thrown.</span> If not specified, then `1` will be used.
 		</pre>
 
@@ -1021,7 +1021,7 @@ Methods</h4>
 		This method is DEPRECATED, as it is intended to be replaced by {{AudioWorkletNode}}.
 		Creates a {{ScriptProcessorNode}} for direct audio processing using scripts.
 		<span class="synchronous">An {{IndexSizeError}} exception MUST be thrown if
-		{{bufferSize!!argument}} or {{numberOfInputChannels}} or {{numberOfOutputChannels}}
+		{{createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)/bufferSize}} or {{createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)/numberOfInputChannels}} or {{createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)/numberOfOutputChannels}}
 		are outside the valid range.</span>
 
 		It is invalid for both {{numberOfInputChannels}} and {{numberOfOutputChannels}} to be zero.
@@ -1389,9 +1389,9 @@ Constructors</h4>
 
 			1. Set a <code>control thread state</code> to <code>suspended</code> on the {{AudioContext}}.
 
-			2. Set a <dfn>rendering thread state</dfn> to <code>suspended</code> on the {{AudioContext}}.
+			2. Set a <dfn dfn for>rendering thread state</dfn> to <code>suspended</code> on the {{AudioContext}}.
 
-			3. Let <dfn>pendingResumePromises</dfn> be an empty ordered list of promises.
+			3. Let <dfn dfn for>pendingResumePromises</dfn> be an empty ordered list of promises.
 
 			4. If <code>contextOptions</code> is given, apply the options:
 
@@ -1972,7 +1972,7 @@ Methods</h4>
 		</div>
 
 		<div algorithm="begin offline rendering">
-			To <dfn>begin offline rendering</dfn>, the following steps MUST
+			To <dfn dfn for>begin offline rendering</dfn>, the following steps MUST
 			happen on a <a>rendering thread</a> that is created for the
 			occasion.
 

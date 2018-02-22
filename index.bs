@@ -10474,8 +10474,7 @@ can restart executing this algoritm if needed.
 	latency implications.
 
 	{{OfflineAudioContext}} will execute the algorithm continuously,
-	until <var>length</var> (as passed in the
-	{{OfflineAudioContext}} contructor) frames have been rendered.
+	until {{OfflineAudioContext/length}} frames have been rendered.
 </div>
 
 1. Let <em>Q<sub>rendering</sub></em> be an empty <a>control message

@@ -9252,7 +9252,7 @@ instances created from the definition.
 	identical set of string keys from <a>node name to processor
 	definition map</a> that are associated with the matching
 	<a>parameterDescriptors</a> values. This internal storage is
-	populated as a consequence of calling the {{registerProcessor}} method in the
+	populated as a consequence of calling the {{registerProcessor()}} method in the
         <a>rendering thread</a>. The population is guaranteed to complete
         prior to the resolution of the promise returned by 
 	<a href="https://drafts.css-houdini.org/worklets/#dom-worklet-addmodule">addModule()</a>

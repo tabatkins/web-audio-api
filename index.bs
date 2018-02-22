@@ -864,7 +864,7 @@ Methods</h4>
 		{{IndexSizeError}} exception MUST be thrown for
 		invalid parameter values.</span>
 
-		<pre class=argumentdef for="BaseAudioContext/createChannelMerger()">
+		<pre class=argumentdef for="BaseAudioContext/createChannelMerger(numberOfInputs)">
 		numberOfInputs: Determines the number of inputs. Values of up to 32 MUST be supported. If not specified, then `6` will be used.
 		</pre>
 
@@ -880,7 +880,7 @@ Methods</h4>
 		{{IndexSizeError}} exception MUST be thrown for invalid
 		parameter values.</span>
 
-		<pre class=argumentdef for="BaseAudioContext/createChannelSplitter()">
+		<pre class=argumentdef for="BaseAudioContext/createChannelSplitter(numberOfOutputs)">
 		numberOfOutputs: The number of outputs. Values of up to 32 MUST be supported. If not specified, then `6` will be used.
 		</pre>
 
@@ -1021,13 +1021,13 @@ Methods</h4>
 		This method is DEPRECATED, as it is intended to be replaced by {{AudioWorkletNode}}.
 		Creates a {{ScriptProcessorNode}} for direct audio processing using scripts.
 		<span class="synchronous">An {{IndexSizeError}} exception MUST be thrown if
-		{{bufferSize}} or {{numberOfInputChannels}} or {{numberOfOutputChannels}}
+		{{bufferSize!!argument}} or {{numberOfInputChannels}} or {{numberOfOutputChannels}}
 		are outside the valid range.</span>
 
 		It is invalid for both {{numberOfInputChannels}} and {{numberOfOutputChannels}} to be zero.
 		In this case an {{IndexSizeError}} MUST be thrown.
 
-		<pre class=argumentdef for="BaseAudioContext/createScriptProcessor()">
+		<pre class=argumentdef for="BaseAudioContext/createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)">
 		bufferSize: The {{ScriptProcessorNode/bufferSize}} parameter determines the buffer size in units of sample-frames. If it's not passed in, or if the value is 0, then the implementation will choose the best buffer size for the given environment, which will be constant power of 2 throughout the lifetime of the node. Otherwise if the author explicitly specifies the bufferSize, it <em class="rfc2119" title="MUST">MUST</em> be one of the following values: 256, 512, 1024, 2048, 4096, 8192, 16384. This value controls how frequently the {{ScriptProcessorNode/onaudioprocess}} event is dispatched and how many sample-frames need to be processed each call. Lower values for {{ScriptProcessorNode/bufferSize}} will result in a lower (better) <a href="#latency">latency</a>. Higher values will be necessary to avoid audio breakup and <a href="#audio-glitching">glitches</a>. It is recommended for authors to not specify this buffer size and allow the implementation to pick a good buffer size to balance between <a href="#latency">latency</a> and audio quality. If the value of this parameter is not one of the allowed power-of-2 values listed above, <span class="synchronous">an {{IndexSizeError}} <em class="rfc2119" title="MUST">MUST</em> be thrown</span>.
 		numberOfInputChannels: This parameter determines the number of channels for this node's input. Values of up to 32 must be supported. <span class="synchronous">A {{NotSupportedError}} must be thrown if the number of channels is not supported.</span>
 		numberOfOutputChannels: This parameter determines the number of channels for this node's output. Values of up to 32 must be supported. <span class="synchronous">A {{NotSupportedError}} must be thrown if the number of channels is not supported.</span>
@@ -1086,11 +1086,11 @@ Methods</h4>
 			1. Let <var>promise</var> be a new promise.
 
 			2. If the operation <a href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer"><code>IsDetachedBuffer</code></a>
-				(described in [[!ECMASCRIPT]]) on {{BaseAudioContext/decodeAudioData()/audioData!!argument}} is
+				(described in [[!ECMASCRIPT]]) on {{BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback)/audioData!!argument}} is
 				<code>false</code>, execute the following steps:
 
 				1. <a href="https://tc39.github.io/ecma262/#sec-detacharraybuffer">Detach</a>
-						the {{audioData}} {{ArrayBuffer}}. This
+						the {{BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback)/audioData!!argument}} {{ArrayBuffer}}. This
 						operation is described in [[!ECMASCRIPT]].
 				2. Queue a decoding operation to be performed on another thread.
 
@@ -1112,7 +1112,7 @@ Methods</h4>
 			Note: Multiple <em>decoding threads</em> can run in parallel to
 			service multiple calls to <code>decodeAudioData</code>.
 
-			1. Attempt to decode the encoded {{audioData}} into linear
+			1. Attempt to decode the encoded {{BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback)/audioData!!argument}} into linear
 				PCM.
 
 			2. If a decoding error is encountered due to the audio format
@@ -1132,7 +1132,7 @@ Methods</h4>
 				1. Take the result, representing the decoded linear PCM
 					audio data, and resample it to the sample-rate of the
 					{{AudioContext}} if it is different from
-					the sample-rate of {{audioData}}.
+					the sample-rate of {{BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback)/audioData!!argument}}.
 
 				2. Queue a task on the <a>control thread</a>'s event loop
 					to execute the following steps:
@@ -1327,7 +1327,7 @@ allowed to transition from <code>suspended</code> to
 
 Note: For example, a user agent could require that an
 {{AudioContext}} control thread state change to
-running is <a> triggered by user activation</a> (as described in [[HTML]]).
+running is <a>triggered by user activation</a> (as described in [[HTML]]).
 
 <pre class="idl">
 [Exposed=Window]
@@ -6123,7 +6123,7 @@ path: audionode.include
 macros:
 	noi: 1
 	noo: see notes
-	noo-notes:  This defaults to 6, but is otherwise determined from {{ChannelSplitterOptions/numberOfOutputs | ChannelSplitterOptions.numberOfOutputs}} or the value specified by {{BaseAudioContext/createChannelSplitter}}
+	noo-notes:  This defaults to 6, but is otherwise determined from {{ChannelSplitterOptions/numberOfOutputs|ChannelSplitterOptions.numberOfOutputs}} or the value specified by {{BaseAudioContext/createChannelSplitter}}
 	cc: {{AudioNode/numberOfOutputs}}
 	cc-notes: Has <a>channelCount constraints</a>
 	cc-mode: explicit
@@ -8837,7 +8837,7 @@ path: audionode.include
 macros:
 	noi: 1
 	noo: 1
-	cc: {{BaseAudioContext/numberOfInputChannels}}
+	cc: {{BaseAudioContext/createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)/numberOfInputChannels}}
 	cc-notes: This is the number of channels specified when constructing this node. There are <a>channelCount constraints</a>.
 	cc-mode: explicit
 	cc-mode-notes:  Has <a>channelCountMode constraints</a>
@@ -9781,7 +9781,8 @@ The return value of this method controls the lifetime of the
 {{AudioWorkletNode}}. At the conclusion of each call to the
 <code>process()</code> method, <a href="https://tc39.github.io/ecma262/#sec-toboolean"><code>ToBoolean</code></a> (described in [[!ECMASCRIPT]])
 is applied to the return value and the result is assigned to the associated AudioWorkletProcessor's <a>active source</a> flag. This in turn affects whether subsequent
-invocations of <code>process()</code> occur, and has an impact on the lifetime of the node. The flag change is propagated by <a href="#queue">queueing a task</a> on the control thread to update the corresponding {{AudioWorkletNode}}'s <code>state</code> property accordingly.
+invocations of <code>process()</code> occur, and has an impact on the lifetime of the node. 
+To propagate the flag change <a>queue a task</a> on the control thread to update the corresponding {{AudioWorkletNode}}'s <code>state</code> property accordingly.
 
 <div class="note">
 	This lifetime policy can support a variety of approaches found in

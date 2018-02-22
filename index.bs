@@ -9667,11 +9667,48 @@ only be instantiated by the construction of an
 reference</dfn>, initially null.
 
 <pre class="idl">
-[Exposed=AudioWorklet]
+[Exposed=AudioWorklet,
+Constructor (optional AudioWorkletOptions options)]
 interface AudioWorkletProcessor {
 	readonly attribute MessagePort port;
 };
 </pre>
+
+<h5 id="AudioWorketProcessor-constructors">
+Constructors</h5>
+<dl dfn-type="constructor" dfn-for="AudioWorkletProcessor">
+	: <dfn>AudioWorkletProcessor(options)</dfn>
+	::
+		When the constructor for {{AudioWorkletProcessor}} is invoked, the following steps are performed:
+		<div algorithm="AudioWorkletProcessor()">
+			1. Compare the value of NewTarget with the <a href=
+				"https://tc39.github.io/ecma262/#active-function-object">active
+				function object</a>; if the two are equal, throw a
+				<code>TypeError</code> is thrown.
+
+				Note: This check prevents the invocation of the constructor
+				directly from JavaScript. The interface object may only
+				be called internally by the UA.
+
+			  1. Initialize the {{AudioWorkletProcessor}} using the
+				contents of the <code>options</code> dictionary that was
+				passed to the constructor for {{AudioWorkletNode}}. The
+				contents of this dictionary will have been serialized and
+				deserialized according to the algorithm for <a href=
+				"#instantiation-of-AudioWorkletNode-and-AudioWorkletProcessor"> instantiating an AudioWorkletProcessor</a>.
+
+				Note: The base implementation of {{AudioWorkletProcessor}}
+				does not examine the values in the {{AudioWorkletProcessor/AudioWorkletProcessor()/options!!argument}}
+				dictionary. However, processor classes that extend
+				{{AudioWorkletProcessor}} will use this dictionary to
+				initialize themselves based on the options relevant to
+				their specific node type.
+		</div>
+
+		<pre class="argumentdef" for="AudioWorkletProcessor/AudioWorkletProcessor()">
+		options: User-specified dictionary for custom initializations.
+		</pre>
+</dl>
 
 <h5 id="AudioWorkletProcessor-attributes">
 Attributes</h5>
@@ -9915,6 +9952,9 @@ thread, where the constructor was called.
 		StructuredSerializeWithTransfer</a>(<var>processorPortOnThisSide</var>,
 		« <var>processorPortOnThisSide</var> »).
 
+7. Let <var>optionsSerialization</var> be <a href=
+	"https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserialize">StructuredSerialize</a>(<var>options</var>).
+
 8. Set <var>node</var>'s {{AudioWorkletNode/port}} to <var>nodePort</var>.
 
 9. Let <var>parameterDescriptors</var> be the result of retrieval
@@ -9950,7 +9990,7 @@ thread, where the constructor was called.
 
 10. <a>Queue a control message</a> to create an
 	{{AudioWorkletProcessor}}, given <var>nodeName</var>,
-	<var>processorPortSerialization</var>, and <var>node</var>.
+	<var>processorPortSerialization</var>, <var>optionsSerialization</var>,  and <var>node</var>.
 
 11. Return <var>node</var>.
 
@@ -9969,6 +10009,11 @@ steps and queue a task on the <a>control thread</a> to fire
 	StructuredDeserializeWithTransfer</a>(<var>processorPortSerialization</var>,
 	the current Realm).
 
+1. Let <var>options</var> be <a href=
+	"https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer">
+	  StructuredDeserialize</a>(<var>optionsSerialization</var>, the
+	  current Realm).
+
 2. Let <var>processorConstructor</var> be the result of looking up
 	<var>nodeName</var> on the {{AudioWorkletGlobalScope}}'s <a>node
 	name to processor definition map</a>.
@@ -9977,7 +10022,7 @@ steps and queue a task on the <a>control thread</a> to fire
 	throw a {{NotSupportedError}} DOMException.
 
 4. Let <var>processor</var> be the result of
-	Construct(<var>processorConstructor</var>).
+	Construct(<var>processorConstructor</var>, « <var>options</var> »).
 
 5. If <var>processor</var> does not implement the
 	{{AudioWorkletProcessor}} interface, throw an

@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="2d8319e01d46b8fc7c3bdf3717ac3d14092dd247" name="document-revision">
+  <meta content="3c7850a1afccb5f25d927c84c9f9db6761bcd4b7" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -3896,8 +3896,7 @@ used with the <code><a data-link-type="element" href="https://html.spec.whatwg.o
      <p>Let <var>b</var> be a new <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑦">AudioBuffer</a></code> object.
 Respectively assign the values of the attributes <var>numberOfChannels</var>, <var>length</var>, <var>sampleRate</var> of the <code class="idl"><a data-link-type="idl" href="#dictdef-audiobufferoptions" id="ref-for-dictdef-audiobufferoptions①">AudioBufferOptions</a></code> passed
 in the constructor to the internal slots <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot">[[number of channels]]</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot">[[length]]</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-sample-rate-slot" id="ref-for-dom-audiobuffer-sample-rate-slot">[[sample rate]]</a></code>.</p>
-     <p>Set the internal slot <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-internal-data-slot" id="ref-for-dom-audiobuffer-internal-data-slot">[[internal data]]</a></code> of this <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑧">AudioBuffer</a></code> to the result of calling <a href="https://tc39.github.io/ecma262/#sec-createbytedatablock"><code> CreateByteDataBlock(<code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot①">[[length]]</a></code> * <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot①">[[number of
-channels]]</a></code>)</code></a>.</p>
+     <p>Set the internal slot <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-internal-data-slot" id="ref-for-dom-audiobuffer-internal-data-slot">[[internal data]]</a></code> of this <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑧">AudioBuffer</a></code> to the result of calling <a href="https://tc39.github.io/ecma262/#sec-createbytedatablock"><code> CreateByteDataBlock</code></a><code>(<code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot①">[[length]]</a></code> * <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot①">[[number of channels]]</a></code>)</code>.</p>
      <p class="note" role="note"><span>Note:</span> This initializes the underlying storage to zero.</p>
      <table class="argumentdef data">
       <caption>Arguments for the <a class="idl-code" data-link-type="method">AudioBuffer.AudioBuffer()</a> method.</caption>

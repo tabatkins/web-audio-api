@@ -8837,7 +8837,7 @@ path: audionode.include
 macros:
 	noi: 1
 	noo: 1
-	cc: {{BaseAudioContext/numberOfInputChannels}}
+	cc: {{BaseAudioContext/createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)/numberOfInputChannels}}
 	cc-notes: This is the number of channels specified when constructing this node. There are <a>channelCount constraints</a>.
 	cc-mode: explicit
 	cc-mode-notes:  Has <a>channelCountMode constraints</a>

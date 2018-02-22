@@ -3681,7 +3681,7 @@ rendering time quantum. It MUST be internally computed as follows:
 
 2. The <em>computedValue</em> is the sum of the <em>intrinsic</em>
 	value and the value of the <a href="#input-audioparam-buffer">input
-	{{AudioParam}} buffer</a>. When read, the
+	AudioParam buffer</a>. When read, the
 	<code>value</code> attribute always returns the
 	<em>computedValue</em> for the current time.
 
@@ -5093,7 +5093,7 @@ interface AudioListener {
 Attributes</h4>
 
 For all of the following {{AudioParam}}s, the {{AudioParam}}
-rate is specified by the <dfn>listener {{AudioParam}} rate</dfn>
+rate is specified by the <dfn>listener AudioParam rate</dfn>
 which is <a>a-rate</a> when any connected {{PannerNode}} is
 <a>a-rate</a> and is <a>k-rate</a> otherwise.
 
@@ -10559,7 +10559,7 @@ can restart executing this algoritm if needed.
 			buffers <a href="#available">made available for reading</a>
 			by all {{AudioNode}} connected to this {{AudioParam}},
 			<a href="#down-mix">down mix</a> the resulting buffer down to
-			Mono, and call this buffer the <dfn id="input-audioparam-buffer">input {{AudioParam}}
+			Mono, and call this buffer the <dfn id="input-audioparam-buffer">input AudioParam
 			buffer</dfn>.
 
 		2. <a href="#computation-of-value">Compute the value(s)</a> of

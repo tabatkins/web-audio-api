@@ -1327,7 +1327,7 @@ allowed to transition from <code>suspended</code> to
 
 Note: For example, a user agent could require that an
 {{AudioContext}} control thread state change to
-running is <a> triggered by user activation</a> (as described in [[HTML]]).
+running is <a>triggered by user activation</a> (as described in [[HTML]]).
 
 <pre class="idl">
 [Exposed=Window]

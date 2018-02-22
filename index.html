@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="08c89d33e7d1e9c9b1c7a32c604f21d41e8dd583" name="document-revision">
+  <meta content="10e9049de2deb7864d9a3bca170381e861ac014a" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -1526,7 +1526,7 @@ pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Web Audio API</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2018-02-21">21 February 2018</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2018-02-22">22 February 2018</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1984,12 +1984,13 @@ it is anticipated to be used with the <code>canvas</code> 2D <a data-link-type="
         <li>
          <a href="#audioworkletprocessor"><span class="secno">1.33.4</span> <span class="content"> The <code class="idl"><span>AudioWorkletProcessor</span></code> Interface</span></a>
          <ol class="toc">
-          <li><a href="#AudioWorkletProcessor-attributes"><span class="secno">1.33.4.1</span> <span class="content"> Attributes</span></a>
-          <li><a href="#defining-a-valid-audioworkletprocessor"><span class="secno">1.33.4.2</span> <span class="content"> Defining A Valid AudioWorkletProcessor</span></a>
+          <li><a href="#AudioWorketProcessor-constructors"><span class="secno">1.33.4.1</span> <span class="content"> Constructors</span></a>
+          <li><a href="#AudioWorkletProcessor-attributes"><span class="secno">1.33.4.2</span> <span class="content"> Attributes</span></a>
+          <li><a href="#defining-a-valid-audioworkletprocessor"><span class="secno">1.33.4.3</span> <span class="content"> Defining A Valid AudioWorkletProcessor</span></a>
           <li>
-           <a href="#dictdef-audioparamdescriptor"><span class="secno">1.33.4.3</span> <span class="content"> <code class="idl"><span>AudioParamDescriptor</span></code></span></a>
+           <a href="#dictdef-audioparamdescriptor"><span class="secno">1.33.4.4</span> <span class="content"> <code class="idl"><span>AudioParamDescriptor</span></code></span></a>
            <ol class="toc">
-            <li><a href="#dictionary-audioparamdescriptor-members"><span class="secno">1.33.4.3.1</span> <span class="content"> Dictionary <code class="idl"><span>AudioParamDescriptor</span></code> Members</span></a>
+            <li><a href="#dictionary-audioparamdescriptor-members"><span class="secno">1.33.4.4.1</span> <span class="content"> Dictionary <code class="idl"><span>AudioParamDescriptor</span></code> Members</span></a>
            </ol>
          </ol>
         <li><a href="#instantiation-of-AudioWorkletNode-and-AudioWorkletProcessor"><span class="secno">1.33.5</span> <span class="content"> The instantiation of <code class="idl"><span>AudioWorkletNode</span></code> and <code class="idl"><span>AudioWorkletProcessor</span></code></span></a>
@@ -2564,14 +2565,14 @@ but is instead extended by the concrete interfaces <code class="idl"><a data-lin
   <span class="kt">Promise</span>&lt;<span class="kt">void</span>> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-resume" id="ref-for-dom-baseaudiocontext-resume">resume</a> ();
   <span class="kt">attribute</span> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler" id="ref-for-eventhandler">EventHandler</a> <a class="nv idl-code" data-link-type="attribute" data-type="EventHandler" href="#dom-baseaudiocontext-onstatechange" id="ref-for-dom-baseaudiocontext-onstatechange">onstatechange</a>;
   <a class="n" data-link-type="idl-name" href="#audiobuffer" id="ref-for-audiobuffer③">AudioBuffer</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createbuffer" id="ref-for-dom-baseaudiocontext-createbuffer①">createBuffer</a> (<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long"><span class="kt">unsigned</span> <span class="kt">long</span></a> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/createBuffer(numberOfChannels, length, sampleRate)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createbuffer-numberofchannels-length-samplerate-numberofchannels"><code>numberOfChannels</code><a class="self-link" href="#dom-baseaudiocontext-createbuffer-numberofchannels-length-samplerate-numberofchannels"></a></dfn>, <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long①"><span class="kt">unsigned</span> <span class="kt">long</span></a> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/createBuffer(numberOfChannels, length, sampleRate)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createbuffer-numberofchannels-length-samplerate-length"><code>length</code><a class="self-link" href="#dom-baseaudiocontext-createbuffer-numberofchannels-length-samplerate-length"></a></dfn>, <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float①"><span class="kt">float</span></a> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/createBuffer(numberOfChannels, length, sampleRate)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createbuffer-numberofchannels-length-samplerate-samplerate"><code>sampleRate</code><a class="self-link" href="#dom-baseaudiocontext-createbuffer-numberofchannels-length-samplerate-samplerate"></a></dfn>);
-  <span class="kt">Promise</span>&lt;<a class="n" data-link-type="idl-name" href="#audiobuffer" id="ref-for-audiobuffer④">AudioBuffer</a>> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-decodeaudiodata" id="ref-for-dom-baseaudiocontext-decodeaudiodata①">decodeAudioData</a> (<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer"><span class="kt">ArrayBuffer</span></a> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback), BaseAudioContext/decodeAudioData(audioData, successCallback), BaseAudioContext/decodeAudioData(audioData)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata"><code>audioData</code><a class="self-link" href="#dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata"></a></dfn>,
+  <span class="kt">Promise</span>&lt;<a class="n" data-link-type="idl-name" href="#audiobuffer" id="ref-for-audiobuffer④">AudioBuffer</a>> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-decodeaudiodata" id="ref-for-dom-baseaudiocontext-decodeaudiodata①">decodeAudioData</a> (<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer"><span class="kt">ArrayBuffer</span></a> <dfn class="nv dfn-paneled idl-code" data-dfn-for="BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback), BaseAudioContext/decodeAudioData(audioData, successCallback), BaseAudioContext/decodeAudioData(audioData)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata"><code>audioData</code></dfn>,
                                         <span class="kt">optional</span> <a class="n" data-link-type="idl-name" href="#callback-decodesuccesscallback-parameters" id="ref-for-callback-decodesuccesscallback-parameters①">DecodeSuccessCallback</a> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback), BaseAudioContext/decodeAudioData(audioData, successCallback), BaseAudioContext/decodeAudioData(audioData)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-successcallback"><code>successCallback</code><a class="self-link" href="#dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-successcallback"></a></dfn>,
                                         <span class="kt">optional</span> <a class="n" data-link-type="idl-name" href="#callback-decodeerrorcallback-parameters" id="ref-for-callback-decodeerrorcallback-parameters①">DecodeErrorCallback</a> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback), BaseAudioContext/decodeAudioData(audioData, successCallback), BaseAudioContext/decodeAudioData(audioData)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-errorcallback"><code>errorCallback</code><a class="self-link" href="#dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-errorcallback"></a></dfn>);
   <a class="n" data-link-type="idl-name" href="#AudioBufferSourceNode" id="ref-for-AudioBufferSourceNode①">AudioBufferSourceNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createbuffersource" id="ref-for-dom-baseaudiocontext-createbuffersource">createBufferSource</a> ();
   <a class="n" data-link-type="idl-name" href="#ConstantSourceNode" id="ref-for-ConstantSourceNode①">ConstantSourceNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createconstantsource" id="ref-for-dom-baseaudiocontext-createconstantsource">createConstantSource</a> ();
-  <a class="n" data-link-type="idl-name" href="#scriptprocessornode" id="ref-for-scriptprocessornode②">ScriptProcessorNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createscriptprocessor" id="ref-for-dom-baseaudiocontext-createscriptprocessor">createScriptProcessor</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long②"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">bufferSize</a> = 0,
-                                            <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long③"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">numberOfInputChannels</a> = 2,
-                                            <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long④"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">numberOfOutputChannels</a> = 2);
+  <a class="n" data-link-type="idl-name" href="#scriptprocessornode" id="ref-for-scriptprocessornode②">ScriptProcessorNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createscriptprocessor" id="ref-for-dom-baseaudiocontext-createscriptprocessor">createScriptProcessor</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long②"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize">bufferSize</a> = 0,
+                                            <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long③"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels">numberOfInputChannels</a> = 2,
+                                            <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long④"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels">numberOfOutputChannels</a> = 2);
   <a class="n" data-link-type="idl-name" href="#analysernode" id="ref-for-analysernode①">AnalyserNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createanalyser" id="ref-for-dom-baseaudiocontext-createanalyser">createAnalyser</a> ();
   <a class="n" data-link-type="idl-name" href="#gainnode" id="ref-for-gainnode①">GainNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-creategain" id="ref-for-dom-baseaudiocontext-creategain">createGain</a> ();
   <a class="n" data-link-type="idl-name" href="#DelayNode" id="ref-for-DelayNode①">DelayNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createdelay" id="ref-for-dom-baseaudiocontext-createdelay">createDelay</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime" id="ref-for-dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime">maxDelayTime</a> = 1.0);
@@ -2581,8 +2582,8 @@ but is instead extended by the concrete interfaces <code class="idl"><a data-lin
   <a class="n" data-link-type="idl-name" href="#pannernode" id="ref-for-pannernode②">PannerNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createpanner" id="ref-for-dom-baseaudiocontext-createpanner">createPanner</a> ();
   <a class="n" data-link-type="idl-name" href="#stereopannernode" id="ref-for-stereopannernode①">StereoPannerNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createstereopanner" id="ref-for-dom-baseaudiocontext-createstereopanner">createStereoPanner</a> ();
   <a class="n" data-link-type="idl-name" href="#ConvolverNode" id="ref-for-ConvolverNode①">ConvolverNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createconvolver" id="ref-for-dom-baseaudiocontext-createconvolver">createConvolver</a> ();
-  <a class="n" data-link-type="idl-name" href="#channelsplitternode" id="ref-for-channelsplitternode①">ChannelSplitterNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelsplitter" id="ref-for-dom-baseaudiocontext-createchannelsplitter">createChannelSplitter</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">numberOfOutputs</a> = 6);
-  <a class="n" data-link-type="idl-name" href="#channelmergernode" id="ref-for-channelmergernode①">ChannelMergerNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelmerger" id="ref-for-dom-baseaudiocontext-createchannelmerger">createChannelMerger</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑥"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">numberOfInputs</a> = 6);
+  <a class="n" data-link-type="idl-name" href="#channelsplitternode" id="ref-for-channelsplitternode①">ChannelSplitterNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelsplitter" id="ref-for-dom-baseaudiocontext-createchannelsplitter">createChannelSplitter</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createchannelsplitter-numberofoutputs-numberofoutputs" id="ref-for-dom-baseaudiocontext-createchannelsplitter-numberofoutputs-numberofoutputs">numberOfOutputs</a> = 6);
+  <a class="n" data-link-type="idl-name" href="#channelmergernode" id="ref-for-channelmergernode①">ChannelMergerNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelmerger" id="ref-for-dom-baseaudiocontext-createchannelmerger">createChannelMerger</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑥"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createchannelmerger-numberofinputs-numberofinputs" id="ref-for-dom-baseaudiocontext-createchannelmerger-numberofinputs-numberofinputs">numberOfInputs</a> = 6);
   <a class="n" data-link-type="idl-name" href="#dynamicscompressornode" id="ref-for-dynamicscompressornode①">DynamicsCompressorNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createdynamicscompressor" id="ref-for-dom-baseaudiocontext-createdynamicscompressor">createDynamicsCompressor</a> ();
   <a class="n" data-link-type="idl-name" href="#oscillatornode" id="ref-for-oscillatornode②">OscillatorNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createoscillator" id="ref-for-dom-baseaudiocontext-createoscillator">createOscillator</a> ();
   <a class="n" data-link-type="idl-name" href="#periodicwave" id="ref-for-periodicwave①">PeriodicWave</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createperiodicwave" id="ref-for-dom-baseaudiocontext-createperiodicwave">createPeriodicWave</a> (<span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float②"><span class="kt">float</span></a>> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/createPeriodicWave(real, imag, constraints), BaseAudioContext/createPeriodicWave(real, imag)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createperiodicwave-real-imag-constraints-real"><code>real</code><a class="self-link" href="#dom-baseaudiocontext-createperiodicwave-real-imag-constraints-real"></a></dfn>, <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float③"><span class="kt">float</span></a>> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/createPeriodicWave(real, imag, constraints), BaseAudioContext/createPeriodicWave(real, imag)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createperiodicwave-real-imag-constraints-imag"><code>imag</code><a class="self-link" href="#dom-baseaudiocontext-createperiodicwave-real-imag-constraints-imag"></a></dfn>, <span class="kt">optional</span> <a class="n" data-link-type="idl-name" href="#dictdef-periodicwaveconstraints" id="ref-for-dictdef-periodicwaveconstraints">PeriodicWaveConstraints</a> <dfn class="nv idl-code" data-dfn-for="BaseAudioContext/createPeriodicWave(real, imag, constraints), BaseAudioContext/createPeriodicWave(real, imag)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createperiodicwave-real-imag-constraints-constraints"><code>constraints</code><a class="self-link" href="#dom-baseaudiocontext-createperiodicwave-real-imag-constraints-constraints"></a></dfn>);
@@ -2712,7 +2713,7 @@ nominal range.</span></p>
 merger. <span class="synchronous">An <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror">IndexSizeError</a></code> exception MUST be thrown for
 invalid parameter values.</span></p>
      <table class="argumentdef data">
-      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelmerger" id="ref-for-dom-baseaudiocontext-createchannelmerger①">BaseAudioContext.createChannelMerger()</a> method.</caption>
+      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelmerger" id="ref-for-dom-baseaudiocontext-createchannelmerger①">BaseAudioContext.createChannelMerger(numberOfInputs)</a> method.</caption>
       <thead>
        <tr>
         <th>Parameter 
@@ -2722,7 +2723,7 @@ invalid parameter values.</span></p>
         <th>Description 
       <tbody>
        <tr>
-        <td><dfn class="idl-code" data-dfn-for="BaseAudioContext/createChannelMerger()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createchannelmerger-numberofinputs"><code>numberOfInputs</code><a class="self-link" href="#dom-baseaudiocontext-createchannelmerger-numberofinputs"></a></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createChannelMerger(numberOfInputs)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createchannelmerger-numberofinputs-numberofinputs"><code>numberOfInputs</code></dfn> 
         <td> unsigned long 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
@@ -2735,7 +2736,7 @@ invalid parameter values.</span></p>
 splitter. <span class="synchronous">An <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror①">IndexSizeError</a></code> exception MUST be thrown for invalid
 parameter values.</span></p>
      <table class="argumentdef data">
-      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelsplitter" id="ref-for-dom-baseaudiocontext-createchannelsplitter①">BaseAudioContext.createChannelSplitter()</a> method.</caption>
+      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelsplitter" id="ref-for-dom-baseaudiocontext-createchannelsplitter①">BaseAudioContext.createChannelSplitter(numberOfOutputs)</a> method.</caption>
       <thead>
        <tr>
         <th>Parameter 
@@ -2745,7 +2746,7 @@ parameter values.</span></p>
         <th>Description 
       <tbody>
        <tr>
-        <td><dfn class="idl-code" data-dfn-for="BaseAudioContext/createChannelSplitter()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createchannelsplitter-numberofoutputs"><code>numberOfOutputs</code><a class="self-link" href="#dom-baseaudiocontext-createchannelsplitter-numberofoutputs"></a></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createChannelSplitter(numberOfOutputs)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createchannelsplitter-numberofoutputs-numberofoutputs"><code>numberOfOutputs</code></dfn> 
         <td> unsigned long 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
@@ -2887,11 +2888,11 @@ method has been called on as a first argument, and <var>o</var>.</p>
     <dd data-md="">
      <p><a data-link-type="dfn" href="#factory-method" id="ref-for-factory-method①③">Factory method</a> for a <code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode③">ScriptProcessorNode</a></code>.
 This method is DEPRECATED, as it is intended to be replaced by <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode①">AudioWorkletNode</a></code>.
-Creates a <code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode④">ScriptProcessorNode</a></code> for direct audio processing using scripts. <span class="synchronous">An <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror②">IndexSizeError</a></code> exception MUST be thrown if <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize">bufferSize</a></code> or <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels">numberOfInputChannels</a></code> or <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels">numberOfOutputChannels</a></code> are outside the valid range.</span></p>
-     <p>It is invalid for both <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels①">numberOfInputChannels</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels①">numberOfOutputChannels</a></code> to be zero.
+Creates a <code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode④">ScriptProcessorNode</a></code> for direct audio processing using scripts. <span class="synchronous">An <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror②">IndexSizeError</a></code> exception MUST be thrown if <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize①">bufferSize</a></code> or <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels①">numberOfInputChannels</a></code> or <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels①">numberOfOutputChannels</a></code> are outside the valid range.</span></p>
+     <p>It is invalid for both <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels②">numberOfInputChannels</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels②">numberOfOutputChannels</a></code> to be zero.
 In this case an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror③">IndexSizeError</a></code> MUST be thrown.</p>
      <table class="argumentdef data">
-      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-baseaudiocontext-createscriptprocessor" id="ref-for-dom-baseaudiocontext-createscriptprocessor①">BaseAudioContext.createScriptProcessor()</a> method.</caption>
+      <caption>Arguments for the <a class="idl-code" data-link-type="method" href="#dom-baseaudiocontext-createscriptprocessor" id="ref-for-dom-baseaudiocontext-createscriptprocessor①">BaseAudioContext.createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)</a> method.</caption>
       <thead>
        <tr>
         <th>Parameter 
@@ -2901,19 +2902,19 @@ In this case an <code class="idl"><a data-link-type="idl" href="https://heycam.g
         <th>Description 
       <tbody>
        <tr>
-        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createScriptProcessor()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createscriptprocessor-buffersize"><code>bufferSize</code></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize"><code>bufferSize</code></dfn> 
         <td> unsigned long 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
         <td>The <code class="idl"><a data-link-type="idl" href="#dom-scriptprocessornode-buffersize" id="ref-for-dom-scriptprocessornode-buffersize">bufferSize</a></code> parameter determines the buffer size in units of sample-frames. If it’s not passed in, or if the value is 0, then the implementation will choose the best buffer size for the given environment, which will be constant power of 2 throughout the lifetime of the node. Otherwise if the author explicitly specifies the bufferSize, it <em class="rfc2119" title="MUST">MUST</em> be one of the following values: 256, 512, 1024, 2048, 4096, 8192, 16384. This value controls how frequently the <code class="idl"><a data-link-type="idl" href="#dom-scriptprocessornode-onaudioprocess" id="ref-for-dom-scriptprocessornode-onaudioprocess">onaudioprocess</a></code> event is dispatched and how many sample-frames need to be processed each call. Lower values for <code class="idl"><a data-link-type="idl" href="#dom-scriptprocessornode-buffersize" id="ref-for-dom-scriptprocessornode-buffersize①">bufferSize</a></code> will result in a lower (better) <a href="#latency">latency</a>. Higher values will be necessary to avoid audio breakup and <a href="#audio-glitching">glitches</a>. It is recommended for authors to not specify this buffer size and allow the implementation to pick a good buffer size to balance between <a href="#latency">latency</a> and audio quality. If the value of this parameter is not one of the allowed power-of-2 values listed above, <span class="synchronous">an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror④">IndexSizeError</a></code> <em class="rfc2119" title="MUST">MUST</em> be thrown</span>. 
        <tr>
-        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createScriptProcessor()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createscriptprocessor-numberofinputchannels"><code>numberOfInputChannels</code></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels"><code>numberOfInputChannels</code></dfn> 
         <td> unsigned long 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
         <td>This parameter determines the number of channels for this node’s input. Values of up to 32 must be supported. <span class="synchronous">A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror④">NotSupportedError</a></code> must be thrown if the number of channels is not supported.</span> 
        <tr>
-        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createScriptProcessor()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels"><code>numberOfOutputChannels</code></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels"><code>numberOfOutputChannels</code></dfn> 
         <td> unsigned long 
         <td> <span class="no">✘</span>
         <td> <span class="yes">✔</span>
@@ -2949,10 +2950,10 @@ completes.</p>
        <li data-md="">
         <p>Let <var>promise</var> be a new promise.</p>
        <li data-md="">
-        <p>If the operation <a href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer"><code>IsDetachedBuffer</code></a> (described in <a data-link-type="biblio" href="#biblio-ecmascript">[ECMASCRIPT]</a>) on <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-baseaudiocontext-decodeaudiodata-audiodata" id="ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata">audioData</a></code> is <code>false</code>, execute the following steps:</p>
+        <p>If the operation <a href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer"><code>IsDetachedBuffer</code></a> (described in <a data-link-type="biblio" href="#biblio-ecmascript">[ECMASCRIPT]</a>) on <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata" id="ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata">audioData</a></code> is <code>false</code>, execute the following steps:</p>
         <ol>
          <li data-md="">
-          <p><a href="https://tc39.github.io/ecma262/#sec-detacharraybuffer">Detach</a> the <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-decodeaudiodata-audiodata" id="ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata①">audioData</a></code> <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer③">ArrayBuffer</a></code>. This
+          <p><a href="https://tc39.github.io/ecma262/#sec-detacharraybuffer">Detach</a> the <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata" id="ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata①">audioData</a></code> <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-ArrayBuffer" id="ref-for-idl-ArrayBuffer③">ArrayBuffer</a></code>. This
 	operation is described in <a data-link-type="biblio" href="#biblio-ecmascript">[ECMASCRIPT]</a>.</p>
          <li data-md="">
           <p>Queue a decoding operation to be performed on another thread.</p>
@@ -2980,7 +2981,7 @@ completes.</p>
 	service multiple calls to <code>decodeAudioData</code>.</p>
       <ol>
        <li data-md="">
-        <p>Attempt to decode the encoded <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-decodeaudiodata-audiodata" id="ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata②">audioData</a></code> into linear
+        <p>Attempt to decode the encoded <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata" id="ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata②">audioData</a></code> into linear
 PCM.</p>
        <li data-md="">
         <p>If a decoding error is encountered due to the audio format
@@ -3002,7 +3003,7 @@ event loop:</p>
          <li data-md="">
           <p>Take the result, representing the decoded linear PCM
 audio data, and resample it to the sample-rate of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑤">AudioContext</a></code> if it is different from
-the sample-rate of <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-decodeaudiodata-audiodata" id="ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata③">audioData</a></code>.</p>
+the sample-rate of <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata" id="ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata③">audioData</a></code>.</p>
          <li data-md="">
           <p>Queue a task on the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread③">control thread</a>’s event loop
 to execute the following steps:</p>
@@ -3029,7 +3030,7 @@ invoke <code class="idl"><a class="idl-code" data-link-type="argument" href="#do
         <th>Description 
       <tbody>
        <tr>
-        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/decodeAudioData()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-decodeaudiodata-audiodata"><code>audioData</code></dfn> 
+        <td><dfn class="idl-code" data-dfn-for="BaseAudioContext/decodeAudioData()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-decodeaudiodata-audiodata"><code>audioData</code><a class="self-link" href="#dom-baseaudiocontext-decodeaudiodata-audiodata"></a></dfn> 
         <td> ArrayBuffer 
         <td> <span class="no">✘</span>
         <td> <span class="no">✘</span>
@@ -3169,7 +3170,7 @@ start</dfn> if the user agent and the system allow audio output in
 the current context. In other words, if the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①⑦">AudioContext</a></code> <em>control thread state</em> is
 allowed to transition from <code>suspended</code> to <code>running</code>.</p>
    <p class="note" role="note"><span>Note:</span> For example, a user agent could require that an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①⑧">AudioContext</a></code> control thread state change to
-running is <a data-link-type="dfn"> triggered by user activation</a> (as described in <a data-link-type="biblio" href="#biblio-html">[HTML]</a>).</p>
+running is <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/interaction.html#triggered-by-user-activation" id="ref-for-triggered-by-user-activation">triggered by user activation</a> (as described in <a data-link-type="biblio" href="#biblio-html">[HTML]</a>).</p>
 <pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①">Exposed</a>=<span class="n">Window</span>]
 <span class="kt">enum</span> <dfn class="nv dfn-paneled idl-code" data-dfn-type="enum" data-export="" id="enumdef-audiocontextlatencycategory"><code>AudioContextLatencyCategory</code></dfn> {
     <a class="s idl-code" data-link-type="enum-value" href="#dom-audiocontextlatencycategory-balanced" id="ref-for-dom-audiocontextlatencycategory-balanced">"balanced"</a>,
@@ -7796,7 +7797,7 @@ applications and would often be used in conjunction with <code class="idl"><a da
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-numberofoutputs" id="ref-for-dom-audionode-numberofoutputs⑧">numberOfOutputs</a></code> 
        <td>see notes 
-       <td>This defaults to 6, but is otherwise determined from <code class="idl"><a data-link-type="idl"> ChannelSplitterOptions.numberOfOutputs</a></code> or the value specified by <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createchannelsplitter" id="ref-for-dom-baseaudiocontext-createchannelsplitter②">createChannelSplitter</a></code> 
+       <td>This defaults to 6, but is otherwise determined from <code class="idl"><a data-link-type="idl" href="#dom-channelsplitteroptions-numberofoutputs" id="ref-for-dom-channelsplitteroptions-numberofoutputs">ChannelSplitterOptions.numberOfOutputs</a></code> or the value specified by <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createchannelsplitter" id="ref-for-dom-baseaudiocontext-createchannelsplitter②">createChannelSplitter</a></code> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcount" id="ref-for-dom-audionode-channelcount②①">channelCount</a></code> 
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-numberofoutputs" id="ref-for-dom-audionode-numberofoutputs⑨">numberOfOutputs</a></code> 
@@ -7874,7 +7875,7 @@ desired.</p>
    </dl>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="dictionary" data-export="" data-level="1.15.2" data-lt="ChannelSplitterOptions" id="dictdef-channelsplitteroptions"><span class="secno">1.15.2. </span><span class="content"> <code class="idl"><a data-link-type="idl" href="#dictdef-channelsplitteroptions" id="ref-for-dictdef-channelsplitteroptions">ChannelSplitterOptions</a></code></span></h4>
 <pre class="idl highlight def"><span class="kt">dictionary</span> <a class="nv idl-code" data-link-type="dictionary" href="#dictdef-channelsplitteroptions" id="ref-for-dictdef-channelsplitteroptions①">ChannelSplitterOptions</a> : <a class="n" data-link-type="idl-name" href="#dictdef-audionodeoptions" id="ref-for-dictdef-audionodeoptions⑥">AudioNodeOptions</a> {
-  <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤④"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-default="6" data-link-type="dict-member" data-type="unsigned long " href="#dom-channelsplitteroptions-numberofoutputs" id="ref-for-dom-channelsplitteroptions-numberofoutputs">numberOfOutputs</a> = 6;
+  <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤④"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-default="6" data-link-type="dict-member" data-type="unsigned long " href="#dom-channelsplitteroptions-numberofoutputs" id="ref-for-dom-channelsplitteroptions-numberofoutputs①">numberOfOutputs</a> = 6;
 };
 </pre>
    <h5 class="heading settled" data-level="1.15.2.1" id="dictionary-channelsplitteroptions-members"><span class="secno">1.15.2.1. </span><span class="content"> Dictionary <code class="idl"><a data-link-type="idl" href="#dictdef-channelsplitteroptions" id="ref-for-dictdef-channelsplitteroptions②">ChannelSplitterOptions</a></code> Members</span><a class="self-link" href="#dictionary-channelsplitteroptions-members"></a></h5>
@@ -10619,7 +10620,7 @@ purposes until implementations remove this node type.</p>
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcount" id="ref-for-dom-audionode-channelcount③①">channelCount</a></code> 
-       <td><code class="idl"><a data-link-type="idl">numberOfInputChannels</a></code> 
+       <td><code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels③">numberOfInputChannels</a></code> 
        <td>This is the number of channels specified when constructing this node. There are <a data-link-type="dfn" href="#audionode-channelcount-constraints" id="ref-for-audionode-channelcount-constraints⑥">channelCount constraints</a>. 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode②②">channelCountMode</a></code> 
@@ -10644,8 +10645,8 @@ least one input or one output connected. Lower numbers for <code class="idl"><a 
 a lower (better) <a href="#latency">latency</a>. Higher numbers will
 be necessary to avoid audio breakup and <a href="#audio-glitching">glitches</a>. This value will be picked by the
 implementation if the bufferSize argument to <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor" id="ref-for-dom-baseaudiocontext-createscriptprocessor②">createScriptProcessor()</a></code> is not passed in, or is set to 0.</p>
-   <p><code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels②">numberOfInputChannels</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels②">numberOfOutputChannels</a></code> determine the number of input and output channels. It is invalid for
-both <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels③">numberOfInputChannels</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels③">numberOfOutputChannels</a></code> to be zero.</p>
+   <p><code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels④">numberOfInputChannels</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels③">numberOfOutputChannels</a></code> determine the number of input and output channels. It is invalid for
+both <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels⑤">numberOfInputChannels</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels④">numberOfOutputChannels</a></code> to be zero.</p>
 <pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed③⑥">Exposed</a>=<span class="n">Window</span>]
 <span class="kt">interface</span> <a class="nv idl-code" data-link-type="interface" href="#scriptprocessornode" id="ref-for-scriptprocessornode①③">ScriptProcessorNode</a> : <a class="n" data-link-type="idl-name" href="#audionode" id="ref-for-audionode①⑥②">AudioNode</a> {
   <span class="kt">attribute</span> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/webappapis.html#eventhandler" id="ref-for-eventhandler⑥">EventHandler</a> <a class="nv idl-code" data-link-type="attribute" data-type="EventHandler" href="#dom-scriptprocessornode-onaudioprocess" id="ref-for-dom-scriptprocessornode-onaudioprocess⑤">onaudioprocess</a>;
@@ -11376,26 +11377,69 @@ the class manifests the actual audio processing mechanism of a
 custom audio node. <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②③">AudioWorkletProcessor</a></code> can
 only be instantiated by the construction of an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode②⑨">AudioWorkletNode</a></code> instance. Every <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②④">AudioWorkletProcessor</a></code> has an associated <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="node reference" data-noexport="" id="node-reference">node
 reference</dfn>, initially null.</p>
-<pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed④③">Exposed</a>=<span class="n">AudioWorklet</span>]
+<pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed④③">Exposed</a>=<span class="n">AudioWorklet</span>,
+<a class="nv idl-code" data-link-type="constructor" href="#dom-audioworkletprocessor-audioworkletprocessor" id="ref-for-dom-audioworkletprocessor-audioworkletprocessor">Constructor</a> (<span class="kt">optional</span> <a class="n" data-link-type="idl-name">AudioWorkletOptions</a> <dfn class="nv idl-code" data-dfn-for="AudioWorkletProcessor/AudioWorkletProcessor(options)" data-dfn-type="argument" data-export="" id="dom-audioworkletprocessor-audioworkletprocessor-options-options"><code>options</code><a class="self-link" href="#dom-audioworkletprocessor-audioworkletprocessor-options-options"></a></dfn>)]
 <span class="kt">interface</span> <a class="nv idl-code" data-link-type="interface" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②⑤">AudioWorkletProcessor</a> {
   <span class="kt">readonly</span> <span class="kt">attribute</span> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/web-messaging.html#messageport" id="ref-for-messageport②">MessagePort</a> <a class="nv idl-code" data-link-type="attribute" data-readonly="" data-type="MessagePort" href="#dom-audioworkletprocessor-port" id="ref-for-dom-audioworkletprocessor-port">port</a>;
 };
 </pre>
-   <h5 class="heading settled" data-level="1.33.4.1" id="AudioWorkletProcessor-attributes"><span class="secno">1.33.4.1. </span><span class="content"> Attributes</span><a class="self-link" href="#AudioWorkletProcessor-attributes"></a></h5>
+   <h5 class="heading settled" data-level="1.33.4.1" id="AudioWorketProcessor-constructors"><span class="secno">1.33.4.1. </span><span class="content"> Constructors</span><a class="self-link" href="#AudioWorketProcessor-constructors"></a></h5>
+   <dl>
+    <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletProcessor" data-dfn-type="constructor" data-export="" id="dom-audioworkletprocessor-audioworkletprocessor"><code>AudioWorkletProcessor(options)</code></dfn>
+    <dd data-md="">
+     <p>When the constructor for <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②⑥">AudioWorkletProcessor</a></code> is invoked, the following steps are performed:</p>
+     <div class="algorithm" data-algorithm="AudioWorkletProcessor()">
+      <ol>
+       <li data-md="">
+        <p>Compare the value of NewTarget with the <a href="https://tc39.github.io/ecma262/#active-function-object">active
+function object</a>; if the two are equal, throw a <code>TypeError</code> is thrown.</p>
+        <p class="note" role="note"><span>Note:</span> This check prevents the invocation of the constructor
+directly from JavaScript. The interface object may only
+be called internally by the UA.</p>
+       <li data-md="">
+        <p>Initialize the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②⑦">AudioWorkletProcessor</a></code> using the
+contents of the <code>options</code> dictionary that was
+passed to the constructor for <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⓪">AudioWorkletNode</a></code>. The
+contents of this dictionary will have been serialized and
+deserialized according to the algorithm for <a href="#instantiation-of-AudioWorkletNode-and-AudioWorkletProcessor"> instantiating an AudioWorkletProcessor</a>.</p>
+        <p class="note" role="note"><span>Note:</span> The base implementation of <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②⑧">AudioWorkletProcessor</a></code> does not examine the values in the <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-audioworkletprocessor-audioworkletprocessor-options" id="ref-for-dom-audioworkletprocessor-audioworkletprocessor-options">options</a></code> dictionary. However, processor classes that extend <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②⑨">AudioWorkletProcessor</a></code> will use this dictionary to
+initialize themselves based on the options relevant to
+their specific node type.</p>
+      </ol>
+     </div>
+     <table class="argumentdef data">
+      <caption>Arguments for the <a class="idl-code" data-link-type="method">AudioWorkletProcessor.AudioWorkletProcessor()</a> method.</caption>
+      <thead>
+       <tr>
+        <th>Parameter 
+        <th>Type 
+        <th>Nullable 
+        <th>Optional 
+        <th>Description 
+      <tbody>
+       <tr>
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletProcessor/AudioWorkletProcessor()" data-dfn-type="argument" data-export="" id="dom-audioworkletprocessor-audioworkletprocessor-options"><code>options</code></dfn> 
+        <td> AudioWorkletOptions 
+        <td> <span class="no">✘</span>
+        <td> <span class="yes">✔</span>
+        <td>User-specified dictionary for custom initializations.
+     </table>
+   </dl>
+   <h5 class="heading settled" data-level="1.33.4.2" id="AudioWorkletProcessor-attributes"><span class="secno">1.33.4.2. </span><span class="content"> Attributes</span><a class="self-link" href="#AudioWorkletProcessor-attributes"></a></h5>
    <dl>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioWorkletProcessor" data-dfn-type="attribute" data-export="" id="dom-audioworkletprocessor-port"><code>port</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/web-messaging.html#messageport" id="ref-for-messageport③">MessagePort</a>, readonly</span>
     <dd data-md="">
-     <p>Every <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②⑥">AudioWorkletProcessor</a></code> has an associated <code>port</code> which is a <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/web-messaging.html#messageport" id="ref-for-messageport④">MessagePort</a></code>. It is connected to the port on the
-corresponding <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②⑦">AudioWorkletProcessor</a></code> object allowing
-bidirectional communication between a pair of <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⓪">AudioWorkletNode</a></code> and <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②⑧">AudioWorkletProcessor</a></code>.</p>
+     <p>Every <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⓪">AudioWorkletProcessor</a></code> has an associated <code>port</code> which is a <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/web-messaging.html#messageport" id="ref-for-messageport④">MessagePort</a></code>. It is connected to the port on the
+corresponding <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③①">AudioWorkletProcessor</a></code> object allowing
+bidirectional communication between a pair of <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③①">AudioWorkletNode</a></code> and <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③②">AudioWorkletProcessor</a></code>.</p>
    </dl>
-   <h5 class="heading settled" data-level="1.33.4.2" id="defining-a-valid-audioworkletprocessor"><span class="secno">1.33.4.2. </span><span class="content"> Defining A Valid AudioWorkletProcessor</span><a class="self-link" href="#defining-a-valid-audioworkletprocessor"></a></h5>
-   <p>User can define a custom audio processor by extending <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②⑨">AudioWorkletProcessor</a></code>. The subclass MUST define a method
+   <h5 class="heading settled" data-level="1.33.4.3" id="defining-a-valid-audioworkletprocessor"><span class="secno">1.33.4.3. </span><span class="content"> Defining A Valid AudioWorkletProcessor</span><a class="self-link" href="#defining-a-valid-audioworkletprocessor"></a></h5>
+   <p>User can define a custom audio processor by extending <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③③">AudioWorkletProcessor</a></code>. The subclass MUST define a method
 named <code>process()</code> that implements the audio processing
 algorithm and have a valid static property named <code><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="parameterdescriptors">parameterDescriptors</dfn></code> which is an iterable
-of <code class="idl"><a data-link-type="idl" href="#dictdef-audioparamdescriptor" id="ref-for-dictdef-audioparamdescriptor①">AudioParamDescriptor</a></code> that is looked up by the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⓪">AudioWorkletProcessor</a></code> constructor to create instances of <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①④⑨">AudioParam</a></code> in the <code>parameters</code> maplike storage
+of <code class="idl"><a data-link-type="idl" href="#dictdef-audioparamdescriptor" id="ref-for-dictdef-audioparamdescriptor①">AudioParamDescriptor</a></code> that is looked up by the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③④">AudioWorkletProcessor</a></code> constructor to create instances of <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①④⑨">AudioParam</a></code> in the <code>parameters</code> maplike storage
 in the node. The step 5 and 6 of <a data-link-type="functionish" href="#dom-audioworkletglobalscope-registerprocessor" id="ref-for-dom-audioworkletglobalscope-registerprocessor⑤">registerProcessor()</a> ensure the
-validity of a given <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③①">AudioWorkletProcessor</a></code> subclass.</p>
+validity of a given <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⑤">AudioWorkletProcessor</a></code> subclass.</p>
    <p>An example of a valid subclass is as follows:</p>
 <pre class="example highlight" id="example-2e9052f7" title="Subclassing AudioWorkletProcessor"><a class="self-link" href="#example-2e9052f7"></a><span class="kr">class</span> MyProcessor <span class="kr">extends</span> AudioWorkletProcessor <span class="p">{</span>
   <span class="kr">static</span> get parameterDescriptors<span class="p">()</span> <span class="p">{</span>
@@ -11428,10 +11472,10 @@ ANY of the following <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport=
 true:</p>
    <ol>
     <li data-md="">
-     <p>The associated <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③②">AudioWorkletProcessor</a></code>'s <a data-link-type="dfn" href="#active-source" id="ref-for-active-source③">active
+     <p>The associated <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⑥">AudioWorkletProcessor</a></code>'s <a data-link-type="dfn" href="#active-source" id="ref-for-active-source③">active
 source</a> flag is equal to <code>true</code>.</p>
     <li data-md="">
-     <p>There are one or more connected inputs to the <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③①">AudioWorkletNode</a></code>.</p>
+     <p>There are one or more connected inputs to the <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③②">AudioWorkletNode</a></code>.</p>
    </ol>
    <p>The method is invoked with the following arguments:</p>
    <dl>
@@ -11457,9 +11501,10 @@ output.</p>
      <p>A map of string keys and associated <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-Float32Array" id="ref-for-idl-Float32Array②⑤">Float32Array</a></code>s. <code>parameters["name"]</code> corresponds to the automation
 values of the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⓪">AudioParam</a></code> named <code>"name"</code>.</p>
    </dl>
-   <p>The return value of this method controls the lifetime of the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③③">AudioWorkletProcessor</a></code>'s associated <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③②">AudioWorkletNode</a></code>. At the conclusion of each call to the <code>process()</code> method, <a href="https://tc39.github.io/ecma262/#sec-toboolean"><code>ToBoolean</code></a> (described in <a data-link-type="biblio" href="#biblio-ecmascript">[ECMASCRIPT]</a>)
+   <p>The return value of this method controls the lifetime of the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⑦">AudioWorkletProcessor</a></code>'s associated <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③③">AudioWorkletNode</a></code>. At the conclusion of each call to the <code>process()</code> method, <a href="https://tc39.github.io/ecma262/#sec-toboolean"><code>ToBoolean</code></a> (described in <a data-link-type="biblio" href="#biblio-ecmascript">[ECMASCRIPT]</a>)
 is applied to the return value and the result is assigned to the associated AudioWorkletProcessor’s <a data-link-type="dfn" href="#active-source" id="ref-for-active-source④">active source</a> flag. This in turn affects whether subsequent
-invocations of <code>process()</code> occur, and has an impact on the lifetime of the node. The flag change is propagated by <a href="#queue">queueing a task</a> on the control thread to update the corresponding <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③③">AudioWorkletNode</a></code>'s <code>state</code> property accordingly.</p>
+invocations of <code>process()</code> occur, and has an impact on the lifetime of the node. 
+To propagate the flag change <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-task" id="ref-for-queue-a-task">queue a task</a> on the control thread to update the corresponding <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③④">AudioWorkletNode</a></code>'s <code>state</code> property accordingly.</p>
    <div class="note" role="note">
      This lifetime policy can support a variety of approaches found in
 	built-in nodes, including the following: 
@@ -11485,17 +11530,17 @@ longer producing an output.</p>
     <p>Note that the preceding definition implies that when no
 	return value is provided from an implementation of <code>process()</code>, the effect is identical to returning <code>false</code> (since the effective return value is the falsy
 	value <code>undefined</code>). This is a reasonable behavior for
-	any <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③④">AudioWorkletProcessor</a></code> that is active only when it has
+	any <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⑧">AudioWorkletProcessor</a></code> that is active only when it has
 	active inputs.</p>
    </div>
    <p>If <code>process()</code> is not called during some rendering
 quantum due to the lack of any applicable <a data-link-type="dfn" href="#active-processing-conditions" id="ref-for-active-processing-conditions">active processing
 conditions</a>, the result is is as if the processor emitted
 silence for this period.</p>
-   <h5 class="heading settled dfn-paneled idl-code" data-dfn-type="dictionary" data-export="" data-level="1.33.4.3" data-lt="AudioParamDescriptor" id="dictdef-audioparamdescriptor"><span class="secno">1.33.4.3. </span><span class="content"> <code class="idl"><a data-link-type="idl" href="#dictdef-audioparamdescriptor" id="ref-for-dictdef-audioparamdescriptor②">AudioParamDescriptor</a></code></span></h5>
+   <h5 class="heading settled dfn-paneled idl-code" data-dfn-type="dictionary" data-export="" data-level="1.33.4.4" data-lt="AudioParamDescriptor" id="dictdef-audioparamdescriptor"><span class="secno">1.33.4.4. </span><span class="content"> <code class="idl"><a data-link-type="idl" href="#dictdef-audioparamdescriptor" id="ref-for-dictdef-audioparamdescriptor②">AudioParamDescriptor</a></code></span></h5>
    <p>The <code class="idl"><a data-link-type="idl" href="#dictdef-audioparamdescriptor" id="ref-for-dictdef-audioparamdescriptor③">AudioParamDescriptor</a></code> dictionary is used to
 specify properties for an <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤①">AudioParam</a></code> object
-that is used in an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③④">AudioWorkletNode</a></code>.</p>
+that is used in an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑤">AudioWorkletNode</a></code>.</p>
 <pre class="idl highlight def"><span class="kt">dictionary</span> <a class="nv idl-code" data-link-type="dictionary" href="#dictdef-audioparamdescriptor" id="ref-for-dictdef-audioparamdescriptor④">AudioParamDescriptor</a> {
   <span class="kt">required</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString⑥"><span class="kt">DOMString</span></a> <a class="nv idl-code" data-link-type="dict-member" data-type="DOMString " href="#dom-audioparamdescriptor-name" id="ref-for-dom-audioparamdescriptor-name">name</a>;
   <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑨⑦"><span class="kt">float</span></a> <a class="nv idl-code" data-default="0" data-link-type="dict-member" data-type="float " href="#dom-audioparamdescriptor-defaultvalue" id="ref-for-dom-audioparamdescriptor-defaultvalue">defaultValue</a> = 0;
@@ -11503,7 +11548,7 @@ that is used in an <code class="idl"><a data-link-type="idl" href="#audioworklet
   <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑨⑨"><span class="kt">float</span></a> <a class="nv idl-code" data-default="3.4028235e38" data-link-type="dict-member" data-type="float " href="#dom-audioparamdescriptor-maxvalue" id="ref-for-dom-audioparamdescriptor-maxvalue">maxValue</a> = 3.4028235e38;
 };
 </pre>
-   <h6 class="heading settled" data-level="1.33.4.3.1" id="dictionary-audioparamdescriptor-members"><span class="secno">1.33.4.3.1. </span><span class="content"> Dictionary <code class="idl"><a data-link-type="idl" href="#dictdef-audioparamdescriptor" id="ref-for-dictdef-audioparamdescriptor⑤">AudioParamDescriptor</a></code> Members</span><a class="self-link" href="#dictionary-audioparamdescriptor-members"></a></h6>
+   <h6 class="heading settled" data-level="1.33.4.4.1" id="dictionary-audioparamdescriptor-members"><span class="secno">1.33.4.4.1. </span><span class="content"> Dictionary <code class="idl"><a data-link-type="idl" href="#dictdef-audioparamdescriptor" id="ref-for-dictdef-audioparamdescriptor⑤">AudioParamDescriptor</a></code> Members</span><a class="self-link" href="#dictionary-audioparamdescriptor-members"></a></h6>
    <dl>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioParamDescriptor" data-dfn-type="dict-member" data-export="" id="dom-audioparamdescriptor-defaultvalue"><code>defaultValue</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float①⓪⓪">float</a>, defaulting to <code>0</code></span>
     <dd data-md="">
@@ -11528,10 +11573,10 @@ negative finite single precision floating-point number.</p>
 a duplicated name is found when registering the class
 definition.</p>
    </dl>
-   <h4 class="heading settled" data-level="1.33.5" id="instantiation-of-AudioWorkletNode-and-AudioWorkletProcessor"><span class="secno">1.33.5. </span><span class="content"> The instantiation of <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑤">AudioWorkletNode</a></code> and <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⑤">AudioWorkletProcessor</a></code></span><a class="self-link" href="#instantiation-of-AudioWorkletNode-and-AudioWorkletProcessor"></a></h4>
-   <p>When the constructor of <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑥">AudioWorkletNode</a></code> is invoked in the
-main global scope, the corresponding <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⑥">AudioWorkletProcessor</a></code> instance is automatically created in <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①④">AudioWorkletGlobalScope</a></code>. After the construction, they
-maintain the internal reference to each other until the <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑦">AudioWorkletNode</a></code> instance is destroyed.</p>
+   <h4 class="heading settled" data-level="1.33.5" id="instantiation-of-AudioWorkletNode-and-AudioWorkletProcessor"><span class="secno">1.33.5. </span><span class="content"> The instantiation of <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑥">AudioWorkletNode</a></code> and <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⑨">AudioWorkletProcessor</a></code></span><a class="self-link" href="#instantiation-of-AudioWorkletNode-and-AudioWorkletProcessor"></a></h4>
+   <p>When the constructor of <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑦">AudioWorkletNode</a></code> is invoked in the
+main global scope, the corresponding <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⓪">AudioWorkletProcessor</a></code> instance is automatically created in <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①④">AudioWorkletGlobalScope</a></code>. After the construction, they
+maintain the internal reference to each other until the <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑧">AudioWorkletNode</a></code> instance is destroyed.</p>
    <p>Note that the instantiation of these two objects spans the control
 thread and the rendering thread.</p>
    <p>When <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode" id="ref-for-dom-audioworkletnode-audioworkletnode①">AudioWorkletNode</a></code>(<var>context</var>, <var>nodeName</var>, <var>options</var>) constructor is invoked,
@@ -11540,13 +11585,13 @@ thread, where the constructor was called.</p>
    <ol>
     <li data-md="">
      <p>Let <var>this</var> be the instance being created by
-constructor of <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑧">AudioWorkletNode</a></code> or its subclass.</p>
+constructor of <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑨">AudioWorkletNode</a></code> or its subclass.</p>
     <li data-md="">
      <p>If <var>nodeName</var> does not exists as a key in the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨⓪">BaseAudioContext</a></code>’s <a data-link-type="dfn" href="#node-name-to-parameter-descriptor-map" id="ref-for-node-name-to-parameter-descriptor-map①">node name to parameter descriptor
 map</a>, throw a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror③⑦">NotSupportedError</a></code> exception and abort
 these steps.</p>
     <li data-md="">
-     <p>Let <var>node</var> be a new <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑨">AudioWorkletNode</a></code> object.</p>
+     <p>Let <var>node</var> be a new <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⓪">AudioWorkletNode</a></code> object.</p>
     <li data-md="">
      <p>Let <var>messageChannel</var> be a new <a href="https://html.spec.whatwg.org/multipage/#message-channels">MessageChannel</a>.</p>
     <li data-md="">
@@ -11556,6 +11601,8 @@ these steps.</p>
     <li data-md="">
      <p>Let <var>processorPortSerialization</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserializewithtransfer"> StructuredSerializeWithTransfer</a>(<var>processorPortOnThisSide</var>,
 	« <var>processorPortOnThisSide</var> »).</p>
+    <li data-md="">
+     <p>Let <var>optionsSerialization</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserialize">StructuredSerialize</a>(<var>options</var>).</p>
     <li data-md="">
      <p>Set <var>node</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-port" id="ref-for-dom-audioworkletnode-port①">port</a></code> to <var>nodePort</var>.</p>
     <li data-md="">
@@ -11594,12 +11641,12 @@ the same name member.</p>
        <p>Set <var>node</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-parameters" id="ref-for-dom-audioworkletnode-parameters①">parameters</a></code> to <var>audioParamMap</var>.</p>
      </ol>
     <li data-md="">
-     <p><a data-link-type="dfn" href="#queuing" id="ref-for-queuing⑦">Queue a control message</a> to create an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⑦">AudioWorkletProcessor</a></code>, given <var>nodeName</var>, <var>processorPortSerialization</var>, and <var>node</var>.</p>
+     <p><a data-link-type="dfn" href="#queuing" id="ref-for-queuing⑦">Queue a control message</a> to create an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④①">AudioWorkletProcessor</a></code>, given <var>nodeName</var>, <var>processorPortSerialization</var>, <var>optionsSerialization</var>,  and <var>node</var>.</p>
     <li data-md="">
      <p>Return <var>node</var>.</p>
    </ol>
-   <p>In order to process a control message for the construction of an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⑧">AudioWorkletProcessor</a></code>, given a string <var>nodeName</var>, a
-serialization record <var>processorPortSerialization</var>, and an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⓪">AudioWorkletNode</a></code> <var>node</var>, perform the following
+   <p>In order to process a control message for the construction of an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④②">AudioWorkletProcessor</a></code>, given a string <var>nodeName</var>, a
+serialization record <var>processorPortSerialization</var>, and an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④①">AudioWorkletNode</a></code> <var>node</var>, perform the following
 steps on the <a data-link-type="dfn" href="#rendering-thread" id="ref-for-rendering-thread①⓪">rendering thread</a>. If any of these steps throws
 an exception (either explicitly or implicitly), abort the rest of
 steps and queue a task on the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread①④">control thread</a> to fire <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-onprocessorstatechange" id="ref-for-dom-audioworkletnode-onprocessorstatechange②">onprocessorstatechange</a></code> event to <var>node</var> with <code>error</code> state.</p>
@@ -11608,6 +11655,9 @@ steps and queue a task on the <a data-link-type="dfn" href="#control-thread" id=
      <p>Let <var>processorPort</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer"> StructuredDeserializeWithTransfer</a>(<var>processorPortSerialization</var>,
 the current Realm).</p>
     <li data-md="">
+     <p>Let <var>options</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer"> StructuredDeserialize</a>(<var>optionsSerialization</var>, the
+  current Realm).</p>
+    <li data-md="">
      <p>Let <var>processorConstructor</var> be the result of looking up <var>nodeName</var> on the <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑤">AudioWorkletGlobalScope</a></code>'s <a data-link-type="dfn" href="#node-name-to-processor-definition-map" id="ref-for-node-name-to-processor-definition-map④">node
 name to processor definition map</a>.</p>
     <li data-md="">
@@ -11615,9 +11665,9 @@ name to processor definition map</a>.</p>
 throw a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror③⑧">NotSupportedError</a></code> DOMException.</p>
     <li data-md="">
      <p>Let <var>processor</var> be the result of
-Construct(<var>processorConstructor</var>).</p>
+Construct(<var>processorConstructor</var>, « <var>options</var> »).</p>
     <li data-md="">
-     <p>If <var>processor</var> does not implement the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor③⑨">AudioWorkletProcessor</a></code> interface, throw an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror③②">InvalidStateError</a></code> DOMException.</p>
+     <p>If <var>processor</var> does not implement the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④③">AudioWorkletProcessor</a></code> interface, throw an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror③②">InvalidStateError</a></code> DOMException.</p>
     <li data-md="">
      <p>Set <var>processor</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletprocessor-port" id="ref-for-dom-audioworkletprocessor-port①">port</a></code> to <var>processorPort</var>.</p>
     <li data-md="">
@@ -11625,7 +11675,7 @@ Construct(<var>processorConstructor</var>).</p>
     <li data-md="">
      <p>Set <var>node</var>’s <a data-link-type="dfn" href="#processor-reference" id="ref-for-processor-reference">processor reference</a> to <var>processor</var>.</p>
     <li data-md="">
-     <p>Queue a task the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread①⑤">control thread</a> to set the associated <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④①">AudioWorkletNode</a></code>'s state to <code>running</code>, then fire
+     <p>Queue a task the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread①⑤">control thread</a> to set the associated <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④②">AudioWorkletNode</a></code>'s state to <code>running</code>, then fire
 a <code>statechange</code> event.</p>
    </ol>
    <h4 class="heading settled" data-level="1.33.6" id="AudioWorklet-Sequence"><span class="secno">1.33.6. </span><span class="content"> AudioWorklet Sequence of Events</span><a class="self-link" href="#AudioWorklet-Sequence"></a></h4>
@@ -11638,40 +11688,40 @@ occurring relative to an <code class="idl"><a data-link-type="idl" href="#audiow
    <p>The steps depicted in the diagram are one possible sequence of
 events involving the creation of an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①③">AudioContext</a></code> and an
 associated <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑥">AudioWorkletGlobalScope</a></code>, followed by the creation
-of an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④②">AudioWorkletNode</a></code> and its associated <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⓪">AudioWorkletProcessor</a></code>.</p>
+of an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④③">AudioWorkletNode</a></code> and its associated <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④④">AudioWorkletProcessor</a></code>.</p>
    <ol>
     <li data-md="">
      <p>An <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①④">AudioContext</a></code> is created.</p>
     <li data-md="">
      <p>In the main scope, <code>context.audioWorklet</code> is requested to add a script module.</p>
     <li data-md="">
-     <p>Since none exists yet, a new <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑦">AudioWorkletGlobalScope</a></code> is created in association with the context’sThis is the global scope in which <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④①">AudioWorkletProcessor</a></code> class definitions will be evaluated. (On subsequent calls, this previously created scope will be used.)</p>
+     <p>Since none exists yet, a new <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑦">AudioWorkletGlobalScope</a></code> is created in association with the context’sThis is the global scope in which <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑤">AudioWorkletProcessor</a></code> class definitions will be evaluated. (On subsequent calls, this previously created scope will be used.)</p>
     <li data-md="">
      <p>The imported script is run in the newly created global scope.</p>
     <li data-md="">
-     <p>As part of running the imported script, an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④②">AudioWorkletProcessor</a></code> is registered under
+     <p>As part of running the imported script, an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑥">AudioWorkletProcessor</a></code> is registered under
 a key (<code>"custom"</code> in the above diagram) within the <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑧">AudioWorkletGlobalScope</a></code>.
 This populates maps both in the global scope and in the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①⑤">AudioContext</a></code>.</p>
     <li data-md="">
      <p>The promise for the <code>addModule()</code> call is resolved.</p>
     <li data-md="">
-     <p>In the main scope, an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④③">AudioWorkletNode</a></code> is created using
+     <p>In the main scope, an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④④">AudioWorkletNode</a></code> is created using
 the user-specified key along with a
 dictionary of options.</p>
     <li data-md="">
      <p>As part of the node’s creation, this key is used to look up the
-correct <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④③">AudioWorkletProcessor</a></code> subclass for instantiation.</p>
+correct <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑦">AudioWorkletProcessor</a></code> subclass for instantiation.</p>
     <li data-md="">
-     <p>An instance of the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④④">AudioWorkletProcessor</a></code> subclass is
+     <p>An instance of the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑧">AudioWorkletProcessor</a></code> subclass is
 instantiated with a structured clone of the same options
-dictionary. This instance is paired with the previously created <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④④">AudioWorkletNode</a></code>.</p>
+dictionary. This instance is paired with the previously created <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⑤">AudioWorkletNode</a></code>.</p>
    </ol>
    <h4 class="heading settled" data-level="1.33.7" id="AudioWorklet-Examples"><span class="secno">1.33.7. </span><span class="content"> AudioWorklet Examples</span><a class="self-link" href="#AudioWorklet-Examples"></a></h4>
    <h5 class="heading settled" data-level="1.33.7.1" id="the-bitcrusher-node"><span class="secno">1.33.7.1. </span><span class="content"> The BitCrusher Node</span><a class="self-link" href="#the-bitcrusher-node"></a></h5>
    <p>Bitcrushing is a mechanism by which the quality of an audio
 stream is reduced both by quantizing the sample value (simulating
 a lower bit-depth), and by quantizing in time resolution
-(simulating a lower sample rate). This example shows how to use <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤④">AudioParam</a></code>s (in this case, treated as <a data-link-type="dfn" href="#a-rate" id="ref-for-a-rate②⑤">a-rate</a>) inside an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑤">AudioWorkletProcessor</a></code>.</p>
+(simulating a lower sample rate). This example shows how to use <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤④">AudioParam</a></code>s (in this case, treated as <a data-link-type="dfn" href="#a-rate" id="ref-for-a-rate②⑤">a-rate</a>) inside an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑨">AudioWorkletProcessor</a></code>.</p>
 <pre class="example highlight" id="example-927d8f8b" title="BitCrusher - Global Scope"><a class="self-link" href="#example-927d8f8b"></a><span class="kd">let</span> context <span class="o">=</span> <span class="k">new</span> AudioContext<span class="p">();</span>
 context<span class="p">.</span>audioWorklet<span class="p">.</span>addModule<span class="p">(</span><span class="s1">'bitcrusher.js'</span><span class="p">).</span>then<span class="p">(()</span> <span class="p">=></span> <span class="p">{</span>
   <span class="kd">let</span> context <span class="o">=</span> <span class="k">new</span> AudioContext<span class="p">();</span>
@@ -11740,15 +11790,15 @@ context<span class="p">.</span>audioWorklet<span class="p">.</span>addModule<spa
 
 <span class="p">});</span>
 </pre>
-   <p class="note" role="note"><span>Note:</span> In the definition of <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑥">AudioWorkletProcessor</a></code> class, an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror③③">InvalidStateError</a></code> will be thrown if the
+   <p class="note" role="note"><span>Note:</span> In the definition of <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor⑤⓪">AudioWorkletProcessor</a></code> class, an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror③③">InvalidStateError</a></code> will be thrown if the
 author-supplied constructor uses JavaScript’s return-override
 feature, or does not properly call <code>super()</code>.</p>
    <h5 class="heading settled" data-level="1.33.7.2" id="vu-meter-mode"><span class="secno">1.33.7.2. </span><span class="content"> VU Meter Node</span><a class="self-link" href="#vu-meter-mode"></a></h5>
    <p>This example of a simple sound level meter further illustrates
-how to create an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⑤">AudioWorkletNode</a></code> subclass
+how to create an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⑥">AudioWorkletNode</a></code> subclass
 that acts like a native <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑦⑤">AudioNode</a></code>, accepting
 constructor options and encapsulating the inter-thread
-communication (asynchronous) between <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⑥">AudioWorkletNode</a></code> and <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑦">AudioWorkletProcessor</a></code>. This node does not use any output.</p>
+communication (asynchronous) between <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⑦">AudioWorkletNode</a></code> and <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor⑤①">AudioWorkletProcessor</a></code>. This node does not use any output.</p>
 <pre class="example highlight" id="example-3cc6d691" title="VUMeterNode - Global Scope (vumeternode.js)"><a class="self-link" href="#example-3cc6d691"></a><span class="kr">class</span> VUMeterNode <span class="kr">extends</span> AudioWorkletNode <span class="p">{</span>
 
   constructor <span class="p">(</span>context<span class="p">,</span> options<span class="p">)</span> <span class="p">{</span>
@@ -12921,7 +12971,7 @@ consideration less important over time.</p>
 of the audio graph, notably:</p>
    <ul>
     <li data-md="">
-     <p>The <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⑦">AudioWorkletNode</a></code> can run a script that buffers
+     <p>The <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⑧">AudioWorkletNode</a></code> can run a script that buffers
 internally, adding delay to the signal path.</p>
     <li data-md="">
      <p>The <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①⑧">DelayNode</a></code>, whose role is to add controlled latency
@@ -13175,7 +13225,7 @@ James (Intel Corporation);</p>
    <li><a href="#acquire-the-content">acquire the content</a><span>, in §1.4.3</span>
    <li><a href="#acquire-the-content">acquire the contents of an AudioBuffer</a><span>, in §1.4.3</span>
    <li><a href="#acquiring">acquiring system resources</a><span>, in §1.1.7</span>
-   <li><a href="#active-processing-conditions">active processing conditions</a><span>, in §1.33.4.2</span>
+   <li><a href="#active-processing-conditions">active processing conditions</a><span>, in §1.33.4.3</span>
    <li><a href="#active-reference">active reference</a><span>, in §1.5.5</span>
    <li><a href="#active-source">active source</a><span>, in §1.33.3</span>
    <li><a href="#allowed-to-start">allowed to start</a><span>, in §1.2</span>
@@ -13213,7 +13263,7 @@ James (Intel Corporation);</p>
    <li><a href="#audionode">AudioNode</a><span>, in §1.4.4.1</span>
    <li><a href="#dictdef-audionodeoptions">AudioNodeOptions</a><span>, in §1.5.3</span>
    <li><a href="#AudioParam">AudioParam</a><span>, in §1.5.5</span>
-   <li><a href="#dictdef-audioparamdescriptor">AudioParamDescriptor</a><span>, in §1.33.4.2</span>
+   <li><a href="#dictdef-audioparamdescriptor">AudioParamDescriptor</a><span>, in §1.33.4.3</span>
    <li><a href="#audioparammap">AudioParamMap</a><span>, in §1.33.3</span>
    <li><a href="#audioprocessingevent">AudioProcessingEvent</a><span>, in §1.11.2</span>
    <li><a href="#dictdef-audioprocessingeventinit">AudioProcessingEventInit</a><span>, in §1.12.1</span>
@@ -13227,6 +13277,7 @@ James (Intel Corporation);</p>
    <li><a href="#dom-audioworkletnode-audioworkletnode">AudioWorkletNode(context, name, options)</a><span>, in §1.33.3.1</span>
    <li><a href="#dictdef-audioworkletnodeoptions">AudioWorkletNodeOptions</a><span>, in §1.33.3.2</span>
    <li><a href="#audioworkletprocessor">AudioWorkletProcessor</a><span>, in §1.33.3.3.2</span>
+   <li><a href="#dom-audioworkletprocessor-audioworkletprocessor">AudioWorkletProcessor(options)</a><span>, in §1.33.4.1</span>
    <li><a href="#enumdef-audioworkletprocessorstate">AudioWorkletProcessorState</a><span>, in §1.33.3</span>
    <li><a href="#dfn-automation-event">automation events</a><span>, in §1.6</span>
    <li><a href="#automation-event-time">automation event time</a><span>, in §1.6</span>
@@ -13403,7 +13454,7 @@ James (Intel Corporation);</p>
     defaultValue
     <ul>
      <li><a href="#dom-audioparam-defaultvalue">attribute for AudioParam</a><span>, in §1.6.1</span>
-     <li><a href="#dom-audioparamdescriptor-defaultvalue">dict-member for AudioParamDescriptor</a><span>, in §1.33.4.3.1</span>
+     <li><a href="#dom-audioparamdescriptor-defaultvalue">dict-member for AudioParamDescriptor</a><span>, in §1.33.4.4.1</span>
     </ul>
    <li><a href="#DelayNode">DelayNode</a><span>, in §1.17.4</span>
    <li><a href="#dom-delaynode-delaynode">DelayNode(context, options)</a><span>, in §1.18.1</span>
@@ -13588,7 +13639,7 @@ James (Intel Corporation);</p>
     maxValue
     <ul>
      <li><a href="#dom-audioparam-maxvalue">attribute for AudioParam</a><span>, in §1.6.1</span>
-     <li><a href="#dom-audioparamdescriptor-maxvalue">dict-member for AudioParamDescriptor</a><span>, in §1.33.4.3.1</span>
+     <li><a href="#dom-audioparamdescriptor-maxvalue">dict-member for AudioParamDescriptor</a><span>, in §1.33.4.4.1</span>
     </ul>
    <li>
     mediaElement
@@ -13624,12 +13675,12 @@ James (Intel Corporation);</p>
     minValue
     <ul>
      <li><a href="#dom-audioparam-minvalue">attribute for AudioParam</a><span>, in §1.6.1</span>
-     <li><a href="#dom-audioparamdescriptor-minvalue">dict-member for AudioParamDescriptor</a><span>, in §1.33.4.3.1</span>
+     <li><a href="#dom-audioparamdescriptor-minvalue">dict-member for AudioParamDescriptor</a><span>, in §1.33.4.4.1</span>
     </ul>
    <li><a href="#most-negative-single-float">most-negative-single-float</a><span>, in §1.6</span>
    <li><a href="#most-positive-single-float">most-positive-single-float</a><span>, in §1.6</span>
    <li><a href="#mute">Muting</a><span>, in §2.4</span>
-   <li><a href="#dom-audioparamdescriptor-name">name</a><span>, in §1.33.4.3.1</span>
+   <li><a href="#dom-audioparamdescriptor-name">name</a><span>, in §1.33.4.4.1</span>
    <li><a href="#node-name-to-parameter-descriptor-map">node name to parameter descriptor map</a><span>, in §1.33.1</span>
    <li><a href="#node-name-to-processor-definition-map">node name to processor definition map</a><span>, in §1.33.1</span>
    <li><a href="#node-reference">node reference</a><span>, in §1.33.4</span>
@@ -13735,7 +13786,7 @@ James (Intel Corporation);</p>
     </ul>
    <li><a href="#enumdef-panningmodeltype">PanningModelType</a><span>, in §1.28</span>
    <li><a href="#dom-audioworkletnodeoptions-parameterdata">parameterData</a><span>, in §1.33.3.3.1</span>
-   <li><a href="#parameterdescriptors">parameterDescriptors</a><span>, in §1.33.4.2</span>
+   <li><a href="#parameterdescriptors">parameterDescriptors</a><span>, in §1.33.4.3</span>
    <li><a href="#dom-audioworkletnode-parameters">parameters</a><span>, in §1.33.3.2</span>
    <li><a href="#dom-biquadfiltertype-peaking">peaking</a><span>, in §1.13</span>
    <li><a href="#dom-audioworkletprocessorstate-pending">pending</a><span>, in §1.33.3</span>
@@ -13764,7 +13815,7 @@ James (Intel Corporation);</p>
     port
     <ul>
      <li><a href="#dom-audioworkletnode-port">attribute for AudioWorkletNode</a><span>, in §1.33.3.2</span>
-     <li><a href="#dom-audioworkletprocessor-port">attribute for AudioWorkletProcessor</a><span>, in §1.33.4.1</span>
+     <li><a href="#dom-audioworkletprocessor-port">attribute for AudioWorkletProcessor</a><span>, in §1.33.4.2</span>
     </ul>
    <li>
     positionX
@@ -13968,6 +14019,8 @@ James (Intel Corporation);</p>
      <li><a href="https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement">HTMLMediaElement</a>
      <li><a href="https://html.spec.whatwg.org/multipage/web-messaging.html#messageport">MessagePort</a>
      <li><a href="https://html.spec.whatwg.org/multipage/media.html#audio">audio</a>
+     <li><a href="https://html.spec.whatwg.org/multipage/webappapis.html#queue-a-task">queue a task</a>
+     <li><a href="https://html.spec.whatwg.org/multipage/interaction.html#triggered-by-user-activation">triggered by user activation</a>
      <li><a href="https://html.spec.whatwg.org/multipage/media.html#video">video</a>
     </ul>
    <li>
@@ -14079,9 +14132,9 @@ James (Intel Corporation);</p>
                                         <span class="kt">optional</span> <a class="n" data-link-type="idl-name" href="#callback-decodeerrorcallback-parameters" id="ref-for-callback-decodeerrorcallback-parameters①①">DecodeErrorCallback</a> <a class="nv" href="#dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-errorcallback"><code>errorCallback</code></a>);
   <a class="n" data-link-type="idl-name" href="#AudioBufferSourceNode" id="ref-for-AudioBufferSourceNode①①⓪">AudioBufferSourceNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createbuffersource" id="ref-for-dom-baseaudiocontext-createbuffersource①">createBufferSource</a> ();
   <a class="n" data-link-type="idl-name" href="#ConstantSourceNode" id="ref-for-ConstantSourceNode①①">ConstantSourceNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createconstantsource" id="ref-for-dom-baseaudiocontext-createconstantsource①">createConstantSource</a> ();
-  <a class="n" data-link-type="idl-name" href="#scriptprocessornode" id="ref-for-scriptprocessornode②①">ScriptProcessorNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createscriptprocessor" id="ref-for-dom-baseaudiocontext-createscriptprocessor③">createScriptProcessor</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long②①⓪"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">bufferSize</a> = 0,
-                                            <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long③①⓪"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">numberOfInputChannels</a> = 2,
-                                            <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long④①⓪"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">numberOfOutputChannels</a> = 2);
+  <a class="n" data-link-type="idl-name" href="#scriptprocessornode" id="ref-for-scriptprocessornode②①">ScriptProcessorNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createscriptprocessor" id="ref-for-dom-baseaudiocontext-createscriptprocessor③">createScriptProcessor</a>(<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long②①⓪"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize②">bufferSize</a> = 0,
+                                            <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long③①⓪"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels⑥">numberOfInputChannels</a> = 2,
+                                            <span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long④①⓪"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels" id="ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels⑤">numberOfOutputChannels</a> = 2);
   <a class="n" data-link-type="idl-name" href="#analysernode" id="ref-for-analysernode①⑥">AnalyserNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createanalyser" id="ref-for-dom-baseaudiocontext-createanalyser①">createAnalyser</a> ();
   <a class="n" data-link-type="idl-name" href="#gainnode" id="ref-for-gainnode①⑤">GainNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-creategain" id="ref-for-dom-baseaudiocontext-creategain①">createGain</a> ();
   <a class="n" data-link-type="idl-name" href="#DelayNode" id="ref-for-DelayNode①⑨">DelayNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createdelay" id="ref-for-dom-baseaudiocontext-createdelay③">createDelay</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①①⓪"><span class="kt">double</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime" id="ref-for-dom-baseaudiocontext-createdelay-maxdelaytime-maxdelaytime②">maxDelayTime</a> = 1.0);
@@ -14091,8 +14144,8 @@ James (Intel Corporation);</p>
   <a class="n" data-link-type="idl-name" href="#pannernode" id="ref-for-pannernode②⑥">PannerNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createpanner" id="ref-for-dom-baseaudiocontext-createpanner①">createPanner</a> ();
   <a class="n" data-link-type="idl-name" href="#stereopannernode" id="ref-for-stereopannernode①⑤">StereoPannerNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createstereopanner" id="ref-for-dom-baseaudiocontext-createstereopanner①">createStereoPanner</a> ();
   <a class="n" data-link-type="idl-name" href="#ConvolverNode" id="ref-for-ConvolverNode①①⓪">ConvolverNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createconvolver" id="ref-for-dom-baseaudiocontext-createconvolver①">createConvolver</a> ();
-  <a class="n" data-link-type="idl-name" href="#channelsplitternode" id="ref-for-channelsplitternode①①⓪">ChannelSplitterNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelsplitter" id="ref-for-dom-baseaudiocontext-createchannelsplitter④">createChannelSplitter</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤①⓪"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">numberOfOutputs</a> = 6);
-  <a class="n" data-link-type="idl-name" href="#channelmergernode" id="ref-for-channelmergernode①⑦">ChannelMergerNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelmerger" id="ref-for-dom-baseaudiocontext-createchannelmerger③">createChannelMerger</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑥②"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument">numberOfInputs</a> = 6);
+  <a class="n" data-link-type="idl-name" href="#channelsplitternode" id="ref-for-channelsplitternode①①⓪">ChannelSplitterNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelsplitter" id="ref-for-dom-baseaudiocontext-createchannelsplitter④">createChannelSplitter</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤①⓪"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createchannelsplitter-numberofoutputs-numberofoutputs" id="ref-for-dom-baseaudiocontext-createchannelsplitter-numberofoutputs-numberofoutputs①">numberOfOutputs</a> = 6);
+  <a class="n" data-link-type="idl-name" href="#channelmergernode" id="ref-for-channelmergernode①⑦">ChannelMergerNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createchannelmerger" id="ref-for-dom-baseaudiocontext-createchannelmerger③">createChannelMerger</a> (<span class="kt">optional</span> <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑥②"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-link-type="argument" href="#dom-baseaudiocontext-createchannelmerger-numberofinputs-numberofinputs" id="ref-for-dom-baseaudiocontext-createchannelmerger-numberofinputs-numberofinputs①">numberOfInputs</a> = 6);
   <a class="n" data-link-type="idl-name" href="#dynamicscompressornode" id="ref-for-dynamicscompressornode①①⓪">DynamicsCompressorNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createdynamicscompressor" id="ref-for-dom-baseaudiocontext-createdynamicscompressor①">createDynamicsCompressor</a> ();
   <a class="n" data-link-type="idl-name" href="#oscillatornode" id="ref-for-oscillatornode②①">OscillatorNode</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createoscillator" id="ref-for-dom-baseaudiocontext-createoscillator①">createOscillator</a> ();
   <a class="n" data-link-type="idl-name" href="#periodicwave" id="ref-for-periodicwave①①⓪">PeriodicWave</a> <a class="nv idl-code" data-link-type="method" href="#dom-baseaudiocontext-createperiodicwave" id="ref-for-dom-baseaudiocontext-createperiodicwave④">createPeriodicWave</a> (<span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float②①⓪"><span class="kt">float</span></a>> <a class="nv" href="#dom-baseaudiocontext-createperiodicwave-real-imag-constraints-real"><code>real</code></a>, <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float③①⓪"><span class="kt">float</span></a>> <a class="nv" href="#dom-baseaudiocontext-createperiodicwave-real-imag-constraints-imag"><code>imag</code></a>, <span class="kt">optional</span> <a class="n" data-link-type="idl-name" href="#dictdef-periodicwaveconstraints" id="ref-for-dictdef-periodicwaveconstraints⑦">PeriodicWaveConstraints</a> <a class="nv" href="#dom-baseaudiocontext-createperiodicwave-real-imag-constraints-constraints"><code>constraints</code></a>);
@@ -14363,7 +14416,7 @@ James (Intel Corporation);</p>
 };
 
 <span class="kt">dictionary</span> <a class="nv idl-code" data-link-type="dictionary" href="#dictdef-channelsplitteroptions" id="ref-for-dictdef-channelsplitteroptions①①">ChannelSplitterOptions</a> : <a class="n" data-link-type="idl-name" href="#dictdef-audionodeoptions" id="ref-for-dictdef-audionodeoptions⑥①">AudioNodeOptions</a> {
-  <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤④①"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-default="6" data-link-type="dict-member" data-type="unsigned long " href="#dom-channelsplitteroptions-numberofoutputs" id="ref-for-dom-channelsplitteroptions-numberofoutputs①">numberOfOutputs</a> = 6;
+  <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long⑤④①"><span class="kt">unsigned</span> <span class="kt">long</span></a> <a class="nv idl-code" data-default="6" data-link-type="dict-member" data-type="unsigned long " href="#dom-channelsplitteroptions-numberofoutputs" id="ref-for-dom-channelsplitteroptions-numberofoutputs①①">numberOfOutputs</a> = 6;
 };
 
 [<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed②③①">Exposed</a>=<span class="n">Window</span>,
@@ -14636,7 +14689,8 @@ James (Intel Corporation);</p>
   <a class="n" data-link-type="idl-name">Object</a> <a class="nv idl-code" data-default="null" data-link-type="dict-member" data-type="Object " href="#dom-audioworkletnodeoptions-processoroptions" id="ref-for-dom-audioworkletnodeoptions-processoroptions①">processorOptions</a> = <span class="kt">null</span>;
 };
 
-[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed④③①">Exposed</a>=<span class="n">AudioWorklet</span>]
+[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed④③①">Exposed</a>=<span class="n">AudioWorklet</span>,
+<a class="nv idl-code" data-link-type="constructor" href="#dom-audioworkletprocessor-audioworkletprocessor" id="ref-for-dom-audioworkletprocessor-audioworkletprocessor①">Constructor</a> (<span class="kt">optional</span> <a class="n" data-link-type="idl-name">AudioWorkletOptions</a> <a class="nv" href="#dom-audioworkletprocessor-audioworkletprocessor-options-options"><code>options</code></a>)]
 <span class="kt">interface</span> <a class="nv idl-code" data-link-type="interface" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor②⑤①">AudioWorkletProcessor</a> {
   <span class="kt">readonly</span> <span class="kt">attribute</span> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/web-messaging.html#messageport" id="ref-for-messageport②①">MessagePort</a> <a class="nv idl-code" data-link-type="attribute" data-readonly="" data-type="MessagePort" href="#dom-audioworkletprocessor-port" id="ref-for-dom-audioworkletprocessor-port②">port</a>;
 };
@@ -14836,6 +14890,13 @@ The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
 Control thread and rendering thread</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata">
+   <b><a href="#dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata">#dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata">1.1.2. 
+Methods</a> <a href="#ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata①">(2)</a> <a href="#ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata②">(3)</a> <a href="#ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata-successcallback-errorcallback-audiodata③">(4)</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="dom-baseaudiocontext-audioworklet">
    <b><a href="#dom-baseaudiocontext-audioworklet">#dom-baseaudiocontext-audioworklet</a></b><b>Referenced in:</b>
    <ul>
@@ -14989,6 +15050,13 @@ Methods</a>
 The ChannelMergerNode Interface</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createchannelmerger-numberofinputs-numberofinputs">
+   <b><a href="#dom-baseaudiocontext-createchannelmerger-numberofinputs-numberofinputs">#dom-baseaudiocontext-createchannelmerger-numberofinputs-numberofinputs</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-baseaudiocontext-createchannelmerger-numberofinputs-numberofinputs">1.1. 
+The BaseAudioContext Interface</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="dom-baseaudiocontext-createchannelsplitter">
    <b><a href="#dom-baseaudiocontext-createchannelsplitter">#dom-baseaudiocontext-createchannelsplitter</a></b><b>Referenced in:</b>
    <ul>
@@ -14998,6 +15066,13 @@ The BaseAudioContext Interface</a>
 Methods</a>
     <li><a href="#ref-for-dom-baseaudiocontext-createchannelsplitter②">1.15. 
 The ChannelSplitterNode Interface</a> <a href="#ref-for-dom-baseaudiocontext-createchannelsplitter③">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createchannelsplitter-numberofoutputs-numberofoutputs">
+   <b><a href="#dom-baseaudiocontext-createchannelsplitter-numberofoutputs-numberofoutputs">#dom-baseaudiocontext-createchannelsplitter-numberofoutputs-numberofoutputs</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-baseaudiocontext-createchannelsplitter-numberofoutputs-numberofoutputs">1.1. 
+The BaseAudioContext Interface</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-baseaudiocontext-createconstantsource">
@@ -15097,29 +15172,35 @@ Methods</a>
 The ScriptProcessorNode Interface - DEPRECATED</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createscriptprocessor-buffersize">
-   <b><a href="#dom-baseaudiocontext-createscriptprocessor-buffersize">#dom-baseaudiocontext-createscriptprocessor-buffersize</a></b><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize">
+   <b><a href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize">#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize">1.1.2. 
+    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize">1.1. 
+The BaseAudioContext Interface</a>
+    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-buffersize①">1.1.2. 
 Methods</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createscriptprocessor-numberofinputchannels">
-   <b><a href="#dom-baseaudiocontext-createscriptprocessor-numberofinputchannels">#dom-baseaudiocontext-createscriptprocessor-numberofinputchannels</a></b><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels">
+   <b><a href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels">#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels">1.1.2. 
-Methods</a> <a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels①">(2)</a>
-    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels②">1.30. 
-The ScriptProcessorNode Interface - DEPRECATED</a> <a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-numberofinputchannels③">(2)</a>
+    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels">1.1. 
+The BaseAudioContext Interface</a>
+    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels①">1.1.2. 
+Methods</a> <a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels②">(2)</a>
+    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels③">1.30. 
+The ScriptProcessorNode Interface - DEPRECATED</a> <a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels④">(2)</a> <a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofinputchannels⑤">(3)</a>
    </ul>
   </aside>
-  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels">
-   <b><a href="#dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels">#dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels</a></b><b>Referenced in:</b>
+  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels">
+   <b><a href="#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels">#dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels">1.1.2. 
-Methods</a> <a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels①">(2)</a>
-    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels②">1.30. 
-The ScriptProcessorNode Interface - DEPRECATED</a> <a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-numberofoutputchannels③">(2)</a>
+    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels">1.1. 
+The BaseAudioContext Interface</a>
+    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels①">1.1.2. 
+Methods</a> <a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels②">(2)</a>
+    <li><a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels③">1.30. 
+The ScriptProcessorNode Interface - DEPRECATED</a> <a href="#ref-for-dom-baseaudiocontext-createscriptprocessor-buffersize-numberofinputchannels-numberofoutputchannels-numberofoutputchannels④">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-baseaudiocontext-createstereopanner">
@@ -15143,13 +15224,6 @@ The BaseAudioContext Interface</a>
 The BaseAudioContext Interface</a> <a href="#ref-for-dom-baseaudiocontext-decodeaudiodata①">(2)</a>
     <li><a href="#ref-for-dom-baseaudiocontext-decodeaudiodata②">1.1.2. 
 Methods</a> <a href="#ref-for-dom-baseaudiocontext-decodeaudiodata③">(2)</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="dom-baseaudiocontext-decodeaudiodata-audiodata">
-   <b><a href="#dom-baseaudiocontext-decodeaudiodata-audiodata">#dom-baseaudiocontext-decodeaudiodata-audiodata</a></b><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata">1.1.2. 
-Methods</a> <a href="#ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata①">(2)</a> <a href="#ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata②">(3)</a> <a href="#ref-for-dom-baseaudiocontext-decodeaudiodata-audiodata③">(4)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-baseaudiocontext-decodeaudiodata-successcallback">
@@ -16171,7 +16245,7 @@ Dictionary AudioNodeOptions Members</a>
 AudioNode Creation</a> <a href="#ref-for-computednumberofchannels①">(2)</a> <a href="#ref-for-computednumberofchannels②">(3)</a> <a href="#ref-for-computednumberofchannels③">(4)</a>
     <li><a href="#ref-for-computednumberofchannels④">1.33.3.3.2. 
 Configuring Channels with AudioWorkletNodeOptions</a>
-    <li><a href="#ref-for-computednumberofchannels⑤">1.33.4.2. 
+    <li><a href="#ref-for-computednumberofchannels⑤">1.33.4.3. 
 Defining A Valid AudioWorkletProcessor</a> <a href="#ref-for-computednumberofchannels⑥">(2)</a>
     <li><a href="#ref-for-computednumberofchannels⑦">5. 
 Channel up-mixing and down-mixing</a> <a href="#ref-for-computednumberofchannels⑧">(2)</a> <a href="#ref-for-computednumberofchannels⑨">(3)</a>
@@ -16959,7 +17033,7 @@ The StereoPannerNode Interface</a>
 The WaveShaperNode Interface</a> <a href="#ref-for-tail-time②③">(2)</a> <a href="#ref-for-tail-time②④">(3)</a>
     <li><a href="#ref-for-tail-time②⑤">1.33.3. 
 The AudioWorkletNode Interface</a> <a href="#ref-for-tail-time②⑥">(2)</a>
-    <li><a href="#ref-for-tail-time②⑦">1.33.4.2. 
+    <li><a href="#ref-for-tail-time②⑦">1.33.4.3. 
 Defining A Valid AudioWorkletProcessor</a>
    </ul>
   </aside>
@@ -17043,9 +17117,9 @@ Attributes</a>
 AudioWorkletNodeOptions</a>
     <li><a href="#ref-for-AudioParam①④⑦">1.33.3.3.1. 
 Dictionary AudioWorkletNodeOptions Members</a> <a href="#ref-for-AudioParam①④⑧">(2)</a>
-    <li><a href="#ref-for-AudioParam①④⑨">1.33.4.2. 
+    <li><a href="#ref-for-AudioParam①④⑨">1.33.4.3. 
 Defining A Valid AudioWorkletProcessor</a> <a href="#ref-for-AudioParam①⑤⓪">(2)</a>
-    <li><a href="#ref-for-AudioParam①⑤①">1.33.4.3. 
+    <li><a href="#ref-for-AudioParam①⑤①">1.33.4.4. 
 AudioParamDescriptor</a>
     <li><a href="#ref-for-AudioParam①⑤②">1.33.5. 
 The instantiation of AudioWorkletNode and AudioWorkletProcessor</a> <a href="#ref-for-AudioParam①⑤③">(2)</a>
@@ -18541,7 +18615,9 @@ Dictionary ChannelSplitterOptions Members</a>
   <aside class="dfn-panel" data-for="dom-channelsplitteroptions-numberofoutputs">
    <b><a href="#dom-channelsplitteroptions-numberofoutputs">#dom-channelsplitteroptions-numberofoutputs</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-channelsplitteroptions-numberofoutputs">1.15.2. 
+    <li><a href="#ref-for-dom-channelsplitteroptions-numberofoutputs">1.15. 
+The ChannelSplitterNode Interface</a>
+    <li><a href="#ref-for-dom-channelsplitteroptions-numberofoutputs①">1.15.2. 
 ChannelSplitterOptions</a>
    </ul>
   </aside>
@@ -20250,7 +20326,7 @@ AudioWorklet Sequence of Events</a> <a href="#ref-for-audioworkletglobalscope①
    <ul>
     <li><a href="#ref-for-dom-audioworkletglobalscope-currenttime">1.33.2. 
 The AudioWorkletGlobalScope Interface</a>
-    <li><a href="#ref-for-dom-audioworkletglobalscope-currenttime①">1.33.4.2. 
+    <li><a href="#ref-for-dom-audioworkletglobalscope-currenttime①">1.33.4.3. 
 Defining A Valid AudioWorkletProcessor</a>
    </ul>
   </aside>
@@ -20270,7 +20346,7 @@ Concepts</a>
 The AudioWorkletGlobalScope Interface</a> <a href="#ref-for-dom-audioworkletglobalscope-registerprocessor②">(2)</a>
     <li><a href="#ref-for-dom-audioworkletglobalscope-registerprocessor③">1.33.2.2. 
 Methods</a> <a href="#ref-for-dom-audioworkletglobalscope-registerprocessor④">(2)</a>
-    <li><a href="#ref-for-dom-audioworkletglobalscope-registerprocessor⑤">1.33.4.2. 
+    <li><a href="#ref-for-dom-audioworkletglobalscope-registerprocessor⑤">1.33.4.3. 
 Defining A Valid AudioWorkletProcessor</a>
    </ul>
   </aside>
@@ -20325,18 +20401,20 @@ Dictionary AudioWorkletNodeOptions Members</a> <a href="#ref-for-audioworkletnod
     <li><a href="#ref-for-audioworkletnode②⑨">1.33.4. 
 The AudioWorkletProcessor Interface</a>
     <li><a href="#ref-for-audioworkletnode③⓪">1.33.4.1. 
-Attributes</a>
+Constructors</a>
     <li><a href="#ref-for-audioworkletnode③①">1.33.4.2. 
-Defining A Valid AudioWorkletProcessor</a> <a href="#ref-for-audioworkletnode③②">(2)</a> <a href="#ref-for-audioworkletnode③③">(3)</a>
-    <li><a href="#ref-for-audioworkletnode③④">1.33.4.3. 
+Attributes</a>
+    <li><a href="#ref-for-audioworkletnode③②">1.33.4.3. 
+Defining A Valid AudioWorkletProcessor</a> <a href="#ref-for-audioworkletnode③③">(2)</a> <a href="#ref-for-audioworkletnode③④">(3)</a>
+    <li><a href="#ref-for-audioworkletnode③⑤">1.33.4.4. 
 AudioParamDescriptor</a>
-    <li><a href="#ref-for-audioworkletnode③⑤">1.33.5. 
-The instantiation of AudioWorkletNode and AudioWorkletProcessor</a> <a href="#ref-for-audioworkletnode③⑥">(2)</a> <a href="#ref-for-audioworkletnode③⑦">(3)</a> <a href="#ref-for-audioworkletnode③⑧">(4)</a> <a href="#ref-for-audioworkletnode③⑨">(5)</a> <a href="#ref-for-audioworkletnode④⓪">(6)</a> <a href="#ref-for-audioworkletnode④①">(7)</a>
-    <li><a href="#ref-for-audioworkletnode④②">1.33.6. 
-AudioWorklet Sequence of Events</a> <a href="#ref-for-audioworkletnode④③">(2)</a> <a href="#ref-for-audioworkletnode④④">(3)</a>
-    <li><a href="#ref-for-audioworkletnode④⑤">1.33.7.2. 
-VU Meter Node</a> <a href="#ref-for-audioworkletnode④⑥">(2)</a>
-    <li><a href="#ref-for-audioworkletnode④⑦">8.1. 
+    <li><a href="#ref-for-audioworkletnode③⑥">1.33.5. 
+The instantiation of AudioWorkletNode and AudioWorkletProcessor</a> <a href="#ref-for-audioworkletnode③⑦">(2)</a> <a href="#ref-for-audioworkletnode③⑧">(3)</a> <a href="#ref-for-audioworkletnode③⑨">(4)</a> <a href="#ref-for-audioworkletnode④⓪">(5)</a> <a href="#ref-for-audioworkletnode④①">(6)</a> <a href="#ref-for-audioworkletnode④②">(7)</a>
+    <li><a href="#ref-for-audioworkletnode④③">1.33.6. 
+AudioWorklet Sequence of Events</a> <a href="#ref-for-audioworkletnode④④">(2)</a> <a href="#ref-for-audioworkletnode④⑤">(3)</a>
+    <li><a href="#ref-for-audioworkletnode④⑥">1.33.7.2. 
+VU Meter Node</a> <a href="#ref-for-audioworkletnode④⑦">(2)</a>
+    <li><a href="#ref-for-audioworkletnode④⑧">8.1. 
 Latency</a>
    </ul>
   </aside>
@@ -20354,7 +20432,7 @@ The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
 The AudioWorkletNode Interface</a> <a href="#ref-for-active-source①">(2)</a>
     <li><a href="#ref-for-active-source②">1.33.3.2. 
 Attributes</a>
-    <li><a href="#ref-for-active-source③">1.33.4.2. 
+    <li><a href="#ref-for-active-source③">1.33.4.3. 
 Defining A Valid AudioWorkletProcessor</a> <a href="#ref-for-active-source④">(2)</a>
    </ul>
   </aside>
@@ -20534,16 +20612,18 @@ Dictionary AudioWorkletNodeOptions Members</a>
     <li><a href="#ref-for-audioworkletprocessor②②">1.33.4. 
 The AudioWorkletProcessor Interface</a> <a href="#ref-for-audioworkletprocessor②③">(2)</a> <a href="#ref-for-audioworkletprocessor②④">(3)</a> <a href="#ref-for-audioworkletprocessor②⑤">(4)</a>
     <li><a href="#ref-for-audioworkletprocessor②⑥">1.33.4.1. 
-Attributes</a> <a href="#ref-for-audioworkletprocessor②⑦">(2)</a> <a href="#ref-for-audioworkletprocessor②⑧">(3)</a>
-    <li><a href="#ref-for-audioworkletprocessor②⑨">1.33.4.2. 
-Defining A Valid AudioWorkletProcessor</a> <a href="#ref-for-audioworkletprocessor③⓪">(2)</a> <a href="#ref-for-audioworkletprocessor③①">(3)</a> <a href="#ref-for-audioworkletprocessor③②">(4)</a> <a href="#ref-for-audioworkletprocessor③③">(5)</a> <a href="#ref-for-audioworkletprocessor③④">(6)</a>
-    <li><a href="#ref-for-audioworkletprocessor③⑤">1.33.5. 
-The instantiation of AudioWorkletNode and AudioWorkletProcessor</a> <a href="#ref-for-audioworkletprocessor③⑥">(2)</a> <a href="#ref-for-audioworkletprocessor③⑦">(3)</a> <a href="#ref-for-audioworkletprocessor③⑧">(4)</a> <a href="#ref-for-audioworkletprocessor③⑨">(5)</a>
-    <li><a href="#ref-for-audioworkletprocessor④⓪">1.33.6. 
-AudioWorklet Sequence of Events</a> <a href="#ref-for-audioworkletprocessor④①">(2)</a> <a href="#ref-for-audioworkletprocessor④②">(3)</a> <a href="#ref-for-audioworkletprocessor④③">(4)</a> <a href="#ref-for-audioworkletprocessor④④">(5)</a>
-    <li><a href="#ref-for-audioworkletprocessor④⑤">1.33.7.1. 
-The BitCrusher Node</a> <a href="#ref-for-audioworkletprocessor④⑥">(2)</a>
-    <li><a href="#ref-for-audioworkletprocessor④⑦">1.33.7.2. 
+Constructors</a> <a href="#ref-for-audioworkletprocessor②⑦">(2)</a> <a href="#ref-for-audioworkletprocessor②⑧">(3)</a> <a href="#ref-for-audioworkletprocessor②⑨">(4)</a>
+    <li><a href="#ref-for-audioworkletprocessor③⓪">1.33.4.2. 
+Attributes</a> <a href="#ref-for-audioworkletprocessor③①">(2)</a> <a href="#ref-for-audioworkletprocessor③②">(3)</a>
+    <li><a href="#ref-for-audioworkletprocessor③③">1.33.4.3. 
+Defining A Valid AudioWorkletProcessor</a> <a href="#ref-for-audioworkletprocessor③④">(2)</a> <a href="#ref-for-audioworkletprocessor③⑤">(3)</a> <a href="#ref-for-audioworkletprocessor③⑥">(4)</a> <a href="#ref-for-audioworkletprocessor③⑦">(5)</a> <a href="#ref-for-audioworkletprocessor③⑧">(6)</a>
+    <li><a href="#ref-for-audioworkletprocessor③⑨">1.33.5. 
+The instantiation of AudioWorkletNode and AudioWorkletProcessor</a> <a href="#ref-for-audioworkletprocessor④⓪">(2)</a> <a href="#ref-for-audioworkletprocessor④①">(3)</a> <a href="#ref-for-audioworkletprocessor④②">(4)</a> <a href="#ref-for-audioworkletprocessor④③">(5)</a>
+    <li><a href="#ref-for-audioworkletprocessor④④">1.33.6. 
+AudioWorklet Sequence of Events</a> <a href="#ref-for-audioworkletprocessor④⑤">(2)</a> <a href="#ref-for-audioworkletprocessor④⑥">(3)</a> <a href="#ref-for-audioworkletprocessor④⑦">(4)</a> <a href="#ref-for-audioworkletprocessor④⑧">(5)</a>
+    <li><a href="#ref-for-audioworkletprocessor④⑨">1.33.7.1. 
+The BitCrusher Node</a> <a href="#ref-for-audioworkletprocessor⑤⓪">(2)</a>
+    <li><a href="#ref-for-audioworkletprocessor⑤①">1.33.7.2. 
 VU Meter Node</a>
    </ul>
   </aside>
@@ -20552,6 +20632,20 @@ VU Meter Node</a>
    <ul>
     <li><a href="#ref-for-node-reference">1.33.5. 
 The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-audioworkletprocessor-audioworkletprocessor">
+   <b><a href="#dom-audioworkletprocessor-audioworkletprocessor">#dom-audioworkletprocessor-audioworkletprocessor</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-audioworkletprocessor-audioworkletprocessor">1.33.4. 
+The AudioWorkletProcessor Interface</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-audioworkletprocessor-audioworkletprocessor-options">
+   <b><a href="#dom-audioworkletprocessor-audioworkletprocessor-options">#dom-audioworkletprocessor-audioworkletprocessor-options</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-audioworkletprocessor-audioworkletprocessor-options">1.33.4.1. 
+Constructors</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-audioworkletprocessor-port">
@@ -20573,7 +20667,7 @@ Concepts</a>
   <aside class="dfn-panel" data-for="active-processing-conditions">
    <b><a href="#active-processing-conditions">#active-processing-conditions</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-active-processing-conditions">1.33.4.2. 
+    <li><a href="#ref-for-active-processing-conditions">1.33.4.3. 
 Defining A Valid AudioWorkletProcessor</a>
    </ul>
   </aside>
@@ -20582,11 +20676,11 @@ Defining A Valid AudioWorkletProcessor</a>
    <ul>
     <li><a href="#ref-for-dictdef-audioparamdescriptor">1.33.3.2. 
 Attributes</a>
-    <li><a href="#ref-for-dictdef-audioparamdescriptor①">1.33.4.2. 
+    <li><a href="#ref-for-dictdef-audioparamdescriptor①">1.33.4.3. 
 Defining A Valid AudioWorkletProcessor</a>
-    <li><a href="#ref-for-dictdef-audioparamdescriptor②">1.33.4.3. 
+    <li><a href="#ref-for-dictdef-audioparamdescriptor②">1.33.4.4. 
 AudioParamDescriptor</a> <a href="#ref-for-dictdef-audioparamdescriptor③">(2)</a> <a href="#ref-for-dictdef-audioparamdescriptor④">(3)</a>
-    <li><a href="#ref-for-dictdef-audioparamdescriptor⑤">1.33.4.3.1. 
+    <li><a href="#ref-for-dictdef-audioparamdescriptor⑤">1.33.4.4.1. 
 Dictionary AudioParamDescriptor Members</a>
     <li><a href="#ref-for-dictdef-audioparamdescriptor⑥">1.33.5. 
 The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
@@ -20595,32 +20689,32 @@ The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
   <aside class="dfn-panel" data-for="dom-audioparamdescriptor-defaultvalue">
    <b><a href="#dom-audioparamdescriptor-defaultvalue">#dom-audioparamdescriptor-defaultvalue</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-audioparamdescriptor-defaultvalue">1.33.4.3. 
+    <li><a href="#ref-for-dom-audioparamdescriptor-defaultvalue">1.33.4.4. 
 AudioParamDescriptor</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-audioparamdescriptor-maxvalue">
    <b><a href="#dom-audioparamdescriptor-maxvalue">#dom-audioparamdescriptor-maxvalue</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-audioparamdescriptor-maxvalue">1.33.4.3. 
+    <li><a href="#ref-for-dom-audioparamdescriptor-maxvalue">1.33.4.4. 
 AudioParamDescriptor</a>
-    <li><a href="#ref-for-dom-audioparamdescriptor-maxvalue①">1.33.4.3.1. 
+    <li><a href="#ref-for-dom-audioparamdescriptor-maxvalue①">1.33.4.4.1. 
 Dictionary AudioParamDescriptor Members</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-audioparamdescriptor-minvalue">
    <b><a href="#dom-audioparamdescriptor-minvalue">#dom-audioparamdescriptor-minvalue</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-audioparamdescriptor-minvalue">1.33.4.3. 
+    <li><a href="#ref-for-dom-audioparamdescriptor-minvalue">1.33.4.4. 
 AudioParamDescriptor</a>
-    <li><a href="#ref-for-dom-audioparamdescriptor-minvalue①">1.33.4.3.1. 
+    <li><a href="#ref-for-dom-audioparamdescriptor-minvalue①">1.33.4.4.1. 
 Dictionary AudioParamDescriptor Members</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-audioparamdescriptor-name">
    <b><a href="#dom-audioparamdescriptor-name">#dom-audioparamdescriptor-name</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-audioparamdescriptor-name">1.33.4.3. 
+    <li><a href="#ref-for-dom-audioparamdescriptor-name">1.33.4.4. 
 AudioParamDescriptor</a>
     <li><a href="#ref-for-dom-audioparamdescriptor-name①">1.33.5. 
 The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
@@ -20670,7 +20764,7 @@ Concepts</a> <a href="#ref-for-rendering-thread⑥">(2)</a>
 The AudioWorkletGlobalScope Interface</a>
     <li><a href="#ref-for-rendering-thread⑧">1.33.4. 
 The AudioWorkletProcessor Interface</a>
-    <li><a href="#ref-for-rendering-thread⑨">1.33.4.2. 
+    <li><a href="#ref-for-rendering-thread⑨">1.33.4.3. 
 Defining A Valid AudioWorkletProcessor</a>
     <li><a href="#ref-for-rendering-thread①⓪">1.33.5. 
 The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
@@ -20758,7 +20852,7 @@ Methods</a> <a href="#ref-for-render-quantum⑨">(2)</a>
 Attributes</a>
     <li><a href="#ref-for-render-quantum①①">1.32.2. 
 Attributes</a>
-    <li><a href="#ref-for-render-quantum①②">1.33.4.2. 
+    <li><a href="#ref-for-render-quantum①②">1.33.4.3. 
 Defining A Valid AudioWorkletProcessor</a>
    </ul>
   </aside>

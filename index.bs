@@ -1086,11 +1086,11 @@ Methods</h4>
 			1. Let <var>promise</var> be a new promise.
 
 			2. If the operation <a href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer"><code>IsDetachedBuffer</code></a>
-				(described in [[!ECMASCRIPT]]) on {{BaseAudioContext/decodeAudioData()/audioData!!argument}} is
+				(described in [[!ECMASCRIPT]]) on {{BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback)/audioData!!argument}} is
 				<code>false</code>, execute the following steps:
 
 				1. <a href="https://tc39.github.io/ecma262/#sec-detacharraybuffer">Detach</a>
-						the {{audioData}} {{ArrayBuffer}}. This
+						the {{BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback)/audioData!!argument}} {{ArrayBuffer}}. This
 						operation is described in [[!ECMASCRIPT]].
 				2. Queue a decoding operation to be performed on another thread.
 
@@ -1112,7 +1112,7 @@ Methods</h4>
 			Note: Multiple <em>decoding threads</em> can run in parallel to
 			service multiple calls to <code>decodeAudioData</code>.
 
-			1. Attempt to decode the encoded {{audioData}} into linear
+			1. Attempt to decode the encoded {{BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback)/audioData!!argument}} into linear
 				PCM.
 
 			2. If a decoding error is encountered due to the audio format
@@ -1132,7 +1132,7 @@ Methods</h4>
 				1. Take the result, representing the decoded linear PCM
 					audio data, and resample it to the sample-rate of the
 					{{AudioContext}} if it is different from
-					the sample-rate of {{audioData}}.
+					the sample-rate of {{BaseAudioContext/decodeAudioData(audioData, successCallback, errorCallback)/audioData!!argument}}.
 
 				2. Queue a task on the <a>control thread</a>'s event loop
 					to execute the following steps:

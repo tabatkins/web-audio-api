@@ -1021,7 +1021,7 @@ Methods</h4>
 		This method is DEPRECATED, as it is intended to be replaced by {{AudioWorkletNode}}.
 		Creates a {{ScriptProcessorNode}} for direct audio processing using scripts.
 		<span class="synchronous">An {{IndexSizeError}} exception MUST be thrown if
-		{{bufferSize}} or {{numberOfInputChannels}} or {{numberOfOutputChannels}}
+		{{bufferSize!!argument}} or {{numberOfInputChannels}} or {{numberOfOutputChannels}}
 		are outside the valid range.</span>
 
 		It is invalid for both {{numberOfInputChannels}} and {{numberOfOutputChannels}} to be zero.

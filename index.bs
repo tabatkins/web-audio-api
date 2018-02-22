@@ -721,7 +721,7 @@ Attributes</h4>
 		Allows access to the <code>Worklet</code> object that can import
 		a script containing {{AudioWorkletProcessor}}
 		class definitions via the algorithms defined by [[!worklets-1]]
-		and {{BaseAudioContext/AudioWorklet}}.
+		and {{AudioWorklet}}.
 
 	: <dfn>currentTime</dfn>
 	::

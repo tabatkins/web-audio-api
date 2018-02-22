@@ -2179,8 +2179,8 @@ Constructors</h4>
 	::
 		Let <var>b</var> be a new {{AudioBuffer}} object.
 		Respectively assign the values of the attributes
-		<var>numberOfChannels</var>, <var>length</var>,
-		<var>sampleRate</var> of the {{AudioBufferOptions}} passed
+		{{AudioBufferOptions/numberOfChannels}}, {{AudioBufferOptions/length}},
+		{{AudioBufferOptions/sampleRate}} of the {{AudioBufferOptions}} passed
 		in the constructor to the internal slots {{[[number of channels]]}}, {{[[length]]}}, {{[[sample rate]]}}.
 
 		Set the internal slot {{[[internal data]]}} of this

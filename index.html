@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="3b5bf3ec9e63d8c426387d3681016a29d0246775" name="document-revision">
+  <meta content="2d8319e01d46b8fc7c3bdf3717ac3d14092dd247" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -3896,8 +3896,8 @@ used with the <code><a data-link-type="element" href="https://html.spec.whatwg.o
      <p>Let <var>b</var> be a new <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑦">AudioBuffer</a></code> object.
 Respectively assign the values of the attributes <var>numberOfChannels</var>, <var>length</var>, <var>sampleRate</var> of the <code class="idl"><a data-link-type="idl" href="#dictdef-audiobufferoptions" id="ref-for-dictdef-audiobufferoptions①">AudioBufferOptions</a></code> passed
 in the constructor to the internal slots <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot">[[number of channels]]</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot">[[length]]</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-sample-rate-slot" id="ref-for-dom-audiobuffer-sample-rate-slot">[[sample rate]]</a></code>.</p>
-     <p>Set the internal slot <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-internal-data-slot" id="ref-for-dom-audiobuffer-internal-data-slot">[[internal data]]</a></code> of this <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑧">AudioBuffer</a></code> to the result of calling <a href="https://tc39.github.io/ecma262/#sec-createbytedatablock"><code> CreateByteDataBlock(<span>[length]</span> * [[number of
-channels]])</code></a>.</p>
+     <p>Set the internal slot <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-internal-data-slot" id="ref-for-dom-audiobuffer-internal-data-slot">[[internal data]]</a></code> of this <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑧">AudioBuffer</a></code> to the result of calling <a href="https://tc39.github.io/ecma262/#sec-createbytedatablock"><code> CreateByteDataBlock(<code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot①">[[length]]</a></code> * <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot①">[[number of
+channels]]</a></code>)</code></a>.</p>
      <p class="note" role="note"><span>Note:</span> This initializes the underlying storage to zero.</p>
      <table class="argumentdef data">
       <caption>Arguments for the <a class="idl-code" data-link-type="method">AudioBuffer.AudioBuffer()</a> method.</caption>
@@ -3922,16 +3922,16 @@ channels]])</code></a>.</p>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioBuffer" data-dfn-type="attribute" data-export="" id="dom-audiobuffer-duration"><code>duration</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double①④">double</a>, readonly</span>
     <dd data-md="">
      <p>Duration of the PCM audio data in seconds.</p>
-     <p>This is computed from the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-sample-rate-slot" id="ref-for-dom-audiobuffer-sample-rate-slot①">[[sample rate]]</a></code> and the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot①">[[length]]</a></code> of the <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑨">AudioBuffer</a></code> by performing
-a division between the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot②">[[length]]</a></code> and the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-sample-rate-slot" id="ref-for-dom-audiobuffer-sample-rate-slot②">[[sample rate]]</a></code>.</p>
+     <p>This is computed from the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-sample-rate-slot" id="ref-for-dom-audiobuffer-sample-rate-slot①">[[sample rate]]</a></code> and the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot②">[[length]]</a></code> of the <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑨">AudioBuffer</a></code> by performing
+a division between the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot③">[[length]]</a></code> and the <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-sample-rate-slot" id="ref-for-dom-audiobuffer-sample-rate-slot②">[[sample rate]]</a></code>.</p>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioBuffer" data-dfn-type="attribute" data-export="" id="dom-audiobuffer-length"><code>length</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long②②">unsigned long</a>, readonly</span>
     <dd data-md="">
      <p>Length of the PCM audio data in sample-frames. This MUST return
-the value of <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot③">[[length]]</a></code>.</p>
+the value of <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot④">[[length]]</a></code>.</p>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioBuffer" data-dfn-type="attribute" data-export="" id="dom-audiobuffer-numberofchannels"><code>numberOfChannels</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-unsigned-long" id="ref-for-idl-unsigned-long②③">unsigned long</a>, readonly</span>
     <dd data-md="">
      <p>The number of discrete audio channels. This MUST return the value
-of <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot①">[[number of channels]]</a></code>.</p>
+of <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot②">[[number of channels]]</a></code>.</p>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioBuffer" data-dfn-type="attribute" data-export="" id="dom-audiobuffer-samplerate"><code>sampleRate</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float①①">float</a>, readonly</span>
     <dd data-md="">
      <p>The sample-rate for the PCM audio data in samples per second.
@@ -15788,8 +15788,8 @@ OfflineAudioCompletionEventInit</a>
    <b><a href="#dom-audiobuffer-number-of-channels-slot">#dom-audiobuffer-number-of-channels-slot</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-dom-audiobuffer-number-of-channels-slot">1.4.1. 
-Constructors</a>
-    <li><a href="#ref-for-dom-audiobuffer-number-of-channels-slot①">1.4.2. 
+Constructors</a> <a href="#ref-for-dom-audiobuffer-number-of-channels-slot①">(2)</a>
+    <li><a href="#ref-for-dom-audiobuffer-number-of-channels-slot②">1.4.2. 
 Attributes</a>
    </ul>
   </aside>
@@ -15797,9 +15797,9 @@ Attributes</a>
    <b><a href="#dom-audiobuffer-length-slot">#dom-audiobuffer-length-slot</a></b><b>Referenced in:</b>
    <ul>
     <li><a href="#ref-for-dom-audiobuffer-length-slot">1.4.1. 
-Constructors</a>
-    <li><a href="#ref-for-dom-audiobuffer-length-slot①">1.4.2. 
-Attributes</a> <a href="#ref-for-dom-audiobuffer-length-slot②">(2)</a> <a href="#ref-for-dom-audiobuffer-length-slot③">(3)</a>
+Constructors</a> <a href="#ref-for-dom-audiobuffer-length-slot①">(2)</a>
+    <li><a href="#ref-for-dom-audiobuffer-length-slot②">1.4.2. 
+Attributes</a> <a href="#ref-for-dom-audiobuffer-length-slot③">(2)</a> <a href="#ref-for-dom-audiobuffer-length-slot④">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-audiobuffer-sample-rate-slot">

@@ -9668,7 +9668,7 @@ reference</dfn>, initially null.
 
 <pre class="idl">
 [Exposed=AudioWorklet,
-Constructor (optional AudioWorkletOptions options)]
+Constructor (optional AudioWorkletNodeOptions options)]
 interface AudioWorkletProcessor {
 	readonly attribute MessagePort port;
 };

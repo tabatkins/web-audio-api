@@ -825,7 +825,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>BiquadFilterNode</code>
+			<em>Return type:</em> {{BiquadFilterNode}}
 		</div>
 
 	: <dfn>createBuffer(numberOfChannels, length, sampleRate)</dfn>
@@ -853,7 +853,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>AudioBufferSourceNode</code>
+			<em>Return type:</em> {{AudioBufferSourceNode}}
 		</div>
 
 	: <dfn>createChannelMerger(numberOfInputs)</dfn>
@@ -869,7 +869,7 @@ Methods</h4>
 		</pre>
 
 		<div>
-			<em>Return type:</em> <code>ChannelMergerNode</code>
+			<em>Return type:</em> {{ChannelMergerNode}}
 		</div>
 
 	: <dfn>createChannelSplitter(numberOfOutputs)</dfn>
@@ -896,7 +896,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>ConstantSourceNode</code>
+			<em>Return type:</em> {{ConstantSourceNode}}
 		</div>
 
 	: <dfn>createConvolver()</dfn>
@@ -906,7 +906,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>ConvolverNode</code>
+			<em>Return type:</em> {{ConvolverNode}}
 		</div>
 
 	: <dfn>createDelay(maxDelayTime)</dfn>
@@ -919,7 +919,7 @@ Methods</h4>
 		</pre>
 
 		<div>
-			<em>Return type:</em> <code>DelayNode</code>
+			<em>Return type:</em> {{DelayNode}}
 		</div>
 
 	: <dfn>createDynamicsCompressor()</dfn>
@@ -930,7 +930,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>DynamicsCompressorNode</code>
+			<em>Return type:</em> {{DynamicsCompressorNode}}
 		</div>
 
 	: <dfn>createGain()</dfn>
@@ -951,7 +951,7 @@ Methods</h4>
 		</pre>
 
 		<div>
-			<em>Return type:</em> <code>IIRFilterNode</code>
+			<em>Return type:</em> {{IIRFilterNode}}
 		</div>
 
 	: <dfn>createOscillator()</dfn>
@@ -961,7 +961,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>OscillatorNode</code>
+			<em>Return type:</em> {{OscillatorNode}}
 		</div>
 
 	: <dfn>createPanner()</dfn>
@@ -971,7 +971,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>PannerNode</code>
+			<em>Return type:</em> {{PannerNode}}
 		</div>
 
 	: <dfn>createPeriodicWave(real, imag, constraints)</dfn>
@@ -1012,7 +1012,7 @@ Methods</h4>
 		</pre>
 
 		<div>
-			<em>Return type:</em> <code>PeriodicWave</code>
+			<em>Return type:</em> {{PeriodicWave}}
 		</div>
 
 	: <dfn>createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)</dfn>
@@ -1034,7 +1034,7 @@ Methods</h4>
 		</pre>
 
 		<div>
-			<em>Return type:</em> <code>ScriptProcessorNode</code>
+			<em>Return type:</em> {{ScriptProcessorNode}}
 		</div>
 
 	: <dfn>createStereoPanner()</dfn>
@@ -1044,7 +1044,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>StereoPannerNode</code>
+			<em>Return type:</em> {{StereoPannerNode}}
 		</div>
 
 	: <dfn>createWaveShaper()</dfn>
@@ -1055,7 +1055,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>WaveShaperNode</code>
+			<em>Return type:</em> {{WaveShaperNode}}
 		</div>
 
 	: <dfn>decodeAudioData(audioData, successCallback, errorCallback)</dfn>
@@ -1154,7 +1154,7 @@ Methods</h4>
 		</pre>
 
 		<div>
-			<em>Return type:</em> <code>Promise&lt;AudioBuffer></code>
+			<em>Return type:</em> {{Promise}}&lt;{{AudioBuffer}}&gt;
 		</div>
 
 	: <dfn>resume()</dfn>
@@ -1228,7 +1228,7 @@ Methods</h4>
 		</div>
 
 		<div>
-			<em>Return type:</em> <code>Promise&lt;void></code>
+			<em>Return type:</em> {{Promise}}&lt;{{void}}&gt;
 		</div>
 </dl>
 
@@ -1550,7 +1550,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>Promise&lt;void></code>
+			<em>Return type:</em> {{Promise}}&lt;{{void}}&gt;
 		</div>
 
 	: <dfn>createMediaElementSource(mediaElement)</dfn>
@@ -1578,7 +1578,7 @@ Methods</h4>
 		</div>
 		<div>
 			<em>Return type:</em>
-			<code>MediaStreamAudioDestinationNode</code>
+			{{MediaStreamAudioDestinationNode}}
 		</div>
 
 	: <dfn>createMediaStreamSource(mediaStream)</dfn>
@@ -1590,7 +1590,7 @@ Methods</h4>
 		</pre>
 
 		<div>
-			<em>Return type:</em> <code>MediaStreamAudioSourceNode</code>
+			<em>Return type:</em> {{MediaStreamAudioSourceNode}}
 		</div>
 
 	: <dfn>createMediaStreamTrackSource(mediaStreamTrack)</dfn>
@@ -1603,7 +1603,7 @@ Methods</h4>
 
 		<div>
 			<em>Return type:</em>
-			<code>MediaStreamTrackAudioSourceNode</code>
+			{{MediaStreamTrackAudioSourceNode}}
 		</div>
 
 	: <dfn>getOutputTimestamp()</dfn>
@@ -1665,7 +1665,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>AudioTimestamp</code>
+			<em>Return type:</em> {{AudioTimestamp}}
 		</div>
 
 	: <dfn>suspend()</dfn>
@@ -1744,7 +1744,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>Promise&lt;void></code>
+			<em>Return type:</em> {{Promise}}&lt;{{void}}&gt;
 		</div>
 </dl>
 
@@ -2008,7 +2008,7 @@ Methods</h4>
 			<em>No parameters.</em>
 		</div>
 		<div>
-			<em>Return type:</em> <code>Promise&lt;AudioBuffer></code>
+			<em>Return type:</em> {{Promise}}&lt;{{AudioBuffer}}&gt;
 		</div>
 
 	: <dfn>suspend(suspendTime)</dfn>
@@ -2031,7 +2031,7 @@ Methods</h4>
 		</pre>
 
 		<div>
-			<em>Return type:</em> <code>Promise&lt;void></code>
+			<em>Return type:</em> {{Promise}}&lt;{{void}}&gt;
 		</div>
 </dl>
 

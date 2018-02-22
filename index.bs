@@ -2305,7 +2305,7 @@ accessing the resulting array, because it may avoid unnecessary
 memory allocation and copying.
 
 An internal operation <a href="#acquire-the-content">acquire the
-contents of an {{AudioBuffer}}</a> is invoked when the
+contents of an AudioBuffer</a> is invoked when the
 contents of an {{AudioBuffer}} are needed by some API
 implementation. This operation returns immutable channel data to the
 invoker.

@@ -3669,25 +3669,27 @@ The <dfn>computedValue</dfn> is the final value controlling the
 audio DSP and is computed by the audio rendering thread during each
 rendering time quantum. It MUST be internally computed as follows:
 
-1. An <em>intrinsic</em> parameter value will be calculated at
-	each time, which is either the value set directly to the
-	<code>value</code> attribute, or, if there are any <a href="#dfn-automation-event">automation events</a> with times before or
-	at this time, the value as calculated from these events. When read,
-	the <code>value</code> attribute always returns the
-	<em>intrinsic</em> value for the current time. If automation events
-	are removed from a given time range, then the <em>intrinsic</em>
-	value will remain unchanged and stay at its previous value until
-	either the <code>value</code> attribute is directly set, or
-	automation events are added for the time range.
+<div algorithm="computation-of-value">
+	1. An <em>intrinsic</em> parameter value will be calculated at
+		each time, which is either the value set directly to the
+		<code>value</code> attribute, or, if there are any <a href="#dfn-automation-event">automation events</a> with times before or
+		at this time, the value as calculated from these events. When read,
+		the <code>value</code> attribute always returns the
+		<em>intrinsic</em> value for the current time. If automation events
+		are removed from a given time range, then the <em>intrinsic</em>
+		value will remain unchanged and stay at its previous value until
+		either the <code>value</code> attribute is directly set, or
+		automation events are added for the time range.
 
-2. The <em>computedValue</em> is the sum of the <em>intrinsic</em>
-	value and the value of the <a href="#input-audioparam-buffer">input
-	AudioParam buffer</a>. When read, the
-	<code>value</code> attribute always returns the
-	<em>computedValue</em> for the current time.
+	2. The <em>computedValue</em> is the sum of the <em>intrinsic</em>
+		value and the value of the <a href="#input-audioparam-buffer">input
+		AudioParam buffer</a>. When read, the
+		<code>value</code> attribute always returns the
+		<em>computedValue</em> for the current time.
 
-3. If this {{AudioParam}} is a <a>compound parameter</a>,
-	compute its final value with other {{AudioParam}}s.
+	3. If this {{AudioParam}} is a <a>compound parameter</a>,
+		compute its final value with other {{AudioParam}}s.
+</div>
 
 The <dfn>nominal range</dfn> for a <a>computedValue</a> are the
 lower and higher values this parameter can effectively have. For
@@ -4190,17 +4192,19 @@ When the <dfn id="current-frequency-data">current frequency
 data</dfn> are computed, the following operations are to be
 performed:
 
-1. Compute the <a>current time-domain data</a>.
+<div algorithm="compute-frequency-data">
+	1. Compute the <a>current time-domain data</a>.
 
-2. <a href="#blackman-window">Apply a Blackman window</a> to the time domain input data.
+	2. <a href="#blackman-window">Apply a Blackman window</a> to the time domain input data.
 
-3. <a href="#fourier-transform">Apply a Fourier transform</a> to the
-	windowed time domain input data to get imaginary and real
-	frequency data.
+	3. <a href="#fourier-transform">Apply a Fourier transform</a> to the
+		windowed time domain input data to get imaginary and real
+		frequency data.
 
-4. <a href="#smoothing-over-time">Smooth over time</a> the frequency domain data.
+	4. <a href="#smoothing-over-time">Smooth over time</a> the frequency domain data.
 
-5. <a href="#conversion-to-db">Conversion to dB</a>.
+	5. <a href="#conversion-to-db">Conversion to dB</a>.
+</div>
 
 In the following, let \(N\) be the value of the
 {{AnalyserNode/fftSize}} attribute of this {{AnalyserNode}}.
@@ -6987,83 +6991,85 @@ values. Those values persist accros invocation of this algorithm.
 * Let <dfn attribute for="DynamicsCompressorNode">[[compressor gain]]</dfn> be a floating point
 	number, initialized to 1.0.
 
-The following algorithm allow determining a value for
-<var>reduction gain</var>, for each sample of input, for a render
-quantum of audio.
+<div algorithm="reduction-gain">
+	The following algorithm allow determining a value for
+	<var>reduction gain</var>, for each sample of input, for a render
+	quantum of audio.
 
-1. Let <var>threshold</var>, <var>knee</var> have the value of the
-	{{AudioParam}} of the same name, <a href="#db-to-linear">converted to linear unit</a> sampled at the time of
-	processing of this block (as <a>k-rate</a> parameters).
+	1. Let <var>threshold</var>, <var>knee</var> have the value of the
+		{{AudioParam}} of the same name, <a href="#db-to-linear">converted to linear unit</a> sampled at the time of
+		processing of this block (as <a>k-rate</a> parameters).
 
-2. Let <var>ratio</var> have the value of the <code>ratio</code>
-	{{AudioParam}}, sampled at the time of processing of this block
-	(as a <a>k-rate</a> parameter).
+	2. Let <var>ratio</var> have the value of the <code>ratio</code>
+		{{AudioParam}}, sampled at the time of processing of this block
+		(as a <a>k-rate</a> parameter).
 
-3. Let <var>attack</var> and <var>release</var> have the value of
-	the {{AudioParam}} of the same name, sampled at the time of
-	processing (those are <a>k-rate</a> parameters), mutiplied by the
-	sample-rate of the {{BaseAudioContext}} this
-	{{DynamicsCompressorNode}} is <a href="#associated">associated</a> with.
+	3. Let <var>attack</var> and <var>release</var> have the value of
+		the {{AudioParam}} of the same name, sampled at the time of
+		processing (those are <a>k-rate</a> parameters), mutiplied by the
+		sample-rate of the {{BaseAudioContext}} this
+		{{DynamicsCompressorNode}} is <a href="#associated">associated</a> with.
 
-4. Let <var>detector average</var> be the value of the slot {{[[detector average]]}}.
+	4. Let <var>detector average</var> be the value of the slot {{[[detector average]]}}.
 
-5. Let <var>compressor gain</var> be the value of the slot {{[[compressor gain]]}}.
+	5. Let <var>compressor gain</var> be the value of the slot {{[[compressor gain]]}}.
 
-6. For each sample <var>input</var> of the render quantum to be
-	processed, execute the following steps:
+	6. For each sample <var>input</var> of the render quantum to be
+		processed, execute the following steps:
 
-	1. Let <var>releasing</var> be `true` if
-		<var>target gain</var> is greater than <var>compressor
-		gain</var>, <code>false</code> otherwise.
+		1. Let <var>releasing</var> be `true` if
+			<var>target gain</var> is greater than <var>compressor
+			gain</var>, <code>false</code> otherwise.
 
-	2. If the absolute value of <var>input</var> is less than
-		0.0001, let <var>attenuation</var> be 1.0. Else, let
-		<var>shaped input</var> be the value of applying the <a href="#compression-curve">compression curve</a> to the absolute
-		value of <var>input</var>. Let <var>attenuation</var> be
-		<var>shaped input</var> divided by the absolute value of <var>input</var>.
+		2. If the absolute value of <var>input</var> is less than
+			0.0001, let <var>attenuation</var> be 1.0. Else, let
+			<var>shaped input</var> be the value of applying the <a href="#compression-curve">compression curve</a> to the absolute
+			value of <var>input</var>. Let <var>attenuation</var> be
+			<var>shaped input</var> divided by the absolute value of <var>input</var>.
 
-	3. Let <var>detector rate</var> be the result of applying the
-		<a href="#detector-curve">detector curve</a> to
-		<var>attenuation</var>.
+		3. Let <var>detector rate</var> be the result of applying the
+			<a href="#detector-curve">detector curve</a> to
+			<var>attenuation</var>.
 
-	4. Substract <var>detector average</var> to
-		<var>attenuation</var>, and multiply the result by
-		<var>detector rate</var>. Add this new result to <var>detector
+		4. Substract <var>detector average</var> to
+			<var>attenuation</var>, and multiply the result by
+			<var>detector rate</var>. Add this new result to <var>detector
+			average</var>.
+
+		5. Clamp <var>detector average</var> to a maximum of 1.0.
+
+		6. Let <var>envelope rate</var> be the result of <a>computing the envelope rate</a>.
+
+		7. If <var>releasing</var> is `true`, set
+			<var>compressor gain</var> to the multiplication of
+			<var>compressor gain</var> by <var>envelope rate</var>, clamped
+			to a maximum of 1.0.
+
+		8. Else, if <var>releasing</var> is <code>false</code>, let
+			<var>gain increment</var> to be <var>detector average</var>
+			minus <var>compressor gain</var>. Multiply <var>gain
+			increment</var> by <var>envelope rate</var>, and add the result
+			to <var>compressor gain</var>.
+
+		9. Compute <var>reduction gain</var> to be <var>compressor
+			gain</var> multiplied by the return value of <a>computing the
+			makeup gain</a>.
+
+		10. Compute <var>metering gain</var> to be <var>final gain</var>, <a href="#linear-to-decibel">converted to
+			decibel</a>.
+
+	7. Set {{[[compressor gain]]}} to <var>compressor
+		gain</var>.
+
+	8. Set {{[[detector average]]}} to <var>detector
 		average</var>.
 
-	5. Clamp <var>detector average</var> to a maximum of 1.0.
+	9. <a>Atomically</a> set the internal slot {{[[internal reduction]]}}
+		to the value of <var>metering gain</var>.
 
-	6. Let <var>envelope rate</var> be the result of <a>computing the envelope rate</a>.
-
-	7. If <var>releasing</var> is `true`, set
-		<var>compressor gain</var> to the multiplication of
-		<var>compressor gain</var> by <var>envelope rate</var>, clamped
-		to a maximum of 1.0.
-
-	8. Else, if <var>releasing</var> is <code>false</code>, let
-		<var>gain increment</var> to be <var>detector average</var>
-		minus <var>compressor gain</var>. Multiply <var>gain
-		increment</var> by <var>envelope rate</var>, and add the result
-		to <var>compressor gain</var>.
-
-	9. Compute <var>reduction gain</var> to be <var>compressor
-		gain</var> multiplied by the return value of <a>computing the
-		makeup gain</a>.
-
-	10. Compute <var>metering gain</var> to be <var>final gain</var>, <a href="#linear-to-decibel">converted to
-		decibel</a>.
-
-7. Set {{[[compressor gain]]}} to <var>compressor
-	gain</var>.
-
-8. Set {{[[detector average]]}} to <var>detector
-	average</var>.
-
-9. <a>Atomically</a> set the internal slot {{[[internal reduction]]}}
-	to the value of <var>metering gain</var>.
-
-	Note: This step makes the metering gain update once per block, at the
-	end of the block processing.
+		Note: This step makes the metering gain update once per block, at the
+		end of the block processing.
+</div>
 
 The makeup gain is a fixed gain stage that only depends on ratio,
 knee and threshold parameter of the compressor, and not on the
@@ -9142,18 +9148,20 @@ Attributes</h4>
 		better to use no oversampling in order to get a very precise
 		shaping curve.
 
-		A value of "{{2x}}" or "{{4x}}" means that the following steps MUST be
-		performed:
+		<div algorithm="oversample">
+			A value of "{{2x}}" or "{{4x}}" means that the following steps MUST be
+			performed:
 
-		1. Up-sample the input samples to 2x or 4x the sample-rate of
-			the {{AudioContext}}. Thus for each <a>render
-			quantum</a>, generate 256 (for 2x) or 512 (for 4x) samples.
+			1. Up-sample the input samples to 2x or 4x the sample-rate of
+				the {{AudioContext}}. Thus for each <a>render
+				quantum</a>, generate 256 (for 2x) or 512 (for 4x) samples.
 
-		2. Apply the shaping curve.
+			2. Apply the shaping curve.
 
-		3. Down-sample the result back to the sample-rate of the
-			{{AudioContext}}. Thus taking the 256 (or 512)
-			processed samples, generating 128 as the final result.
+			3. Down-sample the result back to the sample-rate of the
+				{{AudioContext}}. Thus taking the 256 (or 512)
+				processed samples, generating 128 as the final result.
+		</div>
 
 		The exact up-sampling and down-sampling filters are not
 		specified, and can be tuned for sound quality (low aliasing,
@@ -9926,74 +9934,76 @@ maintain the internal reference to each other until the
 Note that the instantiation of these two objects spans the control
 thread and the rendering thread.
 
-When {{AudioWorkletNode()|AudioWorkletNode}}({{AudioWorkletNode/AudioWorkletNode(context, name, options)/context}},
-{{AudioWorkletNode/AudioWorkletNode(context, name, options)/name|nodeName}}, {{AudioWorkletNode/AudioWorkletNode(context, name, options)/options}}) constructor is invoked,
-the user agent MUST perform the following steps on the control
-thread, where the constructor was called.
+<div algorithm="audioworklet construction">
+	When {{AudioWorkletNode()|AudioWorkletNode}}({{AudioWorkletNode/AudioWorkletNode(context, name, options)/context}},
+	{{AudioWorkletNode/AudioWorkletNode(context, name, options)/name|nodeName}}, {{AudioWorkletNode/AudioWorkletNode(context, name, options)/options}}) constructor is invoked,
+	the user agent MUST perform the following steps on the control
+	thread, where the constructor was called.
 
-1. Let <var>this</var> be the instance being created by
-	constructor of {{AudioWorkletNode}} or its subclass.
+	1. Let <var>this</var> be the instance being created by
+		constructor of {{AudioWorkletNode}} or its subclass.
 
-2. If <var>nodeName</var> does not exists as a key in the
-	{{BaseAudioContext}}’s <a>node name to parameter descriptor
-	map</a>, throw a {{NotSupportedError}} exception and abort
-	these steps.
+	2. If <var>nodeName</var> does not exists as a key in the
+		{{BaseAudioContext}}’s <a>node name to parameter descriptor
+		map</a>, throw a {{NotSupportedError}} exception and abort
+		these steps.
 
-3. Let <var>node</var> be a new {{AudioWorkletNode}} object.
+	3. Let <var>node</var> be a new {{AudioWorkletNode}} object.
 
-4. Let <var>messageChannel</var> be a new <a href="https://html.spec.whatwg.org/multipage/#message-channels">MessageChannel</a>.
+	4. Let <var>messageChannel</var> be a new <a href="https://html.spec.whatwg.org/multipage/#message-channels">MessageChannel</a>.
 
-5. Let <var>nodePort</var> be the value of
-	<var>messageChannel</var>'s <code>port1</code> attribute.
+	5. Let <var>nodePort</var> be the value of
+		<var>messageChannel</var>'s <code>port1</code> attribute.
 
-6. Let <var>processorPortOnThisSide</var> be the value of
-	<var>messageChannel</var>'s <code>port2</code> attribute.
+	6. Let <var>processorPortOnThisSide</var> be the value of
+		<var>messageChannel</var>'s <code>port2</code> attribute.
 
-7. Let <var>processorPortSerialization</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserializewithtransfer">
-		StructuredSerializeWithTransfer</a>(<var>processorPortOnThisSide</var>,
-		« <var>processorPortOnThisSide</var> »).
+	7. Let <var>processorPortSerialization</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserializewithtransfer">
+			StructuredSerializeWithTransfer</a>(<var>processorPortOnThisSide</var>,
+			« <var>processorPortOnThisSide</var> »).
 
-7. Let <var>optionsSerialization</var> be <a href=
-	"https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserialize">StructuredSerialize</a>(<var>options</var>).
+	7. Let <var>optionsSerialization</var> be <a href=
+		"https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserialize">StructuredSerialize</a>(<var>options</var>).
 
-8. Set <var>node</var>'s {{AudioWorkletNode/port}} to <var>nodePort</var>.
+	8. Set <var>node</var>'s {{AudioWorkletNode/port}} to <var>nodePort</var>.
 
-9. Let <var>parameterDescriptors</var> be the result of retrieval
-	of <var>nodeName</var> from <a>node name to parameter descriptor map</a>:
+	9. Let <var>parameterDescriptors</var> be the result of retrieval
+		of <var>nodeName</var> from <a>node name to parameter descriptor map</a>:
 
-	1. Let <var>audioParamMap</var> be a new {{AudioParamMap}} object.
+		1. Let <var>audioParamMap</var> be a new {{AudioParamMap}} object.
 
-	2. For each <var>descriptor</var> of <var>parameterDescriptors</var>:
-		1. Let <var>paramName</var> be the value of
-			<var>descriptor</var>'s {{AudioParamDescriptor/name}}.
+		2. For each <var>descriptor</var> of <var>parameterDescriptors</var>:
+			1. Let <var>paramName</var> be the value of
+				<var>descriptor</var>'s {{AudioParamDescriptor/name}}.
 
-		2. Let <var>audioParam</var> be a new {{AudioParam}}
-			instance.
+			2. Let <var>audioParam</var> be a new {{AudioParam}}
+				instance.
 
-		3. Append (<var>paramName</var>, <var>audioParam</var>) to
-			<var>audioParamMap</var>'s entries.
+			3. Append (<var>paramName</var>, <var>audioParam</var>) to
+				<var>audioParamMap</var>'s entries.
 
-	3. For each <var>paramNameInOption</var> → <var>value</var> of <var>options</var>:
-		1. If there exists an entry with name member equal to
-			<var>paramNameInOption</var> inside
-			<var>audioParamMap</var>, set that {{AudioParam}}'s
-			value to <var>value</var>.
+		3. For each <var>paramNameInOption</var> → <var>value</var> of <var>options</var>:
+			1. If there exists an entry with name member equal to
+				<var>paramNameInOption</var> inside
+				<var>audioParamMap</var>, set that {{AudioParam}}'s
+				value to <var>value</var>.
 
-		2. <var>paramNameInOption</var> will be ignored when:
-			* <var>audioParamMap</var> does not have any entry with
-				the same name member.
+			2. <var>paramNameInOption</var> will be ignored when:
+				* <var>audioParamMap</var> does not have any entry with
+					the same name member.
 
-			* <var>value</var> is not a type of <code>Number</code>
-				or out of the range specified in
-				{{AudioParamDescriptor}}.
+				* <var>value</var> is not a type of <code>Number</code>
+					or out of the range specified in
+					{{AudioParamDescriptor}}.
 
-	4. Set <var>node</var>'s {{AudioWorkletNode/parameters}} to <var>audioParamMap</var>.
+		4. Set <var>node</var>'s {{AudioWorkletNode/parameters}} to <var>audioParamMap</var>.
 
-10. <a>Queue a control message</a> to create an
-	{{AudioWorkletProcessor}}, given <var>nodeName</var>,
-	<var>processorPortSerialization</var>, <var>optionsSerialization</var>,  and <var>node</var>.
+	10. <a>Queue a control message</a> to create an
+		{{AudioWorkletProcessor}}, given <var>nodeName</var>,
+		<var>processorPortSerialization</var>, <var>optionsSerialization</var>,  and <var>node</var>.
 
-11. Return <var>node</var>.
+	11. Return <var>node</var>.
+</div>
 
 In order to process a control message for the construction of an
 {{AudioWorkletProcessor}}, given a string <var>nodeName</var>, a
@@ -10005,41 +10015,43 @@ steps and queue a task on the <a>control thread</a> to fire
 {{AudioWorkletNode/onprocessorstatechange}} event to
 <var>node</var> with <code>error</code> state.
 
-1. Let <var>processorPort</var> be
-	<a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer">
-	StructuredDeserializeWithTransfer</a>(<var>processorPortSerialization</var>,
-	the current Realm).
+<div algorithm="process control message">
+	1. Let <var>processorPort</var> be
+		<a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer">
+		StructuredDeserializeWithTransfer</a>(<var>processorPortSerialization</var>,
+		the current Realm).
 
-1. Let <var>options</var> be <a href=
-	"https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer">
-	  StructuredDeserialize</a>(<var>optionsSerialization</var>, the
-	  current Realm).
+	1. Let <var>options</var> be <a href=
+		"https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer">
+		  StructuredDeserialize</a>(<var>optionsSerialization</var>, the
+		  current Realm).
 
-2. Let <var>processorConstructor</var> be the result of looking up
-	<var>nodeName</var> on the {{AudioWorkletGlobalScope}}'s <a>node
-	name to processor definition map</a>.
+	2. Let <var>processorConstructor</var> be the result of looking up
+		<var>nodeName</var> on the {{AudioWorkletGlobalScope}}'s <a>node
+		name to processor definition map</a>.
 
-3. If <var>processorConstructor</var> is <code>undefined</code>,
-	throw a {{NotSupportedError}} DOMException.
+	3. If <var>processorConstructor</var> is <code>undefined</code>,
+		throw a {{NotSupportedError}} DOMException.
 
-4. Let <var>processor</var> be the result of
-	Construct(<var>processorConstructor</var>, « <var>options</var> »).
+	4. Let <var>processor</var> be the result of
+		Construct(<var>processorConstructor</var>, « <var>options</var> »).
 
-5. If <var>processor</var> does not implement the
-	{{AudioWorkletProcessor}} interface, throw an
-	{{InvalidStateError}} DOMException.
+	5. If <var>processor</var> does not implement the
+		{{AudioWorkletProcessor}} interface, throw an
+		{{InvalidStateError}} DOMException.
 
-6. Set <var>processor</var>'s {{AudioWorkletProcessor/port}} to <var>processorPort</var>.
+	6. Set <var>processor</var>'s {{AudioWorkletProcessor/port}} to <var>processorPort</var>.
 
-7. Set <var>processor</var>'s <a>node reference</a> to
-	<var>node</var>.
+	7. Set <var>processor</var>'s <a>node reference</a> to
+		<var>node</var>.
 
-8. Set <var>node</var>'s <a>processor reference</a> to
-	<var>processor</var>.
+	8. Set <var>node</var>'s <a>processor reference</a> to
+		<var>processor</var>.
 
-9. Queue a task the <a>control thread</a> to set the associated
-	{{AudioWorkletNode}}'s state to <code>running</code>, then fire
-	a <code>statechange</code> event.
+	9. Queue a task the <a>control thread</a> to set the associated
+		{{AudioWorkletNode}}'s state to <code>running</code>, then fire
+		a <code>statechange</code> event.
+</div>
 
 <h4 id="AudioWorklet-Sequence">
 AudioWorklet Sequence of Events</h4>
@@ -10060,31 +10072,33 @@ associated {{AudioWorkletGlobalScope}}, followed by the creation
 of an {{AudioWorkletNode}} and its associated
 {{AudioWorkletProcessor}}.
 
-1. An {{AudioContext}} is created.
+<div algorithm="audioworklet sequence">
+	1. An {{AudioContext}} is created.
 
-2. In the main scope, <code>context.audioWorklet</code> is requested to add a script module.
+	2. In the main scope, <code>context.audioWorklet</code> is requested to add a script module.
 
-2. Since none exists yet, a new {{AudioWorkletGlobalScope}} is created in association with the context'sThis is the global scope in which {{AudioWorkletProcessor}} class definitions will be evaluated. (On subsequent calls, this previously created scope will be used.)
+	2. Since none exists yet, a new {{AudioWorkletGlobalScope}} is created in association with the context'sThis is the global scope in which {{AudioWorkletProcessor}} class definitions will be evaluated. (On subsequent calls, this previously created scope will be used.)
 
-2. The imported script is run in the newly created global scope.
+	2. The imported script is run in the newly created global scope.
 
-3. As part of running the imported script, an {{AudioWorkletProcessor}} is registered under
-	a key (<code>"custom"</code> in the above diagram) within the {{AudioWorkletGlobalScope}}.
-	This populates maps both in the global scope and in the {{AudioContext}}.
+	3. As part of running the imported script, an {{AudioWorkletProcessor}} is registered under
+		a key (<code>"custom"</code> in the above diagram) within the {{AudioWorkletGlobalScope}}.
+		This populates maps both in the global scope and in the {{AudioContext}}.
 
-3. The promise for the <code>addModule()</code> call is resolved.
+	3. The promise for the <code>addModule()</code> call is resolved.
 
-6. In the main scope, an {{AudioWorkletNode}} is created using
-	the user-specified key along with a
-	dictionary of options.
+	6. In the main scope, an {{AudioWorkletNode}} is created using
+		the user-specified key along with a
+		dictionary of options.
 
-7. As part of the node's creation, this key is used to look up the
-	correct {{AudioWorkletProcessor}} subclass for instantiation.
+	7. As part of the node's creation, this key is used to look up the
+		correct {{AudioWorkletProcessor}} subclass for instantiation.
 
-8. An instance of the {{AudioWorkletProcessor}} subclass is
-	instantiated with a structured clone of the same options
-	dictionary. This instance is paired with the previously created
-	{{AudioWorkletNode}}.
+	8. An instance of the {{AudioWorkletProcessor}} subclass is
+		instantiated with a structured clone of the same options
+		dictionary. This instance is paired with the previously created
+		{{AudioWorkletNode}}.
+</div>
 
 <h4 id="AudioWorklet-Examples">
 AudioWorklet Examples</h4>
@@ -10479,117 +10493,119 @@ can restart executing this algoritm if needed.
 	until {{OfflineAudioContext/length}} frames have been rendered.
 </div>
 
-1. Let <em>Q<sub>rendering</sub></em> be an empty <a>control message
-	queue</a>. <a>Atomically</a> <a>swap</a>
-	<em>Q<sub>rendering</sub></em> and <em>Q</em>
+<div algorithm="rendering a graph">
+	1. Let <em>Q<sub>rendering</sub></em> be an empty <a>control message
+		queue</a>. <a>Atomically</a> <a>swap</a>
+		<em>Q<sub>rendering</sub></em> and <em>Q</em>
 
-2. While there are messages in <em>Q<sub>rendering</sub></em>,
-	execute the following steps:
+	2. While there are messages in <em>Q<sub>rendering</sub></em>,
+		execute the following steps:
 
-	1. Execute the asynchronous section of the <a>oldest message</a>
-		of <em>Q<sub>rendering</sub></em>.
+		1. Execute the asynchronous section of the <a>oldest message</a>
+			of <em>Q<sub>rendering</sub></em>.
 
-	2. Remove the <a>oldest message</a> of
-		<em>Q<sub>rendering</sub></em>.
+		2. Remove the <a>oldest message</a> of
+			<em>Q<sub>rendering</sub></em>.
 
-3. If the <a>rendering thread state</a> of the {{AudioContext}}
-	is not <code>running</code>, return false.
+	3. If the <a>rendering thread state</a> of the {{AudioContext}}
+		is not <code>running</code>, return false.
 
-4. Order the {{AudioNode}}s of the {{AudioContext}} to be
-	processed.
+	4. Order the {{AudioNode}}s of the {{AudioContext}} to be
+		processed.
 
-	1. Let <em>ordered</em> be an empty list of {{AudioNode}}s.
-		It will contain an ordered list of {{AudioNode}}s when this
-		ordering algorithm terminates.
+		1. Let <em>ordered</em> be an empty list of {{AudioNode}}s.
+			It will contain an ordered list of {{AudioNode}}s when this
+			ordering algorithm terminates.
 
-	2. Let <em>nodes</em> be the set of all nodes created by this
-		{{AudioContext}}, and still alive.
+		2. Let <em>nodes</em> be the set of all nodes created by this
+			{{AudioContext}}, and still alive.
 
-	3. Let <em>cycle breakers</em> be an empty set of
-		{{DelayNode}}s. It will contain all the {{DelayNode}}s that
-		are part of a cycle.
+		3. Let <em>cycle breakers</em> be an empty set of
+			{{DelayNode}}s. It will contain all the {{DelayNode}}s that
+			are part of a cycle.
 
-	4. For each {{AudioNode}} <em>node</em> in <em>nodes</em>:
+		4. For each {{AudioNode}} <em>node</em> in <em>nodes</em>:
 
-		1. If <em>node</em> is a {{DelayNode}} that is part of a
-			cycle, add it to <em>cycle breakers</em> and remove it from
-			<em>nodes</em>.
+			1. If <em>node</em> is a {{DelayNode}} that is part of a
+				cycle, add it to <em>cycle breakers</em> and remove it from
+				<em>nodes</em>.
 
-	5. If <em>nodes</em> contains cycles, <a href="#mute">mute</a>
-		all the {{AudioNode}}s that are part of this cycle, and remove
-		them from <em>nodes</em>.
+		5. If <em>nodes</em> contains cycles, <a href="#mute">mute</a>
+			all the {{AudioNode}}s that are part of this cycle, and remove
+			them from <em>nodes</em>.
 
-	6. While there are unmarked {{AudioNode}}s in <em>nodes</em>:
+		6. While there are unmarked {{AudioNode}}s in <em>nodes</em>:
 
-		1. Choose an {{AudioNode}} <em>node</em> in
-			<em>nodes</em>
+			1. Choose an {{AudioNode}} <em>node</em> in
+				<em>nodes</em>
 
-		2. <a>Visit</a> <em>node</em>.
+			2. <a>Visit</a> <em>node</em>.
 
-		<div algorithm="visiting a node">
-			<dfn lt="Visit">Visiting a node</dfn> <em>node</em>
-			means performing the following steps:
+			<div algorithm="visiting a node">
+				<dfn lt="Visit">Visiting a node</dfn> <em>node</em>
+				means performing the following steps:
 
-			1. If <em>node</em> is marked, abort these steps.
+				1. If <em>node</em> is marked, abort these steps.
 
-			2. Mark <em>node</em>.
+				2. Mark <em>node</em>.
 
-			3. For each {{AudioNode}} <em>input</em> connected to
-				<em>node</em>:
-				1. <a>Visit</a> <em>input</em>.
-		</div>
+				3. For each {{AudioNode}} <em>input</em> connected to
+					<em>node</em>:
+					1. <a>Visit</a> <em>input</em>.
+			</div>
 
-	7. Add <em>node</em> to the beginning of <em>ordered</em>.
+		7. Add <em>node</em> to the beginning of <em>ordered</em>.
 
-5. Reverse the order of <em>nodes</em>.
+	5. Reverse the order of <em>nodes</em>.
 
-6. For each {{DelayNode}} in a cycle, <a href="#available">make
-	available for reading</a> a block of audio from the {{DelayNode}}
-	buffer, available for reading.
+	6. For each {{DelayNode}} in a cycle, <a href="#available">make
+		available for reading</a> a block of audio from the {{DelayNode}}
+		buffer, available for reading.
 
-7. <a href="#computation-of-value">Compute the value(s)</a> of the
-	{{AudioListener}}'s {{AudioParam}}s for this block.
+	7. <a href="#computation-of-value">Compute the value(s)</a> of the
+		{{AudioListener}}'s {{AudioParam}}s for this block.
 
-8. For each {{AudioNode}}, in the order determined previously:
-	1. For each {{AudioParam}} of this {{AudioNode}}, execute
-		these steps:
+	8. For each {{AudioNode}}, in the order determined previously:
+		1. For each {{AudioParam}} of this {{AudioNode}}, execute
+			these steps:
 
-		1. If this {{AudioParam}} has any {{AudioNode}}
-			connected to it, <a href="#SummingJunction">sum</a> the
-			buffers <a href="#available">made available for reading</a>
-			by all {{AudioNode}} connected to this {{AudioParam}},
-			<a href="#down-mix">down mix</a> the resulting buffer down to
-			Mono, and call this buffer the <dfn id="input-audioparam-buffer">input AudioParam
-			buffer</dfn>.
+			1. If this {{AudioParam}} has any {{AudioNode}}
+				connected to it, <a href="#SummingJunction">sum</a> the
+				buffers <a href="#available">made available for reading</a>
+				by all {{AudioNode}} connected to this {{AudioParam}},
+				<a href="#down-mix">down mix</a> the resulting buffer down to
+				Mono, and call this buffer the <dfn id="input-audioparam-buffer">input AudioParam
+				buffer</dfn>.
 
-		2. <a href="#computation-of-value">Compute the value(s)</a> of
-			this {{AudioParam}} for this block.
+			2. <a href="#computation-of-value">Compute the value(s)</a> of
+				this {{AudioParam}} for this block.
 
-		3. <a>Queue a control message</a> to set the
-			{{[[current value]]}} slot of this {{AudioParam}}
-			to the last value computed in the preceding step.
+			3. <a>Queue a control message</a> to set the
+				{{[[current value]]}} slot of this {{AudioParam}}
+				to the last value computed in the preceding step.
 
-	2. If this {{AudioNode}} has any {{AudioNode}}s connected
-		to its input, <a href="#SummingJunction">sum</a> the buffers
-		<a href="#available">made available for reading</a> by all
-		{{AudioNode}}s connected to this {{AudioNode}}. The
-		resulting buffer is called the <dfn>input buffer</dfn>.
-		<a href="#channel-up-mixing-and-down-mixing">Up or down-mix</a>
-		it to match if number of input channels of this
-		{{AudioNode}}.
+		2. If this {{AudioNode}} has any {{AudioNode}}s connected
+			to its input, <a href="#SummingJunction">sum</a> the buffers
+			<a href="#available">made available for reading</a> by all
+			{{AudioNode}}s connected to this {{AudioNode}}. The
+			resulting buffer is called the <dfn>input buffer</dfn>.
+			<a href="#channel-up-mixing-and-down-mixing">Up or down-mix</a>
+			it to match if number of input channels of this
+			{{AudioNode}}.
 
-	3. If this {{AudioNode}} is a <a>source node</a>, <a href="computing">compute a block of audio</a>,
-		and <a href="#available">make it available for reading</a>.
+		3. If this {{AudioNode}} is a <a>source node</a>, <a href="computing">compute a block of audio</a>,
+			and <a href="#available">make it available for reading</a>.
 
-	4. Else, if this {{AudioNode}} is a <a>destination node</a>,
-		<a href="record">record the input</a> of this {{AudioNode}}.
+		4. Else, if this {{AudioNode}} is a <a>destination node</a>,
+			<a href="record">record the input</a> of this {{AudioNode}}.
 
-	5. Else, <a>process</a> the <a>input buffer</a>,
-		and <a href="#available">make available for reading</a> the resulting buffer.
+		5. Else, <a>process</a> the <a>input buffer</a>,
+			and <a href="#available">make available for reading</a> the resulting buffer.
 
-9. <a>Atomically</a> increment {{BaseAudioContext/currentTime}} by 128 / {{BaseAudioContext/sampleRate}}.
+	9. <a>Atomically</a> increment {{BaseAudioContext/currentTime}} by 128 / {{BaseAudioContext/sampleRate}}.
 
-10. Return true.
+	10. Return true.
+</div>
 
 <dfn id="mute">Muting</dfn> an {{AudioNode}} means that its
 output MUST be silence for the rendering of this audio block.
@@ -10919,21 +10935,23 @@ connected to this input. As part of this process it computes an
 internal value <a>computedNumberOfChannels</a> representing the actual
 number of channels of the input at any given time.
 
-For each input of an {{AudioNode}}, an implementation
-MUST:
+<div algorithm="channel mixing">
+	For each input of an {{AudioNode}}, an implementation
+	MUST:
 
-1. Compute <a>computedNumberOfChannels</a>.
+	1. Compute <a>computedNumberOfChannels</a>.
 
-2. For each connection to the input:
+	2. For each connection to the input:
 
-	1. up-mix or down-mix the connection to
-		<a>computedNumberOfChannels</a> according to the
-		{{ChannelInterpretation}}
-		value given by the node's {{AudioNode/channelInterpretation}} attribute.
+		1. up-mix or down-mix the connection to
+			<a>computedNumberOfChannels</a> according to the
+			{{ChannelInterpretation}}
+			value given by the node's {{AudioNode/channelInterpretation}} attribute.
 
-	2. Mix it together with all of the other mixed streams (from other
-		connections). This is a straight-forward mixing together of each of
-		the corresponding channels from each connection.
+		2. Mix it together with all of the other mixed streams (from other
+			connections). This is a straight-forward mixing together of each of
+			the corresponding channels from each connection.
+</div>
 
 <h3 id="ChannelLayouts">
 Speaker Channel Layouts</h3>
@@ -11233,69 +11251,71 @@ provides basic, but reasonable results. It is used for the for the
 value is ignored. This algorithm MUST be implemented using
 <a>a-rate</a> parameters.
 
-1. For each sample to be computed by this {{AudioNode}}:
+<div algorithm="equalpower panning">
+	1. For each sample to be computed by this {{AudioNode}}:
 
-	1. Let <em>azimuth</em> be the value computed in the <a href="#azimuth-elevation">azimuth and elevation</a> section.
+		1. Let <em>azimuth</em> be the value computed in the <a href="#azimuth-elevation">azimuth and elevation</a> section.
 
-	2. The <em>azimuth</em> value is first contained to be within
-		the range [-90, 90] according to:
+		2. The <em>azimuth</em> value is first contained to be within
+			the range [-90, 90] according to:
 
-		<pre highlight="js">
-		// First, clamp azimuth to allowed range of [-180, 180].
-		azimuth = max(-180, azimuth);
-		azimuth = min(180, azimuth);
+			<pre highlight="js">
+			// First, clamp azimuth to allowed range of [-180, 180].
+			azimuth = max(-180, azimuth);
+			azimuth = min(180, azimuth);
 
-		// Then wrap to range [-90, 90].
-		if (azimuth &lt; -90)
-			azimuth = -180 - azimuth;
-		else if (azimuth > 90)
-			azimuth = 180 - azimuth;
-		</pre>
+			// Then wrap to range [-90, 90].
+			if (azimuth &lt; -90)
+				azimuth = -180 - azimuth;
+			else if (azimuth > 90)
+				azimuth = 180 - azimuth;
+			</pre>
 
-	3. A normalized value <em>x</em> is calculated from
-		<em>azimuth</em> for a mono input as:
+		3. A normalized value <em>x</em> is calculated from
+			<em>azimuth</em> for a mono input as:
 
-		<pre highlight="js">
-		x = (azimuth + 90) / 180;
-		</pre>
+			<pre highlight="js">
+			x = (azimuth + 90) / 180;
+			</pre>
 
-		Or for a stereo input as:
+			Or for a stereo input as:
 
-		<pre highlight="js">
-		if (azimuth &lt;= 0) { // -90 -> 0
-			// Transform the azimuth value from [-90, 0] degrees into the range [-90, 90].
-			x = (azimuth + 90) / 90;
-		} else { // 0 -> 90
-			// Transform the azimuth value from [0, 90] degrees into the range [-90, 90].
-			x = azimuth / 90;
-		}
-		</pre>
+			<pre highlight="js">
+			if (azimuth &lt;= 0) { // -90 -> 0
+				// Transform the azimuth value from [-90, 0] degrees into the range [-90, 90].
+				x = (azimuth + 90) / 90;
+			} else { // 0 -> 90
+				// Transform the azimuth value from [0, 90] degrees into the range [-90, 90].
+				x = azimuth / 90;
+			}
+			</pre>
 
-	4. Left and right gain values are calculated as:
+		4. Left and right gain values are calculated as:
 
-		<pre highlight="js">
-		gainL = cos(x * Math.PI / 2);
-		gainR = sin(x * Math.PI / 2);
-		</pre>
+			<pre highlight="js">
+			gainL = cos(x * Math.PI / 2);
+			gainR = sin(x * Math.PI / 2);
+			</pre>
 
-	5. For mono input, the stereo output is calculated as:
+		5. For mono input, the stereo output is calculated as:
 
-		<pre highlight="js">
-		outputL = input * gainL;
-		outputR = input * gainR;
-		</pre>
+			<pre highlight="js">
+			outputL = input * gainL;
+			outputR = input * gainR;
+			</pre>
 
-		Else for stereo input, the output is calculated as:
+			Else for stereo input, the output is calculated as:
 
-		<pre highlight="js">
-		if (azimuth &lt;= 0) {
-			outputL = inputL + inputR * gainL;
-			outputR = inputR * gainR;
-		} else {
-			outputL = inputL * gainL;
-			outputR = inputR + inputL * gainR;
-		}
-		</pre>
+			<pre highlight="js">
+			if (azimuth &lt;= 0) {
+				outputL = inputL + inputR * gainL;
+				outputR = inputR * gainR;
+			} else {
+				outputL = inputL * gainL;
+				outputR = inputR + inputL * gainR;
+			}
+			</pre>
+</div>
 
 <h4 id="Spatialization-hrtf-panning">
 PannerNode "HRTF" Panning (stereo only)</h4>

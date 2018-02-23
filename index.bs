@@ -999,10 +999,11 @@ Methods</h4>
 				<code>constraints</code> attribute passed to the factory
 				method.
 
-			5. Return the result of constructing a new {{PeriodicWave}}
+			5. Construct a new {{PeriodicWave}}
 				<var>p</var>, passing the {{BaseAudioContext}} this factory
 				method has been called on as a first argument, and
 				<var>o</var>.
+			6. Return <var>p</var>.
 		</div>
 
 		<pre class=argumentdef for="BaseAudioContext/createPeriodicWave()">
@@ -1991,7 +1992,7 @@ Methods</h4>
 				<a>control thread</a>'s event loop to perform the following
 				steps:
 					<ol>
-						<li>Resolve <var>promise</var> with {{[[rendered buffer]]}}.
+						<li>Resolve the <var ignore>promise</var> created by {{startRendering()}} with {{[[rendered buffer]]}}.
 
 						<li>Queue a task to fire an event named
 						<code>complete</code> at this instance, using an instance
@@ -2179,8 +2180,8 @@ Constructors</h4>
 	::
 		Let <var>b</var> be a new {{AudioBuffer}} object.
 		Respectively assign the values of the attributes
-		<var>numberOfChannels</var>, <var>length</var>,
-		<var>sampleRate</var> of the {{AudioBufferOptions}} passed
+		{{AudioBufferOptions/numberOfChannels}}, {{AudioBufferOptions/length}},
+		{{AudioBufferOptions/sampleRate}} of the {{AudioBufferOptions}} passed
 		in the constructor to the internal slots {{[[number of channels]]}}, {{[[length]]}}, {{[[sample rate]]}}.
 
 		Set the internal slot {{[[internal data]]}} of this
@@ -2515,7 +2516,7 @@ is called on.
 <div algorithm="AudioNode factory method">
 	To create a new {{AudioNode}} of a particular type <var>n</var>
 	using its <a>factory method</a>, called on a
-	<var>BaseAudioContext</var> <var>c</var>, execute these steps:
+	{{BaseAudioContext}} <var>c</var>, execute these steps:
 
 	1. Let <var>o</var> be a new object of type <var>n</var>.
 
@@ -2539,8 +2540,7 @@ is called on.
 	arguments <var>context</var> and <var>dict</var> passed to the
 	constructor of this interface.
 
-	1. Set <var>o</var>'s associated {{BaseAudioContext}} to <var>
-		context</var>.
+	1. Set <var>o</var>'s associated {{BaseAudioContext}} to <var>context</var>.
 
 	2. Set its value for {{AudioNode/numberOfInputs}}, {{AudioNode/numberOfOutputs}}, {{AudioNode/channelCount}}, {{AudioNode/channelCountMode}}, {{AudioNode/channelInterpretation}} to the default value for this
 		specific interface outlined in the section for each {{AudioNode}}.
@@ -2925,7 +2925,7 @@ Methods</h4>
 		</div>
 
 		<pre class=argumentdef for="AudioNode/connect(destinationParam, output)">
-			destinationParam: The <code>destination</code> parameter is the {{AudioParam}} to connect to. This method does not return <code>destination</code> {{AudioParam}} object. <span class="synchronous">If <var>destination</var> belongs to an {{AudioNode}} that belongs to a {{BaseAudioContext}} that is different from the {{BaseAudioContext}} that has created the {{AudioNode}} on which this method was called, an {{InvalidAccessError}} MUST be thrown.</span>
+			destinationParam: The <code>destination</code> parameter is the {{AudioParam}} to connect to. This method does not return <code>destination</code> {{AudioParam}} object. <span class="synchronous">If {{AudioNode/connect(destinationParam, output)/destinationParam}} belongs to an {{AudioNode}} that belongs to a {{BaseAudioContext}} that is different from the {{BaseAudioContext}} that has created the {{AudioNode}} on which this method was called, an {{InvalidAccessError}} MUST be thrown.</span>
 			output: The <code>output</code> parameter is an index describing which output of the {{AudioNode}} from which to connect. <span class="synchronous">If the <code>parameter</code> is out-of-bound, an {{IndexSizeError}} exception MUST be thrown.</span>
 		</pre>
 
@@ -3393,7 +3393,7 @@ Methods</h4>
 		</div>
 
 		<pre class=argumentdef for="AudioParam/cancelAndHoldAtTime()">
-			cancelTime: The time after which any previously scheduled parameter changes will be cancelled. It is a time in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>cancelTime</code> is negative or is not a finite number.</span> If <var>cancelTime</var> is less than {{BaseAudioContext/currentTime}}, it is clamped to {{BaseAudioContext/currentTime}}.
+			cancelTime: The time after which any previously scheduled parameter changes will be cancelled. It is a time in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>cancelTime</code> is negative or is not a finite number.</span> If {{AudioParam/cancelAndHoldAtTime()/cancelTime}} is less than {{BaseAudioContext/currentTime}}, it is clamped to {{BaseAudioContext/currentTime}}.
 		</pre>
 
 		<div>
@@ -7048,8 +7048,7 @@ quantum of audio.
 		gain</var> multiplied by the return value of <a>computing the
 		makeup gain</a>.
 
-	10. Compute <var>metering gain</var> to be <var>final
-		gain</var>, <a href="#linear-to-decibel">converted to
+	10. Compute <var>metering gain</var> to be <var>final gain</var>, <a href="#linear-to-decibel">converted to
 		decibel</a>.
 
 7. Set {{[[compressor gain]]}} to <var>compressor
@@ -10474,8 +10473,7 @@ can restart executing this algoritm if needed.
 	latency implications.
 
 	{{OfflineAudioContext}} will execute the algorithm continuously,
-	until <var>length</var> (as passed in the
-	{{OfflineAudioContext}} contructor) frames have been rendered.
+	until {{OfflineAudioContext/length}} frames have been rendered.
 </div>
 
 1. Let <em>Q<sub>rendering</sub></em> be an empty <a>control message

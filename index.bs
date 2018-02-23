@@ -2539,8 +2539,7 @@ is called on.
 	arguments <var>context</var> and <var>dict</var> passed to the
 	constructor of this interface.
 
-	1. Set <var>o</var>'s associated {{BaseAudioContext}} to <var>
-		context</var>.
+	1. Set <var>o</var>'s associated {{BaseAudioContext}} to <var>context</var>.
 
 	2. Set its value for {{AudioNode/numberOfInputs}}, {{AudioNode/numberOfOutputs}}, {{AudioNode/channelCount}}, {{AudioNode/channelCountMode}}, {{AudioNode/channelInterpretation}} to the default value for this
 		specific interface outlined in the section for each {{AudioNode}}.

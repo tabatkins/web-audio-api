@@ -999,10 +999,11 @@ Methods</h4>
 				<code>constraints</code> attribute passed to the factory
 				method.
 
-			5. Return the result of constructing a new {{PeriodicWave}}
+			5. Construct a new {{PeriodicWave}}
 				<var>p</var>, passing the {{BaseAudioContext}} this factory
 				method has been called on as a first argument, and
 				<var>o</var>.
+			6. Return <var>p</var>.
 		</div>
 
 		<pre class=argumentdef for="BaseAudioContext/createPeriodicWave()">
@@ -7047,8 +7048,7 @@ quantum of audio.
 		gain</var> multiplied by the return value of <a>computing the
 		makeup gain</a>.
 
-	10. Compute <var>metering gain</var> to be <var>final
-		gain</var>, <a href="#linear-to-decibel">converted to
+	10. Compute <var>metering gain</var> to be <var>final gain</var>, <a href="#linear-to-decibel">converted to
 		decibel</a>.
 
 7. Set {{[[compressor gain]]}} to <var>compressor

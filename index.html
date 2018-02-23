@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="4b569cf70d4a06beb0eac65daaab1c8ca4886317" name="document-revision">
+  <meta content="45194a02d7cb7cfcdc21a853df4b422f66dd4550" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -9250,7 +9250,7 @@ sourceNode<span class="p">.</span>connect<span class="p">(</span>filterNode<span
 resources. Because Web Audio allows inspection of the content of
 the resource (e.g. using a <code class="idl"><a data-link-type="idl" href="#mediaelementaudiosourcenode" id="ref-for-mediaelementaudiosourcenode②①">MediaElementAudioSourceNode</a></code>, and
 a <code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode①⓪">ScriptProcessorNode</a></code> to read the samples), information
-leakage can occur if scripts from one <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin"> origin</a> inspect the content of a resource from another <a data-link-type="dfn" href="https://w3c.github.io/ServiceWorker/#service-worker-client-origin" id="ref-for-service-worker-client-origin">origin</a>.</p>
+leakage can occur if scripts from one <a href="https://html.spec.whatwg.org/multipage/origin.html#origin">origin</a> inspect the content of a resource from another <a href="https://html.spec.whatwg.org/multipage/origin.html#origin">origin</a>.</p>
    <p>To prevent this, a <code class="idl"><a data-link-type="idl" href="#mediaelementaudiosourcenode" id="ref-for-mediaelementaudiosourcenode②②">MediaElementAudioSourceNode</a></code> MUST output <em>silence</em> instead of the normal output of the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement" id="ref-for-htmlmediaelement①⑧">HTMLMediaElement</a></code> if it has been created using an <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement" id="ref-for-htmlmediaelement①⑨">HTMLMediaElement</a></code> for which the execution of the <a href="https://fetch.spec.whatwg.org/#fetching">fetch
 algorithm</a> labeled the resource as <a data-link-type="dfn">CORS-cross-origin</a>.</p>
    <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="1.23" data-lt="MediaStreamAudioDestinationNode" id="mediastreamaudiodestinationnode"><span class="secno">1.23. </span><span class="content"> The <code class="idl"><a data-link-type="idl" href="#mediastreamaudiodestinationnode" id="ref-for-mediastreamaudiodestinationnode⑦">MediaStreamAudioDestinationNode</a></code> Interface</span></h3>
@@ -14026,11 +14026,6 @@ James (Intel Corporation);</p>
      <li><a href="https://html.spec.whatwg.org/multipage/media.html#video">video</a>
     </ul>
    <li>
-    <a data-link-type="biblio">[service-workers-1]</a> defines the following terms:
-    <ul>
-     <li><a href="https://w3c.github.io/ServiceWorker/#service-worker-client-origin">origin</a>
-    </ul>
-   <li>
     <a data-link-type="biblio">[WebIDL]</a> defines the following terms:
     <ul>
      <li><a href="https://heycam.github.io/webidl/#idl-ArrayBuffer">ArrayBuffer</a>
@@ -14084,8 +14079,6 @@ James (Intel Corporation);</p>
    <dd>Daniel Burnett; et al. <a href="https://www.w3.org/TR/mediacapture-streams/">Media Capture and Streams</a>. 3 October 2017. CR. URL: <a href="https://www.w3.org/TR/mediacapture-streams/">https://www.w3.org/TR/mediacapture-streams/</a>
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
-   <dt id="biblio-service-workers-1">[SERVICE-WORKERS-1]
-   <dd>Alex Russell; et al. <a href="https://www.w3.org/TR/service-workers-1/">Service Workers 1</a>. 2 November 2017. WD. URL: <a href="https://www.w3.org/TR/service-workers-1/">https://www.w3.org/TR/service-workers-1/</a>
    <dt id="biblio-webidl">[WebIDL]
    <dd>Cameron McCormack; Boris Zbarsky; Tobie Langel. <a href="https://heycam.github.io/webidl/">Web IDL</a>. 15 December 2016. ED. URL: <a href="https://heycam.github.io/webidl/">https://heycam.github.io/webidl/</a>
    <dt id="biblio-webrtc">[WEBRTC]

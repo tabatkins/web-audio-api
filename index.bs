@@ -2924,7 +2924,7 @@ Methods</h4>
 		</div>
 
 		<pre class=argumentdef for="AudioNode/connect(destinationParam, output)">
-			destinationParam: The <code>destination</code> parameter is the {{AudioParam}} to connect to. This method does not return <code>destination</code> {{AudioParam}} object. <span class="synchronous">If <var>destination</var> belongs to an {{AudioNode}} that belongs to a {{BaseAudioContext}} that is different from the {{BaseAudioContext}} that has created the {{AudioNode}} on which this method was called, an {{InvalidAccessError}} MUST be thrown.</span>
+			destinationParam: The <code>destination</code> parameter is the {{AudioParam}} to connect to. This method does not return <code>destination</code> {{AudioParam}} object. <span class="synchronous">If {{AudioNode/connect(destinationParam, output)/destinationParam}} belongs to an {{AudioNode}} that belongs to a {{BaseAudioContext}} that is different from the {{BaseAudioContext}} that has created the {{AudioNode}} on which this method was called, an {{InvalidAccessError}} MUST be thrown.</span>
 			output: The <code>output</code> parameter is an index describing which output of the {{AudioNode}} from which to connect. <span class="synchronous">If the <code>parameter</code> is out-of-bound, an {{IndexSizeError}} exception MUST be thrown.</span>
 		</pre>
 

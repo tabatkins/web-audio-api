@@ -983,14 +983,14 @@ Methods</h4>
 			When calling this method,
 			execute these steps:
 
-			1. If <var>real</var> and <var>imag</var> are not of the same
+			1. If {{real}} and {{imag}} are not of the same
 				length, an {{IndexSizeError}} MUST be thrown.
 
 			2. Let <var>o</var> be a new object of type
 				{{PeriodicWaveOptions}}.
 
-			3. Respectively set the <code>real</code> and
-				<code>imag</code> parameters passed to this factory method to
+			3. Respectively set the {{real}} and
+				{{imag}} parameters passed to this factory method to
 				the attributes of the same name on <var>o</var>.
 
 			4. Set the {{PeriodicWaveConstraints/disableNormalization}} attribute on

@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="4978b215b577c82d43ccceb775611100963a0359" name="document-revision">
+  <meta content="351b1fbd1d6b02f44b40b370a4a6bbf0a0747bd4" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -5264,22 +5264,24 @@ to compute the output of an <code class="idl"><a data-link-type="idl" href="#aud
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="computedvalue">computedValue</dfn> is the final value controlling the
 audio DSP and is computed by the audio rendering thread during each
 rendering time quantum. It MUST be internally computed as follows:</p>
-   <ol>
-    <li data-md="">
-     <p>An <em>intrinsic</em> parameter value will be calculated at
+   <div class="algorithm" data-algorithm="computation-of-value">
+    <ol>
+     <li data-md="">
+      <p>An <em>intrinsic</em> parameter value will be calculated at
 each time, which is either the value set directly to the <code>value</code> attribute, or, if there are any <a href="#dfn-automation-event" id="ref-for-dfn-automation-event">automation events</a> with times before or
 at this time, the value as calculated from these events. When read,
 the <code>value</code> attribute always returns the <em>intrinsic</em> value for the current time. If automation events
 are removed from a given time range, then the <em>intrinsic</em> value will remain unchanged and stay at its previous value until
 either the <code>value</code> attribute is directly set, or
 automation events are added for the time range.</p>
-    <li data-md="">
-     <p>The <em>computedValue</em> is the sum of the <em>intrinsic</em> value and the value of the <a href="#input-audioparam-buffer" id="ref-for-input-audioparam-buffer">input
+     <li data-md="">
+      <p>The <em>computedValue</em> is the sum of the <em>intrinsic</em> value and the value of the <a href="#input-audioparam-buffer" id="ref-for-input-audioparam-buffer">input
 AudioParam buffer</a>. When read, the <code>value</code> attribute always returns the <em>computedValue</em> for the current time.</p>
-    <li data-md="">
-     <p>If this <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑤">AudioParam</a></code> is a <a data-link-type="dfn" href="#compound-parameter" id="ref-for-compound-parameter①">compound parameter</a>,
+     <li data-md="">
+      <p>If this <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑤">AudioParam</a></code> is a <a data-link-type="dfn" href="#compound-parameter" id="ref-for-compound-parameter①">compound parameter</a>,
 compute its final value with other <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam⑤⑥">AudioParam</a></code>s.</p>
-   </ol>
+    </ol>
+   </div>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="nominal-range">nominal range</dfn> for a <a data-link-type="dfn" href="#computedvalue" id="ref-for-computedvalue">computedValue</a> are the
 lower and higher values this parameter can effectively have. For <a data-link-type="dfn" href="#simple-parameter" id="ref-for-simple-parameter①">simple parameters</a>, the <a data-link-type="dfn" href="#computedvalue" id="ref-for-computedvalue①">computedValue</a> is clamped to
 the <a data-link-type="dfn" href="#simple-nominal-range" id="ref-for-simple-nominal-range">simple nominal range</a> for this parameter. <a data-link-type="dfn" href="#compound-parameter" id="ref-for-compound-parameter②">Compound
@@ -5745,20 +5747,22 @@ node.</p>
    <p>When the <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="current frequency data" data-noexport="" id="current-frequency-data">current frequency
 data</dfn> are computed, the following operations are to be
 performed:</p>
-   <ol>
-    <li data-md="">
-     <p>Compute the <a data-link-type="dfn" href="#current-time-domain-data" id="ref-for-current-time-domain-data②">current time-domain data</a>.</p>
-    <li data-md="">
-     <p><a href="#blackman-window" id="ref-for-blackman-window">Apply a Blackman window</a> to the time domain input data.</p>
-    <li data-md="">
-     <p><a href="#fourier-transform" id="ref-for-fourier-transform">Apply a Fourier transform</a> to the
+   <div class="algorithm" data-algorithm="compute-frequency-data">
+    <ol>
+     <li data-md="">
+      <p>Compute the <a data-link-type="dfn" href="#current-time-domain-data" id="ref-for-current-time-domain-data②">current time-domain data</a>.</p>
+     <li data-md="">
+      <p><a href="#blackman-window" id="ref-for-blackman-window">Apply a Blackman window</a> to the time domain input data.</p>
+     <li data-md="">
+      <p><a href="#fourier-transform" id="ref-for-fourier-transform">Apply a Fourier transform</a> to the
 windowed time domain input data to get imaginary and real
 frequency data.</p>
-    <li data-md="">
-     <p><a href="#smoothing-over-time" id="ref-for-smoothing-over-time①">Smooth over time</a> the frequency domain data.</p>
-    <li data-md="">
-     <p><a href="#conversion-to-db" id="ref-for-conversion-to-db">Conversion to dB</a>.</p>
-   </ol>
+     <li data-md="">
+      <p><a href="#smoothing-over-time" id="ref-for-smoothing-over-time①">Smooth over time</a> the frequency domain data.</p>
+     <li data-md="">
+      <p><a href="#conversion-to-db" id="ref-for-conversion-to-db">Conversion to dB</a>.</p>
+    </ol>
+   </div>
    <p>In the following, let \(N\) be the value of the <code class="idl"><a data-link-type="idl" href="#dom-analysernode-fftsize" id="ref-for-dom-analysernode-fftsize①①">fftSize</a></code> attribute of this <code class="idl"><a data-link-type="idl" href="#analysernode" id="ref-for-analysernode①③">AnalyserNode</a></code>.</p>
    <div class="algorithm" data-algorithm="apply blackman window">
      <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="blackman-window">Applying a Blackman window</dfn> consists
@@ -8725,70 +8729,72 @@ number, initialized to 0.0.</p>
      <p>Let <dfn class="dfn-paneled idl-code" data-dfn-for="DynamicsCompressorNode" data-dfn-type="attribute" data-export="" id="dom-dynamicscompressornode-compressor-gain-slot"><code>[[compressor gain]]</code></dfn> be a floating point
 number, initialized to 1.0.</p>
    </ul>
-   <p>The following algorithm allow determining a value for <var>reduction gain</var>, for each sample of input, for a render
-quantum of audio.</p>
-   <ol>
-    <li data-md="">
-     <p>Let <var>threshold</var>, <var>knee</var> have the value of the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①①④">AudioParam</a></code> of the same name, <a href="#db-to-linear" id="ref-for-db-to-linear">converted to linear unit</a> sampled at the time of
+   <div class="algorithm" data-algorithm="reduction-gain">
+     The following algorithm allow determining a value for <var>reduction gain</var>, for each sample of input, for a render
+	quantum of audio. 
+    <ol>
+     <li data-md="">
+      <p>Let <var>threshold</var>, <var>knee</var> have the value of the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①①④">AudioParam</a></code> of the same name, <a href="#db-to-linear" id="ref-for-db-to-linear">converted to linear unit</a> sampled at the time of
 processing of this block (as <a data-link-type="dfn" href="#k-rate" id="ref-for-k-rate⑨">k-rate</a> parameters).</p>
-    <li data-md="">
-     <p>Let <var>ratio</var> have the value of the <code>ratio</code> <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①①⑤">AudioParam</a></code>, sampled at the time of processing of this block
+     <li data-md="">
+      <p>Let <var>ratio</var> have the value of the <code>ratio</code> <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①①⑤">AudioParam</a></code>, sampled at the time of processing of this block
 (as a <a data-link-type="dfn" href="#k-rate" id="ref-for-k-rate①⓪">k-rate</a> parameter).</p>
-    <li data-md="">
-     <p>Let <var>attack</var> and <var>release</var> have the value of
+     <li data-md="">
+      <p>Let <var>attack</var> and <var>release</var> have the value of
 the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①①⑥">AudioParam</a></code> of the same name, sampled at the time of
 processing (those are <a data-link-type="dfn" href="#k-rate" id="ref-for-k-rate①①">k-rate</a> parameters), mutiplied by the
 sample-rate of the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑤⑦">BaseAudioContext</a></code> this <code class="idl"><a data-link-type="idl" href="#dynamicscompressornode" id="ref-for-dynamicscompressornode②⓪">DynamicsCompressorNode</a></code> is <a href="#associated" id="ref-for-associated①⓪">associated</a> with.</p>
-    <li data-md="">
-     <p>Let <var>detector average</var> be the value of the slot <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-detector-average-slot" id="ref-for-dom-dynamicscompressornode-detector-average-slot">[[detector average]]</a></code>.</p>
-    <li data-md="">
-     <p>Let <var>compressor gain</var> be the value of the slot <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-compressor-gain-slot" id="ref-for-dom-dynamicscompressornode-compressor-gain-slot">[[compressor gain]]</a></code>.</p>
-    <li data-md="">
-     <p>For each sample <var>input</var> of the render quantum to be
+     <li data-md="">
+      <p>Let <var>detector average</var> be the value of the slot <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-detector-average-slot" id="ref-for-dom-dynamicscompressornode-detector-average-slot">[[detector average]]</a></code>.</p>
+     <li data-md="">
+      <p>Let <var>compressor gain</var> be the value of the slot <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-compressor-gain-slot" id="ref-for-dom-dynamicscompressornode-compressor-gain-slot">[[compressor gain]]</a></code>.</p>
+     <li data-md="">
+      <p>For each sample <var>input</var> of the render quantum to be
 processed, execute the following steps:</p>
-     <ol>
-      <li data-md="">
-       <p>Let <var>releasing</var> be <code>true</code> if <var>target gain</var> is greater than <var>compressor
+      <ol>
+       <li data-md="">
+        <p>Let <var>releasing</var> be <code>true</code> if <var>target gain</var> is greater than <var>compressor
 gain</var>, <code>false</code> otherwise.</p>
-      <li data-md="">
-       <p>If the absolute value of <var>input</var> is less than
+       <li data-md="">
+        <p>If the absolute value of <var>input</var> is less than
 0.0001, let <var>attenuation</var> be 1.0. Else, let <var>shaped input</var> be the value of applying the <a href="#compression-curve" id="ref-for-compression-curve">compression curve</a> to the absolute
 value of <var>input</var>. Let <var>attenuation</var> be <var>shaped input</var> divided by the absolute value of <var>input</var>.</p>
-      <li data-md="">
-       <p>Let <var>detector rate</var> be the result of applying the <a href="#detector-curve" id="ref-for-detector-curve">detector curve</a> to <var>attenuation</var>.</p>
-      <li data-md="">
-       <p>Substract <var>detector average</var> to <var>attenuation</var>, and multiply the result by <var>detector rate</var>. Add this new result to <var>detector
+       <li data-md="">
+        <p>Let <var>detector rate</var> be the result of applying the <a href="#detector-curve" id="ref-for-detector-curve">detector curve</a> to <var>attenuation</var>.</p>
+       <li data-md="">
+        <p>Substract <var>detector average</var> to <var>attenuation</var>, and multiply the result by <var>detector rate</var>. Add this new result to <var>detector
 average</var>.</p>
-      <li data-md="">
-       <p>Clamp <var>detector average</var> to a maximum of 1.0.</p>
-      <li data-md="">
-       <p>Let <var>envelope rate</var> be the result of <a data-link-type="dfn" href="#computing-the-envelope-rate" id="ref-for-computing-the-envelope-rate">computing the envelope rate</a>.</p>
-      <li data-md="">
-       <p>If <var>releasing</var> is <code>true</code>, set <var>compressor gain</var> to the multiplication of <var>compressor gain</var> by <var>envelope rate</var>, clamped
+       <li data-md="">
+        <p>Clamp <var>detector average</var> to a maximum of 1.0.</p>
+       <li data-md="">
+        <p>Let <var>envelope rate</var> be the result of <a data-link-type="dfn" href="#computing-the-envelope-rate" id="ref-for-computing-the-envelope-rate">computing the envelope rate</a>.</p>
+       <li data-md="">
+        <p>If <var>releasing</var> is <code>true</code>, set <var>compressor gain</var> to the multiplication of <var>compressor gain</var> by <var>envelope rate</var>, clamped
 to a maximum of 1.0.</p>
-      <li data-md="">
-       <p>Else, if <var>releasing</var> is <code>false</code>, let <var>gain increment</var> to be <var>detector average</var> minus <var>compressor gain</var>. Multiply <var>gain
+       <li data-md="">
+        <p>Else, if <var>releasing</var> is <code>false</code>, let <var>gain increment</var> to be <var>detector average</var> minus <var>compressor gain</var>. Multiply <var>gain
 increment</var> by <var>envelope rate</var>, and add the result
 to <var>compressor gain</var>.</p>
-      <li data-md="">
-       <p>Compute <var>reduction gain</var> to be <var>compressor
+       <li data-md="">
+        <p>Compute <var>reduction gain</var> to be <var>compressor
 gain</var> multiplied by the return value of <a data-link-type="dfn" href="#computing-the-makeup-gain" id="ref-for-computing-the-makeup-gain">computing the
 makeup gain</a>.</p>
-      <li data-md="">
-       <p>Compute <var>metering gain</var> to be <var>final gain</var>, <a href="#linear-to-decibel" id="ref-for-linear-to-decibel">converted to
+       <li data-md="">
+        <p>Compute <var>metering gain</var> to be <var>final gain</var>, <a href="#linear-to-decibel" id="ref-for-linear-to-decibel">converted to
 decibel</a>.</p>
-     </ol>
-    <li data-md="">
-     <p>Set <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-compressor-gain-slot" id="ref-for-dom-dynamicscompressornode-compressor-gain-slot①">[[compressor gain]]</a></code> to <var>compressor
+      </ol>
+     <li data-md="">
+      <p>Set <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-compressor-gain-slot" id="ref-for-dom-dynamicscompressornode-compressor-gain-slot①">[[compressor gain]]</a></code> to <var>compressor
 gain</var>.</p>
-    <li data-md="">
-     <p>Set <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-detector-average-slot" id="ref-for-dom-dynamicscompressornode-detector-average-slot①">[[detector average]]</a></code> to <var>detector
+     <li data-md="">
+      <p>Set <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-detector-average-slot" id="ref-for-dom-dynamicscompressornode-detector-average-slot①">[[detector average]]</a></code> to <var>detector
 average</var>.</p>
-    <li data-md="">
-     <p><a data-link-type="dfn" href="#atomically" id="ref-for-atomically①">Atomically</a> set the internal slot <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-internal-reduction-slot" id="ref-for-dom-dynamicscompressornode-internal-reduction-slot②">[[internal reduction]]</a></code> to the value of <var>metering gain</var>.</p>
-     <p class="note" role="note"><span>Note:</span> This step makes the metering gain update once per block, at the
+     <li data-md="">
+      <p><a data-link-type="dfn" href="#atomically" id="ref-for-atomically①">Atomically</a> set the internal slot <code class="idl"><a data-link-type="idl" href="#dom-dynamicscompressornode-internal-reduction-slot" id="ref-for-dom-dynamicscompressornode-internal-reduction-slot②">[[internal reduction]]</a></code> to the value of <var>metering gain</var>.</p>
+      <p class="note" role="note"><span>Note:</span> This step makes the metering gain update once per block, at the
 end of the block processing.</p>
-   </ol>
+    </ol>
+   </div>
    <p>The makeup gain is a fixed gain stage that only depends on ratio,
 knee and threshold parameter of the compressor, and not on the
 input signal. The intent here is to increase the output level of
@@ -10956,19 +10962,21 @@ processing by avoiding some aliasing, with the "<code class="idl"><a data-link-t
 yielding the highest quality. For some applications, it’s
 better to use no oversampling in order to get a very precise
 shaping curve.</p>
-     <p>A value of "<code class="idl"><a data-link-type="idl" href="#dom-oversampletype-2x" id="ref-for-dom-oversampletype-2x③">2x</a></code>" or "<code class="idl"><a data-link-type="idl" href="#dom-oversampletype-4x" id="ref-for-dom-oversampletype-4x④">4x</a></code>" means that the following steps MUST be
-performed:</p>
-     <ol>
-      <li data-md="">
-       <p>Up-sample the input samples to 2x or 4x the sample-rate of
+     <div class="algorithm" data-algorithm="oversample">
+       A value of "<code class="idl"><a data-link-type="idl" href="#dom-oversampletype-2x" id="ref-for-dom-oversampletype-2x③">2x</a></code>" or "<code class="idl"><a data-link-type="idl" href="#dom-oversampletype-4x" id="ref-for-dom-oversampletype-4x④">4x</a></code>" means that the following steps MUST be
+	performed: 
+      <ol>
+       <li data-md="">
+        <p>Up-sample the input samples to 2x or 4x the sample-rate of
 the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①⓪">AudioContext</a></code>. Thus for each <a data-link-type="dfn" href="#render-quantum" id="ref-for-render-quantum①①">render
 quantum</a>, generate 256 (for 2x) or 512 (for 4x) samples.</p>
-      <li data-md="">
-       <p>Apply the shaping curve.</p>
-      <li data-md="">
-       <p>Down-sample the result back to the sample-rate of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①①">AudioContext</a></code>. Thus taking the 256 (or 512)
+       <li data-md="">
+        <p>Apply the shaping curve.</p>
+       <li data-md="">
+        <p>Down-sample the result back to the sample-rate of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①①">AudioContext</a></code>. Thus taking the 256 (or 512)
 processed samples, generating 128 as the final result.</p>
-     </ol>
+      </ol>
+     </div>
      <p>The exact up-sampling and down-sampling filters are not
 specified, and can be tuned for sound quality (low aliasing,
 etc.), low latency, and performance.</p>
@@ -11587,105 +11595,109 @@ main global scope, the corresponding <code class="idl"><a data-link-type="idl" h
 maintain the internal reference to each other until the <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑧">AudioWorkletNode</a></code> instance is destroyed.</p>
    <p>Note that the instantiation of these two objects spans the control
 thread and the rendering thread.</p>
-   <p>When <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode" id="ref-for-dom-audioworkletnode-audioworkletnode①">AudioWorkletNode</a></code>(<code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode-context-name-options-context" id="ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-context">context</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode-context-name-options-name" id="ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-name">nodeName</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode-context-name-options-options" id="ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-options">options</a></code>) constructor is invoked,
-the user agent MUST perform the following steps on the control
-thread, where the constructor was called.</p>
-   <ol>
-    <li data-md="">
-     <p>Let <var>this</var> be the instance being created by
+   <div class="algorithm" data-algorithm="audioworklet construction">
+     When <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode" id="ref-for-dom-audioworkletnode-audioworkletnode①">AudioWorkletNode</a></code>(<code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode-context-name-options-context" id="ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-context">context</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode-context-name-options-name" id="ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-name">nodeName</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode-context-name-options-options" id="ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-options">options</a></code>) constructor is invoked,
+	the user agent MUST perform the following steps on the control
+	thread, where the constructor was called. 
+    <ol>
+     <li data-md="">
+      <p>Let <var>this</var> be the instance being created by
 constructor of <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑨">AudioWorkletNode</a></code> or its subclass.</p>
-    <li data-md="">
-     <p>If <var>nodeName</var> does not exists as a key in the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨②">BaseAudioContext</a></code>’s <a data-link-type="dfn" href="#node-name-to-parameter-descriptor-map" id="ref-for-node-name-to-parameter-descriptor-map②">node name to parameter descriptor
+     <li data-md="">
+      <p>If <var>nodeName</var> does not exists as a key in the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨②">BaseAudioContext</a></code>’s <a data-link-type="dfn" href="#node-name-to-parameter-descriptor-map" id="ref-for-node-name-to-parameter-descriptor-map②">node name to parameter descriptor
 map</a>, throw a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror③⑦">NotSupportedError</a></code> exception and abort
 these steps.</p>
-    <li data-md="">
-     <p>Let <var>node</var> be a new <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⓪">AudioWorkletNode</a></code> object.</p>
-    <li data-md="">
-     <p>Let <var>messageChannel</var> be a new <a href="https://html.spec.whatwg.org/multipage/#message-channels">MessageChannel</a>.</p>
-    <li data-md="">
-     <p>Let <var>nodePort</var> be the value of <var>messageChannel</var>’s <code>port1</code> attribute.</p>
-    <li data-md="">
-     <p>Let <var>processorPortOnThisSide</var> be the value of <var>messageChannel</var>’s <code>port2</code> attribute.</p>
-    <li data-md="">
-     <p>Let <var>processorPortSerialization</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserializewithtransfer"> StructuredSerializeWithTransfer</a>(<var>processorPortOnThisSide</var>,
+     <li data-md="">
+      <p>Let <var>node</var> be a new <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⓪">AudioWorkletNode</a></code> object.</p>
+     <li data-md="">
+      <p>Let <var>messageChannel</var> be a new <a href="https://html.spec.whatwg.org/multipage/#message-channels">MessageChannel</a>.</p>
+     <li data-md="">
+      <p>Let <var>nodePort</var> be the value of <var>messageChannel</var>’s <code>port1</code> attribute.</p>
+     <li data-md="">
+      <p>Let <var>processorPortOnThisSide</var> be the value of <var>messageChannel</var>’s <code>port2</code> attribute.</p>
+     <li data-md="">
+      <p>Let <var>processorPortSerialization</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserializewithtransfer"> StructuredSerializeWithTransfer</a>(<var>processorPortOnThisSide</var>,
 	« <var>processorPortOnThisSide</var> »).</p>
-    <li data-md="">
-     <p>Let <var>optionsSerialization</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserialize">StructuredSerialize</a>(<var>options</var>).</p>
-    <li data-md="">
-     <p>Set <var>node</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-port" id="ref-for-dom-audioworkletnode-port①">port</a></code> to <var>nodePort</var>.</p>
-    <li data-md="">
-     <p>Let <var>parameterDescriptors</var> be the result of retrieval
+     <li data-md="">
+      <p>Let <var>optionsSerialization</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structuredserialize">StructuredSerialize</a>(<var>options</var>).</p>
+     <li data-md="">
+      <p>Set <var>node</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-port" id="ref-for-dom-audioworkletnode-port①">port</a></code> to <var>nodePort</var>.</p>
+     <li data-md="">
+      <p>Let <var>parameterDescriptors</var> be the result of retrieval
 of <var>nodeName</var> from <a data-link-type="dfn" href="#node-name-to-parameter-descriptor-map" id="ref-for-node-name-to-parameter-descriptor-map③">node name to parameter descriptor map</a>:</p>
-     <ol>
-      <li data-md="">
-       <p>Let <var>audioParamMap</var> be a new <code class="idl"><a data-link-type="idl" href="#audioparammap" id="ref-for-audioparammap②">AudioParamMap</a></code> object.</p>
-      <li data-md="">
-       <p>For each <var>descriptor</var> of <var>parameterDescriptors</var>:</p>
-       <ol>
-        <li data-md="">
-         <p>Let <var>paramName</var> be the value of <var>descriptor</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioparamdescriptor-name" id="ref-for-dom-audioparamdescriptor-name①">name</a></code>.</p>
-        <li data-md="">
-         <p>Let <var>audioParam</var> be a new <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⓪">AudioParam</a></code> instance.</p>
-        <li data-md="">
-         <p>Append (<var>paramName</var>, <var>audioParam</var>) to <var>audioParamMap</var>’s entries.</p>
-       </ol>
-      <li data-md="">
-       <p>For each <var>paramNameInOption</var> → <var>value</var> of <var>options</var>:</p>
-       <ol>
-        <li data-md="">
-         <p>If there exists an entry with name member equal to <var>paramNameInOption</var> inside <var>audioParamMap</var>, set that <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤①">AudioParam</a></code>'s
+      <ol>
+       <li data-md="">
+        <p>Let <var>audioParamMap</var> be a new <code class="idl"><a data-link-type="idl" href="#audioparammap" id="ref-for-audioparammap②">AudioParamMap</a></code> object.</p>
+       <li data-md="">
+        <p>For each <var>descriptor</var> of <var>parameterDescriptors</var>:</p>
+        <ol>
+         <li data-md="">
+          <p>Let <var>paramName</var> be the value of <var>descriptor</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioparamdescriptor-name" id="ref-for-dom-audioparamdescriptor-name①">name</a></code>.</p>
+         <li data-md="">
+          <p>Let <var>audioParam</var> be a new <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⓪">AudioParam</a></code> instance.</p>
+         <li data-md="">
+          <p>Append (<var>paramName</var>, <var>audioParam</var>) to <var>audioParamMap</var>’s entries.</p>
+        </ol>
+       <li data-md="">
+        <p>For each <var>paramNameInOption</var> → <var>value</var> of <var>options</var>:</p>
+        <ol>
+         <li data-md="">
+          <p>If there exists an entry with name member equal to <var>paramNameInOption</var> inside <var>audioParamMap</var>, set that <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤①">AudioParam</a></code>'s
 value to <var>value</var>.</p>
-        <li data-md="">
-         <p><var>paramNameInOption</var> will be ignored when:</p>
-         <ul>
-          <li data-md="">
-           <p><var>audioParamMap</var> does not have any entry with
+         <li data-md="">
+          <p><var>paramNameInOption</var> will be ignored when:</p>
+          <ul>
+           <li data-md="">
+            <p><var>audioParamMap</var> does not have any entry with
 the same name member.</p>
-          <li data-md="">
-           <p><var>value</var> is not a type of <code>Number</code> or out of the range specified in <code class="idl"><a data-link-type="idl" href="#dictdef-audioparamdescriptor" id="ref-for-dictdef-audioparamdescriptor⑥">AudioParamDescriptor</a></code>.</p>
-         </ul>
-       </ol>
-      <li data-md="">
-       <p>Set <var>node</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-parameters" id="ref-for-dom-audioworkletnode-parameters①">parameters</a></code> to <var>audioParamMap</var>.</p>
-     </ol>
-    <li data-md="">
-     <p><a data-link-type="dfn" href="#queuing" id="ref-for-queuing⑦">Queue a control message</a> to create an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④①">AudioWorkletProcessor</a></code>, given <var>nodeName</var>, <var>processorPortSerialization</var>, <var>optionsSerialization</var>,  and <var>node</var>.</p>
-    <li data-md="">
-     <p>Return <var>node</var>.</p>
-   </ol>
+           <li data-md="">
+            <p><var>value</var> is not a type of <code>Number</code> or out of the range specified in <code class="idl"><a data-link-type="idl" href="#dictdef-audioparamdescriptor" id="ref-for-dictdef-audioparamdescriptor⑥">AudioParamDescriptor</a></code>.</p>
+          </ul>
+        </ol>
+       <li data-md="">
+        <p>Set <var>node</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-parameters" id="ref-for-dom-audioworkletnode-parameters①">parameters</a></code> to <var>audioParamMap</var>.</p>
+      </ol>
+     <li data-md="">
+      <p><a data-link-type="dfn" href="#queuing" id="ref-for-queuing⑦">Queue a control message</a> to create an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④①">AudioWorkletProcessor</a></code>, given <var>nodeName</var>, <var>processorPortSerialization</var>, <var>optionsSerialization</var>,  and <var>node</var>.</p>
+     <li data-md="">
+      <p>Return <var>node</var>.</p>
+    </ol>
+   </div>
    <p>In order to process a control message for the construction of an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④②">AudioWorkletProcessor</a></code>, given a string <var>nodeName</var>, a
 serialization record <var>processorPortSerialization</var>, and an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④①">AudioWorkletNode</a></code> <var>node</var>, perform the following
 steps on the <a data-link-type="dfn" href="#rendering-thread" id="ref-for-rendering-thread①⓪">rendering thread</a>. If any of these steps throws
 an exception (either explicitly or implicitly), abort the rest of
 steps and queue a task on the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread①④">control thread</a> to fire <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-onprocessorstatechange" id="ref-for-dom-audioworkletnode-onprocessorstatechange②">onprocessorstatechange</a></code> event to <var>node</var> with <code>error</code> state.</p>
-   <ol>
-    <li data-md="">
-     <p>Let <var>processorPort</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer"> StructuredDeserializeWithTransfer</a>(<var>processorPortSerialization</var>,
+   <div class="algorithm" data-algorithm="process control message">
+    <ol>
+     <li data-md="">
+      <p>Let <var>processorPort</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer"> StructuredDeserializeWithTransfer</a>(<var>processorPortSerialization</var>,
 the current Realm).</p>
-    <li data-md="">
-     <p>Let <var>options</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer"> StructuredDeserialize</a>(<var>optionsSerialization</var>, the
+     <li data-md="">
+      <p>Let <var>options</var> be <a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer"> StructuredDeserialize</a>(<var>optionsSerialization</var>, the
   current Realm).</p>
-    <li data-md="">
-     <p>Let <var>processorConstructor</var> be the result of looking up <var>nodeName</var> on the <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑤">AudioWorkletGlobalScope</a></code>'s <a data-link-type="dfn" href="#node-name-to-processor-definition-map" id="ref-for-node-name-to-processor-definition-map④">node
+     <li data-md="">
+      <p>Let <var>processorConstructor</var> be the result of looking up <var>nodeName</var> on the <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑤">AudioWorkletGlobalScope</a></code>'s <a data-link-type="dfn" href="#node-name-to-processor-definition-map" id="ref-for-node-name-to-processor-definition-map④">node
 name to processor definition map</a>.</p>
-    <li data-md="">
-     <p>If <var>processorConstructor</var> is <code>undefined</code>,
+     <li data-md="">
+      <p>If <var>processorConstructor</var> is <code>undefined</code>,
 throw a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror③⑧">NotSupportedError</a></code> DOMException.</p>
-    <li data-md="">
-     <p>Let <var>processor</var> be the result of
+     <li data-md="">
+      <p>Let <var>processor</var> be the result of
 Construct(<var>processorConstructor</var>, « <var>options</var> »).</p>
-    <li data-md="">
-     <p>If <var>processor</var> does not implement the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④③">AudioWorkletProcessor</a></code> interface, throw an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror③②">InvalidStateError</a></code> DOMException.</p>
-    <li data-md="">
-     <p>Set <var>processor</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletprocessor-port" id="ref-for-dom-audioworkletprocessor-port①">port</a></code> to <var>processorPort</var>.</p>
-    <li data-md="">
-     <p>Set <var>processor</var>’s <a data-link-type="dfn" href="#node-reference" id="ref-for-node-reference">node reference</a> to <var>node</var>.</p>
-    <li data-md="">
-     <p>Set <var>node</var>’s <a data-link-type="dfn" href="#processor-reference" id="ref-for-processor-reference">processor reference</a> to <var>processor</var>.</p>
-    <li data-md="">
-     <p>Queue a task the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread①⑤">control thread</a> to set the associated <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④②">AudioWorkletNode</a></code>'s state to <code>running</code>, then fire
+     <li data-md="">
+      <p>If <var>processor</var> does not implement the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④③">AudioWorkletProcessor</a></code> interface, throw an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror③②">InvalidStateError</a></code> DOMException.</p>
+     <li data-md="">
+      <p>Set <var>processor</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletprocessor-port" id="ref-for-dom-audioworkletprocessor-port①">port</a></code> to <var>processorPort</var>.</p>
+     <li data-md="">
+      <p>Set <var>processor</var>’s <a data-link-type="dfn" href="#node-reference" id="ref-for-node-reference">node reference</a> to <var>node</var>.</p>
+     <li data-md="">
+      <p>Set <var>node</var>’s <a data-link-type="dfn" href="#processor-reference" id="ref-for-processor-reference">processor reference</a> to <var>processor</var>.</p>
+     <li data-md="">
+      <p>Queue a task the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread①⑤">control thread</a> to set the associated <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④②">AudioWorkletNode</a></code>'s state to <code>running</code>, then fire
 a <code>statechange</code> event.</p>
-   </ol>
+    </ol>
+   </div>
    <h4 class="heading settled" data-level="1.33.6" id="AudioWorklet-Sequence"><span class="secno">1.33.6. </span><span class="content"> AudioWorklet Sequence of Events</span><a class="self-link" href="#AudioWorklet-Sequence"></a></h4>
    <p>The following figure illustrates an idealized sequence of events
 occurring relative to an <code class="idl"><a data-link-type="idl" href="#audioworklet" id="ref-for-audioworklet①⓪">AudioWorklet</a></code>:</p>
@@ -11697,33 +11709,35 @@ occurring relative to an <code class="idl"><a data-link-type="idl" href="#audiow
 events involving the creation of an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①③">AudioContext</a></code> and an
 associated <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑥">AudioWorkletGlobalScope</a></code>, followed by the creation
 of an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④③">AudioWorkletNode</a></code> and its associated <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④④">AudioWorkletProcessor</a></code>.</p>
-   <ol>
-    <li data-md="">
-     <p>An <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①④">AudioContext</a></code> is created.</p>
-    <li data-md="">
-     <p>In the main scope, <code>context.audioWorklet</code> is requested to add a script module.</p>
-    <li data-md="">
-     <p>Since none exists yet, a new <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑦">AudioWorkletGlobalScope</a></code> is created in association with the context’sThis is the global scope in which <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑤">AudioWorkletProcessor</a></code> class definitions will be evaluated. (On subsequent calls, this previously created scope will be used.)</p>
-    <li data-md="">
-     <p>The imported script is run in the newly created global scope.</p>
-    <li data-md="">
-     <p>As part of running the imported script, an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑥">AudioWorkletProcessor</a></code> is registered under
+   <div class="algorithm" data-algorithm="audioworklet sequence">
+    <ol>
+     <li data-md="">
+      <p>An <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①④">AudioContext</a></code> is created.</p>
+     <li data-md="">
+      <p>In the main scope, <code>context.audioWorklet</code> is requested to add a script module.</p>
+     <li data-md="">
+      <p>Since none exists yet, a new <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑦">AudioWorkletGlobalScope</a></code> is created in association with the context’sThis is the global scope in which <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑤">AudioWorkletProcessor</a></code> class definitions will be evaluated. (On subsequent calls, this previously created scope will be used.)</p>
+     <li data-md="">
+      <p>The imported script is run in the newly created global scope.</p>
+     <li data-md="">
+      <p>As part of running the imported script, an <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑥">AudioWorkletProcessor</a></code> is registered under
 a key (<code>"custom"</code> in the above diagram) within the <code class="idl"><a data-link-type="idl" href="#audioworkletglobalscope" id="ref-for-audioworkletglobalscope①⑧">AudioWorkletGlobalScope</a></code>.
 This populates maps both in the global scope and in the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①⑤">AudioContext</a></code>.</p>
-    <li data-md="">
-     <p>The promise for the <code>addModule()</code> call is resolved.</p>
-    <li data-md="">
-     <p>In the main scope, an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④④">AudioWorkletNode</a></code> is created using
+     <li data-md="">
+      <p>The promise for the <code>addModule()</code> call is resolved.</p>
+     <li data-md="">
+      <p>In the main scope, an <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④④">AudioWorkletNode</a></code> is created using
 the user-specified key along with a
 dictionary of options.</p>
-    <li data-md="">
-     <p>As part of the node’s creation, this key is used to look up the
+     <li data-md="">
+      <p>As part of the node’s creation, this key is used to look up the
 correct <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑦">AudioWorkletProcessor</a></code> subclass for instantiation.</p>
-    <li data-md="">
-     <p>An instance of the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑧">AudioWorkletProcessor</a></code> subclass is
+     <li data-md="">
+      <p>An instance of the <code class="idl"><a data-link-type="idl" href="#audioworkletprocessor" id="ref-for-audioworkletprocessor④⑧">AudioWorkletProcessor</a></code> subclass is
 instantiated with a structured clone of the same options
 dictionary. This instance is paired with the previously created <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode④⑤">AudioWorkletNode</a></code>.</p>
-   </ol>
+    </ol>
+   </div>
    <h4 class="heading settled" data-level="1.33.7" id="AudioWorklet-Examples"><span class="secno">1.33.7. </span><span class="content"> AudioWorklet Examples</span><a class="self-link" href="#AudioWorklet-Examples"></a></h4>
    <h5 class="heading settled" data-level="1.33.7.1" id="the-bitcrusher-node"><span class="secno">1.33.7.1. </span><span class="content"> The BitCrusher Node</span><a class="self-link" href="#the-bitcrusher-node"></a></h5>
    <p>Bitcrushing is a mechanism by which the quality of an audio
@@ -12035,113 +12049,115 @@ thread</a> yields and the processing stops. The <a data-link-type="dfn" href="#c
     <p><code class="idl"><a data-link-type="idl" href="#offlineaudiocontext" id="ref-for-offlineaudiocontext②⑤">OfflineAudioContext</a></code> will execute the algorithm continuously,
 	until <code class="idl"><a data-link-type="idl" href="#dom-offlineaudiocontext-length" id="ref-for-dom-offlineaudiocontext-length①">length</a></code> frames have been rendered.</p>
    </div>
-   <ol>
-    <li data-md="">
-     <p>Let <em>Q<sub>rendering</sub></em> be an empty <a data-link-type="dfn" href="#control-message-queue" id="ref-for-control-message-queue⑦">control message
+   <div class="algorithm" data-algorithm="rendering a graph">
+    <ol>
+     <li data-md="">
+      <p>Let <em>Q<sub>rendering</sub></em> be an empty <a data-link-type="dfn" href="#control-message-queue" id="ref-for-control-message-queue⑦">control message
 queue</a>. <a data-link-type="dfn" href="#atomically" id="ref-for-atomically③">Atomically</a> <a data-link-type="dfn" href="#swap" id="ref-for-swap">swap</a> <em>Q<sub>rendering</sub></em> and <em>Q</em></p>
-    <li data-md="">
-     <p>While there are messages in <em>Q<sub>rendering</sub></em>,
+     <li data-md="">
+      <p>While there are messages in <em>Q<sub>rendering</sub></em>,
 execute the following steps:</p>
-     <ol>
-      <li data-md="">
-       <p>Execute the asynchronous section of the <a data-link-type="dfn" href="#oldest-message" id="ref-for-oldest-message">oldest message</a> of <em>Q<sub>rendering</sub></em>.</p>
-      <li data-md="">
-       <p>Remove the <a data-link-type="dfn" href="#oldest-message" id="ref-for-oldest-message①">oldest message</a> of <em>Q<sub>rendering</sub></em>.</p>
-     </ol>
-    <li data-md="">
-     <p>If the <a data-link-type="dfn" href="#rendering-thread-state" id="ref-for-rendering-thread-state④">rendering thread state</a> of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①②④">AudioContext</a></code> is not <code>running</code>, return false.</p>
-    <li data-md="">
-     <p>Order the <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑦⑨">AudioNode</a></code>s of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①②⑤">AudioContext</a></code> to be
+      <ol>
+       <li data-md="">
+        <p>Execute the asynchronous section of the <a data-link-type="dfn" href="#oldest-message" id="ref-for-oldest-message">oldest message</a> of <em>Q<sub>rendering</sub></em>.</p>
+       <li data-md="">
+        <p>Remove the <a data-link-type="dfn" href="#oldest-message" id="ref-for-oldest-message①">oldest message</a> of <em>Q<sub>rendering</sub></em>.</p>
+      </ol>
+     <li data-md="">
+      <p>If the <a data-link-type="dfn" href="#rendering-thread-state" id="ref-for-rendering-thread-state④">rendering thread state</a> of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①②④">AudioContext</a></code> is not <code>running</code>, return false.</p>
+     <li data-md="">
+      <p>Order the <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑦⑨">AudioNode</a></code>s of the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①②⑤">AudioContext</a></code> to be
 processed.</p>
-     <ol>
-      <li data-md="">
-       <p>Let <em>ordered</em> be an empty list of <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⓪">AudioNode</a></code>s.
+      <ol>
+       <li data-md="">
+        <p>Let <em>ordered</em> be an empty list of <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⓪">AudioNode</a></code>s.
 It will contain an ordered list of <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧①">AudioNode</a></code>s when this
 ordering algorithm terminates.</p>
-      <li data-md="">
-       <p>Let <em>nodes</em> be the set of all nodes created by this <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①②⑥">AudioContext</a></code>, and still alive.</p>
-      <li data-md="">
-       <p>Let <em>cycle breakers</em> be an empty set of <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①④">DelayNode</a></code>s. It will contain all the <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①⑤">DelayNode</a></code>s that
+       <li data-md="">
+        <p>Let <em>nodes</em> be the set of all nodes created by this <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①②⑥">AudioContext</a></code>, and still alive.</p>
+       <li data-md="">
+        <p>Let <em>cycle breakers</em> be an empty set of <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①④">DelayNode</a></code>s. It will contain all the <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①⑤">DelayNode</a></code>s that
 are part of a cycle.</p>
-      <li data-md="">
-       <p>For each <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧②">AudioNode</a></code> <em>node</em> in <em>nodes</em>:</p>
-       <ol>
-        <li data-md="">
-         <p>If <em>node</em> is a <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①⑥">DelayNode</a></code> that is part of a
-cycle, add it to <em>cycle breakers</em> and remove it from <em>nodes</em>.</p>
-       </ol>
-      <li data-md="">
-       <p>If <em>nodes</em> contains cycles, <a href="#mute" id="ref-for-mute">mute</a> all the <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧③">AudioNode</a></code>s that are part of this cycle, and remove
-them from <em>nodes</em>.</p>
-      <li data-md="">
-       <p>While there are unmarked <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧④">AudioNode</a></code>s in <em>nodes</em>:</p>
-       <ol>
-        <li data-md="">
-         <p>Choose an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⑤">AudioNode</a></code> <em>node</em> in <em>nodes</em></p>
-        <li data-md="">
-         <p><a data-link-type="dfn" href="#visit" id="ref-for-visit">Visit</a> <em>node</em>.</p>
-       </ol>
-       <div class="algorithm" data-algorithm="visiting a node">
-         <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="Visit" data-noexport="" id="visit">Visiting a node</dfn> <em>node</em> means performing the following steps: 
+       <li data-md="">
+        <p>For each <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧②">AudioNode</a></code> <em>node</em> in <em>nodes</em>:</p>
         <ol>
          <li data-md="">
-          <p>If <em>node</em> is marked, abort these steps.</p>
-         <li data-md="">
-          <p>Mark <em>node</em>.</p>
-         <li data-md="">
-          <p>For each <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⑥">AudioNode</a></code> <em>input</em> connected to <em>node</em>:</p>
-          <ol>
-           <li data-md="">
-            <p><a data-link-type="dfn" href="#visit" id="ref-for-visit①">Visit</a> <em>input</em>.</p>
-          </ol>
+          <p>If <em>node</em> is a <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①⑥">DelayNode</a></code> that is part of a
+cycle, add it to <em>cycle breakers</em> and remove it from <em>nodes</em>.</p>
         </ol>
-       </div>
-      <li data-md="">
-       <p>Add <em>node</em> to the beginning of <em>ordered</em>.</p>
-     </ol>
-    <li data-md="">
-     <p>Reverse the order of <em>nodes</em>.</p>
-    <li data-md="">
-     <p>For each <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①⑦">DelayNode</a></code> in a cycle, <a href="#available" id="ref-for-available">make
+       <li data-md="">
+        <p>If <em>nodes</em> contains cycles, <a href="#mute" id="ref-for-mute">mute</a> all the <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧③">AudioNode</a></code>s that are part of this cycle, and remove
+them from <em>nodes</em>.</p>
+       <li data-md="">
+        <p>While there are unmarked <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧④">AudioNode</a></code>s in <em>nodes</em>:</p>
+        <ol>
+         <li data-md="">
+          <p>Choose an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⑤">AudioNode</a></code> <em>node</em> in <em>nodes</em></p>
+         <li data-md="">
+          <p><a data-link-type="dfn" href="#visit" id="ref-for-visit">Visit</a> <em>node</em>.</p>
+        </ol>
+        <div class="algorithm" data-algorithm="visiting a node">
+          <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="Visit" data-noexport="" id="visit">Visiting a node</dfn> <em>node</em> means performing the following steps: 
+         <ol>
+          <li data-md="">
+           <p>If <em>node</em> is marked, abort these steps.</p>
+          <li data-md="">
+           <p>Mark <em>node</em>.</p>
+          <li data-md="">
+           <p>For each <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⑥">AudioNode</a></code> <em>input</em> connected to <em>node</em>:</p>
+           <ol>
+            <li data-md="">
+             <p><a data-link-type="dfn" href="#visit" id="ref-for-visit①">Visit</a> <em>input</em>.</p>
+           </ol>
+         </ol>
+        </div>
+       <li data-md="">
+        <p>Add <em>node</em> to the beginning of <em>ordered</em>.</p>
+      </ol>
+     <li data-md="">
+      <p>Reverse the order of <em>nodes</em>.</p>
+     <li data-md="">
+      <p>For each <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①⑦">DelayNode</a></code> in a cycle, <a href="#available" id="ref-for-available">make
 available for reading</a> a block of audio from the <code class="idl"><a data-link-type="idl" href="#DelayNode" id="ref-for-DelayNode①⑧">DelayNode</a></code> buffer, available for reading.</p>
-    <li data-md="">
-     <p><a href="#computation-of-value">Compute the value(s)</a> of the <code class="idl"><a data-link-type="idl" href="#audiolistener" id="ref-for-audiolistener⑧">AudioListener</a></code>'s <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤④">AudioParam</a></code>s for this block.</p>
-    <li data-md="">
-     <p>For each <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⑦">AudioNode</a></code>, in the order determined previously:</p>
-     <ol>
-      <li data-md="">
-       <p>For each <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⑤">AudioParam</a></code> of this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⑧">AudioNode</a></code>, execute
+     <li data-md="">
+      <p><a href="#computation-of-value">Compute the value(s)</a> of the <code class="idl"><a data-link-type="idl" href="#audiolistener" id="ref-for-audiolistener⑧">AudioListener</a></code>'s <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤④">AudioParam</a></code>s for this block.</p>
+     <li data-md="">
+      <p>For each <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⑦">AudioNode</a></code>, in the order determined previously:</p>
+      <ol>
+       <li data-md="">
+        <p>For each <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⑤">AudioParam</a></code> of this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⑧">AudioNode</a></code>, execute
 these steps:</p>
-       <ol>
-        <li data-md="">
-         <p>If this <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⑥">AudioParam</a></code> has any <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⑨">AudioNode</a></code> connected to it, <a href="#SummingJunction">sum</a> the
+        <ol>
+         <li data-md="">
+          <p>If this <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⑥">AudioParam</a></code> has any <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑧⑨">AudioNode</a></code> connected to it, <a href="#SummingJunction">sum</a> the
 buffers <a href="#available" id="ref-for-available①">made available for reading</a> by all <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨⓪">AudioNode</a></code> connected to this <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⑦">AudioParam</a></code>, <a href="#down-mix">down mix</a> the resulting buffer down to
 Mono, and call this buffer the <dfn class="dfn-paneled" data-dfn-type="dfn" data-lt="input AudioParam buffer" data-noexport="" id="input-audioparam-buffer">input AudioParam
 buffer</dfn>.</p>
-        <li data-md="">
-         <p><a href="#computation-of-value">Compute the value(s)</a> of
+         <li data-md="">
+          <p><a href="#computation-of-value">Compute the value(s)</a> of
 this <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⑧">AudioParam</a></code> for this block.</p>
-        <li data-md="">
-         <p><a data-link-type="dfn" href="#queuing" id="ref-for-queuing⑧">Queue a control message</a> to set the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-current-value-slot" id="ref-for-dom-audioparam-current-value-slot③">[[current value]]</a></code> slot of this <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⑨">AudioParam</a></code> to the last value computed in the preceding step.</p>
-       </ol>
-      <li data-md="">
-       <p>If this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨①">AudioNode</a></code> has any <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨②">AudioNode</a></code>s connected
+         <li data-md="">
+          <p><a data-link-type="dfn" href="#queuing" id="ref-for-queuing⑧">Queue a control message</a> to set the <code class="idl"><a data-link-type="idl" href="#dom-audioparam-current-value-slot" id="ref-for-dom-audioparam-current-value-slot③">[[current value]]</a></code> slot of this <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①⑤⑨">AudioParam</a></code> to the last value computed in the preceding step.</p>
+        </ol>
+       <li data-md="">
+        <p>If this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨①">AudioNode</a></code> has any <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨②">AudioNode</a></code>s connected
 to its input, <a href="#SummingJunction">sum</a> the buffers <a href="#available" id="ref-for-available②">made available for reading</a> by all <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨③">AudioNode</a></code>s connected to this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨④">AudioNode</a></code>. The
 resulting buffer is called the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="input-buffer">input buffer</dfn>. <a href="#channel-up-mixing-and-down-mixing">Up or down-mix</a> it to match if number of input channels of this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨⑤">AudioNode</a></code>.</p>
-      <li data-md="">
-       <p>If this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨⑥">AudioNode</a></code> is a <a data-link-type="dfn" href="#source-node" id="ref-for-source-node①">source node</a>, <a href="computing">compute a block of audio</a>,
+       <li data-md="">
+        <p>If this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨⑥">AudioNode</a></code> is a <a data-link-type="dfn" href="#source-node" id="ref-for-source-node①">source node</a>, <a href="computing">compute a block of audio</a>,
 and <a href="#available" id="ref-for-available③">make it available for reading</a>.</p>
-      <li data-md="">
-       <p>Else, if this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨⑦">AudioNode</a></code> is a <a data-link-type="dfn" href="#destination-node" id="ref-for-destination-node">destination node</a>, <a href="record">record the input</a> of this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨⑧">AudioNode</a></code>.</p>
-      <li data-md="">
-       <p>Else, <a data-link-type="dfn" href="#process" id="ref-for-process">process</a> the <a data-link-type="dfn" href="#input-buffer" id="ref-for-input-buffer">input buffer</a>,
+       <li data-md="">
+        <p>Else, if this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨⑦">AudioNode</a></code> is a <a data-link-type="dfn" href="#destination-node" id="ref-for-destination-node">destination node</a>, <a href="record">record the input</a> of this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨⑧">AudioNode</a></code>.</p>
+       <li data-md="">
+        <p>Else, <a data-link-type="dfn" href="#process" id="ref-for-process">process</a> the <a data-link-type="dfn" href="#input-buffer" id="ref-for-input-buffer">input buffer</a>,
 and <a href="#available" id="ref-for-available④">make available for reading</a> the resulting buffer.</p>
-     </ol>
-    <li data-md="">
-     <p><a data-link-type="dfn" href="#atomically" id="ref-for-atomically④">Atomically</a> increment <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime④⑤">currentTime</a></code> by 128 / <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-samplerate" id="ref-for-dom-baseaudiocontext-samplerate⑧">sampleRate</a></code>.</p>
-    <li data-md="">
-     <p>Return true.</p>
-   </ol>
+      </ol>
+     <li data-md="">
+      <p><a data-link-type="dfn" href="#atomically" id="ref-for-atomically④">Atomically</a> increment <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-currenttime" id="ref-for-dom-baseaudiocontext-currenttime④⑤">currentTime</a></code> by 128 / <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-samplerate" id="ref-for-dom-baseaudiocontext-samplerate⑧">sampleRate</a></code>.</p>
+     <li data-md="">
+      <p>Return true.</p>
+    </ol>
+   </div>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="mute">Muting</dfn> an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①⑨⑨">AudioNode</a></code> means that its
 output MUST be silence for the rendering of this audio block.</p>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="available">Making a buffer available for reading</dfn> from an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode②⓪⓪">AudioNode</a></code> means putting it in a state where other <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode②⓪①">AudioNode</a></code>s connected to this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode②⓪②">AudioNode</a></code> can safely
@@ -12402,22 +12418,24 @@ converting it to a stream with a smaller number of channels.</p>
 connected to this input. As part of this process it computes an
 internal value <a data-link-type="dfn" href="#computednumberofchannels" id="ref-for-computednumberofchannels⑦">computedNumberOfChannels</a> representing the actual
 number of channels of the input at any given time.</p>
-   <p>For each input of an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode②①⑤">AudioNode</a></code>, an implementation
-MUST:</p>
-   <ol>
-    <li data-md="">
-     <p>Compute <a data-link-type="dfn" href="#computednumberofchannels" id="ref-for-computednumberofchannels⑧">computedNumberOfChannels</a>.</p>
-    <li data-md="">
-     <p>For each connection to the input:</p>
-     <ol>
-      <li data-md="">
-       <p>up-mix or down-mix the connection to <a data-link-type="dfn" href="#computednumberofchannels" id="ref-for-computednumberofchannels⑨">computedNumberOfChannels</a> according to the <code class="idl"><a data-link-type="idl" href="#enumdef-channelinterpretation" id="ref-for-enumdef-channelinterpretation④">ChannelInterpretation</a></code> value given by the node’s <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation②⑦">channelInterpretation</a></code> attribute.</p>
-      <li data-md="">
-       <p>Mix it together with all of the other mixed streams (from other
+   <div class="algorithm" data-algorithm="channel mixing">
+     For each input of an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode②①⑤">AudioNode</a></code>, an implementation
+	MUST: 
+    <ol>
+     <li data-md="">
+      <p>Compute <a data-link-type="dfn" href="#computednumberofchannels" id="ref-for-computednumberofchannels⑧">computedNumberOfChannels</a>.</p>
+     <li data-md="">
+      <p>For each connection to the input:</p>
+      <ol>
+       <li data-md="">
+        <p>up-mix or down-mix the connection to <a data-link-type="dfn" href="#computednumberofchannels" id="ref-for-computednumberofchannels⑨">computedNumberOfChannels</a> according to the <code class="idl"><a data-link-type="idl" href="#enumdef-channelinterpretation" id="ref-for-enumdef-channelinterpretation④">ChannelInterpretation</a></code> value given by the node’s <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation②⑦">channelInterpretation</a></code> attribute.</p>
+       <li data-md="">
+        <p>Mix it together with all of the other mixed streams (from other
 connections). This is a straight-forward mixing together of each of
 the corresponding channels from each connection.</p>
-     </ol>
-   </ol>
+      </ol>
+    </ol>
+   </div>
    <h3 class="heading settled" data-level="5.1" id="ChannelLayouts"><span class="secno">5.1. </span><span class="content"> Speaker Channel Layouts</span><a class="self-link" href="#ChannelLayouts"></a></h3>
    <p>When <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation②⑧">channelInterpretation</a></code> is
 "<code class="idl"><a data-link-type="idl" href="#dom-channelinterpretation-speakers" id="ref-for-dom-channelinterpretation-speakers②③">speakers</a></code>" then the
@@ -12770,14 +12788,15 @@ connections to the input are mono. Otherwise <em>stereo-to-stereo</em> processin
    <p>This is a simple and relatively inexpensive algorithm which
 provides basic, but reasonable results. It is used for the for the <code class="idl"><a data-link-type="idl" href="#pannernode" id="ref-for-pannernode②④">PannerNode</a></code> when the <code class="idl"><a data-link-type="idl" href="#dom-pannernode-panningmodel" id="ref-for-dom-pannernode-panningmodel⑧">panningModel</a></code> attribute is set to
 "<code class="idl"><a data-link-type="idl" href="#dom-panningmodeltype-equalpower" id="ref-for-dom-panningmodeltype-equalpower⑨">equalpower</a></code>", in which case the <em>elevation</em> value is ignored. This algorithm MUST be implemented using <a data-link-type="dfn" href="#a-rate" id="ref-for-a-rate②⑥">a-rate</a> parameters.</p>
-   <ol>
-    <li data-md="">
-     <p>For each sample to be computed by this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode②①⑥">AudioNode</a></code>:</p>
-     <ol>
-      <li data-md="">
-       <p>Let <em>azimuth</em> be the value computed in the <a href="#azimuth-elevation">azimuth and elevation</a> section.</p>
-      <li data-md="">
-       <p>The <em>azimuth</em> value is first contained to be within
+   <div class="algorithm" data-algorithm="equalpower panning">
+    <ol>
+     <li data-md="">
+      <p>For each sample to be computed by this <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode②①⑥">AudioNode</a></code>:</p>
+      <ol>
+       <li data-md="">
+        <p>Let <em>azimuth</em> be the value computed in the <a href="#azimuth-elevation">azimuth and elevation</a> section.</p>
+       <li data-md="">
+        <p>The <em>azimuth</em> value is first contained to be within
 the range [-90, 90] according to:</p>
 <pre class="highlight"><span class="c1">// First, clamp azimuth to allowed range of [-180, 180].</span>
 <span class="c1"></span>azimuth <span class="o">=</span> max<span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> azimuth<span class="p">);</span>
@@ -12789,11 +12808,11 @@ azimuth <span class="o">=</span> min<span class="p">(</span><span class="mi">180
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span>azimuth <span class="o">></span> <span class="mi">90</span><span class="p">)</span>
   azimuth <span class="o">=</span> <span class="mi">180</span> <span class="o">-</span> azimuth<span class="p">;</span>
 </pre>
-      <li data-md="">
-       <p>A normalized value <em>x</em> is calculated from <em>azimuth</em> for a mono input as:</p>
+       <li data-md="">
+        <p>A normalized value <em>x</em> is calculated from <em>azimuth</em> for a mono input as:</p>
 <pre class="highlight">x <span class="o">=</span> <span class="p">(</span>azimuth <span class="o">+</span> <span class="mi">90</span><span class="p">)</span> <span class="o">/</span> <span class="mi">180</span><span class="p">;</span>
 </pre>
-       <p>Or for a stereo input as:</p>
+        <p>Or for a stereo input as:</p>
 <pre class="highlight"><span class="k">if</span> <span class="p">(</span>azimuth <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// -90 -> 0</span>
 <span class="c1"></span>  <span class="c1">// Transform the azimuth value from [-90, 0] degrees into the range [-90, 90].</span>
 <span class="c1"></span>  x <span class="o">=</span> <span class="p">(</span>azimuth <span class="o">+</span> <span class="mi">90</span><span class="p">)</span> <span class="o">/</span> <span class="mi">90</span><span class="p">;</span>
@@ -12802,17 +12821,17 @@ azimuth <span class="o">=</span> min<span class="p">(</span><span class="mi">180
 <span class="c1"></span>  x <span class="o">=</span> azimuth <span class="o">/</span> <span class="mi">90</span><span class="p">;</span>
 <span class="p">}</span>
 </pre>
-      <li data-md="">
-       <p>Left and right gain values are calculated as:</p>
+       <li data-md="">
+        <p>Left and right gain values are calculated as:</p>
 <pre class="highlight">gainL <span class="o">=</span> cos<span class="p">(</span>x <span class="o">*</span> Math<span class="p">.</span>PI <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
 gainR <span class="o">=</span> sin<span class="p">(</span>x <span class="o">*</span> Math<span class="p">.</span>PI <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
 </pre>
-      <li data-md="">
-       <p>For mono input, the stereo output is calculated as:</p>
+       <li data-md="">
+        <p>For mono input, the stereo output is calculated as:</p>
 <pre class="highlight">outputL <span class="o">=</span> input <span class="o">*</span> gainL<span class="p">;</span>
 outputR <span class="o">=</span> input <span class="o">*</span> gainR<span class="p">;</span>
 </pre>
-       <p>Else for stereo input, the output is calculated as:</p>
+        <p>Else for stereo input, the output is calculated as:</p>
 <pre class="highlight"><span class="k">if</span> <span class="p">(</span>azimuth <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
   outputL <span class="o">=</span> inputL <span class="o">+</span> inputR <span class="o">*</span> gainL<span class="p">;</span>
   outputR <span class="o">=</span> inputR <span class="o">*</span> gainR<span class="p">;</span>
@@ -12821,8 +12840,9 @@ outputR <span class="o">=</span> input <span class="o">*</span> gainR<span class
   outputR <span class="o">=</span> inputR <span class="o">+</span> inputL <span class="o">*</span> gainR<span class="p">;</span>
 <span class="p">}</span>
 </pre>
-     </ol>
-   </ol>
+      </ol>
+    </ol>
+   </div>
    <h4 class="heading settled" data-level="7.3.2" id="Spatialization-hrtf-panning"><span class="secno">7.3.2. </span><span class="content"> PannerNode "HRTF" Panning (stereo only)</span><a class="self-link" href="#Spatialization-hrtf-panning"></a></h4>
    <p>This requires a set of <a href="https://en.wikipedia.org/wiki/Head-related_transfer_function">HRTF</a> (Head-related Transfer Function) impulse responses recorded at a
 variety of azimuths and elevations. The implementation requires a

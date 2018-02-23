@@ -2515,7 +2515,7 @@ is called on.
 <div algorithm="AudioNode factory method">
 	To create a new {{AudioNode}} of a particular type <var>n</var>
 	using its <a>factory method</a>, called on a
-	<var>BaseAudioContext</var> <var>c</var>, execute these steps:
+	{{BaseAudioContext}} <var>c</var>, execute these steps:
 
 	1. Let <var>o</var> be a new object of type <var>n</var>.
 

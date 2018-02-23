@@ -3392,7 +3392,7 @@ Methods</h4>
 		</div>
 
 		<pre class=argumentdef for="AudioParam/cancelAndHoldAtTime()">
-			cancelTime: The time after which any previously scheduled parameter changes will be cancelled. It is a time in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>cancelTime</code> is negative or is not a finite number.</span> If <var>cancelTime</var> is less than {{BaseAudioContext/currentTime}}, it is clamped to {{BaseAudioContext/currentTime}}.
+			cancelTime: The time after which any previously scheduled parameter changes will be cancelled. It is a time in the same time coordinate system as the {{AudioContext}}'s {{BaseAudioContext/currentTime}} attribute. <span class="synchronous">A {{RangeError}} exception MUST be thrown if <code>cancelTime</code> is negative or is not a finite number.</span> If {{AudioParam/cancelAndHoldAtTime()/cancelTime}} is less than {{BaseAudioContext/currentTime}}, it is clamped to {{BaseAudioContext/currentTime}}.
 		</pre>
 
 		<div>

@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="45194a02d7cb7cfcdc21a853df4b422f66dd4550" name="document-revision">
+  <meta content="8fdc598080d54ed0fd8904ae90f97f8ffa2bc2a2" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -2485,7 +2485,7 @@ inputs to <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-fo
 MediaStream such as live audio input, or from a remote peer.</p>
     <li data-md="">
      <p>A <code class="idl"><a data-link-type="idl" href="#mediastreamtrackaudiosourcenode" id="ref-for-mediastreamtrackaudiosourcenode②">MediaStreamTrackAudioSourceNode</a></code> interface,
-an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode②⑤">AudioNode</a></code> which is the audio source from a <code class="idl"><a data-link-type="idl">MediaStreamTrack</a></code>.</p>
+an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode②⑤">AudioNode</a></code> which is the audio source from a <a href="https://www.w3.org/TR/mediacapture-streams/#mediastreamtrack">MediaStreamTrack</a>.</p>
     <li data-md="">
      <p>A <code class="idl"><a data-link-type="idl" href="#mediastreamaudiodestinationnode" id="ref-for-mediastreamaudiodestinationnode①">MediaStreamAudioDestinationNode</a></code> interface,
 an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode②⑥">AudioNode</a></code> which is the audio destination to a
@@ -3374,7 +3374,7 @@ resolve <em>promise</em>, return it, and abort these steps.</p>
         </ol>
       </ol>
      </div>
-     <p>When an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext④③">AudioContext</a></code> is closed, any <code class="idl"><a data-link-type="idl">MediaStream</a></code>s and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement" id="ref-for-htmlmediaelement①">HTMLMediaElement</a></code>s
+     <p>When an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext④③">AudioContext</a></code> is closed, any <a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a>s and <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement" id="ref-for-htmlmediaelement①">HTMLMediaElement</a></code>s
 that were connected to an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext④④">AudioContext</a></code> will have their
 output ignored. That is, these will no longer cause any output
 to speakers or other output devices. For more flexibility in
@@ -3451,7 +3451,7 @@ re-routed into the processing graph of the <code class="idl"><a data-link-type="
         <td> MediaStreamTrack 
         <td> <span class="no">✘</span>
         <td> <span class="no">✘</span>
-        <td>The <code class="idl"><a data-link-type="idl">MediaStreamTrack</a></code> that will act as source. <span class="synchronous">The value of its <code>kind</code> attribute must be equal to <code>"audio"</code>, or an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror⑤">InvalidStateError</a></code> exception MUST be thrown.</span>
+        <td>The <a href="https://www.w3.org/TR/mediacapture-streams/#mediastreamtrack">MediaStreamTrack</a> that will act as source. <span class="synchronous">The value of its <code>kind</code> attribute must be equal to <code>"audio"</code>, or an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror⑤">InvalidStateError</a></code> exception MUST be thrown.</span>
      </table>
      <div> <em>Return type:</em> <code class="idl"><a data-link-type="idl" href="#mediastreamtrackaudiosourcenode" id="ref-for-mediastreamtrackaudiosourcenode⑤">MediaStreamTrackAudioSourceNode</a></code> </div>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioContext" data-dfn-type="method" data-export="" id="dom-audiocontext-getoutputtimestamp"><code>getOutputTimestamp()</code></dfn>
@@ -3548,7 +3548,7 @@ resolve <em>promise</em>, return it, and abort these steps.</p>
         </ol>
       </ol>
      </div>
-     <p>While an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑤⑨">AudioContext</a></code> is suspended, <code class="idl"><a data-link-type="idl">MediaStream</a></code>s will have their output ignored; that
+     <p>While an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext⑤⑨">AudioContext</a></code> is suspended, <a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a>s will have their output ignored; that
 is, data will be lost by the real time nature of media streams. <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement" id="ref-for-htmlmediaelement②">HTMLMediaElement</a></code>s will similarly have their output
 ignored until the system is resumed. <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode②">AudioWorkletNode</a></code>s
 and <code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode⑥">ScriptProcessorNode</a></code>s will cease to have their
@@ -3900,6 +3900,7 @@ Respectively assign the values of the attributes <code class="idl"><a data-link-
 in the constructor to the internal slots <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot">[[number of channels]]</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot">[[length]]</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-sample-rate-slot" id="ref-for-dom-audiobuffer-sample-rate-slot">[[sample rate]]</a></code>.</p>
      <p>Set the internal slot <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-internal-data-slot" id="ref-for-dom-audiobuffer-internal-data-slot">[[internal data]]</a></code> of this <code class="idl"><a data-link-type="idl" href="#audiobuffer" id="ref-for-audiobuffer②⑧">AudioBuffer</a></code> to the result of calling <a href="https://tc39.github.io/ecma262/#sec-createbytedatablock"><code> CreateByteDataBlock</code></a><code>(<code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-length-slot" id="ref-for-dom-audiobuffer-length-slot①">[[length]]</a></code> * <code class="idl"><a data-link-type="idl" href="#dom-audiobuffer-number-of-channels-slot" id="ref-for-dom-audiobuffer-number-of-channels-slot①">[[number of channels]]</a></code>)</code>.</p>
      <p class="note" role="note"><span>Note:</span> This initializes the underlying storage to zero.</p>
+     <p>Return <var>b</var>.</p>
      <table class="argumentdef data">
       <caption>Arguments for the <a class="idl-code" data-link-type="method">AudioBuffer.AudioBuffer()</a> method.</caption>
       <thead>
@@ -4736,7 +4737,7 @@ clapping your hands in a large concert hall and continuing to hear
 the sound reverberate throughout the hall). Some <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode①②⓪">AudioNode</a></code>s have this property. Please see
 details for specific nodes.</p>
     <li data-md="">
-     <p><code class="idl"><a data-link-type="idl">MediaStream</a></code>s keep a <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode⑤">MediaStreamAudioSourceNode</a></code> alive as long as the underlying <code class="idl"><a data-link-type="idl">MediaStreamTrack</a></code> that is playing through the <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode⑥">MediaStreamAudioSourceNode</a></code> has not <a href="https://w3c.github.io/mediacapture-main/#track-ended">ended</a> (as per <a data-link-type="biblio" href="#biblio-mediacapture-streams">[mediacapture-streams]</a>).</p>
+     <p><a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a>s keep a <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode⑤">MediaStreamAudioSourceNode</a></code> alive as long as the underlying <a href="https://www.w3.org/TR/mediacapture-streams/#mediastreamtrack">MediaStreamTrack</a> that is playing through the <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode⑥">MediaStreamAudioSourceNode</a></code> has not <a href="https://w3c.github.io/mediacapture-main/#track-ended">ended</a> (as per <a data-link-type="biblio" href="#biblio-mediacapture-streams">[mediacapture-streams]</a>).</p>
     <li data-md="">
      <p><code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement" id="ref-for-htmlmediaelement③">HTMLMediaElement</a></code>s keep their associated <code class="idl"><a data-link-type="idl" href="#mediaelementaudiosourcenode" id="ref-for-mediaelementaudiosourcenode⑦">MediaElementAudioSourceNode</a></code> alive as long as the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement" id="ref-for-htmlmediaelement④">HTMLMediaElement</a></code> is in a state where audio could
 ever be played in the future.</p>
@@ -9254,9 +9255,9 @@ leakage can occur if scripts from one <a href="https://html.spec.whatwg.org/mult
    <p>To prevent this, a <code class="idl"><a data-link-type="idl" href="#mediaelementaudiosourcenode" id="ref-for-mediaelementaudiosourcenode②②">MediaElementAudioSourceNode</a></code> MUST output <em>silence</em> instead of the normal output of the <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement" id="ref-for-htmlmediaelement①⑧">HTMLMediaElement</a></code> if it has been created using an <code class="idl"><a data-link-type="idl" href="https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement" id="ref-for-htmlmediaelement①⑨">HTMLMediaElement</a></code> for which the execution of the <a href="https://fetch.spec.whatwg.org/#fetching">fetch
 algorithm</a> labeled the resource as <a data-link-type="dfn">CORS-cross-origin</a>.</p>
    <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="1.23" data-lt="MediaStreamAudioDestinationNode" id="mediastreamaudiodestinationnode"><span class="secno">1.23. </span><span class="content"> The <code class="idl"><a data-link-type="idl" href="#mediastreamaudiodestinationnode" id="ref-for-mediastreamaudiodestinationnode⑦">MediaStreamAudioDestinationNode</a></code> Interface</span></h3>
-   <p>This interface is an audio destination representing a <code class="idl"><a data-link-type="idl">MediaStream</a></code> with a single <code class="idl"><a data-link-type="idl">MediaStreamTrack</a></code> whose <code>kind</code> is <code>"audio"</code>. This <code class="idl"><a data-link-type="idl">MediaStream</a></code> is
+   <p>This interface is an audio destination representing a <a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a> with a single <a href="https://www.w3.org/TR/mediacapture-streams/#mediastreamtrack">MediaStreamTrack</a> whose <code>kind</code> is <code>"audio"</code>. This <a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a> is
 created when the node is created and is accessible via the <code class="idl"><a data-link-type="idl" href="#dom-mediastreamaudiodestinationnode-stream" id="ref-for-dom-mediastreamaudiodestinationnode-stream">stream</a></code> attribute. This stream can be used in a similar way
-as a <code class="idl"><a data-link-type="idl">MediaStream</a></code> obtained via <code>getUserMedia()</code>, and can, for example, be sent to a
+as a <a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a> obtained via <code>getUserMedia()</code>, and can, for example, be sent to a
 remote peer using the <code>RTCPeerConnection</code> (described in <a data-link-type="biblio" href="#biblio-webrtc">[webrtc]</a>) <code>addStream()</code> method.</p>
    <div class="node-info">
     <table>
@@ -9337,10 +9338,10 @@ and return <var>node</var>.</p>
 number of channels as the node itself, and whose <code>kind</code> attribute has the value <code>"audio"</code>.</p>
    </dl>
    <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="1.24" data-lt="MediaStreamAudioSourceNode" id="mediastreamaudiosourcenode"><span class="secno">1.24. </span><span class="content"> The <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode⑦">MediaStreamAudioSourceNode</a></code> Interface</span></h3>
-   <p>This interface represents an audio source from a <code class="idl"><a data-link-type="idl">MediaStream</a></code>. The track that will be used as the source
-of audio and will be output from this node is the first <code class="idl"><a data-link-type="idl">MediaStreamTrack</a></code> whose <code>kind</code> attribute has
+   <p>This interface represents an audio source from a <a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a>. The track that will be used as the source
+of audio and will be output from this node is the first <a href="https://www.w3.org/TR/mediacapture-streams/#mediastreamtrack">MediaStreamTrack</a> whose <code>kind</code> attribute has
 the value <code>"audio"</code>, when alphabetically sorting the
-tracks of this <code class="idl"><a data-link-type="idl">MediaStream</a></code> by their <code>id</code> attribute. Those interfaces are described in <a data-link-type="biblio" href="#biblio-mediacapture-streams">[mediacapture-streams]</a>.</p>
+tracks of this <a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a> by their <code>id</code> attribute. Those interfaces are described in <a data-link-type="biblio" href="#biblio-mediacapture-streams">[mediacapture-streams]</a>.</p>
    <p class="note" role="note"><span>Note:</span> The behaviour for picking the track to output is weird for legacy
 reasons. <code class="idl"><a data-link-type="idl" href="#mediastreamtrackaudiosourcenode" id="ref-for-mediastreamtrackaudiosourcenode⑥">MediaStreamTrackAudioSourceNode</a></code> should be used
 instead.</p>
@@ -9366,7 +9367,7 @@ instead.</p>
     </table>
    </div>
    <p>The number of channels of the output corresponds to the number of
-channels of the <code class="idl"><a data-link-type="idl">MediaStreamTrack</a></code>. If there is no valid
+channels of the <a href="https://www.w3.org/TR/mediacapture-streams/#mediastreamtrack">MediaStreamTrack</a>. If there is no valid
 audio track, then the number of channels output will be one silent
 channel.</p>
 <pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed③①">Exposed</a>=<span class="n">Window</span>,
@@ -9401,19 +9402,19 @@ channel.</p>
         <td> MediaStreamAudioSourceOptions 
         <td> <span class="no">✘</span>
         <td> <span class="no">✘</span>
-        <td>Initial parameter values for this <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode①①">MediaStreamAudioSourceNode</a></code>. If the <code class="idl"><a data-link-type="idl">MediaStream</a></code> parameter does not reference a <code class="idl"><a data-link-type="idl">MediaStream</a></code> whose <code>kind</code> attribute has the value <code>"audio"</code>, <span class="synchronous">an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror②⑤">InvalidStateError</a></code> MUST be thrown</span>.
+        <td>Initial parameter values for this <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode①①">MediaStreamAudioSourceNode</a></code>. If the <code class="idl"><a data-link-type="idl" href="#dom-mediastreamaudiosourceoptions-mediastream" id="ref-for-dom-mediastreamaudiosourceoptions-mediastream">mediaStream</a></code> parameter does not reference a <a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a> whose <code>kind</code> attribute has the value <code>"audio"</code>, <span class="synchronous">an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror②⑤">InvalidStateError</a></code> MUST be thrown</span>.
      </table>
    </dl>
    <h4 class="heading settled" data-level="1.24.2" id="MediaStreamAudioSourceNode-attributes"><span class="secno">1.24.2. </span><span class="content"> Attributes</span><a class="self-link" href="#MediaStreamAudioSourceNode-attributes"></a></h4>
    <dl>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="MediaStreamAudioSourceNode" data-dfn-type="attribute" data-export="" id="dom-mediastreamaudiosourcenode-mediastream"><code>mediaStream</code></dfn>, <span> of type <a data-link-type="idl-name">MediaStream</a>, readonly</span>
     <dd data-md="">
-     <p>The <code class="idl"><a data-link-type="idl">MediaStream</a></code> used when constructing this <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode①②">MediaStreamAudioSourceNode</a></code>.</p>
+     <p>The <a href="https://www.w3.org/TR/mediacapture-streams/#mediastream">MediaStream</a> used when constructing this <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode①②">MediaStreamAudioSourceNode</a></code>.</p>
    </dl>
    <h4 class="heading settled dfn-paneled idl-code" data-dfn-type="dictionary" data-export="" data-level="1.24.3" data-lt="MediaStreamAudioSourceOptions" id="dictdef-mediastreamaudiosourceoptions"><span class="secno">1.24.3. </span><span class="content"> <code class="idl"><a data-link-type="idl" href="#dictdef-mediastreamaudiosourceoptions" id="ref-for-dictdef-mediastreamaudiosourceoptions①">MediaStreamAudioSourceOptions</a></code></span></h4>
    <p>This specifies the options for constructing a <code class="idl"><a data-link-type="idl" href="#mediastreamaudiosourcenode" id="ref-for-mediastreamaudiosourcenode①③">MediaStreamAudioSourceNode</a></code>.</p>
 <pre class="idl highlight def"><span class="kt">dictionary</span> <a class="nv idl-code" data-link-type="dictionary" href="#dictdef-mediastreamaudiosourceoptions" id="ref-for-dictdef-mediastreamaudiosourceoptions②">MediaStreamAudioSourceOptions</a> {
-  <span class="kt">required</span> <a class="n" data-link-type="idl-name">MediaStream</a> <a class="nv idl-code" data-link-type="dict-member" data-type="MediaStream " href="#dom-mediastreamaudiosourceoptions-mediastream" id="ref-for-dom-mediastreamaudiosourceoptions-mediastream">mediaStream</a>;
+  <span class="kt">required</span> <a class="n" data-link-type="idl-name">MediaStream</a> <a class="nv idl-code" data-link-type="dict-member" data-type="MediaStream " href="#dom-mediastreamaudiosourceoptions-mediastream" id="ref-for-dom-mediastreamaudiosourceoptions-mediastream①">mediaStream</a>;
 };
 </pre>
    <h5 class="heading settled" data-level="1.24.3.1" id="dictionary-mediastreamaudiosourceoptions-members"><span class="secno">1.24.3.1. </span><span class="content"> Dictionary <code class="idl"><a data-link-type="idl" href="#dictdef-mediastreamaudiosourceoptions" id="ref-for-dictdef-mediastreamaudiosourceoptions③">MediaStreamAudioSourceOptions</a></code> Members</span><a class="self-link" href="#dictionary-mediastreamaudiosourceoptions-members"></a></h5>
@@ -9423,7 +9424,7 @@ channel.</p>
      <p>The media stream that will act as a source. This MUST be specified.</p>
    </dl>
    <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="1.25" data-lt="MediaStreamTrackAudioSourceNode" id="mediastreamtrackaudiosourcenode"><span class="secno">1.25. </span><span class="content"> The <code class="idl"><a data-link-type="idl" href="#mediastreamtrackaudiosourcenode" id="ref-for-mediastreamtrackaudiosourcenode⑦">MediaStreamTrackAudioSourceNode</a></code> Interface</span></h3>
-   <p>This interface represents an audio source from a <code class="idl"><a data-link-type="idl">MediaStreamTrack</a></code>.</p>
+   <p>This interface represents an audio source from a <a href="https://www.w3.org/TR/mediacapture-streams/#mediastreamtrack">MediaStreamTrack</a>.</p>
    <div class="node-info">
     <table>
      <thead>
@@ -9446,7 +9447,7 @@ channel.</p>
     </table>
    </div>
    <p>The number of channels of the output corresponds to the number of
-channels of the <code class="idl"><a data-link-type="idl">MediaStreamTrack</a></code>.</p>
+channels of the <a href="https://www.w3.org/TR/mediacapture-streams/#mediastreamtrack">MediaStreamTrack</a>.</p>
 <pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed③②">Exposed</a>=<span class="n">Window</span>,
  <a class="nv idl-code" data-link-type="constructor" href="#dom-mediastreamtrackaudiosourcenode-mediastreamtrackaudiosourcenode" id="ref-for-dom-mediastreamtrackaudiosourcenode-mediastreamtrackaudiosourcenode">Constructor</a> (<a class="n" data-link-type="idl-name" href="#audiocontext" id="ref-for-audiocontext①⓪⑦">AudioContext</a> <dfn class="nv idl-code" data-dfn-for="MediaStreamTrackAudioSourceNode/MediaStreamTrackAudioSourceNode(context, options)" data-dfn-type="argument" data-export="" id="dom-mediastreamtrackaudiosourcenode-mediastreamtrackaudiosourcenode-context-options-context"><code>context</code><a class="self-link" href="#dom-mediastreamtrackaudiosourcenode-mediastreamtrackaudiosourcenode-context-options-context"></a></dfn>, <a class="n" data-link-type="idl-name" href="#dictdef-mediastreamtrackaudiosourceoptions" id="ref-for-dictdef-mediastreamtrackaudiosourceoptions">MediaStreamTrackAudioSourceOptions</a> <dfn class="nv idl-code" data-dfn-for="MediaStreamTrackAudioSourceNode/MediaStreamTrackAudioSourceNode(context, options)" data-dfn-type="argument" data-export="" id="dom-mediastreamtrackaudiosourcenode-mediastreamtrackaudiosourcenode-context-options-options"><code>options</code><a class="self-link" href="#dom-mediastreamtrackaudiosourcenode-mediastreamtrackaudiosourcenode-context-options-options"></a></dfn>)]
 <span class="kt">interface</span> <a class="nv idl-code" data-link-type="interface" href="#mediastreamtrackaudiosourcenode" id="ref-for-mediastreamtrackaudiosourcenode⑧">MediaStreamTrackAudioSourceNode</a> : <a class="n" data-link-type="idl-name" href="#audionode" id="ref-for-audionode①⑤⑨">AudioNode</a> {
@@ -9493,7 +9494,7 @@ required.</p>
    <dl>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="MediaStreamTrackAudioSourceOptions" data-dfn-type="dict-member" data-export="" id="dom-mediastreamtrackaudiosourceoptions-mediastreamtrack"><code>mediaStreamTrack</code></dfn>, <span> of type <a data-link-type="idl-name">MediaStreamTrack</a></span>
     <dd data-md="">
-     <p>The media stream track that will act as a source. If this <code class="idl"><a data-link-type="idl">MediaStreamTrack</a></code> <code>kind</code> attribute is
+     <p>The media stream track that will act as a source. If this <a href="https://www.w3.org/TR/mediacapture-streams/#mediastreamtrack">MediaStreamTrack</a> <code>kind</code> attribute is
 not <code>"audio"</code>, an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror②⑥">InvalidStateError</a></code> MUST be thrown.</p>
    </dl>
    <h3 class="heading settled dfn-paneled idl-code" data-dfn-type="interface" data-export="" data-level="1.26" data-lt="OscillatorNode" id="oscillatornode"><span class="secno">1.26. </span><span class="content"> The <code class="idl"><a data-link-type="idl" href="#oscillatornode" id="ref-for-oscillatornode⑦">OscillatorNode</a></code> Interface</span></h3>
@@ -10420,7 +10421,7 @@ to <code class="idl"><a data-link-type="idl" href="#pannernode" id="ref-for-pann
 with an <code class="idl"><a data-link-type="idl" href="#oscillatornode" id="ref-for-oscillatornode①⑦">OscillatorNode</a></code>.</p>
    <p>A <a data-link-type="dfn" href="https://heycam.github.io/webidl/#dfn-conforming-implementation" id="ref-for-dfn-conforming-implementation①">conforming implementation</a> MUST support <code class="idl"><a data-link-type="idl" href="#periodicwave" id="ref-for-periodicwave①③">PeriodicWave</a></code> up to at least 8192 elements.</p>
 <pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed③⑤">Exposed</a>=<span class="n">Window</span>,
- <a class="nv idl-code" data-link-type="constructor" href="#dom-periodicwave-periodicwave" id="ref-for-dom-periodicwave-periodicwave">Constructor</a> (<a class="n" data-link-type="idl-name" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑦③">BaseAudioContext</a> <dfn class="nv idl-code" data-dfn-for="PeriodicWave/PeriodicWave(context, options)" data-dfn-type="argument" data-export="" id="dom-periodicwave-periodicwave-context-options-context"><code>context</code><a class="self-link" href="#dom-periodicwave-periodicwave-context-options-context"></a></dfn>, <span class="kt">optional</span> <a class="n" data-link-type="idl-name" href="#dictdef-periodicwaveoptions" id="ref-for-dictdef-periodicwaveoptions①">PeriodicWaveOptions</a> <dfn class="nv idl-code" data-dfn-for="PeriodicWave/PeriodicWave(context, options)" data-dfn-type="argument" data-export="" id="dom-periodicwave-periodicwave-context-options-options"><code>options</code><a class="self-link" href="#dom-periodicwave-periodicwave-context-options-options"></a></dfn>)]
+ <a class="nv idl-code" data-link-type="constructor" href="#dom-periodicwave-periodicwave" id="ref-for-dom-periodicwave-periodicwave">Constructor</a> (<a class="n" data-link-type="idl-name" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑦③">BaseAudioContext</a> <dfn class="nv idl-code" data-dfn-for="PeriodicWave/PeriodicWave(context, options)" data-dfn-type="argument" data-export="" id="dom-periodicwave-periodicwave-context-options-context"><code>context</code><a class="self-link" href="#dom-periodicwave-periodicwave-context-options-context"></a></dfn>, <span class="kt">optional</span> <a class="n" data-link-type="idl-name" href="#dictdef-periodicwaveoptions" id="ref-for-dictdef-periodicwaveoptions①">PeriodicWaveOptions</a> <dfn class="nv dfn-paneled idl-code" data-dfn-for="PeriodicWave/PeriodicWave(context, options)" data-dfn-type="argument" data-export="" id="dom-periodicwave-periodicwave-context-options-options"><code>options</code></dfn>)]
 <span class="kt">interface</span> <a class="nv idl-code" data-link-type="interface" href="#periodicwave" id="ref-for-periodicwave①④">PeriodicWave</a> {
 };
 </pre>
@@ -10434,17 +10435,17 @@ with an <code class="idl"><a data-link-type="idl" href="#oscillatornode" id="ref
         <p>Let <var>p</var> be a new <code class="idl"><a data-link-type="idl" href="#periodicwave" id="ref-for-periodicwave①⑤">PeriodicWave</a></code> object. Let <dfn class="idl-code" data-dfn-for="PeriodicWave" data-dfn-type="attribute" data-export="" id="dom-periodicwave-associated-context-slot"><code>[[associated context]]</code><a class="self-link" href="#dom-periodicwave-associated-context-slot"></a></dfn> be a reference to the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑦④">BaseAudioContext</a></code> passed as first argument of this
 constructor.</p>
        <li data-md="">
-        <p>If the <var>real</var> and <var>imag</var> parameters of
+        <p>If the <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real①">real</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag①">imag</a></code> parameters of
 the <code class="idl"><a data-link-type="idl" href="#dictdef-periodicwaveoptions" id="ref-for-dictdef-periodicwaveoptions②">PeriodicWaveOptions</a></code> are not of the same length, an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror②⑤">IndexSizeError</a></code> exception MUST be thrown.</p>
        <li data-md="">
-        <p>If <var>options</var> has not been passed in, let <dfn class="dfn-paneled idl-code" data-dfn-for="PeriodicWave" data-dfn-type="attribute" data-export="" id="dom-periodicwave-real-slot"><code>[[real]]</code></dfn> and <dfn class="dfn-paneled idl-code" data-dfn-for="PeriodicWave" data-dfn-type="attribute" data-export="" id="dom-periodicwave-imag-slot"><code>[[imag]]</code></dfn> be two internal
+        <p>If <code class="idl"><a class="idl-code" data-link-type="argument" href="#dom-periodicwave-periodicwave-context-options-options" id="ref-for-dom-periodicwave-periodicwave-context-options-options">options</a></code> has not been passed in, let <dfn class="dfn-paneled idl-code" data-dfn-for="PeriodicWave" data-dfn-type="attribute" data-export="" id="dom-periodicwave-real-slot"><code>[[real]]</code></dfn> and <dfn class="dfn-paneled idl-code" data-dfn-for="PeriodicWave" data-dfn-type="attribute" data-export="" id="dom-periodicwave-imag-slot"><code>[[imag]]</code></dfn> be two internal
 slots of type <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-Float32Array" id="ref-for-idl-Float32Array①⑦">Float32Array</a></code> and length 2. Set the
 second element of the <code class="idl"><a data-link-type="idl" href="#dom-periodicwave-imag-slot" id="ref-for-dom-periodicwave-imag-slot">[[imag]]</a></code> array to 1.</p>
         <p class="note" role="note"><span>Note:</span> When setting this <code class="idl"><a data-link-type="idl" href="#periodicwave" id="ref-for-periodicwave①⑥">PeriodicWave</a></code> on an <code class="idl"><a data-link-type="idl" href="#oscillatornode" id="ref-for-oscillatornode①⑧">OscillatorNode</a></code>, this is equivalent to using the
 built-in type <code>"sine"</code>.</p>
        <li data-md="">
         <p>Otherwise, let <code class="idl"><a data-link-type="idl" href="#dom-periodicwave-real-slot" id="ref-for-dom-periodicwave-real-slot">[[real]]</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-periodicwave-imag-slot" id="ref-for-dom-periodicwave-imag-slot①">[[imag]]</a></code> be two internal slots of type <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#idl-Float32Array" id="ref-for-idl-Float32Array①⑧">Float32Array</a></code>, both of length equal to the maximum
-length of the <var>real</var> and <var>imag</var> attributes of
+length of the <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real②">real</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag②">imag</a></code> attributes of
 the <code class="idl"><a data-link-type="idl" href="#dictdef-periodicwaveoptions" id="ref-for-dictdef-periodicwaveoptions③">PeriodicWaveOptions</a></code> passed in. <a href="https://heycam.github.io/webidl/#dfn-get-buffer-source-copy"> Make a copy</a> of those arrays into their respective
 internal slots.</p>
        <li data-md="">
@@ -10501,30 +10502,30 @@ to an <code class="idl"><a data-link-type="idl" href="#oscillatornode" id="ref-f
 both are given, the sequences must have the same length; otherwise
 an <span class="synchronous">error of type <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror②⑧">NotSupportedError</a></code> MUST be thrown</span>.</p>
 <pre class="idl highlight def"><span class="kt">dictionary</span> <a class="nv idl-code" data-link-type="dictionary" href="#dictdef-periodicwaveoptions" id="ref-for-dictdef-periodicwaveoptions⑦">PeriodicWaveOptions</a> : <a class="n" data-link-type="idl-name" href="#dictdef-periodicwaveconstraints" id="ref-for-dictdef-periodicwaveconstraints⑥">PeriodicWaveConstraints</a> {
-  <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑧⑦"><span class="kt">float</span></a>> <a class="nv idl-code" data-link-type="dict-member" data-type="sequence<float> " href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real①">real</a>;
-  <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑧⑧"><span class="kt">float</span></a>> <a class="nv idl-code" data-link-type="dict-member" data-type="sequence<float> " href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag①">imag</a>;
+  <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑧⑦"><span class="kt">float</span></a>> <a class="nv idl-code" data-link-type="dict-member" data-type="sequence<float> " href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real③">real</a>;
+  <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑧⑧"><span class="kt">float</span></a>> <a class="nv idl-code" data-link-type="dict-member" data-type="sequence<float> " href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag③">imag</a>;
 };
 </pre>
    <h5 class="heading settled" data-level="1.29.3.1" id="dictionary-periodicwaveoptions-members"><span class="secno">1.29.3.1. </span><span class="content"> Dictionary <code class="idl"><a data-link-type="idl" href="#dictdef-periodicwaveoptions" id="ref-for-dictdef-periodicwaveoptions⑧">PeriodicWaveOptions</a></code> Members</span><a class="self-link" href="#dictionary-periodicwaveoptions-members"></a></h5>
    <dl>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="PeriodicWaveOptions" data-dfn-type="dict-member" data-export="" id="dom-periodicwaveoptions-imag"><code>imag</code></dfn>, <span> of type sequence&lt;<a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑧⑨">float</a>></span>
     <dd data-md="">
-     <p>The <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag②">imag</a></code> parameter represents an array of <code>sine</code> terms. The first element (index 0) does not
+     <p>The <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag④">imag</a></code> parameter represents an array of <code>sine</code> terms. The first element (index 0) does not
 exist in the Fourier series. Implementations MUST set it to
 zero when computing the waveform. The second element (index
 1) represents the fundamental frequency. The third element
 represents the first overtone, and so on.</p>
      <p>This defaults to a sequence of all zeroes of the same length
-as <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real②">real</a></code> if <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real③">real</a></code> is given.</p>
+as <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real④">real</a></code> if <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real⑤">real</a></code> is given.</p>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="PeriodicWaveOptions" data-dfn-type="dict-member" data-export="" id="dom-periodicwaveoptions-real"><code>real</code></dfn>, <span> of type sequence&lt;<a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑨⓪">float</a>></span>
     <dd data-md="">
-     <p>The <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real④">real</a></code> parameter represents an array of <code>cosine</code> terms. The first element (index 0) is the
+     <p>The <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real⑥">real</a></code> parameter represents an array of <code>cosine</code> terms. The first element (index 0) is the
 DC-offset of the periodic waveform. Implementations MUST set
 it to zero when computing the waveform. The second element
 (index 1) represents the fundamental frequency. The third
 element represents the first overtone, and so on.</p>
      <p>This defaults to a sequence of all zeroes of the same length
-as <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag③">imag</a></code> if <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag④">imag</a></code> is
+as <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag⑤">imag</a></code> if <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag⑥">imag</a></code> is
 given.</p>
    </dl>
    <h4 class="heading settled" data-level="1.29.4" id="waveform-generation"><span class="secno">1.29.4. </span><span class="content"> Waveform Generation</span><a class="self-link" href="#waveform-generation"></a></h4>
@@ -14512,7 +14513,7 @@ James (Intel Corporation);</p>
 };
 
 <span class="kt">dictionary</span> <a class="nv idl-code" data-link-type="dictionary" href="#dictdef-mediastreamaudiosourceoptions" id="ref-for-dictdef-mediastreamaudiosourceoptions②①">MediaStreamAudioSourceOptions</a> {
-  <span class="kt">required</span> <a class="n" data-link-type="idl-name">MediaStream</a> <a class="nv idl-code" data-link-type="dict-member" data-type="MediaStream " href="#dom-mediastreamaudiosourceoptions-mediastream" id="ref-for-dom-mediastreamaudiosourceoptions-mediastream①">mediaStream</a>;
+  <span class="kt">required</span> <a class="n" data-link-type="idl-name">MediaStream</a> <a class="nv idl-code" data-link-type="dict-member" data-type="MediaStream " href="#dom-mediastreamaudiosourceoptions-mediastream" id="ref-for-dom-mediastreamaudiosourceoptions-mediastream①①">mediaStream</a>;
 };
 
 [<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed③②①">Exposed</a>=<span class="n">Window</span>,
@@ -14607,8 +14608,8 @@ James (Intel Corporation);</p>
 };
 
 <span class="kt">dictionary</span> <a class="nv idl-code" data-link-type="dictionary" href="#dictdef-periodicwaveoptions" id="ref-for-dictdef-periodicwaveoptions⑦①">PeriodicWaveOptions</a> : <a class="n" data-link-type="idl-name" href="#dictdef-periodicwaveconstraints" id="ref-for-dictdef-periodicwaveconstraints⑥①">PeriodicWaveConstraints</a> {
-  <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑧⑦①"><span class="kt">float</span></a>> <a class="nv idl-code" data-link-type="dict-member" data-type="sequence<float> " href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real①①">real</a>;
-  <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑧⑧①"><span class="kt">float</span></a>> <a class="nv idl-code" data-link-type="dict-member" data-type="sequence<float> " href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag①①">imag</a>;
+  <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑧⑦①"><span class="kt">float</span></a>> <a class="nv idl-code" data-link-type="dict-member" data-type="sequence<float> " href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real③①">real</a>;
+  <span class="kt">sequence</span>&lt;<a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-float" id="ref-for-idl-float⑧⑧①"><span class="kt">float</span></a>> <a class="nv idl-code" data-link-type="dict-member" data-type="sequence<float> " href="#dom-periodicwaveoptions-imag" id="ref-for-dom-periodicwaveoptions-imag③①">imag</a>;
 };
 
 [<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed③⑥①">Exposed</a>=<span class="n">Window</span>]
@@ -19321,7 +19322,9 @@ Dictionary MediaStreamAudioSourceOptions Members</a>
   <aside class="dfn-panel" data-for="dom-mediastreamaudiosourceoptions-mediastream">
    <b><a href="#dom-mediastreamaudiosourceoptions-mediastream">#dom-mediastreamaudiosourceoptions-mediastream</a></b><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-dom-mediastreamaudiosourceoptions-mediastream">1.24.3. 
+    <li><a href="#ref-for-dom-mediastreamaudiosourceoptions-mediastream">1.24.1. 
+Constructors</a>
+    <li><a href="#ref-for-dom-mediastreamaudiosourceoptions-mediastream①">1.24.3. 
 MediaStreamAudioSourceOptions</a>
    </ul>
   </aside>
@@ -19977,6 +19980,13 @@ Waveform Normalization</a>
 Oscillator Coefficients</a>
    </ul>
   </aside>
+  <aside class="dfn-panel" data-for="dom-periodicwave-periodicwave-context-options-options">
+   <b><a href="#dom-periodicwave-periodicwave-context-options-options">#dom-periodicwave-periodicwave-context-options-options</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-periodicwave-periodicwave-context-options-options">1.29.1. 
+Constructors</a>
+   </ul>
+  </aside>
   <aside class="dfn-panel" data-for="dom-periodicwave-periodicwave">
    <b><a href="#dom-periodicwave-periodicwave">#dom-periodicwave-periodicwave</a></b><b>Referenced in:</b>
    <ul>
@@ -20051,10 +20061,12 @@ Dictionary PeriodicWaveOptions Members</a>
    <ul>
     <li><a href="#ref-for-dom-periodicwaveoptions-imag">1.1.2. 
 Methods</a>
-    <li><a href="#ref-for-dom-periodicwaveoptions-imag①">1.29.3. 
+    <li><a href="#ref-for-dom-periodicwaveoptions-imag①">1.29.1. 
+Constructors</a> <a href="#ref-for-dom-periodicwaveoptions-imag②">(2)</a>
+    <li><a href="#ref-for-dom-periodicwaveoptions-imag③">1.29.3. 
 PeriodicWaveOptions</a>
-    <li><a href="#ref-for-dom-periodicwaveoptions-imag②">1.29.3.1. 
-Dictionary PeriodicWaveOptions Members</a> <a href="#ref-for-dom-periodicwaveoptions-imag③">(2)</a> <a href="#ref-for-dom-periodicwaveoptions-imag④">(3)</a>
+    <li><a href="#ref-for-dom-periodicwaveoptions-imag④">1.29.3.1. 
+Dictionary PeriodicWaveOptions Members</a> <a href="#ref-for-dom-periodicwaveoptions-imag⑤">(2)</a> <a href="#ref-for-dom-periodicwaveoptions-imag⑥">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-periodicwaveoptions-real">
@@ -20062,10 +20074,12 @@ Dictionary PeriodicWaveOptions Members</a> <a href="#ref-for-dom-periodicwaveopt
    <ul>
     <li><a href="#ref-for-dom-periodicwaveoptions-real">1.1.2. 
 Methods</a>
-    <li><a href="#ref-for-dom-periodicwaveoptions-real①">1.29.3. 
+    <li><a href="#ref-for-dom-periodicwaveoptions-real①">1.29.1. 
+Constructors</a> <a href="#ref-for-dom-periodicwaveoptions-real②">(2)</a>
+    <li><a href="#ref-for-dom-periodicwaveoptions-real③">1.29.3. 
 PeriodicWaveOptions</a>
-    <li><a href="#ref-for-dom-periodicwaveoptions-real②">1.29.3.1. 
-Dictionary PeriodicWaveOptions Members</a> <a href="#ref-for-dom-periodicwaveoptions-real③">(2)</a> <a href="#ref-for-dom-periodicwaveoptions-real④">(3)</a>
+    <li><a href="#ref-for-dom-periodicwaveoptions-real④">1.29.3.1. 
+Dictionary PeriodicWaveOptions Members</a> <a href="#ref-for-dom-periodicwaveoptions-real⑤">(2)</a> <a href="#ref-for-dom-periodicwaveoptions-real⑥">(3)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="scriptprocessornode">

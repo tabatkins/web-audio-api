@@ -7526,9 +7526,9 @@ Security with MediaElementAudioSourceNode and cross-origin resources</h4>
 resources. Because Web Audio allows inspection of the content of
 the resource (e.g. using a {{MediaElementAudioSourceNode}}, and
 a {{ScriptProcessorNode}} to read the samples), information
-leakage can occur if scripts from one <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#origin">
-origin</a> inspect the content of a resource from another
-<a>origin</a>.
+leakage can occur if scripts from one [[html#origin|origin]]
+inspect the content of a resource from another
+[[html#origin|origin]].
 
 To prevent this, a {{MediaElementAudioSourceNode}} MUST output
 <em>silence</em> instead of the normal output of the

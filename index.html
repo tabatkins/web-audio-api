@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="12a480b12b2d981f80e0d86eafaac82a66bc6646" name="document-revision">
+  <meta content="4978b215b577c82d43ccceb775611100963a0359" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -11257,7 +11257,7 @@ the absence of any connected inputs.</p>
    </table>
 <pre class="idl highlight def">[<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed④②">Exposed</a>=<span class="n">Window</span>,
  <a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#SecureContext" id="ref-for-SecureContext②">SecureContext</a>,
- <a class="nv idl-code" data-link-type="constructor" href="#dom-audioworkletnode-audioworkletnode" id="ref-for-dom-audioworkletnode-audioworkletnode">Constructor</a> (<a class="n" data-link-type="idl-name" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑧⑨">BaseAudioContext</a> <dfn class="nv idl-code" data-dfn-for="AudioWorkletNode/AudioWorkletNode(context, name, options)" data-dfn-type="argument" data-export="" id="dom-audioworkletnode-audioworkletnode-context-name-options-context"><code>context</code><a class="self-link" href="#dom-audioworkletnode-audioworkletnode-context-name-options-context"></a></dfn>, <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString④"><span class="kt">DOMString</span></a> <dfn class="nv idl-code" data-dfn-for="AudioWorkletNode/AudioWorkletNode(context, name, options)" data-dfn-type="argument" data-export="" id="dom-audioworkletnode-audioworkletnode-context-name-options-name"><code>name</code><a class="self-link" href="#dom-audioworkletnode-audioworkletnode-context-name-options-name"></a></dfn>, <span class="kt">optional</span> <a class="n" data-link-type="idl-name" href="#dictdef-audioworkletnodeoptions" id="ref-for-dictdef-audioworkletnodeoptions">AudioWorkletNodeOptions</a> <dfn class="nv idl-code" data-dfn-for="AudioWorkletNode/AudioWorkletNode(context, name, options)" data-dfn-type="argument" data-export="" id="dom-audioworkletnode-audioworkletnode-context-name-options-options"><code>options</code><a class="self-link" href="#dom-audioworkletnode-audioworkletnode-context-name-options-options"></a></dfn>)]
+ <a class="nv idl-code" data-link-type="constructor" href="#dom-audioworkletnode-audioworkletnode" id="ref-for-dom-audioworkletnode-audioworkletnode">Constructor</a> (<a class="n" data-link-type="idl-name" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑧⑨">BaseAudioContext</a> <dfn class="nv dfn-paneled idl-code" data-dfn-for="AudioWorkletNode/AudioWorkletNode(context, name, options)" data-dfn-type="argument" data-export="" id="dom-audioworkletnode-audioworkletnode-context-name-options-context"><code>context</code></dfn>, <a class="n idl-code" data-link-type="interface" href="https://heycam.github.io/webidl/#idl-DOMString" id="ref-for-idl-DOMString④"><span class="kt">DOMString</span></a> <dfn class="nv dfn-paneled idl-code" data-dfn-for="AudioWorkletNode/AudioWorkletNode(context, name, options)" data-dfn-type="argument" data-export="" id="dom-audioworkletnode-audioworkletnode-context-name-options-name"><code>name</code></dfn>, <span class="kt">optional</span> <a class="n" data-link-type="idl-name" href="#dictdef-audioworkletnodeoptions" id="ref-for-dictdef-audioworkletnodeoptions">AudioWorkletNodeOptions</a> <dfn class="nv dfn-paneled idl-code" data-dfn-for="AudioWorkletNode/AudioWorkletNode(context, name, options)" data-dfn-type="argument" data-export="" id="dom-audioworkletnode-audioworkletnode-context-name-options-options"><code>options</code></dfn>)]
 <span class="kt">interface</span> <a class="nv idl-code" data-link-type="interface" href="#audioworkletnode" id="ref-for-audioworkletnode①⑨">AudioWorkletNode</a> : <a class="n" data-link-type="idl-name" href="#audionode" id="ref-for-audionode①⑦①">AudioNode</a> {
   <span class="kt">readonly</span> <span class="kt">attribute</span> <a class="n" data-link-type="idl-name" href="#audioparammap" id="ref-for-audioparammap">AudioParamMap</a> <a class="nv idl-code" data-link-type="attribute" data-readonly="" data-type="AudioParamMap" href="#dom-audioworkletnode-parameters" id="ref-for-dom-audioworkletnode-parameters">parameters</a>;
   <span class="kt">readonly</span> <span class="kt">attribute</span> <a class="n" data-link-type="idl-name" href="https://html.spec.whatwg.org/multipage/web-messaging.html#messageport" id="ref-for-messageport">MessagePort</a> <a class="nv idl-code" data-link-type="attribute" data-readonly="" data-type="MessagePort" href="#dom-audioworkletnode-port" id="ref-for-dom-audioworkletnode-port">port</a>;
@@ -11286,6 +11286,12 @@ the absence of any connected inputs.</p>
         <td> <span class="no">✘</span>
         <td> <span class="no">✘</span>
         <td>The <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨⓪">BaseAudioContext</a></code> this new <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode②②">AudioWorkletNode</a></code> will be <a href="#associated" id="ref-for-associated②②">associated</a> with. 
+       <tr>
+        <td><dfn class="idl-code" data-dfn-for="AudioWorkletNode/AudioWorkletNode()" data-dfn-type="argument" data-export="" id="dom-audioworkletnode-audioworkletnode-name"><code>name</code><a class="self-link" href="#dom-audioworkletnode-audioworkletnode-name"></a></dfn> 
+        <td> DOMString 
+        <td> <span class="no">✘</span>
+        <td> <span class="no">✘</span>
+        <td>A string that can be used as a key in the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨①">BaseAudioContext</a></code>’s <a data-link-type="dfn" href="#node-name-to-parameter-descriptor-map" id="ref-for-node-name-to-parameter-descriptor-map①">node name to parameter descriptor map</a>. 
        <tr>
         <td><dfn class="idl-code" data-dfn-for="AudioWorkletNode/AudioWorkletNode()" data-dfn-type="argument" data-export="" id="dom-audioworkletnode-audioworkletnode-options"><code>options</code><a class="self-link" href="#dom-audioworkletnode-audioworkletnode-options"></a></dfn> 
         <td> AudioWorkletNodeOptions 
@@ -11581,7 +11587,7 @@ main global scope, the corresponding <code class="idl"><a data-link-type="idl" h
 maintain the internal reference to each other until the <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑧">AudioWorkletNode</a></code> instance is destroyed.</p>
    <p>Note that the instantiation of these two objects spans the control
 thread and the rendering thread.</p>
-   <p>When <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode" id="ref-for-dom-audioworkletnode-audioworkletnode①">AudioWorkletNode</a></code>(<var>context</var>, <var>nodeName</var>, <var>options</var>) constructor is invoked,
+   <p>When <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode" id="ref-for-dom-audioworkletnode-audioworkletnode①">AudioWorkletNode</a></code>(<code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode-context-name-options-context" id="ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-context">context</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode-context-name-options-name" id="ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-name">nodeName</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-audioworkletnode-context-name-options-options" id="ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-options">options</a></code>) constructor is invoked,
 the user agent MUST perform the following steps on the control
 thread, where the constructor was called.</p>
    <ol>
@@ -11589,7 +11595,7 @@ thread, where the constructor was called.</p>
      <p>Let <var>this</var> be the instance being created by
 constructor of <code class="idl"><a data-link-type="idl" href="#audioworkletnode" id="ref-for-audioworkletnode③⑨">AudioWorkletNode</a></code> or its subclass.</p>
     <li data-md="">
-     <p>If <var>nodeName</var> does not exists as a key in the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨①">BaseAudioContext</a></code>’s <a data-link-type="dfn" href="#node-name-to-parameter-descriptor-map" id="ref-for-node-name-to-parameter-descriptor-map①">node name to parameter descriptor
+     <p>If <var>nodeName</var> does not exists as a key in the <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨②">BaseAudioContext</a></code>’s <a data-link-type="dfn" href="#node-name-to-parameter-descriptor-map" id="ref-for-node-name-to-parameter-descriptor-map②">node name to parameter descriptor
 map</a>, throw a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror③⑦">NotSupportedError</a></code> exception and abort
 these steps.</p>
     <li data-md="">
@@ -11609,7 +11615,7 @@ these steps.</p>
      <p>Set <var>node</var>’s <code class="idl"><a data-link-type="idl" href="#dom-audioworkletnode-port" id="ref-for-dom-audioworkletnode-port①">port</a></code> to <var>nodePort</var>.</p>
     <li data-md="">
      <p>Let <var>parameterDescriptors</var> be the result of retrieval
-of <var>nodeName</var> from <a data-link-type="dfn" href="#node-name-to-parameter-descriptor-map" id="ref-for-node-name-to-parameter-descriptor-map②">node name to parameter descriptor map</a>:</p>
+of <var>nodeName</var> from <a data-link-type="dfn" href="#node-name-to-parameter-descriptor-map" id="ref-for-node-name-to-parameter-descriptor-map③">node name to parameter descriptor map</a>:</p>
      <ol>
       <li data-md="">
        <p>Let <var>audioParamMap</var> be a new <code class="idl"><a data-link-type="idl" href="#audioparammap" id="ref-for-audioparammap②">AudioParamMap</a></code> object.</p>
@@ -11948,7 +11954,7 @@ long as the memory operations are not reordered.</p>
    <p>The Web Audio API MUST be implemented using a <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread①⑥">control thread</a>,
 and a <a data-link-type="dfn" href="#rendering-thread" id="ref-for-rendering-thread①①">rendering thread</a>.</p>
    <p>The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="control-thread">control thread</dfn> is the thread from which the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①⑥">AudioContext</a></code> is instantiated, and from which authors
-manipulate the audio graph, that is, from where the operation on a <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨②">BaseAudioContext</a></code> are invoked. The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="rendering-thread">rendering thread</dfn> is the thread on which the actual audio output is computed, in
+manipulate the audio graph, that is, from where the operation on a <code class="idl"><a data-link-type="idl" href="#baseaudiocontext" id="ref-for-baseaudiocontext⑨③">BaseAudioContext</a></code> are invoked. The <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="rendering-thread">rendering thread</dfn> is the thread on which the actual audio output is computed, in
 reaction to the calls from the <a data-link-type="dfn" href="#control-thread" id="ref-for-control-thread①⑦">control thread</a>. It can be a
 real-time, callback-based audio thread, if computing audio for an <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-for-audiocontext①①⑦">AudioContext</a></code>, or a normal thread if rendering and audio graph
 offline using an <code class="idl"><a data-link-type="idl" href="#offlineaudiocontext" id="ref-for-offlineaudiocontext②④">OfflineAudioContext</a></code>.</p>
@@ -14881,10 +14887,10 @@ Methods</a>
     <li><a href="#ref-for-baseaudiocontext⑧⑧">1.33.3. 
 The AudioWorkletNode Interface</a> <a href="#ref-for-baseaudiocontext⑧⑨">(2)</a>
     <li><a href="#ref-for-baseaudiocontext⑨⓪">1.33.3.1. 
-Constructors</a>
-    <li><a href="#ref-for-baseaudiocontext⑨①">1.33.5. 
+Constructors</a> <a href="#ref-for-baseaudiocontext⑨①">(2)</a>
+    <li><a href="#ref-for-baseaudiocontext⑨②">1.33.5. 
 The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
-    <li><a href="#ref-for-baseaudiocontext⑨②">2.2. 
+    <li><a href="#ref-for-baseaudiocontext⑨③">2.2. 
 Control thread and rendering thread</a>
    </ul>
   </aside>
@@ -20345,8 +20351,10 @@ The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
    <ul>
     <li><a href="#ref-for-node-name-to-parameter-descriptor-map">1.33.2.2. 
 Methods</a>
-    <li><a href="#ref-for-node-name-to-parameter-descriptor-map①">1.33.5. 
-The instantiation of AudioWorkletNode and AudioWorkletProcessor</a> <a href="#ref-for-node-name-to-parameter-descriptor-map②">(2)</a>
+    <li><a href="#ref-for-node-name-to-parameter-descriptor-map①">1.33.3.1. 
+Constructors</a>
+    <li><a href="#ref-for-node-name-to-parameter-descriptor-map②">1.33.5. 
+The instantiation of AudioWorkletNode and AudioWorkletProcessor</a> <a href="#ref-for-node-name-to-parameter-descriptor-map③">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="audioworkletglobalscope">
@@ -20528,6 +20536,27 @@ The AudioWorkletNode Interface</a>
    <ul>
     <li><a href="#ref-for-dom-audioworkletprocessorstate-error">1.33.3. 
 The AudioWorkletNode Interface</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-audioworkletnode-audioworkletnode-context-name-options-context">
+   <b><a href="#dom-audioworkletnode-audioworkletnode-context-name-options-context">#dom-audioworkletnode-audioworkletnode-context-name-options-context</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-context">1.33.5. 
+The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-audioworkletnode-audioworkletnode-context-name-options-name">
+   <b><a href="#dom-audioworkletnode-audioworkletnode-context-name-options-name">#dom-audioworkletnode-audioworkletnode-context-name-options-name</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-name">1.33.5. 
+The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-audioworkletnode-audioworkletnode-context-name-options-options">
+   <b><a href="#dom-audioworkletnode-audioworkletnode-context-name-options-options">#dom-audioworkletnode-audioworkletnode-context-name-options-options</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-audioworkletnode-audioworkletnode-context-name-options-options">1.33.5. 
+The instantiation of AudioWorkletNode and AudioWorkletProcessor</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-audioworkletnode-audioworkletnode">

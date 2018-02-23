@@ -2190,6 +2190,8 @@ Constructors</h4>
 
 		Note: This initializes the underlying storage to zero.
 
+		Return <var>b</var>.
+
 		<pre class=argumentdef for="AudioBuffer/AudioBuffer()">
 		options:
 		</pre>

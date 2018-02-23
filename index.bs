@@ -9533,6 +9533,7 @@ Constructors</h5>
 
 		<pre class=argumentdef for="AudioWorkletNode/AudioWorkletNode()">
 			context: The {{BaseAudioContext}} this new {{AudioWorkletNode}} will be <a href="#associated">associated</a> with.
+			name: A string that can be used as a key in the {{BaseAudioContext}}’s <a>node name to parameter descriptor map</a>.
 			options: Optional initial parameters value for this {{AudioWorkletNode}}.
 		</pre>
 </dl>

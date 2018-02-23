@@ -1992,7 +1992,7 @@ Methods</h4>
 				<a>control thread</a>'s event loop to perform the following
 				steps:
 					<ol>
-						<li>Resolve <var>promise</var> with {{[[rendered buffer]]}}.
+						<li>Resolve the <var ignore>promise</var> created by {{startRendering()}} with {{[[rendered buffer]]}}.
 
 						<li>Queue a task to fire an event named
 						<code>complete</code> at this instance, using an instance

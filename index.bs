@@ -9925,8 +9925,8 @@ maintain the internal reference to each other until the
 Note that the instantiation of these two objects spans the control
 thread and the rendering thread.
 
-When {{AudioWorkletNode()|AudioWorkletNode}}(<var>context</var>,
-<var>nodeName</var>, <var>options</var>) constructor is invoked,
+When {{AudioWorkletNode()|AudioWorkletNode}}({{AudioWorkletNode/AudioWorkletNode(context, name, options)/context}},
+{{AudioWorkletNode/AudioWorkletNode(context, name, options)/name|nodeName}}, {{AudioWorkletNode/AudioWorkletNode(context, name, options)/options}}) constructor is invoked,
 the user agent MUST perform the following steps on the control
 thread, where the constructor was called.
 

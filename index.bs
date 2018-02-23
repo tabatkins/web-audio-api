@@ -570,7 +570,7 @@ The interfaces defined are:
 
 * A {{MediaStreamTrackAudioSourceNode}} interface,
 	an {{AudioNode}} which is the audio source from a
-	{{MediaStreamTrack}}.
+	[[mediacapture-streams#mediastreamtrack|MediaStreamTrack]].
 
 * A {{MediaStreamAudioDestinationNode}} interface,
 	an {{AudioNode}} which is the audio destination to a
@@ -1536,7 +1536,7 @@ Methods</h4>
 		</div>
 
 		When an {{AudioContext}} is closed, any
-		{{MediaStream}}s and {{HTMLMediaElement}}s
+		[[mediacapture-streams#mediastream|MediaStream]]s and {{HTMLMediaElement}}s
 		that were connected to an {{AudioContext}} will have their
 		output ignored. That is, these will no longer cause any output
 		to speakers or other output devices. For more flexibility in
@@ -1599,7 +1599,7 @@ Methods</h4>
 		Creates a {{MediaStreamTrackAudioSourceNode}}.
 
 		<pre class=argumentdef for="AudioContext/createMediaStreamTrackSource()">
-		mediaStreamTrack: The {{MediaStreamTrack}} that will act as source. <span class="synchronous">The value of its <code>kind</code> attribute must be equal to <code>"audio"</code>, or an {{InvalidStateError}} exception MUST be thrown.</span>
+		mediaStreamTrack: The [[mediacapture-streams#mediastreamtrack|MediaStreamTrack]] that will act as source. <span class="synchronous">The value of its <code>kind</code> attribute must be equal to <code>"audio"</code>, or an {{InvalidStateError}} exception MUST be thrown.</span>
 		</pre>
 
 		<div>
@@ -1726,7 +1726,7 @@ Methods</h4>
 		</div>
 
 		While an {{AudioContext}} is suspended,
-		{{MediaStream}}s will have their output ignored; that
+		[[mediacapture-streams#mediastream|MediaStream]]s will have their output ignored; that
 		is, data will be lost by the real time nature of media streams.
 		{{HTMLMediaElement}}s will similarly have their output
 		ignored until the system is resumed. {{AudioWorkletNode}}s
@@ -3100,9 +3100,9 @@ There are several types of references:
 	{{AudioNode}}s have this property. Please see
 	details for specific nodes.
 
-6. {{MediaStream}}s keep a
+6. [[mediacapture-streams#mediastream|MediaStream]]s keep a
 	{{MediaStreamAudioSourceNode}} alive as long as the underlying
-	{{MediaStreamTrack}} that is playing through the
+	[[mediacapture-streams#mediastreamtrack|MediaStreamTrack]] that is playing through the
 	{{MediaStreamAudioSourceNode}} has not <a href="https://w3c.github.io/mediacapture-main/#track-ended">ended</a>
 	(as per [[!mediacapture-streams]]).
 
@@ -7549,11 +7549,11 @@ algorithm</a> labeled the resource as
 The {{MediaStreamAudioDestinationNode}} Interface</h3>
 
 This interface is an audio destination representing a
-{{MediaStream}} with a single {{MediaStreamTrack}}
-whose <code>kind</code> is <code>"audio"</code>. This {{MediaStream}} is
+[[mediacapture-streams#mediastream|MediaStream]] with a single [[mediacapture-streams#mediastreamtrack|MediaStreamTrack]]
+whose <code>kind</code> is <code>"audio"</code>. This [[mediacapture-streams#mediastream|MediaStream]] is
 created when the node is created and is accessible via the
 {{MediaStreamAudioDestinationNode/stream}} attribute. This stream can be used in a similar way
-as a {{MediaStream}} obtained via
+as a [[mediacapture-streams#mediastream|MediaStream]] obtained via
 <code>getUserMedia()</code>, and can, for example, be sent to a
 remote peer using the <code>RTCPeerConnection</code> (described in
 [[!webrtc]]) <code>addStream()</code> method.
@@ -7614,11 +7614,11 @@ Attributes</h4>
 The {{MediaStreamAudioSourceNode}} Interface</h3>
 
 This interface represents an audio source from a
-{{MediaStream}}. The track that will be used as the source
+[[mediacapture-streams#mediastream|MediaStream]]. The track that will be used as the source
 of audio and will be output from this node is the first
-{{MediaStreamTrack}} whose <code>kind</code> attribute has
+[[mediacapture-streams#mediastreamtrack|MediaStreamTrack]] whose <code>kind</code> attribute has
 the value <code>"audio"</code>, when alphabetically sorting the
-tracks of this {{MediaStream}} by their <code>id</code>
+tracks of this [[mediacapture-streams#mediastream|MediaStream]] by their <code>id</code>
 attribute. Those interfaces are described in
 [[!mediacapture-streams]].
 
@@ -7634,7 +7634,7 @@ macros:
 </pre>
 
 The number of channels of the output corresponds to the number of
-channels of the {{MediaStreamTrack}}. If there is no valid
+channels of the [[mediacapture-streams#mediastreamtrack|MediaStreamTrack]]. If there is no valid
 audio track, then the number of channels output will be one silent
 channel.
 
@@ -7658,7 +7658,7 @@ Constructors</h4>
 
 		<pre class=argumentdef for="MediaStreamAudioSourceNode/MediaStreamAudioSourceNode()">
 			context: The {{BaseAudioContext}} this new {{MediaStreamAudioSourceNode}} will be <a href="#associated">associated</a> with.
-			options: Initial parameter values for this {{MediaStreamAudioSourceNode}}. If the {{MediaStream}} parameter does not reference a {{MediaStream}} whose <code>kind</code> attribute has the value <code>"audio"</code>, <span class="synchronous">an {{InvalidStateError}} MUST be thrown</span>.
+			options: Initial parameter values for this {{MediaStreamAudioSourceNode}}. If the {{MediaStreamAudioSourceOptions/mediaStream}} parameter does not reference a [[mediacapture-streams#mediastream|MediaStream]] whose <code>kind</code> attribute has the value <code>"audio"</code>, <span class="synchronous">an {{InvalidStateError}} MUST be thrown</span>.
 		</pre>
 </dl>
 
@@ -7667,7 +7667,7 @@ Attributes</h4>
 
 <dl dfn-type=attribute dfn-for="MediaStreamAudioSourceNode">
 	: <dfn>mediaStream</dfn>
-	:: The {{MediaStream}} used when constructing this {{MediaStreamAudioSourceNode}}.
+	:: The [[mediacapture-streams#mediastream|MediaStream]] used when constructing this {{MediaStreamAudioSourceNode}}.
 </dl>
 
 <h4 dictionary lt="MediaStreamAudioSourceOptions">
@@ -7697,7 +7697,7 @@ Dictionary {{MediaStreamAudioSourceOptions}} Members</h5>
 <h3 interface lt="MediaStreamTrackAudioSourceNode">
 The {{MediaStreamTrackAudioSourceNode}} Interface</h3>
 
-This interface represents an audio source from a {{MediaStreamTrack}}.
+This interface represents an audio source from a [[mediacapture-streams#mediastreamtrack|MediaStreamTrack]].
 
 <pre class=include>
 path: audionode-noinput.include
@@ -7707,7 +7707,7 @@ macros:
 </pre>
 
 The number of channels of the output corresponds to the number of
-channels of the {{MediaStreamTrack}}.
+channels of the [[mediacapture-streams#mediastreamtrack|MediaStreamTrack]].
 
 <pre class="idl">
 [Exposed=Window,
@@ -7752,7 +7752,7 @@ Dictionary {{MediaStreamTrackAudioSourceOptions}} Members</h5>
 	: <dfn>mediaStreamTrack</dfn>
 	::
 		The media stream track that will act as a source. If this
-		{{MediaStreamTrack}} <code>kind</code> attribute is
+		[[mediacapture-streams#mediastreamtrack|MediaStreamTrack]] <code>kind</code> attribute is
 		not <code>"audio"</code>, an {{InvalidStateError}}
 		MUST be thrown.
 </dl>

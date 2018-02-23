@@ -8599,11 +8599,11 @@ Constructors</h4>
 				{{BaseAudioContext}} passed as first argument of this
 				constructor.
 
-			2. If the <var>real</var> and <var>imag</var> parameters of
+			2. If the {{PeriodicWaveOptions/real}} and {{PeriodicWaveOptions/imag}} parameters of
 				the {{PeriodicWaveOptions}} are not of the same length, an
 				{{IndexSizeError}} exception MUST be thrown.
 
-			3. If <var>options</var> has not been passed in, let
+			3. If {{PeriodicWave/PeriodicWave(context, options)/options!!argument}} has not been passed in, let
 				<dfn attribute for="PeriodicWave">\[[real]]</dfn> and <dfn attribute for="PeriodicWave">\[[imag]]</dfn> be two internal
 				slots of type {{Float32Array}} and length 2. Set the
 				second element of the {{[[imag]]}} array to 1.
@@ -8615,7 +8615,7 @@ Constructors</h4>
 			4. Otherwise, let {{[[real]]}} and
 				{{[[imag]]}} be two internal slots of type
 				{{Float32Array}}, both of length equal to the maximum
-				length of the <var>real</var> and <var>imag</var> attributes of
+				length of the {{PeriodicWaveOptions/real}} and {{PeriodicWaveOptions/imag}} attributes of
 				the {{PeriodicWaveOptions}} passed in.
 				<a href="https://heycam.github.io/webidl/#dfn-get-buffer-source-copy">
 				Make a copy</a> of those arrays into their respective

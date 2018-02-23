@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="8fdc598080d54ed0fd8904ae90f97f8ffa2bc2a2" name="document-revision">
+  <meta content="12a480b12b2d981f80e0d86eafaac82a66bc6646" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -2839,12 +2839,12 @@ delay time will be 0 seconds.</p>
 	execute these steps: 
       <ol>
        <li data-md="">
-        <p>If <var>real</var> and <var>imag</var> are not of the same
+        <p>If <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createperiodicwave-real" id="ref-for-dom-baseaudiocontext-createperiodicwave-real">real</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createperiodicwave-imag" id="ref-for-dom-baseaudiocontext-createperiodicwave-imag">imag</a></code> are not of the same
 length, an <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#indexsizeerror" id="ref-for-indexsizeerror②">IndexSizeError</a></code> MUST be thrown.</p>
        <li data-md="">
         <p>Let <var>o</var> be a new object of type <code class="idl"><a data-link-type="idl" href="#dictdef-periodicwaveoptions" id="ref-for-dictdef-periodicwaveoptions">PeriodicWaveOptions</a></code>.</p>
        <li data-md="">
-        <p>Respectively set the <code>real</code> and <code>imag</code> parameters passed to this factory method to
+        <p>Respectively set the <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createperiodicwave-real" id="ref-for-dom-baseaudiocontext-createperiodicwave-real①">real</a></code> and <code class="idl"><a data-link-type="idl" href="#dom-baseaudiocontext-createperiodicwave-imag" id="ref-for-dom-baseaudiocontext-createperiodicwave-imag①">imag</a></code> parameters passed to this factory method to
 the attributes of the same name on <var>o</var>.</p>
        <li data-md="">
         <p>Set the <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveconstraints-disablenormalization" id="ref-for-dom-periodicwaveconstraints-disablenormalization">disableNormalization</a></code> attribute on <var>o</var> to the value of the <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveconstraints-disablenormalization" id="ref-for-dom-periodicwaveconstraints-disablenormalization①">disableNormalization</a></code> attribute of the <code>constraints</code> attribute passed to the factory
@@ -2867,13 +2867,13 @@ method has been called on as a first argument, and <var>o</var>.</p>
         <th>Description 
       <tbody>
        <tr>
-        <td><dfn class="idl-code" data-dfn-for="BaseAudioContext/createPeriodicWave()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createperiodicwave-real"><code>real</code><a class="self-link" href="#dom-baseaudiocontext-createperiodicwave-real"></a></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createPeriodicWave()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createperiodicwave-real"><code>real</code></dfn> 
         <td> sequence&lt;float> 
         <td> <span class="no">✘</span>
         <td> <span class="no">✘</span>
         <td>A sequence of cosine parameters. See its <code class="idl"><a data-link-type="idl" href="#dom-periodicwaveoptions-real" id="ref-for-dom-periodicwaveoptions-real">real</a></code> constructor argument for a more detailed description. 
        <tr>
-        <td><dfn class="idl-code" data-dfn-for="BaseAudioContext/createPeriodicWave()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createperiodicwave-imag"><code>imag</code><a class="self-link" href="#dom-baseaudiocontext-createperiodicwave-imag"></a></dfn> 
+        <td><dfn class="dfn-paneled idl-code" data-dfn-for="BaseAudioContext/createPeriodicWave()" data-dfn-type="argument" data-export="" id="dom-baseaudiocontext-createperiodicwave-imag"><code>imag</code></dfn> 
         <td> sequence&lt;float> 
         <td> <span class="no">✘</span>
         <td> <span class="no">✘</span>
@@ -15157,6 +15157,20 @@ Methods</a>
 Waveform Generation</a>
     <li><a href="#ref-for-dom-baseaudiocontext-createperiodicwave③">1.29.6. 
 Oscillator Coefficients</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createperiodicwave-real">
+   <b><a href="#dom-baseaudiocontext-createperiodicwave-real">#dom-baseaudiocontext-createperiodicwave-real</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-baseaudiocontext-createperiodicwave-real">1.1.2. 
+Methods</a> <a href="#ref-for-dom-baseaudiocontext-createperiodicwave-real①">(2)</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="dom-baseaudiocontext-createperiodicwave-imag">
+   <b><a href="#dom-baseaudiocontext-createperiodicwave-imag">#dom-baseaudiocontext-createperiodicwave-imag</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-dom-baseaudiocontext-createperiodicwave-imag">1.1.2. 
+Methods</a> <a href="#ref-for-dom-baseaudiocontext-createperiodicwave-imag①">(2)</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="dom-baseaudiocontext-createscriptprocessor">

@@ -10018,12 +10018,12 @@ steps and queue a task on the <a>control thread</a> to fire
 <div algorithm="process control message">
 	1. Let <var>processorPort</var> be
 		<a href="https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer">
-		StructuredDeserializeWithTransfer</a>(<var>processorPortSerialization</var>,
+		StructuredDeserializeWithTransfer</a>(<code>processorPortSerialization</code>,
 		the current Realm).
 
 	1. Let <var>options</var> be <a href=
 		"https://html.spec.whatwg.org/multipage/infrastructure.html#structureddeserializewithtransfer">
-		  StructuredDeserialize</a>(<var>optionsSerialization</var>, the
+		  StructuredDeserialize</a>(<code>optionsSerialization</code>, the
 		  current Realm).
 
 	2. Let <var>processorConstructor</var> be the result of looking up

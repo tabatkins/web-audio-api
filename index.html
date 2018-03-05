@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="149676cb677963768514c78a1e15b18aceb893f7" name="document-revision">
+  <meta content="292fcd06026bfd7d56b11e8adcfd14a52ba1a64c" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -1526,7 +1526,7 @@ pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Web Audio API</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2018-02-26">26 February 2018</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2018-03-05">5 March 2018</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -4368,36 +4368,36 @@ cannot be changed. An <span class="synchronous"><code class="idl"><a data-link-t
 be thrown for any attempt to change the value.</span></p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#channelsplitternode" id="ref-for-channelsplitternode⑤">ChannelSplitterNode</a></code>
       <dd data-md="">
-       <p>The channel count mode cannot be changed from "explicit" and
+       <p>The channel count mode cannot be changed from "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit①">explicit</a></code>" and
 an <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①④">InvalidStateError</a></code> exception MUST be thrown for any attempt to change the
 value.</span></p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#channelmergernode" id="ref-for-channelmergernode⑤">ChannelMergerNode</a></code>
       <dd data-md="">
-       <p>The channel count mode cannot be changed from "explicit" and
+       <p>The channel count mode cannot be changed from "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit②">explicit</a></code>" and
 an <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑤">InvalidStateError</a></code> exception MUST be thrown for any attempt to change the
 value.</span></p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#ConvolverNode" id="ref-for-ConvolverNode①⓪">ConvolverNode</a></code>
       <dd data-md="">
-       <p>The channel count mode cannot be changed from "clamped-max",
+       <p>The channel count mode cannot be changed from "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max①">clamped-max</a></code>",
 and a <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①④">NotSupportedError</a></code> exception MUST
 be thrown for any attempt to change the value.</span></p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#dynamicscompressornode" id="ref-for-dynamicscompressornode⑤">DynamicsCompressorNode</a></code>
       <dd data-md="">
-       <p>The channel count mode cannot be set to "max", and a <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑤">NotSupportedError</a></code> exception MUST be thrown for any attempt to set it to
-"max".</span></p>
+       <p>The channel count mode cannot be set to "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max③">max</a></code>", and a <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑤">NotSupportedError</a></code> exception MUST be thrown for any attempt to set it to
+"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max④">max</a></code>".</span></p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#pannernode" id="ref-for-pannernode⑥">PannerNode</a></code>
       <dd data-md="">
-       <p>The channel count mode cannot be set to "max", and a <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑥">NotSupportedError</a></code> exception MUST be thrown for any attempt to set it to
-"max".</span></p>
+       <p>The channel count mode cannot be set to "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑤">max</a></code>", and a <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑥">NotSupportedError</a></code> exception MUST be thrown for any attempt to set it to
+"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑥">max</a></code>".</span></p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#scriptprocessornode" id="ref-for-scriptprocessornode⑧">ScriptProcessorNode</a></code>
       <dd data-md="">
-       <p>The channel count mode cannot be changed from "explicit" and
+       <p>The channel count mode cannot be changed from "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit③">explicit</a></code>" and
 an <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#invalidstateerror" id="ref-for-invalidstateerror①⑥">InvalidStateError</a></code> exception MUST be thrown for any attempt to change the
 value.</span></p>
       <dt data-md=""><code class="idl"><a data-link-type="idl" href="#stereopannernode" id="ref-for-stereopannernode⑤">StereoPannerNode</a></code>
       <dd data-md="">
-       <p>The channel count mode cannot be set to "max", and a <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑦">NotSupportedError</a></code> exception MUST be thrown for any attempt to set it to
-"max".</span></p>
+       <p>The channel count mode cannot be set to "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑦">max</a></code>", and a <span class="synchronous"><code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#notsupportederror" id="ref-for-notsupportederror①⑦">NotSupportedError</a></code> exception MUST be thrown for any attempt to set it to
+"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑧">max</a></code>".</span></p>
      </dl>
      <p>See the <a href="#channel-up-mixing-and-down-mixing">§5 Channel up-mixing and down-mixing</a> section for more information on this attribute.</p>
     <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="AudioNode" data-dfn-type="attribute" data-export="" id="dom-audionode-channelinterpretation"><code>channelInterpretation</code></dfn>, <span> of type <a data-link-type="idl-name" href="#enumdef-channelinterpretation" id="ref-for-enumdef-channelinterpretation①">ChannelInterpretation</a></span>
@@ -4491,7 +4491,7 @@ down-mixing if it is not already mono, then mix it together
 with other such outputs and finally will mix with the <em>intrinsic</em> parameter value (the <code>value</code> the <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①③">AudioParam</a></code> would normally have without any
 audio connections), including any timeline changes scheduled
 for the parameter.</p>
-     <p>The down-mixing to mono is equivalent to the down-mixing for an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑨⓪">AudioNode</a></code> with <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcount" id="ref-for-dom-audionode-channelcount⑧">channelCount</a></code> = 1, <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode③">channelCountMode</a></code> = "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit①">explicit</a></code>", and <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation④">channelInterpretation</a></code> = "<code class="idl"><a data-link-type="idl" href="#dom-channelinterpretation-speakers" id="ref-for-dom-channelinterpretation-speakers②">speakers</a></code>".</p>
+     <p>The down-mixing to mono is equivalent to the down-mixing for an <code class="idl"><a data-link-type="idl" href="#audionode" id="ref-for-audionode⑨⓪">AudioNode</a></code> with <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcount" id="ref-for-dom-audionode-channelcount⑧">channelCount</a></code> = 1, <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode③">channelCountMode</a></code> = "<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit④">explicit</a></code>", and <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation④">channelInterpretation</a></code> = "<code class="idl"><a data-link-type="idl" href="#dom-channelinterpretation-speakers" id="ref-for-dom-channelinterpretation-speakers②">speakers</a></code>".</p>
      <p>There can only be one connection between a given output of one
 specific node and a specific <code class="idl"><a data-link-type="idl" href="#AudioParam" id="ref-for-AudioParam①④">AudioParam</a></code>.
 Multiple connections with the same termini are ignored.</p>
@@ -5487,7 +5487,7 @@ be passed un-processed from input to output.</p>
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode⑤">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max③">max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑨">max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation⑥">channelInterpretation</a></code> 
@@ -5740,7 +5740,7 @@ node.</p>
    <h4 class="heading settled" data-level="1.8.5" id="time-domain-down-mixing"><span class="secno">1.8.5. </span><span class="content"> Time-Domain Down-Mixing</span><a class="self-link" href="#time-domain-down-mixing"></a></h4>
    <p>When the <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport="" id="current-time-domain-data">current time-domain data</dfn> are computed, the
 	input signal must be <a href="#channel-up-mixing-and-down-mixing">down-mixed</a> to mono as if <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcount" id="ref-for-dom-audionode-channelcount①①">channelCount</a></code> is 1, <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode⑥">channelCountMode</a></code> is
-	"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max④">max</a></code>" and <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation⑦">channelInterpretation</a></code> is "<code class="idl"><a data-link-type="idl" href="#dom-channelinterpretation-speakers" id="ref-for-dom-channelinterpretation-speakers④">speakers</a></code>". This is independent of the
+	"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①⓪">max</a></code>" and <code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation⑦">channelInterpretation</a></code> is "<code class="idl"><a data-link-type="idl" href="#dom-channelinterpretation-speakers" id="ref-for-dom-channelinterpretation-speakers④">speakers</a></code>". This is independent of the
 	settings for the <code class="idl"><a data-link-type="idl" href="#analysernode" id="ref-for-analysernode①②">AnalyserNode</a></code> itself. The most recent <code class="idl"><a data-link-type="idl" href="#dom-analysernode-fftsize" id="ref-for-dom-analysernode-fftsize①⓪">fftSize</a></code> frames are used for the
 	down-mixing operation.</p>
    <h4 class="heading settled" data-level="1.8.6" id="fft-windowing-and-smoothing-over-time"><span class="secno">1.8.6. </span><span class="content"> FFT Windowing and smoothing over time</span><a class="self-link" href="#fft-windowing-and-smoothing-over-time"></a></h4>
@@ -5864,7 +5864,7 @@ details in the <code class="idl"><a data-link-type="idl" href="#dom-audioschedul
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode⑦">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑤">max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①①">max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation⑧">channelInterpretation</a></code> 
@@ -6490,7 +6490,7 @@ properties depend on what the context is.</p>
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode⑧">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit②">explicit</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit⑤">explicit</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation⑨">channelInterpretation</a></code> 
@@ -6531,7 +6531,7 @@ channels of output.</p>
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode⑨">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit③">explicit</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit⑥">explicit</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation①⓪">channelInterpretation</a></code> 
@@ -7093,7 +7093,7 @@ together to determine a <dfn class="dfn-paneled" data-dfn-type="dfn" data-noexpo
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode①⓪">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑥">max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①②">max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation①①">channelInterpretation</a></code> 
@@ -7703,7 +7703,7 @@ applications and would often be used in conjunction with <code class="idl"><a da
        <td>Has <a data-link-type="dfn" href="#audionode-channelcount-constraints" id="ref-for-audionode-channelcount-constraints">channelCount constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode①①">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit④">explicit</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit⑦">explicit</a></code>" 
        <td>Has <a data-link-type="dfn" href="#audionode-channelcountmode-constraints" id="ref-for-audionode-channelcountmode-constraints">channelCountMode constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation①②">channelInterpretation</a></code> 
@@ -7811,7 +7811,7 @@ applications and would often be used in conjunction with <code class="idl"><a da
        <td>Has <a data-link-type="dfn" href="#audionode-channelcount-constraints" id="ref-for-audionode-channelcount-constraints①">channelCount constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode①②">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit⑤">explicit</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit⑧">explicit</a></code>" 
        <td>Has <a data-link-type="dfn" href="#audionode-channelcountmode-constraints" id="ref-for-audionode-channelcountmode-constraints①">channelCountMode constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation①③">channelInterpretation</a></code> 
@@ -7918,7 +7918,7 @@ general and can be used as if it were a constructible <code class="idl"><a data-
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode①③">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑦">max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①③">max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation①④">channelInterpretation</a></code> 
@@ -8038,7 +8038,7 @@ convolution effect given an impulse response.</p>
        <td>Has <a data-link-type="dfn" href="#audionode-channelcount-constraints" id="ref-for-audionode-channelcount-constraints②">channelCount constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode①④">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max①">clamped-max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max②">clamped-max</a></code>" 
        <td>Has <a data-link-type="dfn" href="#audionode-channelcountmode-constraints" id="ref-for-audionode-channelcountmode-constraints②">channelCountMode constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation①⑤">channelInterpretation</a></code> 
@@ -8257,7 +8257,7 @@ input and single output.</p>
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode①⑤">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑧">max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①④">max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation①⑥">channelInterpretation</a></code> 
@@ -8410,7 +8410,7 @@ speakers.</p>
        <td>Has <a data-link-type="dfn" href="#audionode-channelcount-constraints" id="ref-for-audionode-channelcount-constraints④">channelCount constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode①⑥">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max②">clamped-max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max③">clamped-max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation①⑦">channelInterpretation</a></code> 
@@ -8905,7 +8905,7 @@ single output:</p>
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode①⑦">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max⑨">max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①⑤">max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation①⑧">channelInterpretation</a></code> 
@@ -9039,7 +9039,7 @@ appropriate.</p>
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode①⑧">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①⓪">max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①⑥">max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation①⑨">channelInterpretation</a></code> 
@@ -9287,7 +9287,7 @@ remote peer using the <code>RTCPeerConnection</code> (described in <a data-link-
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode①⑨">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit⑥">explicit</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit⑨">explicit</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation②⓪">channelInterpretation</a></code> 
@@ -9560,7 +9560,7 @@ of zero at the node’s exact start time. Its <a data-link-type="dfn" href="#nom
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode②⓪">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①①">max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①⑦">max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation②①">channelInterpretation</a></code> 
@@ -9850,7 +9850,7 @@ to the <code class="idl"><a data-link-type="idl" href="#audiocontext" id="ref-fo
        <td>Has <a data-link-type="dfn" href="#audionode-channelcount-constraints" id="ref-for-audionode-channelcount-constraints⑤">channelCount constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode②①">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max③">clamped-max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max④">clamped-max</a></code>" 
        <td>Has <a data-link-type="dfn" href="#audionode-channelcountmode-constraints" id="ref-for-audionode-channelcountmode-constraints④">channelCountMode constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation②②">channelInterpretation</a></code> 
@@ -10632,7 +10632,7 @@ purposes until implementations remove this node type.</p>
        <td>This is the number of channels specified when constructing this node. There are <a data-link-type="dfn" href="#audionode-channelcount-constraints" id="ref-for-audionode-channelcount-constraints⑥">channelCount constraints</a>. 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode②②">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit⑦">explicit</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit①⓪">explicit</a></code>" 
        <td>Has <a data-link-type="dfn" href="#audionode-channelcountmode-constraints" id="ref-for-audionode-channelcountmode-constraints⑤">channelCountMode constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation②③">channelInterpretation</a></code> 
@@ -10702,7 +10702,7 @@ components in a stereo stream.</p>
        <td>Has <a data-link-type="dfn" href="#audionode-channelcount-constraints" id="ref-for-audionode-channelcount-constraints⑦">channelCount constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode②③">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max④">clamped-max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max⑤">clamped-max</a></code>" 
        <td>Has <a data-link-type="dfn" href="#audionode-channelcountmode-constraints" id="ref-for-audionode-channelcountmode-constraints⑥">channelCountMode constraints</a> 
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation②④">channelInterpretation</a></code> 
@@ -10837,7 +10837,7 @@ non-linear shaping curves may be specified.</p>
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode②④">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①②">max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①⑧">max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation②⑤">channelInterpretation</a></code> 
@@ -11207,7 +11207,7 @@ an audio graph.</p>
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelcountmode" id="ref-for-dom-audionode-channelcountmode②⑤">channelCountMode</a></code> 
-       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①③">max</a></code>" 
+       <td>"<code class="idl"><a data-link-type="idl" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①⑨">max</a></code>" 
        <td>
       <tr>
        <td><code class="idl"><a data-link-type="idl" href="#dom-audionode-channelinterpretation" id="ref-for-dom-audionode-channelinterpretation②⑥">channelInterpretation</a></code> 
@@ -14099,7 +14099,7 @@ James (Intel Corporation);</p>
    <dt id="biblio-ecmascript">[ECMASCRIPT]
    <dd><a href="https://tc39.github.io/ecma262/">ECMAScript Language Specification</a>. URL: <a href="https://tc39.github.io/ecma262/">https://tc39.github.io/ecma262/</a>
    <dt id="biblio-hr-time-2">[HR-TIME-2]
-   <dd>Ilya Grigorik; James Simonsen; Jatinder Mann. <a href="https://www.w3.org/TR/hr-time-2/">High Resolution Time Level 2</a>. 3 August 2017. CR. URL: <a href="https://www.w3.org/TR/hr-time-2/">https://www.w3.org/TR/hr-time-2/</a>
+   <dd>Ilya Grigorik; James Simonsen; Jatinder Mann. <a href="https://www.w3.org/TR/hr-time-2/">High Resolution Time Level 2</a>. 1 March 2018. CR. URL: <a href="https://www.w3.org/TR/hr-time-2/">https://www.w3.org/TR/hr-time-2/</a>
    <dt id="biblio-html">[HTML]
    <dd>Anne van Kesteren; et al. <a href="https://html.spec.whatwg.org/multipage/">HTML Standard</a>. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
    <dt id="biblio-mediacapture-streams">[MEDIACAPTURE-STREAMS]
@@ -14277,9 +14277,9 @@ James (Intel Corporation);</p>
 
 [<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①①①">Exposed</a>=<span class="n">Window</span>]
 <span class="kt">enum</span> <a class="nv" href="#enumdef-channelcountmode"><code>ChannelCountMode</code></a> {
-  <a class="s idl-code" data-link-type="enum-value" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max①④">"max"</a>,
-  <a class="s idl-code" data-link-type="enum-value" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max⑤">"clamped-max"</a>,
-  <a class="s idl-code" data-link-type="enum-value" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit⑧">"explicit"</a>
+  <a class="s idl-code" data-link-type="enum-value" href="#dom-channelcountmode-max" id="ref-for-dom-channelcountmode-max②⓪">"max"</a>,
+  <a class="s idl-code" data-link-type="enum-value" href="#dom-channelcountmode-clamped-max" id="ref-for-dom-channelcountmode-clamped-max⑥">"clamped-max"</a>,
+  <a class="s idl-code" data-link-type="enum-value" href="#dom-channelcountmode-explicit" id="ref-for-dom-channelcountmode-explicit①①">"explicit"</a>
 };
 
 [<a class="nv idl-code" data-link-type="extended-attribute" href="https://heycam.github.io/webidl/#Exposed" id="ref-for-Exposed①②①">Exposed</a>=<span class="n">Window</span>]
@@ -16305,28 +16305,28 @@ Channel up-mixing and down-mixing</a> <a href="#ref-for-computednumberofchannels
     <li><a href="#ref-for-dom-channelcountmode-max">1.5.1. 
 AudioNode Creation</a> <a href="#ref-for-dom-channelcountmode-max①">(2)</a>
     <li><a href="#ref-for-dom-channelcountmode-max②">1.5.2. 
-Attributes</a>
-    <li><a href="#ref-for-dom-channelcountmode-max③">1.8. 
+Attributes</a> <a href="#ref-for-dom-channelcountmode-max③">(2)</a> <a href="#ref-for-dom-channelcountmode-max④">(3)</a> <a href="#ref-for-dom-channelcountmode-max⑤">(4)</a> <a href="#ref-for-dom-channelcountmode-max⑥">(5)</a> <a href="#ref-for-dom-channelcountmode-max⑦">(6)</a> <a href="#ref-for-dom-channelcountmode-max⑧">(7)</a>
+    <li><a href="#ref-for-dom-channelcountmode-max⑨">1.8. 
 The AnalyserNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-max④">1.8.5. 
+    <li><a href="#ref-for-dom-channelcountmode-max①⓪">1.8.5. 
 Time-Domain Down-Mixing</a>
-    <li><a href="#ref-for-dom-channelcountmode-max⑤">1.9. 
+    <li><a href="#ref-for-dom-channelcountmode-max①①">1.9. 
 The AudioBufferSourceNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-max⑥">1.13. 
+    <li><a href="#ref-for-dom-channelcountmode-max①②">1.13. 
 The BiquadFilterNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-max⑦">1.16. 
+    <li><a href="#ref-for-dom-channelcountmode-max①③">1.16. 
 The ConstantSourceNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-max⑧">1.18. 
+    <li><a href="#ref-for-dom-channelcountmode-max①④">1.18. 
 The DelayNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-max⑨">1.20. 
+    <li><a href="#ref-for-dom-channelcountmode-max①⑤">1.20. 
 The GainNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-max①⓪">1.21. 
+    <li><a href="#ref-for-dom-channelcountmode-max①⑥">1.21. 
 The IIRFilterNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-max①①">1.26. 
+    <li><a href="#ref-for-dom-channelcountmode-max①⑦">1.26. 
 The OscillatorNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-max①②">1.32. 
+    <li><a href="#ref-for-dom-channelcountmode-max①⑧">1.32. 
 The WaveShaperNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-max①③">1.33.3. 
+    <li><a href="#ref-for-dom-channelcountmode-max①⑨">1.33.3. 
 The AudioWorkletNode Interface</a>
    </ul>
   </aside>
@@ -16335,13 +16335,15 @@ The AudioWorkletNode Interface</a>
    <ul>
     <li><a href="#ref-for-dom-channelcountmode-clamped-max">1.5.1. 
 AudioNode Creation</a>
-    <li><a href="#ref-for-dom-channelcountmode-clamped-max①">1.17. 
+    <li><a href="#ref-for-dom-channelcountmode-clamped-max①">1.5.2. 
+Attributes</a>
+    <li><a href="#ref-for-dom-channelcountmode-clamped-max②">1.17. 
 The ConvolverNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-clamped-max②">1.19. 
+    <li><a href="#ref-for-dom-channelcountmode-clamped-max③">1.19. 
 The DynamicsCompressorNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-clamped-max③">1.28. 
+    <li><a href="#ref-for-dom-channelcountmode-clamped-max④">1.28. 
 The PannerNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-clamped-max④">1.31. 
+    <li><a href="#ref-for-dom-channelcountmode-clamped-max⑤">1.31. 
 The StereoPannerNode Interface</a>
    </ul>
   </aside>
@@ -16350,17 +16352,19 @@ The StereoPannerNode Interface</a>
    <ul>
     <li><a href="#ref-for-dom-channelcountmode-explicit">1.5.1. 
 AudioNode Creation</a>
-    <li><a href="#ref-for-dom-channelcountmode-explicit①">1.5.3. 
+    <li><a href="#ref-for-dom-channelcountmode-explicit①">1.5.2. 
+Attributes</a> <a href="#ref-for-dom-channelcountmode-explicit②">(2)</a> <a href="#ref-for-dom-channelcountmode-explicit③">(3)</a>
+    <li><a href="#ref-for-dom-channelcountmode-explicit④">1.5.3. 
 Methods</a>
-    <li><a href="#ref-for-dom-channelcountmode-explicit②">1.10. 
-The AudioDestinationNode Interface</a> <a href="#ref-for-dom-channelcountmode-explicit③">(2)</a>
-    <li><a href="#ref-for-dom-channelcountmode-explicit④">1.14. 
+    <li><a href="#ref-for-dom-channelcountmode-explicit⑤">1.10. 
+The AudioDestinationNode Interface</a> <a href="#ref-for-dom-channelcountmode-explicit⑥">(2)</a>
+    <li><a href="#ref-for-dom-channelcountmode-explicit⑦">1.14. 
 The ChannelMergerNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-explicit⑤">1.15. 
+    <li><a href="#ref-for-dom-channelcountmode-explicit⑧">1.15. 
 The ChannelSplitterNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-explicit⑥">1.23. 
+    <li><a href="#ref-for-dom-channelcountmode-explicit⑨">1.23. 
 The MediaStreamAudioDestinationNode Interface</a>
-    <li><a href="#ref-for-dom-channelcountmode-explicit⑦">1.30. 
+    <li><a href="#ref-for-dom-channelcountmode-explicit①⓪">1.30. 
 The ScriptProcessorNode Interface - DEPRECATED</a>
    </ul>
   </aside>

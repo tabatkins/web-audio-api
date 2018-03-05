@@ -1097,7 +1097,7 @@ Methods</h4>
 
 			3. Else, execute the following steps:
 
-				1. Let <var>error</var> be a <code>DataCloneError</code>.
+				1. Let <var>error</var> be a {{DataCloneError}}.
 				2. Reject <var>promise</var> with <var>error</var>.
 				3. Queue a task to invoke {{BaseAudioContext/decodeAudioData()/errorCallback!!argument}} with <var>error</var>.
 
@@ -1123,7 +1123,7 @@ Methods</h4>
 				event loop:
 
 				1. Let <var>error</var> be a <code>DOMException</code>
-					whose name is <code>"EncodingError"</code>.
+					whose name is {{EncodingError}}>.
 
 				2. Reject <var>promise</var> with <var>error</var>.
 
@@ -8399,7 +8399,7 @@ Attributes</h4>
 	::
 		Describes how quickly the volume is reduced as source moves
 		away from listener. The default value is 1. A
-		RangeError exception MUST be thrown if this is set to
+		{{RangeError}} exception MUST be thrown if this is set to
 		a negative value.
 
 		The nominal range for the <code>rolloffFactor</code> specifies
@@ -9693,7 +9693,7 @@ Constructors</h5>
 			1. Compare the value of NewTarget with the <a href=
 				"https://tc39.github.io/ecma262/#active-function-object">active
 				function object</a>; if the two are equal, throw a
-				<code>TypeError</code> is thrown.
+				{{TypeError}} is thrown.
 
 				Note: This check prevents the invocation of the constructor
 				directly from JavaScript. The interface object may only

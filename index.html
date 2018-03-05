@@ -1185,7 +1185,7 @@ Possible extra rowspan handling
   </style>
   <meta content="Bikeshed version 6183b7307468d4ebe91020ec360b3be2140e71df" name="generator">
   <link href="https://www.w3.org/TR/webaudio/" rel="canonical">
-  <meta content="292fcd06026bfd7d56b11e8adcfd14a52ba1a64c" name="document-revision">
+  <meta content="d64ffe0e73255acc0e89619db670c002ab5243c1" name="document-revision">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/jax.js?rev=2.6.1" rel="preload">
   <link as="script" href="https://www.w3.org/scripts/MathJax/2.6.1/jax/output/HTML-CSS/fonts/STIX/fontdata.js?rev=2.6.1" rel="preload">
@@ -2964,7 +2964,7 @@ completes.</p>
         <p>Else, execute the following steps:</p>
         <ol>
          <li data-md="">
-          <p>Let <var>error</var> be a <code>DataCloneError</code>.</p>
+          <p>Let <var>error</var> be a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#datacloneerror" id="ref-for-datacloneerror">DataCloneError</a></code>.</p>
          <li data-md="">
           <p>Reject <var>promise</var> with <var>error</var>.</p>
          <li data-md="">
@@ -2993,7 +2993,7 @@ execute the following step, on the <a data-link-type="dfn" href="#control-thread
 event loop:</p>
         <ol>
          <li data-md="">
-          <p>Let <var>error</var> be a <code>DOMException</code> whose name is <code>"EncodingError"</code>.</p>
+          <p>Let <var>error</var> be a <code>DOMException</code> whose name is <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#encodingerror" id="ref-for-encodingerror">EncodingError</a></code>>.</p>
          <li data-md="">
           <p>Reject <var>promise</var> with <var>error</var>.</p>
          <li data-md="">
@@ -10242,8 +10242,7 @@ to a non-positive value.</p>
      <dt data-md=""><dfn class="dfn-paneled idl-code" data-dfn-for="PannerNode" data-dfn-type="attribute" data-export="" id="dom-pannernode-rollofffactor"><code>rolloffFactor</code></dfn>, <span> of type <a data-link-type="idl-name" href="https://heycam.github.io/webidl/#idl-double" id="ref-for-idl-double⑦②">double</a></span>
      <dd data-md="">
       <p>Describes how quickly the volume is reduced as source moves
-away from listener. The default value is 1. A
-RangeError exception MUST be thrown if this is set to
+away from listener. The default value is 1. A <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-rangeerror" id="ref-for-exceptiondef-rangeerror①⑧">RangeError</a></code> exception MUST be thrown if this is set to
 a negative value.</p>
       <p>The nominal range for the <code>rolloffFactor</code> specifies
 the minimum and maximum values the <code>rolloffFactor</code> can have. Values outside the range are clamped to lie within
@@ -11408,7 +11407,7 @@ reference</dfn>, initially null.</p>
       <ol>
        <li data-md="">
         <p>Compare the value of NewTarget with the <a href="https://tc39.github.io/ecma262/#active-function-object">active
-function object</a>; if the two are equal, throw a <code>TypeError</code> is thrown.</p>
+function object</a>; if the two are equal, throw a <code class="idl"><a data-link-type="idl" href="https://heycam.github.io/webidl/#exceptiondef-typeerror" id="ref-for-exceptiondef-typeerror④">TypeError</a></code> is thrown.</p>
         <p class="note" role="note"><span>Note:</span> This check prevents the invocation of the constructor
 directly from JavaScript. The interface object may only
 be called internally by the UA.</p>
@@ -14058,6 +14057,8 @@ James (Intel Corporation);</p>
      <li><a href="https://heycam.github.io/webidl/#idl-ArrayBuffer">ArrayBuffer</a>
      <li><a href="https://heycam.github.io/webidl/#idl-DOMException">DOMException</a>
      <li><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a>
+     <li><a href="https://heycam.github.io/webidl/#datacloneerror">DataCloneError</a>
+     <li><a href="https://heycam.github.io/webidl/#encodingerror">EncodingError</a>
      <li><a href="https://heycam.github.io/webidl/#Exposed">Exposed</a>
      <li><a href="https://heycam.github.io/webidl/#idl-Float32Array">Float32Array</a>
      <li><a href="https://heycam.github.io/webidl/#Global">Global</a>

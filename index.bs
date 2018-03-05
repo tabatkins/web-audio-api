@@ -2749,51 +2749,51 @@ Attributes</h4>
 
 		: {{ChannelSplitterNode}}
 		::
-			The channel count mode cannot be changed from "explicit" and
+			The channel count mode cannot be changed from "{{ChannelCountMode/explicit}}" and
 			an <span class="synchronous">{{InvalidStateError}}
 			exception MUST be thrown for any attempt to change the
 			value.</span>
 
 		: {{ChannelMergerNode}}
 		::
-			The channel count mode cannot be changed from "explicit" and
+			The channel count mode cannot be changed from "{{ChannelCountMode/explicit}}" and
 			an <span class="synchronous">{{InvalidStateError}}
 			exception MUST be thrown for any attempt to change the
 			value.</span>
 
 		: {{ConvolverNode}}
 		::
-			The channel count mode cannot be changed from "clamped-max",
+			The channel count mode cannot be changed from "{{ChannelCountMode/clamped-max}}",
 			and a <span class="synchronous">{{NotSupportedError}} exception MUST
 			be thrown for any attempt to change the value.</span>
 
 		: {{DynamicsCompressorNode}}
 		::
-			The channel count mode cannot be set to "max", and a
+			The channel count mode cannot be set to "{{ChannelCountMode/max}}", and a
 			<span class="synchronous">{{NotSupportedError}}
 			exception MUST be thrown for any attempt to set it to
-			"max".</span>
+			"{{ChannelCountMode/max}}".</span>
 
 		: {{PannerNode}}
 		::
-			The channel count mode cannot be set to "max", and a
+			The channel count mode cannot be set to "{{ChannelCountMode/max}}", and a
 			<span class="synchronous">{{NotSupportedError}}
 			exception MUST be thrown for any attempt to set it to
-			"max".</span>
+			"{{ChannelCountMode/max}}".</span>
 
 		: {{ScriptProcessorNode}}
 		::
-			The channel count mode cannot be changed from "explicit" and
+			The channel count mode cannot be changed from "{{ChannelCountMode/explicit}}" and
 			an <span class="synchronous">{{InvalidStateError}}
 			exception MUST be thrown for any attempt to change the
 			value.</span>
 
 		: {{StereoPannerNode}}
 		::
-			The channel count mode cannot be set to "max", and a
+			The channel count mode cannot be set to "{{ChannelCountMode/max}}", and a
 			<span class="synchronous">{{NotSupportedError}}
 			exception MUST be thrown for any attempt to set it to
-			"max".</span>
+			"{{ChannelCountMode/max}}".</span>
 
 		See the <a href="#channel-up-mixing-and-down-mixing"></a>
 		section for more information on this attribute.
